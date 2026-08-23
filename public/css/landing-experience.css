@@ -2998,3 +2998,96 @@ html.restore-explore .explore-choices {
         min-height: 54px;
     }
 }
+
+
+/* =========================================================
+   MOBILE BLUEPRINT — target-faithful proportion pass
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage .hero-title {
+        width: 60%;
+        font-size: clamp(88px, 28vw, 132px);
+        line-height: .79;
+        letter-spacing: -.055em;
+        transform: scaleX(.76);
+        transform-origin: left top;
+    }
+
+    body.homepage .mobile-blueprint-art {
+        top: -3dvh;
+        right: -25vw;
+        width: min(126vw, 565px);
+        height: 91dvh;
+    }
+
+    body.homepage .blueprint-anvil {
+        stroke-width: 1.28;
+    }
+
+    body.homepage #introPanel .hero-button {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        border: 0;
+        clip-path: polygon(13px 0, 100% 0, 100% calc(100% - 13px), calc(100% - 13px) 100%, 0 100%, 0 13px);
+        background: #ad7139;
+        box-shadow: none;
+    }
+
+    body.homepage #introPanel .hero-button span {
+        position: absolute;
+        inset: 1px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        min-height: 0;
+        padding: 9px 7px;
+        clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    }
+
+    body.homepage #introPanel #sortButton span {
+        color: #100d09;
+        background:
+            repeating-linear-gradient(0deg, rgba(255,255,255,.018) 0 1px, transparent 1px 4px),
+            linear-gradient(135deg, #c78e55, #a26331);
+    }
+
+    body.homepage #introPanel #exploreButton span {
+        color: #d39a60;
+        background:
+            repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 1px, transparent 1px 4px),
+            linear-gradient(180deg, #12100d, #090806);
+    }
+
+    body.homepage .foundry-global-nav {
+        width: 44px !important;
+        height: 44px !important;
+        border: 1px solid rgba(183,116,52,.92) !important;
+        background: rgba(12,11,9,.88) !important;
+        box-shadow: none !important;
+    }
+
+    body.homepage .foundry-global-menu span {
+        width: 22px !important;
+        height: 2px !important;
+        margin: 3px auto !important;
+        background: #e2c598 !important;
+        box-shadow: none !important;
+    }
+}
+
+@media (max-width: 700px) and (orientation: portrait) and (max-height: 740px) {
+    body.homepage .hero-title {
+        font-size: clamp(78px, 25vw, 104px);
+    }
+
+    body.homepage .mobile-blueprint-art {
+        top: -5dvh;
+        right: -27vw;
+        width: 128vw;
+        height: 93dvh;
+    }
+}
