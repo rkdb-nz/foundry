@@ -3135,3 +3135,19 @@ html.restore-explore .explore-choices {
         transform: scaleX(.82);
     }
 }
+
+
+/* =========================================================
+   MOBILE BLUEPRINT — release short-screen headline cap
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage .hero-title {
+        font-size: 32vw;
+        line-height: .79;
+    }
+
+    body.homepage .hero-lines {
+        top: 70dvh;
+    }
+}
