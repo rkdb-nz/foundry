@@ -2955,3 +2955,46 @@ html.restore-explore .explore-choices {
         box-shadow: 0 1px 0 rgba(0,0,0,.8) !important;
     }
 }
+
+
+/* =========================================================
+   MOBILE BLUEPRINT — restore secondary button contrast
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage #introPanel .hero-button {
+        padding: 1px;
+    }
+
+    body.homepage #introPanel .hero-button::before {
+        display: none;
+    }
+
+    body.homepage #introPanel .hero-button span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: calc(clamp(64px, 9.1dvh, 82px) - 2px);
+        padding: 11px 7px;
+        clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    }
+
+    body.homepage #introPanel #exploreButton span {
+        color: #d7a066;
+        background:
+            repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 4px),
+            linear-gradient(180deg, #15120e, #090806);
+    }
+
+    body.homepage #introPanel #sortButton span {
+        color: #120e09;
+        background: transparent;
+    }
+}
+
+@media (max-width: 700px) and (orientation: portrait) and (max-height: 740px) {
+    body.homepage #introPanel .hero-button span {
+        min-height: 54px;
+    }
+}
