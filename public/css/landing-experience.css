@@ -2787,3 +2787,54 @@ html.restore-explore .explore-choices {
         min-height: 56px;
     }
 }
+
+
+/* =========================================================
+   MOBILE BLUEPRINT — composition correction after first test
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage .foundry-global-nav {
+        left: auto !important;
+        right: 5.8vw !important;
+    }
+
+    body.homepage .mobile-wordmark {
+        left: 7.2vw;
+        right: auto;
+        max-width: calc(100vw - 92px);
+    }
+
+    body.homepage .mobile-blueprint-art {
+        top: -12dvh;
+        right: -43vw;
+        width: min(145vw, 650px);
+        height: 102dvh;
+        opacity: .94;
+    }
+
+    body.homepage .blueprint-anvil {
+        stroke-width: 1.55;
+    }
+
+    body.homepage .hero-lines {
+        position: fixed;
+        left: 7.2vw;
+        top: 61dvh;
+        bottom: auto;
+        width: 85.6vw;
+    }
+}
+
+@media (max-width: 700px) and (orientation: portrait) and (max-height: 740px) {
+    body.homepage .mobile-blueprint-art {
+        top: -15dvh;
+        right: -45vw;
+        width: 148vw;
+        height: 105dvh;
+    }
+
+    body.homepage .hero-lines {
+        top: 60dvh;
+    }
+}
