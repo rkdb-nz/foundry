@@ -3659,3 +3659,176 @@ html.restore-explore .explore-choices {
         display: none !important;
     }
 }
+
+
+/* =========================================================
+   MOBILE HOME — shared artwork + live Instrument Serif type
+   ========================================================= */
+
+@font-face {
+    font-family: "Instrument Serif";
+    src: url("../assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Instrument Serif";
+    src: url("../assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    /* One fixed drawing for both landing states: the anvil cannot jump. */
+    body.homepage .landing::before,
+    body.homepage:has(#sortPanel.is-active) .landing::before {
+        display: block !important;
+        opacity: 1 !important;
+        background: #090806 url("../assets/images/mobile-home-shared.webp") center / 100% 100% no-repeat !important;
+    }
+
+    /* Keep only the live masthead from the old mobile blueprint layer. */
+    body.homepage .mobile-blueprint {
+        display: block !important;
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    body.homepage .mobile-blueprint-art {
+        display: none !important;
+    }
+
+    body.homepage .mobile-wordmark {
+        display: block !important;
+        top: 4.2dvh;
+        left: 7vw;
+        color: #eee8dc;
+        font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+        font-size: clamp(14px, 4.1vw, 19px);
+        font-weight: 400;
+        letter-spacing: .22em;
+    }
+
+    /* Page one live headline. */
+    body.homepage #introPanel .hero-title {
+        position: fixed !important;
+        left: 6.5vw !important;
+        top: 12.5dvh !important;
+        width: 49vw !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        clip: auto !important;
+        white-space: normal !important;
+        border: 0 !important;
+        color: #eee9df !important;
+        background: none !important;
+        -webkit-text-fill-color: currentColor !important;
+        filter: drop-shadow(0 2px 2px rgba(0,0,0,.42)) !important;
+        font-family: "Instrument Serif", Georgia, serif !important;
+        font-size: 39vw !important;
+        font-weight: 400 !important;
+        line-height: .82 !important;
+        letter-spacing: -.035em !important;
+        text-align: left !important;
+        transform: none !important;
+    }
+
+    /* Page one live copy. */
+    body.homepage #introPanel .hero-lines {
+        position: fixed !important;
+        left: 7vw !important;
+        top: 63.5dvh !important;
+        width: 42vw !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        clip: auto !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+        color: #b66f32 !important;
+        background: none !important;
+        -webkit-text-fill-color: currentColor !important;
+        filter: none !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 4.25vw !important;
+        font-weight: 400 !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0 !important;
+        text-align: center !important;
+    }
+
+    body.homepage #introPanel .hero-lines div {
+        display: inline !important;
+    }
+
+    body.homepage #introPanel .hero-lines div:first-child::after {
+        content: " ";
+    }
+
+    body.homepage #introPanel .hero-lines div:last-child {
+        display: block !important;
+        margin-top: .18em !important;
+        font-family: "Instrument Serif", Georgia, serif !important;
+        font-size: 1.12em !important;
+        font-style: italic !important;
+        text-align: center !important;
+    }
+
+    /* Page two live headline and supporting line. */
+    body.homepage #sortPanel .sort-title {
+        position: fixed !important;
+        left: 7vw !important;
+        top: 16.5dvh !important;
+        width: 79vw !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        clip: auto !important;
+        white-space: normal !important;
+        border: 0 !important;
+        color: #eee9df !important;
+        background: none !important;
+        -webkit-text-fill-color: currentColor !important;
+        filter: drop-shadow(0 2px 2px rgba(0,0,0,.42)) !important;
+        font-family: "Instrument Serif", Georgia, serif !important;
+        font-size: 24vw !important;
+        font-weight: 400 !important;
+        line-height: .84 !important;
+        letter-spacing: -.03em !important;
+        text-align: left !important;
+        transform: none !important;
+    }
+
+    body.homepage #sortPanel .sort-lines {
+        position: fixed !important;
+        left: 7.2vw !important;
+        top: 39.5dvh !important;
+        width: auto !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        clip: auto !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+        color: #b66f32 !important;
+        background: none !important;
+        -webkit-text-fill-color: currentColor !important;
+        filter: none !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 5vw !important;
+        font-weight: 400 !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0 !important;
+        text-align: left !important;
+    }
+}
