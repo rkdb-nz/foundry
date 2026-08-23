@@ -3174,3 +3174,115 @@ html.restore-explore .explore-choices {
         transform: none;
     }
 }
+
+
+/* =========================================================
+   MOBILE HOME — approved baked artwork + live UI
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage .landing {
+        background-image: url("../assets/images/mobile-home-blueprint.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    body.homepage .landing::before,
+    body.homepage .mobile-blueprint,
+    body.homepage .mobile-wordmark {
+        display: none;
+    }
+
+    body.homepage .hero {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    body.homepage #introPanel {
+        height: 100%;
+    }
+
+    body.homepage #introPanel .hero-title {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    body.homepage #introPanel .hero-lines {
+        position: fixed;
+        left: 6.35vw;
+        top: 74.7dvh;
+        width: 36vw;
+        color: #b66f32;
+        background: none;
+        -webkit-text-fill-color: currentColor;
+        filter: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 4.35vw;
+        font-weight: 400;
+        line-height: 1.22;
+        letter-spacing: 0;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    body.homepage #introPanel .hero-lines div {
+        display: inline;
+    }
+
+    body.homepage #introPanel .hero-lines div:first-child::after {
+        content: " ";
+    }
+
+    body.homepage #introPanel .hero-lines div:nth-child(2)::after {
+        content: "";
+    }
+
+    body.homepage #introPanel .hero-lines div:last-child {
+        display: block;
+        margin-top: .18em;
+        font-family: inherit;
+        font-size: .92em;
+        font-style: italic;
+        text-align: center;
+    }
+
+    body.homepage .hero-actions {
+        left: 4vw;
+        right: 4vw;
+        bottom: max(4.5dvh, env(safe-area-inset-bottom));
+        grid-template-columns: 1fr 1fr;
+        gap: 2.4vw;
+    }
+
+    body.homepage #introPanel .hero-button {
+        min-height: clamp(62px, 9.8dvh, 82px);
+    }
+
+    body.homepage .foundry-global-nav {
+        top: max(2.8dvh, env(safe-area-inset-top)) !important;
+        right: 4.4vw !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .landing {
+        background-image: none;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .hero-lines {
+        position: static;
+        width: auto;
+        color: inherit;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(22px, 6vw, 28px);
+        line-height: 1.42;
+        white-space: normal;
+    }
+}
