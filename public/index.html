@@ -13,6 +13,42 @@
 <body class="homepage">
     <script>if (location.hash === "#explore") document.body.classList.add("explore-open");</script>
     <main class="landing">
+        <div class="mobile-blueprint" aria-hidden="true">
+            <div class="mobile-wordmark">THE FOUNDRY</div>
+            <svg class="mobile-blueprint-art" viewBox="0 0 420 760" role="presentation" focusable="false">
+                <defs>
+                    <pattern id="blueprint-grid-small" width="18" height="18" patternUnits="userSpaceOnUse">
+                        <path d="M18 0H0V18" fill="none" stroke="currentColor" stroke-width=".45" opacity=".18"/>
+                    </pattern>
+                    <pattern id="blueprint-grid" width="90" height="90" patternUnits="userSpaceOnUse">
+                        <rect width="90" height="90" fill="url(#blueprint-grid-small)"/>
+                        <path d="M90 0H0V90" fill="none" stroke="currentColor" stroke-width=".7" opacity=".25"/>
+                    </pattern>
+                </defs>
+                <rect width="420" height="760" fill="url(#blueprint-grid)"/>
+                <g class="blueprint-guides" fill="none" stroke="currentColor">
+                    <path d="M210 0V760M0 378H420"/>
+                    <path d="M105 94H315M105 666H315" stroke-dasharray="2 8"/>
+                    <circle cx="210" cy="94" r="4"/><circle cx="210" cy="378" r="5"/><circle cx="210" cy="666" r="4"/>
+                </g>
+                <g class="blueprint-anvil" fill="none" stroke="currentColor" stroke-linejoin="round">
+                    <path d="M42 420H129L155 438H330L378 420V466L342 487H303C284 505 274 526 276 553L310 617H334V651H118V617H144L177 553C179 526 168 503 147 487H93L42 455Z"/>
+                    <path d="M93 487H342M144 617H310M177 553H276"/>
+                    <path d="M56 433H127L157 451H329L363 436"/>
+                    <rect x="118" y="617" width="216" height="34"/>
+                    <path d="M126 420V487M329 438V487"/>
+                </g>
+                <g class="blueprint-nodes" fill="#0d0c0a" stroke="currentColor">
+                    <rect x="37" y="415" width="10" height="10"/><rect x="123" y="415" width="10" height="10"/>
+                    <rect x="325" y="433" width="10" height="10"/><rect x="373" y="415" width="10" height="10"/>
+                    <rect x="113" y="612" width="10" height="10"/><rect x="329" y="612" width="10" height="10"/>
+                    <rect x="113" y="646" width="10" height="10"/><rect x="329" y="646" width="10" height="10"/>
+                </g>
+                <path class="blueprint-curve" d="M78 622C196 597 235 491 290 363S376 251 388 274" fill="none" stroke="currentColor"/>
+                <circle class="blueprint-handle" cx="388" cy="274" r="6" fill="#0d0c0a" stroke="currentColor"/>
+                <path class="blueprint-cursor" d="M388 274V315L399 304L409 327L418 323L407 301H422Z" fill="#0d0c0a" stroke="currentColor" stroke-linejoin="round"/>
+            </svg>
+        </div>
         <div class="brand">
             <div class="brand-topline">
                 <span class="brand-rule"></span><span class="brand-the">THE</span><span class="brand-rule"></span>
