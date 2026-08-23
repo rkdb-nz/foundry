@@ -3091,3 +3091,32 @@ html.restore-explore .explore-choices {
         height: 93dvh;
     }
 }
+
+
+/* =========================================================
+   MOBILE BLUEPRINT — compact premium menu
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage .foundry-global-nav {
+        width: 44px !important;
+        height: 44px !important;
+        border: 1px solid rgba(180,112,50,.92) !important;
+        background:
+            radial-gradient(circle at 35% 18%, rgba(209,150,83,.10), transparent 42%),
+            linear-gradient(180deg, rgba(24,20,15,.98), rgba(9,8,7,.98)) !important;
+        box-shadow:
+            inset 0 0 0 2px rgba(8,7,6,.96),
+            inset 0 0 0 3px rgba(181,116,54,.30),
+            0 4px 14px rgba(0,0,0,.30) !important;
+    }
+
+    body.homepage .foundry-global-menu span {
+        width: 21px !important;
+        height: 2px !important;
+        margin: 3px auto !important;
+        border: 0 !important;
+        background: linear-gradient(90deg, #9b602e, #e0b173 48%, #98602f) !important;
+        box-shadow: 0 1px 0 rgba(0,0,0,.78) !important;
+    }
+}
