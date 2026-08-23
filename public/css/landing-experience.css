@@ -3151,3 +3151,26 @@ html.restore-explore .explore-choices {
         top: 70dvh;
     }
 }
+
+
+/* =========================================================
+   MOBILE BLUEPRINT — local Onyx type test
+   No Onyx font file is distributed by this project.
+   ========================================================= */
+
+@font-face {
+    font-family: "Foundry Onyx Test";
+    src: local("Onyx"), local("Onyx MT"), local("OnyxMT");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage .hero-title {
+        font-family: "Foundry Onyx Test", "Bodoni Moda", Didot, serif;
+        font-weight: 400;
+        letter-spacing: .005em;
+        transform: none;
+    }
+}
