@@ -2874,3 +2874,84 @@ html.restore-explore .explore-choices {
         top: 63dvh;
     }
 }
+
+
+/* =========================================================
+   MOBILE BLUEPRINT — premium component rebuild
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage .blueprint-anvil {
+        stroke-width: 1.35;
+        filter: drop-shadow(0 0 4px rgba(176, 108, 46, .10));
+    }
+
+    body.homepage .blueprint-nodes {
+        stroke-width: 1.15;
+        opacity: .78;
+    }
+
+    body.homepage #introPanel .hero-button {
+        isolation: isolate;
+        border: 0;
+        clip-path: polygon(13px 0, 100% 0, 100% calc(100% - 13px), calc(100% - 13px) 100%, 0 100%, 0 13px);
+        background: linear-gradient(135deg, #c68b51, #9a5d2c);
+        box-shadow:
+            inset 0 1px 0 rgba(255,225,180,.32),
+            0 7px 20px rgba(0,0,0,.22);
+    }
+
+    body.homepage #introPanel .hero-button::before {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 1px;
+        z-index: 0;
+        pointer-events: none;
+        clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+        background:
+            repeating-linear-gradient(0deg, rgba(255,255,255,.018) 0 1px, transparent 1px 4px),
+            linear-gradient(180deg, #15120e, #0b0a08);
+    }
+
+    body.homepage #introPanel #sortButton::before {
+        background:
+            repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 4px),
+            linear-gradient(135deg, #c58b51, #9c5f2e);
+    }
+
+    body.homepage #introPanel .hero-button span {
+        position: relative;
+        z-index: 1;
+    }
+
+    body.homepage #introPanel #sortButton {
+        color: #120e09;
+    }
+
+    body.homepage #introPanel #exploreButton {
+        color: #d29a61;
+    }
+
+    body.homepage .foundry-global-nav {
+        width: 52px !important;
+        height: 52px !important;
+        border: 1px solid rgba(180,112,50,.92) !important;
+        background:
+            radial-gradient(circle at 35% 18%, rgba(209,150,83,.10), transparent 42%),
+            linear-gradient(180deg, rgba(24,20,15,.98), rgba(9,8,7,.98)) !important;
+        box-shadow:
+            inset 0 0 0 3px rgba(8,7,6,.96),
+            inset 0 0 0 4px rgba(181,116,54,.28),
+            0 5px 18px rgba(0,0,0,.34) !important;
+    }
+
+    body.homepage .foundry-global-menu span {
+        width: 23px !important;
+        height: 2px !important;
+        margin: 3px auto !important;
+        border: 0 !important;
+        background: linear-gradient(90deg, #9b602e, #e0b173 48%, #98602f) !important;
+        box-shadow: 0 1px 0 rgba(0,0,0,.8) !important;
+    }
+}
