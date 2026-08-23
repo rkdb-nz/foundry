@@ -2838,3 +2838,39 @@ html.restore-explore .explore-choices {
         top: 60dvh;
     }
 }
+
+
+/* =========================================================
+   MOBILE BLUEPRINT — final scale and tagline balance
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage .mobile-blueprint-art {
+        top: -8dvh;
+        right: -32vw;
+        width: min(132vw, 590px);
+        height: 94dvh;
+    }
+
+    body.homepage .hero-lines {
+        top: 64dvh;
+    }
+
+    body.homepage .hero-lines div:last-child {
+        display: block;
+        margin-top: 2px;
+    }
+}
+
+@media (max-width: 700px) and (orientation: portrait) and (max-height: 740px) {
+    body.homepage .mobile-blueprint-art {
+        top: -10dvh;
+        right: -34vw;
+        width: 134vw;
+        height: 96dvh;
+    }
+
+    body.homepage .hero-lines {
+        top: 63dvh;
+    }
+}
