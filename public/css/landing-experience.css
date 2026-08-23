@@ -3182,7 +3182,7 @@ html.restore-explore .explore-choices {
 
 @media (max-width: 700px) and (orientation: portrait) {
     body.homepage .landing {
-        background-image: url("../assets/images/mobile-home-blueprint.png");
+        background-image: url("../assets/images/mobile-home-blueprint.webp");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -3307,7 +3307,7 @@ html.restore-explore .explore-choices {
         pointer-events: none;
         opacity: 1;
         mix-blend-mode: normal;
-        background: #090806 url("../assets/images/mobile-home-blueprint.png") center / cover no-repeat !important;
+        background: #090806 url("../assets/images/mobile-home-blueprint.webp") center / cover no-repeat !important;
     }
 
     body.homepage #introPanel .hero-actions,
