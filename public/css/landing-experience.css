@@ -3182,7 +3182,7 @@ html.restore-explore .explore-choices {
 
 @media (max-width: 700px) and (orientation: portrait) {
     body.homepage .landing {
-        background-image: url("../assets/images/mobile-home-blueprint.webp");
+        background-image: url("../assets/images/mobile-home-blueprint.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -3307,7 +3307,7 @@ html.restore-explore .explore-choices {
         pointer-events: none;
         opacity: 1;
         mix-blend-mode: normal;
-        background: #090806 url("../assets/images/mobile-home-blueprint.webp") center / cover no-repeat !important;
+        background: #090806 url("../assets/images/mobile-home-blueprint.png") center / cover no-repeat !important;
     }
 
     body.homepage #introPanel .hero-actions,
@@ -3358,5 +3358,102 @@ html.restore-explore .explore-choices {
             inset 0 1px 0 rgba(220, 154, 86, .18),
             inset 1px 0 0 rgba(193, 120, 53, .10),
             inset 0 -1px 0 rgba(0,0,0,.94);
+    }
+}
+
+
+/* =========================================================
+   MOBILE HOME — approved two-page baked editorial pair
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage .landing::before {
+        background: #090806 url("../assets/images/mobile-home-cover.webp") center / cover no-repeat !important;
+    }
+
+    body.homepage .mobile-blueprint,
+    body.homepage .mobile-wordmark,
+    body.homepage .brand {
+        display: none !important;
+    }
+
+    body.homepage #introPanel .hero-title,
+    body.homepage #introPanel .hero-lines,
+    body.homepage #sortPanel .sort-title,
+    body.homepage #sortPanel .sort-lines {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .landing::before {
+        display: block !important;
+        opacity: 1 !important;
+        background: #090806 url("../assets/images/mobile-home-forge.webp") center / cover no-repeat !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .hero {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    body.homepage #sortPanel {
+        height: 100%;
+    }
+
+    body.homepage #sortPanel .sort-actions {
+        position: fixed;
+        left: 7.5vw;
+        right: 7.5vw;
+        bottom: max(3.8dvh, env(safe-area-inset-bottom));
+        z-index: 4;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 13px;
+        width: auto;
+        margin: 0;
+    }
+
+    body.homepage #sortPanel .email-start {
+        width: 100%;
+        min-width: 0;
+        min-height: clamp(62px, 8.8dvh, 76px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        clip-path: polygon(13px 0, 100% 0, 100% calc(100% - 13px), calc(100% - 13px) 100%, 0 100%, 0 13px);
+        border: 1px solid #a9672f;
+        background:
+            radial-gradient(ellipse at 21% 18%, rgba(255,226,178,.17), transparent 31%),
+            repeating-linear-gradient(101deg, rgba(255,255,255,.026) 0 1px, rgba(0,0,0,.018) 1px 3px, transparent 3px 7px),
+            linear-gradient(135deg, #c98d51, #a6602d);
+        color: #110d08;
+        box-shadow:
+            inset 0 1px 0 rgba(255,231,190,.30),
+            inset 0 -1px 0 rgba(56,25,8,.55),
+            0 7px 18px rgba(0,0,0,.28);
+        font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+        font-size: clamp(11px, 3.1vw, 15px);
+        font-weight: 700;
+        letter-spacing: .15em;
+        text-shadow: 0 1px 0 rgba(255,220,167,.14);
+    }
+
+    body.homepage #sortPanel .hero-back {
+        justify-self: center;
+        min-height: 34px;
+        padding: 5px 16px;
+        color: #c98949;
+        font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+        font-size: clamp(11px, 3vw, 14px);
+        font-weight: 700;
+        letter-spacing: .18em;
     }
 }
