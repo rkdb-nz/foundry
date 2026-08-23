@@ -3120,3 +3120,18 @@ html.restore-explore .explore-choices {
         box-shadow: 0 1px 0 rgba(0,0,0,.78) !important;
     }
 }
+
+
+/* =========================================================
+   MOBILE BLUEPRINT — genuine Bodoni Moda headline
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage .hero-title {
+        font-family: "Bodoni Moda", Didot, "Bodoni MT", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        letter-spacing: -.045em;
+        transform: scaleX(.82);
+    }
+}
