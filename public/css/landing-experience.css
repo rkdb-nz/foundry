@@ -2984,3 +2984,74 @@ html.restore-explore .explore-choices {
         background: linear-gradient(135deg, #eba45b, #b15e24);
     }
 }
+
+
+/* MOBILE HOME V2 — reference button refinement */
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+        gap: 10px;
+        bottom: max(20px, calc(env(safe-area-inset-bottom) + 8px));
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+        position: relative;
+        min-height: clamp(76px, 10.8svh, 96px);
+        padding: 16px 10px 14px;
+        border: 0 !important;
+        border-radius: 0;
+        clip-path: none !important;
+        color: #e7a561;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        box-shadow: none !important;
+        font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+        font-size: clamp(10px, 3vw, 13px);
+        font-stretch: condensed;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: clamp(1.4px, .5vw, 2.2px);
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton {
+        color: #160e08;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23e2a15f'/%3E%3Cstop offset='.58' stop-color='%23c57938'/%3E%3Cstop offset='1' stop-color='%23995424'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M14 1H199V86L185 99H1V14Z' fill='url(%23g)' stroke='%23e29a52' stroke-width='2'/%3E%3C/svg%3E");
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #exploreButton {
+        color: #e4a05c;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M14 1H199V86L185 99H1V14Z' fill='%230b0b0a' fill-opacity='.94' stroke='%23cf7d35' stroke-width='2'/%3E%3C/svg%3E");
+    }
+}
+
+@media (max-width: 700px) and (orientation: portrait) and (max-height: 650px) {
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+        min-height: 62px;
+        padding-top: 12px;
+        padding-bottom: 11px;
+    }
+}
+
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+        min-height: 54px;
+        border: 0 !important;
+        clip-path: none !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+        font-weight: 700;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton {
+        color: #160e08;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23e2a15f'/%3E%3Cstop offset='.58' stop-color='%23c57938'/%3E%3Cstop offset='1' stop-color='%23995424'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M14 1H199V86L185 99H1V14Z' fill='url(%23g)' stroke='%23e29a52' stroke-width='2'/%3E%3C/svg%3E");
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #exploreButton {
+        color: #e4a05c;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M14 1H199V86L185 99H1V14Z' fill='%230b0b0a' fill-opacity='.94' stroke='%23cf7d35' stroke-width='2'/%3E%3C/svg%3E");
+    }
+}
