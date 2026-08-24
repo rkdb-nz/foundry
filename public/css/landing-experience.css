@@ -3832,3 +3832,64 @@ html.restore-explore .explore-choices {
         text-align: left !important;
     }
 }
+
+
+/* =========================================================
+   MOBILE HOME — visible X + slow two-way content dissolve
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    /* Keep the hamburger/X above the open drawer. */
+    body.homepage .foundry-global-nav {
+        z-index: 10020 !important;
+    }
+
+    /* Calm the old forge flare while retaining a trace of motion. */
+    body.homepage.is-forging .forge-transition {
+        opacity: .34;
+    }
+
+    body.homepage.is-forging #introPanel {
+        animation: mobileContentFadeDown 1050ms cubic-bezier(.45,0,.55,1) both !important;
+    }
+
+    body.homepage.is-forging #sortPanel.is-active {
+        animation: mobileContentFadeUp 1250ms cubic-bezier(.22,.72,.24,1) both !important;
+    }
+
+    body.homepage.is-returning #sortPanel.is-active {
+        animation: mobileContentFadeDown 900ms cubic-bezier(.45,0,.55,1) both !important;
+    }
+
+    body.homepage.is-returning #introPanel.is-active {
+        animation: mobileContentFadeUp 1150ms cubic-bezier(.22,.72,.24,1) both !important;
+    }
+}
+
+@keyframes mobileContentFadeDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(3px);
+    }
+}
+
+@keyframes mobileContentFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(3px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
