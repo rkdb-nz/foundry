@@ -3,74 +3,83 @@ const backButton = document.getElementById('backButton');
 
 const introPanel = document.getElementById('introPanel');
 const sortPanel = document.getElementById('sortPanel');
-const exploreScreen = document.getElementById("exploreScreen");
+const exploreScreen = document.getElementById('exploreScreen');
 
 let isTransitioning = false;
 
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function activateSortPanel() {
+    introPanel.classList.remove('is-active');
+    introPanel.setAttribute('aria-hidden', 'true');
+
+    sortPanel.classList.add('is-active');
+    sortPanel.setAttribute('aria-hidden', 'false');
+}
+
+function activateIntroPanel() {
+    sortPanel.classList.remove('is-active');
+    sortPanel.setAttribute('aria-hidden', 'true');
+
+    introPanel.classList.add('is-active');
+    introPanel.setAttribute('aria-hidden', 'false');
+}
+
 function showSortPanel() {
-    if (isTransitioning) {
+    if (isTransitioning || sortPanel.classList.contains('is-active')) {
         return;
     }
 
-    const reducedMotion = window.matchMedia(
-        '(prefers-reduced-motion: reduce)'
-    ).matches;
-
-    if (reducedMotion) {
-        introPanel.classList.remove('is-active');
-        introPanel.setAttribute('aria-hidden', 'true');
-
-        sortPanel.classList.add('is-active');
-        sortPanel.setAttribute('aria-hidden', 'false');
-
+    if (prefersReducedMotion()) {
+        activateSortPanel();
         return;
     }
 
     isTransitioning = true;
     sortButton.disabled = true;
-
     document.body.classList.add('is-forging');
 
     window.setTimeout(() => {
-        introPanel.classList.remove('is-active');
-        introPanel.setAttribute('aria-hidden', 'true');
-
-        sortPanel.classList.add('is-active');
-        sortPanel.setAttribute('aria-hidden', 'false');
-    }, 1093);
+        activateSortPanel();
+    }, 1400);
 
     window.setTimeout(() => {
         document.body.classList.remove('is-forging');
-
         sortButton.disabled = false;
         isTransitioning = false;
-    }, 2358);
+    }, 3200);
 }
 
 function showIntroPanel() {
-    document.documentElement.classList.remove("restore-explore");
-    document.body.classList.remove("explore-open");
-    if (typeof exploreScreen !== "undefined" && exploreScreen) {
-        exploreScreen.setAttribute("aria-hidden", "true");
+    document.documentElement.classList.remove('restore-explore');
+    document.body.classList.remove('explore-open');
+
+    if (exploreScreen) {
+        exploreScreen.setAttribute('aria-hidden', 'true');
     }
+
     if (isTransitioning) {
         return;
     }
 
-    sortPanel.classList.remove("is-active");
-    sortPanel.setAttribute("aria-hidden", "true");
+    if (!sortPanel.classList.contains('is-active') || prefersReducedMotion()) {
+        activateIntroPanel();
+        return;
+    }
 
-    introPanel.classList.remove("is-active", "is-arriving", "home-return", "landing-enter");
-    introPanel.setAttribute("aria-hidden", "true");
-
-    void introPanel.offsetWidth;
-
-    introPanel.classList.add("is-active", "landing-enter");
-    introPanel.setAttribute("aria-hidden", "false");
+    isTransitioning = true;
+    document.body.classList.add('is-returning');
 
     window.setTimeout(() => {
-        introPanel.classList.remove("landing-enter");
-    }, 1050);
+        activateIntroPanel();
+    }, 1200);
+
+    window.setTimeout(() => {
+        document.body.classList.remove('is-returning');
+        isTransitioning = false;
+    }, 2850);
 }
 
 sortButton.addEventListener('click', showSortPanel);
@@ -78,11 +87,12 @@ backButton.addEventListener('click', showIntroPanel);
 
 
 /* =========================================================
-   GLOBAL DRAWER: LANDING-PAGE ACTIONS ONLY
+   GLOBAL NAV: LANDING-PAGE ACTIONS
    ========================================================= */
 
 const drawerHome = document.querySelector('[data-drawer-action="home"]');
 const drawerSite = document.querySelector('[data-drawer-action="site"]');
+const globalBackButton = document.querySelector('.foundry-global-back');
 
 function closeDrawer() {
     if (typeof window.closeFoundryDrawer === 'function') {
@@ -90,14 +100,23 @@ function closeDrawer() {
     }
 }
 
+/* On landing state two, the global Back control returns to state one. */
+globalBackButton?.addEventListener('click', event => {
+    if (!sortPanel.classList.contains('is-active')) {
+        return;
+    }
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    showIntroPanel();
+}, true);
+
 drawerHome?.addEventListener('click', () => {
     window.setTimeout(showIntroPanel, 600);
 });
 
 drawerSite?.addEventListener('click', () => {
-    window.setTimeout(() => {
-        if (typeof showSortPanel === 'function') showSortPanel();
-    }, 380);
+    window.setTimeout(showSortPanel, 380);
 });
 
 
@@ -106,56 +125,53 @@ drawerSite?.addEventListener('click', () => {
 function showExploreScreen() {
     closeDrawer();
 
-    if (window.location.hash !== "#explore") {
-        history.pushState(null, "", "#explore");
+    if (window.location.hash !== '#explore') {
+        history.pushState(null, '', '#explore');
     }
 
-    document.body.classList.add("explore-open");
+    document.body.classList.add('explore-open');
 
-    introPanel.setAttribute("aria-hidden", "true");
-    exploreScreen.setAttribute("aria-hidden", "false");
+    introPanel.setAttribute('aria-hidden', 'true');
+    exploreScreen.setAttribute('aria-hidden', 'false');
 }
 
-exploreButton.addEventListener("click", showExploreScreen);
+exploreButton.addEventListener('click', showExploreScreen);
 
 
 /* Real navigation links close the drawer before the existing page transition runs. */
-document.querySelectorAll('.drawer-link[href]').forEach((link) => {
+document.querySelectorAll('.drawer-link[href]').forEach(link => {
     link.addEventListener('click', closeDrawer);
 });
 
 window.addEventListener('DOMContentLoaded', () => {
     introPanel.classList.remove('is-arriving', 'home-return');
     introPanel.classList.add('landing-enter');
-    window.setTimeout(() => introPanel.classList.remove('landing-enter'), 1050);
+
+    window.setTimeout(() => {
+        introPanel.classList.remove('landing-enter');
+    }, 1050);
 });
 
+
 /* Restore Explore when returning from a subpage via /#explore */
+
 function restoreExploreFromHash() {
-    if (window.location.hash === "#explore") {
+    if (window.location.hash === '#explore') {
         showExploreScreen();
     }
 }
 
-window.addEventListener("DOMContentLoaded", restoreExploreFromHash);
-window.addEventListener("hashchange", restoreExploreFromHash);
+window.addEventListener('DOMContentLoaded', restoreExploreFromHash);
+window.addEventListener('hashchange', restoreExploreFromHash);
 
-/* Restore Explore correctly after browser Back from a Foundry subpage */
-window.addEventListener("pageshow", () => {
-    if (window.location.hash === "#explore") {
+window.addEventListener('pageshow', () => {
+    if (window.location.hash === '#explore') {
         showExploreScreen();
     }
 });
 
-window.addEventListener("popstate", () => {
-    if (window.location.hash === "#explore") {
-        showExploreScreen();
-    }
-});
-
-/* Keep landing-page view in sync with browser Back / Forward */
-window.addEventListener("popstate", () => {
-    if (window.location.hash === "#explore") {
+window.addEventListener('popstate', () => {
+    if (window.location.hash === '#explore') {
         showExploreScreen();
     } else {
         showIntroPanel();
