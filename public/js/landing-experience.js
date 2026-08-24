@@ -43,13 +43,13 @@ function showSortPanel() {
 
     window.setTimeout(() => {
         activateSortPanel();
-    }, 1050);
+    }, 1400);
 
     window.setTimeout(() => {
         document.body.classList.remove('is-forging');
         sortButton.disabled = false;
         isTransitioning = false;
-    }, 2425);
+    }, 3200);
 }
 
 function showIntroPanel() {
@@ -74,12 +74,12 @@ function showIntroPanel() {
 
     window.setTimeout(() => {
         activateIntroPanel();
-    }, 900);
+    }, 1200);
 
     window.setTimeout(() => {
         document.body.classList.remove('is-returning');
         isTransitioning = false;
-    }, 2150);
+    }, 2850);
 }
 
 sortButton.addEventListener('click', showSortPanel);
