@@ -3987,3 +3987,15 @@ html.restore-explore .explore-choices {
         animation-duration: 1500ms !important;
     }
 }
+
+
+/* =========================================================
+   MOBILE EXPLORE — continue the shared anvil environment
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: portrait) {
+    /* Remove Explore's old bare-wall cover so the approved shared artwork remains visible. */
+    body.homepage.explore-open .landing::after {
+        background: transparent !important;
+    }
+}
