@@ -4265,23 +4265,14 @@ html.restore-explore .explore-choices {
 
 
 /* =========================================================
-   MOBILE HOME — real-phone short viewport correction
-   Samsung/browser chrome leaves substantially less usable height
-   than desktop device emulation.
+   MOBILE HOME — real-phone visible-height correction
+   Use the small viewport height so browser chrome is included.
+   The approved tall-phone composition remains unchanged.
    ========================================================= */
 
-@media (max-width: 700px) and (orientation: portrait) and (max-height: 760px) {
-    body.homepage .mobile-wordmark {
-        top: calc(60px + env(safe-area-inset-top)) !important;
-    }
-
+@media (max-width: 700px) and (orientation: portrait) {
     body.homepage #introPanel .hero-title {
-        top: 14.5dvh !important;
-        font-size: min(34vw, 18dvh) !important;
-        line-height: .82 !important;
-    }
-
-    body.homepage #introPanel .hero-lines {
-        top: 64.5dvh !important;
+        top: max(12.5dvh, 102px) !important;
+        font-size: min(39vw, 18svh) !important;
     }
 }
