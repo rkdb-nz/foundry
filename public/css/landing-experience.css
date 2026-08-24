@@ -4033,3 +4033,19 @@ html.restore-explore .explore-choices {
         text-shadow: 0 1px 0 rgba(255,220,176,.18) !important;
     }
 }
+
+
+/* Mobile Explore copy: concise on phones, established desktop copy preserved. */
+.explore-boardroom-mobile-copy {
+    display: none;
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    .explore-boardroom-desktop-copy {
+        display: none;
+    }
+
+    .explore-boardroom-mobile-copy {
+        display: block;
+    }
+}
