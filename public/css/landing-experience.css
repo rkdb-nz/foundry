@@ -314,6 +314,24 @@ background:
     filter: brightness(1.06);
     transform: translateY(-1px);
 }
+
+/* Primary homepage action: forged copper hierarchy. */
+#sortButton {
+    border-color: rgba(234, 157, 84, .82) !important;
+    background:
+        linear-gradient(105deg,
+            #9d5029 0%,
+            #c8753d 22%,
+            #e2a05c 48%,
+            #c46b36 73%,
+            #86401f 100%) !important;
+    color: #160d08 !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 226, 184, .52),
+        inset 0 -1px 0 rgba(73, 31, 13, .78),
+        0 8px 20px rgba(0, 0, 0, .34) !important;
+    text-shadow: 0 1px 0 rgba(255, 211, 157, .24) !important;
+}
 .menu-button {
     position: absolute;
     top: 6%;

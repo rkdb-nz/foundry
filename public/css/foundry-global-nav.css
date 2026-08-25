@@ -631,3 +631,90 @@ body.foundry-global-open .foundry-global-drawer {
         box-shadow: none !important;
     }
 }
+
+/* Desktop landing state two keeps the established Foundry pill unchanged. */
+@media (min-width: 901px) {
+  body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
+    top: 28px !important;
+    right: 34px !important;
+    left: auto !important;
+    width: 246px !important;
+    height: 62px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    align-items: stretch !important;
+    padding: 7px 10px !important;
+    border: 1px solid rgba(214, 168, 107, .70) !important;
+    border-radius: 8px !important;
+    clip-path: none !important;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.055), transparent 18%),
+      linear-gradient(180deg, #1a1713 0%, #100e0c 56%, #090807 100%) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 231, 188, .28),
+      inset 0 -1px 0 rgba(55, 31, 14, .92),
+      0 10px 24px rgba(0,0,0,.46) !important;
+    backdrop-filter: none !important;
+  }
+
+  body.homepage:has(#sortPanel.is-active) .foundry-global-nav::before {
+    display: block !important;
+  }
+
+  body.homepage:has(#sortPanel.is-active) .foundry-global-control,
+  body.homepage:has(#sortPanel.is-active) .foundry-global-control:not(.foundry-global-menu) {
+    width: auto !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  body.homepage:has(#sortPanel.is-active) .foundry-global-control + .foundry-global-control::before {
+    display: block !important;
+  }
+
+  body.homepage:has(#sortPanel.is-active) .foundry-global-back,
+  body.homepage:has(#sortPanel.is-active) .foundry-global-home {
+    animation: none !important;
+  }
+
+  body.homepage:has(#sortPanel.is-active) .foundry-global-control svg {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  body.homepage:has(#sortPanel.is-active) .foundry-global-home svg {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  body.homepage:has(#sortPanel.is-active) .foundry-global-menu {
+    width: auto !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+  }
+
+  body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
+    width: 36px !important;
+    height: 4px !important;
+    border-top: 1px solid rgba(255, 220, 159, .63) !important;
+    border-bottom: 1px solid rgba(42, 23, 10, .96) !important;
+    background: linear-gradient(180deg, #d0a05b 0%, #a36c34 34%, #6a3e20 70%, #352012 100%) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,235,194,.26),
+      0 2px 2px rgba(0,0,0,.82),
+      0 4px 5px rgba(0,0,0,.26) !important;
+  }
+}
