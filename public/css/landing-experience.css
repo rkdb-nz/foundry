@@ -4238,14 +4238,15 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
     right: max(18px, env(safe-area-inset-right)) !important;
     left: auto !important;
     z-index: 10020 !important;
-    width: 48px !important;
-    height: auto !important;
+    width: 144px !important;
+    height: 48px !important;
     padding: 0 !important;
     display: grid !important;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     background: rgba(10, 9, 8, .42) !important;
     border: 1px solid rgba(216, 139, 70, .36) !important;
     border-radius: 0 !important;
+    clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px) !important;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .22) !important;
     backdrop-filter: blur(5px) !important;
 }
@@ -4268,7 +4269,8 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-control {
 }
 
 body.homepage:has(#sortPanel.is-active) .foundry-global-control + .foundry-global-control {
-    border-top: 1px solid rgba(216, 139, 70, .18) !important;
+    border-top: 0 !important;
+    border-left: 1px solid rgba(216, 139, 70, .18) !important;
 }
 
 body.homepage:has(#sortPanel.is-active) .foundry-global-control svg {
@@ -4377,7 +4379,8 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
     body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
         top: max(10px, env(safe-area-inset-top)) !important;
         right: max(10px, env(safe-area-inset-right)) !important;
-        width: 42px !important;
+        width: 126px !important;
+        height: 42px !important;
     }
 
     body.homepage:has(#sortPanel.is-active) .foundry-global-control {
