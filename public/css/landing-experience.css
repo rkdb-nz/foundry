@@ -2985,6 +2985,106 @@ html.restore-explore .explore-choices {
     }
 }
 
+/* Make Me a Site nav: preserve the Home hamburger exactly.
+   Back and Home occupy new space to its left and drift into view. */
+body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
+    width: 144px !important;
+    height: 48px !important;
+    grid-template-columns: repeat(3, 48px) !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    clip-path: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-control {
+    width: 48px !important;
+    min-width: 48px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    border: 0 !important;
+    background: transparent !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-control + .foundry-global-control {
+    border: 0 !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-back,
+body.homepage:has(#sortPanel.is-active) .foundry-global-home {
+    animation: foundry-nav-drift-in 520ms cubic-bezier(.18,.82,.22,1) both;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-home {
+    animation-delay: 70ms;
+}
+
+@keyframes foundry-nav-drift-in {
+    from {
+        opacity: 0;
+        transform: translateX(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
+        top: max(6px, env(safe-area-inset-top)) !important;
+        right: max(8px, env(safe-area-inset-right)) !important;
+        width: 132px !important;
+        height: 44px !important;
+        grid-template-columns: repeat(3, 44px) !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-control {
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        min-height: 44px !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-menu {
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        min-height: 44px !important;
+        gap: 5px !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
+        width: 25px !important;
+        height: 2px !important;
+        background: #d99a5d !important;
+    }
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
+        top: max(8px, env(safe-area-inset-top)) !important;
+        right: max(10px, env(safe-area-inset-right)) !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-menu {
+        width: 48px !important;
+        min-width: 48px !important;
+        height: 48px !important;
+        min-height: 48px !important;
+        gap: 6px !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
+        width: 28px !important;
+        height: 2px !important;
+        background: #d99a5d !important;
+    }
+}
+
 
 /* MOBILE HOME V2 — reference button refinement */
 @media (max-width: 700px) and (orientation: portrait) {
@@ -4397,5 +4497,91 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
 
     body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
         width: 22px !important;
+    }
+}
+
+/* Final second-state nav placement: the original hamburger stays fixed;
+   Back and Home drift into the newly revealed space on its left. */
+body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
+    width: 144px !important;
+    height: 48px !important;
+    grid-template-columns: repeat(3, 48px) !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    clip-path: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-control {
+    width: 48px !important;
+    min-width: 48px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    border: 0 !important;
+    background: transparent !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-control + .foundry-global-control {
+    border: 0 !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-back,
+body.homepage:has(#sortPanel.is-active) .foundry-global-home {
+    animation: foundry-nav-drift-in 520ms cubic-bezier(.18,.82,.22,1) both;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-home {
+    animation-delay: 70ms;
+}
+
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
+        top: max(6px, env(safe-area-inset-top)) !important;
+        right: max(8px, env(safe-area-inset-right)) !important;
+        width: 132px !important;
+        height: 44px !important;
+        grid-template-columns: repeat(3, 44px) !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-control,
+    body.homepage:has(#sortPanel.is-active) .foundry-global-menu {
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        min-height: 44px !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-menu {
+        gap: 5px !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
+        width: 25px !important;
+        height: 2px !important;
+        background: #d99a5d !important;
+    }
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
+        top: max(8px, env(safe-area-inset-top)) !important;
+        right: max(10px, env(safe-area-inset-right)) !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-menu {
+        width: 48px !important;
+        min-width: 48px !important;
+        height: 48px !important;
+        min-height: 48px !important;
+        gap: 6px !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
+        width: 28px !important;
+        height: 2px !important;
+        background: #d99a5d !important;
     }
 }
