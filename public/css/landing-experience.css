@@ -4313,6 +4313,8 @@ body.homepage #sortPanel .sort-copy {
 }
 
 body.homepage #sortPanel .sort-title {
+    position: static !important;
+    inset: auto !important;
     max-width: 8ch !important;
     margin: 0 0 clamp(18px, 2.4vh, 30px) !important;
     transform: none !important;
@@ -4329,6 +4331,8 @@ body.homepage #sortPanel .sort-title {
 }
 
 body.homepage #sortPanel .sort-lines {
+    position: static !important;
+    inset: auto !important;
     margin: 0 !important;
     transform: none !important;
     background: none !important;
@@ -4344,6 +4348,7 @@ body.homepage #sortPanel .sort-lines {
 
 body.homepage #sortPanel .sort-actions {
     position: static !important;
+    inset: auto !important;
     display: block !important;
     width: min(100%, 390px) !important;
     margin: clamp(38px, 5.5vh, 66px) 0 0 !important;
