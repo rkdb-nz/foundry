@@ -3734,9 +3734,10 @@ html.restore-explore .explore-choices {
     body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-wordmark {
         position: fixed !important;
         top: max(9dvh, calc(env(safe-area-inset-top) + 20px)) !important;
-        right: max(4vw, env(safe-area-inset-right)) !important;
-        left: auto !important;
+        right: auto !important;
+        left: max(3.5vw, env(safe-area-inset-left)) !important;
         width: 25vw !important;
+        text-align: left !important;
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) .hero,
