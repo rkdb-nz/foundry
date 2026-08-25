@@ -4413,31 +4413,39 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
 
 @media (max-width: 700px) and (orientation: portrait) {
     body.homepage #sortPanel .sort-copy {
-        top: 55svh !important;
-        right: max(22px, env(safe-area-inset-right)) !important;
-        bottom: max(22px, env(safe-area-inset-bottom)) !important;
-        left: max(28px, env(safe-area-inset-left)) !important;
-        width: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
+        inset: 0 !important;
+        width: 100% !important;
+        display: block !important;
     }
 
     body.homepage #sortPanel .sort-title {
+        position: fixed !important;
+        top: 14svh !important;
+        right: max(22px, env(safe-area-inset-right)) !important;
+        left: max(28px, env(safe-area-inset-left)) !important;
         max-width: 7ch !important;
-        margin-bottom: clamp(18px, 2.5svh, 26px) !important;
-        font-size: clamp(54px, 17vw, 78px) !important;
+        margin: 0 !important;
+        font-size: clamp(65px, 20.4vw, 94px) !important;
         line-height: .94 !important;
         letter-spacing: -.035em !important;
     }
 
     body.homepage #sortPanel .sort-lines {
-        font-size: clamp(27px, 8.5vw, 39px) !important;
+        position: fixed !important;
+        top: 70svh !important;
+        right: max(22px, env(safe-area-inset-right)) !important;
+        left: max(28px, env(safe-area-inset-left)) !important;
+        font-size: clamp(32px, 10.2vw, 47px) !important;
     }
 
     body.homepage #sortPanel .sort-actions {
-        width: 100% !important;
-        margin-top: auto !important;
-        padding-top: clamp(24px, 4svh, 40px) !important;
+        position: fixed !important;
+        right: max(22px, env(safe-area-inset-right)) !important;
+        bottom: max(22px, env(safe-area-inset-bottom)) !important;
+        left: max(28px, env(safe-area-inset-left)) !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     body.homepage #sortPanel .sort-actions .hero-button {
@@ -4449,23 +4457,23 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
 
 @media (max-width: 700px) and (orientation: portrait) and (max-height: 650px) {
     body.homepage #sortPanel .sort-copy {
-        top: 52svh !important;
-        bottom: max(14px, env(safe-area-inset-bottom)) !important;
+        inset: 0 !important;
     }
 
     body.homepage #sortPanel .sort-title {
-        font-size: clamp(47px, 15vw, 62px) !important;
-        margin-bottom: 13px !important;
+        top: 12svh !important;
+        font-size: clamp(56px, 18vw, 74px) !important;
+        margin: 0 !important;
         line-height: .91 !important;
     }
 
     body.homepage #sortPanel .sort-lines {
-        font-size: clamp(24px, 7.4vw, 31px) !important;
+        top: 68svh !important;
+        font-size: clamp(29px, 8.9vw, 37px) !important;
     }
 
     body.homepage #sortPanel .sort-actions {
-        margin-top: auto !important;
-        padding-top: 18px !important;
+        bottom: max(14px, env(safe-area-inset-bottom)) !important;
     }
 
     body.homepage #sortPanel .sort-actions .hero-button {
