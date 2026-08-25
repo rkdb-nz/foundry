@@ -3755,7 +3755,7 @@ html.restore-explore .explore-choices {
         left: max(3.5vw, env(safe-area-inset-left)) !important;
         width: 60vw !important;
         max-width: 60vw !important;
-        font-size: clamp(76px, 25dvh, 108px) !important;
+        font-size: clamp(106px, 35dvh, 151px) !important;
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
@@ -3766,6 +3766,7 @@ html.restore-explore .explore-choices {
         left: auto !important;
         width: 28vw !important;
         max-width: 28vw !important;
+        font-size: clamp(24px, 7.05dvh, 32px) !important;
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
@@ -3791,7 +3792,7 @@ html.restore-explore .explore-choices {
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
         bottom: max(7dvh, env(safe-area-inset-bottom)) !important;
-        font-size: clamp(68px, 24dvh, 94px) !important;
+        font-size: clamp(95px, 33.6dvh, 132px) !important;
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
@@ -3799,6 +3800,7 @@ html.restore-explore .explore-choices {
         right: max(3vw, env(safe-area-inset-right)) !important;
         width: 29vw !important;
         max-width: 29vw !important;
+        font-size: clamp(21px, 6.6dvh, 27px) !important;
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
