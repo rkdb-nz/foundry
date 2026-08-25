@@ -4422,9 +4422,10 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
 
     body.homepage #sortPanel .sort-title {
         max-width: 7ch !important;
-        margin-bottom: clamp(10px, 1.7svh, 17px) !important;
+        margin-bottom: clamp(18px, 2.5svh, 26px) !important;
         font-size: clamp(54px, 17vw, 78px) !important;
-        line-height: .86 !important;
+        line-height: .94 !important;
+        letter-spacing: -.035em !important;
     }
 
     body.homepage #sortPanel .sort-lines {
@@ -4450,6 +4451,8 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
 
     body.homepage #sortPanel .sort-title {
         font-size: clamp(47px, 15vw, 62px) !important;
+        margin-bottom: 13px !important;
+        line-height: .91 !important;
     }
 
     body.homepage #sortPanel .sort-lines {
