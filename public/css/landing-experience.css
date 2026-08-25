@@ -3429,3 +3429,18 @@ html.restore-explore .explore-choices {
         margin-top: 6px;
     }
 }
+
+/* MOBILE HOME LANDSCAPE — doubled promise text */
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+        font-size: clamp(24px, 6.6dvh, 28px);
+        line-height: 1.08;
+        letter-spacing: -.02em;
+    }
+}
+
+@media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+        font-size: clamp(20px, 6.2dvh, 24px);
+    }
+}
