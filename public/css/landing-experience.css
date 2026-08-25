@@ -3461,3 +3461,10 @@ html.restore-explore .explore-choices {
         bottom: calc(max(8px, env(safe-area-inset-bottom)) + 46px + 8px);
     }
 }
+
+/* MOBILE HOME LANDSCAPE — short-browser title clearance */
+@media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+        font-size: clamp(64px, 23dvh, 84px);
+    }
+}
