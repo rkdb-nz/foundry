@@ -3009,6 +3009,13 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-control {
     background: transparent !important;
 }
 
+body.homepage:has(#sortPanel.is-active) .foundry-global-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
 body.homepage:has(#sortPanel.is-active) .foundry-global-control + .foundry-global-control {
     border: 0 !important;
 }
@@ -3088,6 +3095,14 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-home {
         background: #d99a5d !important;
         box-shadow: none !important;
     }
+}
+
+/* Keep the hamburger's bar geometry identical to the approved Home state. */
+body.homepage:has(#sortPanel.is-active) .foundry-global-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 
@@ -4361,7 +4376,7 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-control + .foundry-globa
     display: none !important;
 }
 
-body.homepage:has(#sortPanel.is-active) .foundry-global-control {
+body.homepage:has(#sortPanel.is-active) .foundry-global-control:not(.foundry-global-menu) {
     display: grid !important;
     width: 46px !important;
     min-width: 46px !important;
