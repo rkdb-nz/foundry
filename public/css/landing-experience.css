@@ -3711,3 +3711,97 @@ html.restore-explore .explore-choices {
         white-space: nowrap;
     }
 }
+
+/* Concept C — viewport-anchored final composition */
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing::after {
+        position: fixed !important;
+        inset: 0 0 0 auto !important;
+        width: 34vw !important;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+        position: fixed !important;
+        top: -100dvh !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: -8vw !important;
+        width: 88vw !important;
+        max-width: none !important;
+        height: auto !important;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-wordmark {
+        position: fixed !important;
+        top: max(12dvh, calc(env(safe-area-inset-top) + 28px)) !important;
+        right: max(4vw, env(safe-area-inset-right)) !important;
+        left: auto !important;
+        width: 26vw !important;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero,
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+        position: fixed !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: max(8dvh, env(safe-area-inset-bottom)) !important;
+        left: max(3.5vw, env(safe-area-inset-left)) !important;
+        width: 60vw !important;
+        max-width: 60vw !important;
+        font-size: clamp(58px, 20dvh, 84px) !important;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+        position: fixed !important;
+        top: 24dvh !important;
+        right: max(3vw, env(safe-area-inset-right)) !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 28vw !important;
+        max-width: 28vw !important;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+        position: fixed !important;
+        top: auto !important;
+        right: max(2.2vw, env(safe-area-inset-right)) !important;
+        bottom: max(4dvh, env(safe-area-inset-bottom)) !important;
+        left: auto !important;
+        width: 29.5vw !important;
+    }
+}
+
+@media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
+    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing::after {
+        width: 35vw !important;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+        top: -104dvh !important;
+        left: -10vw !important;
+        width: 91vw !important;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+        bottom: max(7dvh, env(safe-area-inset-bottom)) !important;
+        font-size: clamp(54px, 19dvh, 74px) !important;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+        top: 22dvh !important;
+        right: max(3vw, env(safe-area-inset-right)) !important;
+        width: 29vw !important;
+        max-width: 29vw !important;
+    }
+
+    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+        width: 30.5vw !important;
+    }
+}
