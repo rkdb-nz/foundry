@@ -3060,7 +3060,10 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-home {
     body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
         width: 25px !important;
         height: 2px !important;
+        border-top: 1px solid rgba(255, 220, 159, .63) !important;
+        border-bottom: 1px solid rgba(42, 23, 10, .96) !important;
         background: #d99a5d !important;
+        box-shadow: none !important;
     }
 }
 
@@ -3081,7 +3084,9 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-home {
     body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
         width: 28px !important;
         height: 2px !important;
+        border: 0 !important;
         background: #d99a5d !important;
+        box-shadow: none !important;
     }
 }
 
@@ -4561,7 +4566,10 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-home {
     body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
         width: 25px !important;
         height: 2px !important;
+        border-top: 1px solid rgba(255, 220, 159, .63) !important;
+        border-bottom: 1px solid rgba(42, 23, 10, .96) !important;
         background: #d99a5d !important;
+        box-shadow: none !important;
     }
 }
 
@@ -4582,6 +4590,8 @@ body.homepage:has(#sortPanel.is-active) .foundry-global-home {
     body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
         width: 28px !important;
         height: 2px !important;
+        border: 0 !important;
         background: #d99a5d !important;
+        box-shadow: none !important;
     }
 }
