@@ -3315,6 +3315,331 @@ html.restore-explore .explore-choices {
     }
 }
 
+/* =========================================================
+   MAKE ME A SITE — briefing blueprint
+   Isolated to the second homepage state. The approved intro
+   state, Explore, navigation and unrelated pages are untouched.
+   ========================================================= */
+
+body.homepage #sortPanel {
+    --sort-copper: #c98249;
+    --sort-copper-bright: #e0a064;
+    --sort-ivory: #f2e8d7;
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    width: 100vw;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 67% 50%, rgba(181, 102, 53, .11), transparent 33%),
+        linear-gradient(112deg, rgba(255,255,255,.018), transparent 34%),
+        #0b0a09;
+}
+
+body.homepage #sortPanel::before,
+body.homepage #sortPanel::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+body.homepage #sortPanel::before {
+    inset: clamp(18px, 2.4vw, 46px);
+    border: 1px solid rgba(201, 130, 73, .18);
+    clip-path: polygon(0 0, 43% 0, 43% 1px, 100% 1px, 100% 100%, 58% 100%, 58% calc(100% - 1px), 0 calc(100% - 1px));
+}
+
+body.homepage #sortPanel::after {
+    top: 0;
+    bottom: 0;
+    left: clamp(42px, 7.2vw, 138px);
+    width: 1px;
+    background: linear-gradient(transparent, rgba(201,130,73,.42) 12%, rgba(201,130,73,.18) 88%, transparent);
+}
+
+body.homepage #sortPanel.is-active {
+    display: grid;
+    grid-template-columns: minmax(330px, .82fr) minmax(440px, 1.18fr);
+    align-items: center;
+    gap: clamp(30px, 5vw, 100px);
+    padding:
+        max(clamp(72px, 8vh, 110px), env(safe-area-inset-top))
+        max(clamp(48px, 7vw, 142px), env(safe-area-inset-right))
+        max(clamp(54px, 7vh, 90px), env(safe-area-inset-bottom))
+        max(clamp(70px, 9vw, 174px), env(safe-area-inset-left));
+}
+
+body.homepage #sortPanel .sort-copy {
+    position: relative;
+    z-index: 2;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+}
+
+body.homepage #sortPanel .sort-kicker {
+    display: block;
+    margin: 0 0 clamp(20px, 3vh, 36px);
+    color: var(--sort-copper-bright);
+    font: 700 clamp(9px, .68vw, 12px)/1.2 Arial, Helvetica, sans-serif;
+    letter-spacing: clamp(3px, .4vw, 7px);
+}
+
+body.homepage #sortPanel .sort-title {
+    max-width: 8ch;
+    margin: 0 0 clamp(18px, 2.4vh, 30px);
+    transform: none;
+    background: none;
+    -webkit-text-fill-color: var(--sort-ivory);
+    color: var(--sort-ivory);
+    font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+    font-size: clamp(64px, 6.4vw, 126px);
+    font-weight: 400;
+    line-height: .86;
+    letter-spacing: -.045em;
+    text-align: left;
+    text-wrap: balance;
+    filter: none;
+}
+
+body.homepage #sortPanel .sort-lines {
+    margin: 0;
+    background: none;
+    -webkit-text-fill-color: #d69a67;
+    color: #d69a67;
+    font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 2.65vw, 52px);
+    font-style: italic;
+    line-height: 1;
+    text-align: left;
+    filter: none;
+}
+
+body.homepage #sortPanel .sort-actions {
+    position: static;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    gap: 14px;
+    width: auto;
+    margin: clamp(42px, 6vh, 72px) 0 0;
+}
+
+body.homepage #sortPanel .sort-actions .hero-button,
+body.homepage #sortPanel .sort-actions .hero-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: clamp(210px, 17vw, 286px);
+    min-height: 56px;
+    margin: 0;
+    padding: 16px 24px;
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    border: 1px solid rgba(211, 139, 77, .68);
+    border-radius: 0;
+    color: #f0d6b8;
+    font: 700 clamp(9px, .7vw, 12px)/1.15 Arial, Helvetica, sans-serif;
+    letter-spacing: clamp(1.6px, .22vw, 3.4px);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+body.homepage #sortPanel .sort-actions .hero-button {
+    background: linear-gradient(135deg, #a85f35, #d0844c 52%, #8d492a);
+    box-shadow: inset 0 1px rgba(255, 220, 181, .28), 0 12px 28px rgba(0,0,0,.32);
+}
+
+body.homepage #sortPanel .sort-actions .hero-back {
+    min-width: 132px;
+    background: rgba(11, 10, 9, .44);
+    opacity: 1;
+}
+
+body.homepage #sortPanel .sort-blueprint {
+    position: relative;
+    z-index: 1;
+    grid-column: 2;
+    grid-row: 1;
+    width: min(100%, 760px);
+    justify-self: end;
+    color: var(--sort-copper);
+}
+
+body.homepage #sortPanel .sort-blueprint::before {
+    content: "";
+    position: absolute;
+    inset: 7% 4%;
+    border: 1px solid rgba(201, 130, 73, .22);
+    transform: rotate(-2deg);
+}
+
+body.homepage #sortPanel .sort-blueprint-label {
+    position: absolute;
+    top: 1%;
+    right: 7%;
+    color: rgba(224,160,100,.68);
+    font: 700 clamp(8px, .55vw, 10px)/1 Arial, Helvetica, sans-serif;
+    letter-spacing: .28em;
+}
+
+body.homepage #sortPanel .sort-blueprint svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+body.homepage #sortPanel .sort-drafting-guides {
+    stroke: rgba(201, 130, 73, .28);
+    stroke-width: 1;
+}
+
+body.homepage #sortPanel .sort-drafting-anvil {
+    stroke: rgba(218, 143, 81, .76);
+    stroke-width: 1.35;
+    filter: drop-shadow(0 0 10px rgba(201, 112, 58, .13));
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage #sortPanel.is-active {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(0, 42svh) 1fr;
+        align-content: stretch;
+        gap: 0;
+        padding:
+            max(62px, calc(env(safe-area-inset-top) + 52px))
+            max(22px, env(safe-area-inset-right))
+            max(18px, env(safe-area-inset-bottom))
+            max(26px, env(safe-area-inset-left));
+    }
+
+    body.homepage #sortPanel::before { inset: 12px; }
+    body.homepage #sortPanel::after { left: max(12px, env(safe-area-inset-left)); }
+
+    body.homepage #sortPanel .sort-blueprint {
+        grid-column: 1;
+        grid-row: 1;
+        width: min(92vw, 520px);
+        align-self: start;
+        justify-self: center;
+        transform: translateY(-9%) rotate(-1deg);
+    }
+
+    body.homepage #sortPanel .sort-copy {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: end;
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    body.homepage #sortPanel .sort-kicker {
+        margin-bottom: clamp(10px, 1.8svh, 18px);
+        font-size: clamp(8px, 2.25vw, 10px);
+        letter-spacing: clamp(2px, .8vw, 3.4px);
+    }
+
+    body.homepage #sortPanel .sort-title {
+        max-width: none;
+        margin-bottom: clamp(8px, 1.3svh, 14px);
+        font-size: clamp(49px, 15.7vw, 72px);
+        line-height: .88;
+    }
+
+    body.homepage #sortPanel .sort-lines {
+        font-size: clamp(25px, 7.8vw, 35px);
+    }
+
+    body.homepage #sortPanel .sort-actions {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 9px;
+        margin-top: clamp(20px, 3.5svh, 34px);
+    }
+
+    body.homepage #sortPanel .sort-actions .hero-button,
+    body.homepage #sortPanel .sort-actions .hero-back {
+        min-width: 0;
+        min-height: clamp(46px, 6.2svh, 54px);
+        padding: 12px clamp(11px, 3.5vw, 18px);
+        font-size: clamp(8px, 2.35vw, 10px);
+        letter-spacing: clamp(1.1px, .42vw, 1.8px);
+    }
+}
+
+@media (max-width: 700px) and (orientation: portrait) and (max-height: 650px) {
+    body.homepage #sortPanel.is-active {
+        grid-template-rows: minmax(0, 37svh) 1fr;
+        padding-top: max(54px, calc(env(safe-area-inset-top) + 46px));
+        padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
+
+    body.homepage #sortPanel .sort-blueprint {
+        width: min(78vw, 400px);
+        transform: translateY(-13%);
+    }
+
+    body.homepage #sortPanel .sort-title { font-size: clamp(44px, 14.4vw, 58px); }
+    body.homepage #sortPanel .sort-lines { font-size: clamp(22px, 7vw, 28px); }
+    body.homepage #sortPanel .sort-actions { margin-top: 16px; }
+}
+
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    body.homepage .landing { min-height: 100dvh; }
+
+    body.homepage #sortPanel.is-active {
+        grid-template-columns: minmax(270px, .9fr) minmax(310px, 1.1fr);
+        gap: clamp(16px, 3vw, 34px);
+        min-height: 100dvh;
+        padding:
+            max(34px, env(safe-area-inset-top))
+            max(54px, calc(env(safe-area-inset-right) + 44px))
+            max(24px, env(safe-area-inset-bottom))
+            max(46px, env(safe-area-inset-left));
+    }
+
+    body.homepage #sortPanel::before { inset: 10px; }
+    body.homepage #sortPanel::after { left: max(18px, env(safe-area-inset-left)); }
+
+    body.homepage #sortPanel .sort-kicker {
+        margin-bottom: clamp(10px, 3dvh, 16px);
+        font-size: 8px;
+        letter-spacing: 2.4px;
+    }
+
+    body.homepage #sortPanel .sort-title {
+        margin-bottom: clamp(8px, 2dvh, 12px);
+        font-size: clamp(48px, 15dvh, 66px);
+        line-height: .86;
+    }
+
+    body.homepage #sortPanel .sort-lines { font-size: clamp(24px, 7dvh, 31px); }
+
+    body.homepage #sortPanel .sort-actions {
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin-top: clamp(18px, 5dvh, 27px);
+    }
+
+    body.homepage #sortPanel .sort-actions .hero-button,
+    body.homepage #sortPanel .sort-actions .hero-back {
+        min-width: 0;
+        min-height: 44px;
+        padding: 10px 13px;
+        font-size: 8px;
+        letter-spacing: 1.2px;
+    }
+
+    body.homepage #sortPanel .sort-actions .hero-button { flex: 1 1 auto; }
+    body.homepage #sortPanel .sort-actions .hero-back { flex: 0 0 102px; }
+    body.homepage #sortPanel .sort-blueprint { width: min(100%, 500px); }
+}
+
 
 /* MOBILE HOME LANDSCAPE — stronger headline and horizontal promise */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
