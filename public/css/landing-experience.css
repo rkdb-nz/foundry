@@ -3722,21 +3722,21 @@ html.restore-explore .explore-choices {
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
         position: fixed !important;
-        top: -100dvh !important;
+        top: -56dvh !important;
         right: auto !important;
         bottom: auto !important;
-        left: -8vw !important;
-        width: 88vw !important;
+        left: 7vw !important;
+        width: 58vw !important;
         max-width: none !important;
         height: auto !important;
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-wordmark {
         position: fixed !important;
-        top: max(12dvh, calc(env(safe-area-inset-top) + 28px)) !important;
+        top: max(9dvh, calc(env(safe-area-inset-top) + 20px)) !important;
         right: max(4vw, env(safe-area-inset-right)) !important;
         left: auto !important;
-        width: 26vw !important;
+        width: 25vw !important;
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) .hero,
@@ -3755,7 +3755,7 @@ html.restore-explore .explore-choices {
         left: max(3.5vw, env(safe-area-inset-left)) !important;
         width: 60vw !important;
         max-width: 60vw !important;
-        font-size: clamp(58px, 20dvh, 84px) !important;
+        font-size: clamp(76px, 25dvh, 108px) !important;
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
@@ -3784,14 +3784,14 @@ html.restore-explore .explore-choices {
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
-        top: -104dvh !important;
-        left: -10vw !important;
-        width: 91vw !important;
+        top: -60dvh !important;
+        left: 5vw !important;
+        width: 62vw !important;
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
         bottom: max(7dvh, env(safe-area-inset-bottom)) !important;
-        font-size: clamp(54px, 19dvh, 74px) !important;
+        font-size: clamp(68px, 24dvh, 94px) !important;
     }
 
     body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
