@@ -83,7 +83,7 @@ function showIntroPanel() {
 }
 
 sortButton.addEventListener('click', showSortPanel);
-backButton.addEventListener('click', showIntroPanel);
+backButton?.addEventListener('click', showIntroPanel);
 
 
 /* =========================================================

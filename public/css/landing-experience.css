@@ -2637,14 +2637,14 @@ html.restore-explore .explore-choices {
 }
 
 @media (max-width: 700px) and (orientation: portrait) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) {
         min-height: 100%;
         min-height: 100svh;
         background: #090a09;
         overflow-x: hidden;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .landing {
         position: relative;
         width: 100%;
         min-height: 100vh;
@@ -2658,7 +2658,7 @@ html.restore-explore .explore-choices {
             linear-gradient(180deg, #111210 0%, #090a09 100%);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing::before {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .landing::before {
         content: "";
         position: absolute;
         inset: 0;
@@ -2671,7 +2671,7 @@ html.restore-explore .explore-choices {
         background-size: clamp(72px, 23vw, 104px) clamp(72px, 23vw, 104px);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2 {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2 {
         display: block !important;
         position: absolute;
         inset: 0;
@@ -2680,7 +2680,7 @@ html.restore-explore .explore-choices {
         pointer-events: none;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-wordmark {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-wordmark {
         position: absolute;
         top: max(22px, calc(env(safe-area-inset-top) + 14px));
         left: max(24px, calc(env(safe-area-inset-left) + 18px));
@@ -2693,7 +2693,7 @@ html.restore-explore .explore-choices {
         white-space: nowrap;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         position: absolute;
         top: clamp(165px, 22svh, 230px);
         right: -8%;
@@ -2703,40 +2703,40 @@ html.restore-explore .explore-choices {
         overflow: visible;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-drafting-guides {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-drafting-guides {
         stroke: rgba(200, 126, 64, .58);
         stroke-width: 1;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-drafting-curve,
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-drafting-cursor {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-drafting-curve,
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-drafting-cursor {
         stroke: rgba(225, 143, 72, .92);
         stroke-width: 1.45;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-drafting-anvil {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-drafting-anvil {
         stroke: rgba(225, 151, 82, .98);
         stroke-width: 1.75;
         filter: drop-shadow(0 0 2px rgba(210, 119, 48, .24));
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .brand {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .brand {
         display: none !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         left: max(6%, env(safe-area-inset-left));
         top: clamp(92px, 13svh, 126px);
         width: 88%;
         z-index: 3;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel {
         width: 100%;
         text-align: left;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         width: 4.15ch;
         max-width: 4.15ch;
         margin: 0;
@@ -2757,7 +2757,7 @@ html.restore-explore .explore-choices {
         text-shadow: 0 2px 2px rgba(0, 0, 0, .55);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         position: fixed;
         left: max(8%, calc(env(safe-area-inset-left) + 12px));
         top: clamp(345px, 62svh, 560px);
@@ -2783,16 +2783,16 @@ html.restore-explore .explore-choices {
         transform: none;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines > div {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines > div {
         display: block;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines > div:nth-child(3) {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines > div:nth-child(3) {
         flex-basis: 100%;
         font-style: italic;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-actions {
         position: fixed;
         left: max(5vw, env(safe-area-inset-left));
         right: max(4vw, env(safe-area-inset-right));
@@ -2805,7 +2805,7 @@ html.restore-explore .explore-choices {
         margin: 0;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         width: auto;
         min-width: 0;
         min-height: clamp(62px, 9.5svh, 82px);
@@ -2827,7 +2827,7 @@ html.restore-explore .explore-choices {
         white-space: normal;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton {
         border-color: #dd8b43;
         color: #160f09;
         background:
@@ -2839,33 +2839,33 @@ html.restore-explore .explore-choices {
 }
 
 @media (max-width: 700px) and (orientation: portrait) and (max-height: 650px) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         top: 78px;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         font-size: clamp(72px, 25vw, 96px);
         line-height: .77;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         top: 128px;
         right: -5%;
         width: min(67vw, 255px);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         top: 55svh;
         font-size: clamp(14px, 4vw, 17px);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         min-height: 54px;
     }
 }
 
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .landing {
         min-height: 100dvh;
         height: auto;
         background:
@@ -2873,7 +2873,7 @@ html.restore-explore .explore-choices {
             linear-gradient(180deg, #111210, #090a09);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2 {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2 {
         display: block !important;
         position: absolute;
         inset: 0;
@@ -2882,7 +2882,7 @@ html.restore-explore .explore-choices {
         pointer-events: none;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-wordmark {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-wordmark {
         position: absolute;
         top: max(12px, env(safe-area-inset-top));
         left: max(20px, env(safe-area-inset-left));
@@ -2892,7 +2892,7 @@ html.restore-explore .explore-choices {
         letter-spacing: 4px;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         position: absolute;
         top: -14%;
         right: 1%;
@@ -2900,34 +2900,34 @@ html.restore-explore .explore-choices {
         color: #d08a4b;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-drafting-guides {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-drafting-guides {
         stroke: rgba(200, 126, 64, .58);
         stroke-width: 1;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-drafting-curve,
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-drafting-cursor {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-drafting-curve,
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-drafting-cursor {
         stroke: rgba(225, 143, 72, .92);
         stroke-width: 1.45;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-drafting-anvil {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-drafting-anvil {
         stroke: rgba(225, 151, 82, .98);
         stroke-width: 1.75;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .brand {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .brand {
         display: none !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         left: max(4%, env(safe-area-inset-left));
         top: 17%;
         width: 48%;
         z-index: 3;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         width: 4.4ch;
         margin: 0;
         color: #eee9e0;
@@ -2943,7 +2943,7 @@ html.restore-explore .explore-choices {
         transform-origin: left top;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         margin-top: 16px;
         color: #dc8240;
         background: none;
@@ -2954,7 +2954,7 @@ html.restore-explore .explore-choices {
         transform: none;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-actions {
         position: fixed;
         left: 43%;
         right: max(3%, env(safe-area-inset-right));
@@ -2966,7 +2966,7 @@ html.restore-explore .explore-choices {
         width: auto;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         min-height: 50px;
         padding: 9px 6px;
         border: 1.5px solid #c77735;
@@ -2979,7 +2979,7 @@ html.restore-explore .explore-choices {
         text-transform: uppercase;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton {
         color: #160f09;
         background: linear-gradient(135deg, #eba45b, #b15e24);
     }
@@ -2988,12 +2988,12 @@ html.restore-explore .explore-choices {
 
 /* MOBILE HOME V2 — reference button refinement */
 @media (max-width: 700px) and (orientation: portrait) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-actions {
         gap: 10px;
         bottom: max(20px, calc(env(safe-area-inset-bottom) + 8px));
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         position: relative;
         min-height: clamp(76px, 10.8svh, 96px);
         padding: 16px 10px 14px;
@@ -3014,19 +3014,19 @@ html.restore-explore .explore-choices {
         letter-spacing: clamp(1.4px, .5vw, 2.2px);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton {
         color: #160e08;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23e2a15f'/%3E%3Cstop offset='.58' stop-color='%23c57938'/%3E%3Cstop offset='1' stop-color='%23995424'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M14 1H199V86L185 99H1V14Z' fill='url(%23g)' stroke='%23e29a52' stroke-width='2'/%3E%3C/svg%3E");
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #exploreButton {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #exploreButton {
         color: #e4a05c;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M14 1H199V86L185 99H1V14Z' fill='%230b0b0a' fill-opacity='.94' stroke='%23cf7d35' stroke-width='2'/%3E%3C/svg%3E");
     }
 }
 
 @media (max-width: 700px) and (orientation: portrait) and (max-height: 650px) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         min-height: 62px;
         padding-top: 12px;
         padding-bottom: 11px;
@@ -3034,7 +3034,7 @@ html.restore-explore .explore-choices {
 }
 
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         min-height: 54px;
         border: 0 !important;
         clip-path: none !important;
@@ -3045,12 +3045,12 @@ html.restore-explore .explore-choices {
         font-weight: 700;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton {
         color: #160e08;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23e2a15f'/%3E%3Cstop offset='.58' stop-color='%23c57938'/%3E%3Cstop offset='1' stop-color='%23995424'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M14 1H199V86L185 99H1V14Z' fill='url(%23g)' stroke='%23e29a52' stroke-width='2'/%3E%3C/svg%3E");
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #exploreButton {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #exploreButton {
         color: #e4a05c;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cpath d='M14 1H199V86L185 99H1V14Z' fill='%230b0b0a' fill-opacity='.94' stroke='%23cf7d35' stroke-width='2'/%3E%3C/svg%3E");
     }
@@ -3059,14 +3059,14 @@ html.restore-explore .explore-choices {
 
 /* MOBILE HOME V2 — Firefox-safe complete button frames */
 @media (max-width: 700px) and (orientation: portrait) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         isolation: isolate;
         overflow: visible;
         background: transparent !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button::before,
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button::after {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button::before,
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button::after {
         content: "";
         position: absolute;
         pointer-events: none;
@@ -3074,7 +3074,7 @@ html.restore-explore .explore-choices {
         height: auto;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton::before {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton::before {
         inset: 0;
         z-index: -1;
         clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
@@ -3084,18 +3084,18 @@ html.restore-explore .explore-choices {
         box-shadow: inset 0 0 0 1.5px #e29a52;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton::after {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton::after {
         display: none;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #exploreButton::before {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #exploreButton::before {
         inset: 0;
         z-index: -2;
         clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
         background: #d08039;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #exploreButton::after {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #exploreButton::after {
         display: block;
         inset: 1.5px;
         z-index: -1;
@@ -3106,14 +3106,14 @@ html.restore-explore .explore-choices {
 }
 
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         isolation: isolate;
         overflow: visible;
         background: transparent !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button::before,
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button::after {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button::before,
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button::after {
         content: "";
         position: absolute;
         pointer-events: none;
@@ -3121,25 +3121,25 @@ html.restore-explore .explore-choices {
         height: auto;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton::before {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton::before {
         inset: 0;
         z-index: -1;
         clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
         background: linear-gradient(135deg, #e1a15f, #a85b27);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton::after {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton::after {
         display: none;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #exploreButton::before {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #exploreButton::before {
         inset: 0;
         z-index: -2;
         clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
         background: #d08039;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #exploreButton::after {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #exploreButton::after {
         display: block;
         inset: 1.5px;
         z-index: -1;
@@ -3151,36 +3151,36 @@ html.restore-explore .explore-choices {
 
 /* MOBILE HOME V2 — button label contrast */
 @media (max-width: 700px) and (orientation: portrait) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         opacity: 1 !important;
         font-size: clamp(11px, 3.2vw, 14px);
         font-weight: 800;
         text-shadow: none !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton,
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton:disabled {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton,
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton:disabled {
         opacity: 1 !important;
         color: #160d07 !important;
         -webkit-text-fill-color: #160d07 !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #exploreButton {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #exploreButton {
         color: #f0a75e !important;
         -webkit-text-fill-color: #f0a75e !important;
     }
 }
 
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton,
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #sortButton:disabled {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton,
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #sortButton:disabled {
         opacity: 1 !important;
         color: #160d07 !important;
         -webkit-text-fill-color: #160d07 !important;
         text-shadow: none !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #exploreButton {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #exploreButton {
         color: #f0a75e !important;
         -webkit-text-fill-color: #f0a75e !important;
     }
@@ -3193,40 +3193,40 @@ html.restore-explore .explore-choices {
    ========================================================= */
 
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) {
         width: 100%;
         min-height: 100dvh;
         overflow: hidden;
         background: #090a09;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .landing {
         width: 100%;
         min-height: 100dvh;
         height: 100dvh;
         overflow: hidden;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-wordmark {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-wordmark {
         top: max(14px, env(safe-area-inset-top));
         left: max(24px, calc(env(safe-area-inset-left) + 16px));
         font-size: clamp(11px, 2.1vw, 15px);
         letter-spacing: clamp(3px, .65vw, 5px);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         left: max(4%, env(safe-area-inset-left));
         top: clamp(54px, 16dvh, 76px);
         width: 35%;
         z-index: 3;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel {
         width: 100%;
         text-align: left;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         width: 4.25ch;
         max-width: 4.25ch;
         margin: 0;
@@ -3237,7 +3237,7 @@ html.restore-explore .explore-choices {
         transform-origin: left top;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         display: flex;
         flex-wrap: wrap;
         width: min(31vw, 250px);
@@ -3249,16 +3249,16 @@ html.restore-explore .explore-choices {
         text-align: left;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines > div {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines > div {
         display: block;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines > div:nth-child(3) {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines > div:nth-child(3) {
         flex-basis: 100%;
         font-style: italic;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         top: -10%;
         right: 0;
         width: min(44vw, 390px);
@@ -3266,7 +3266,7 @@ html.restore-explore .explore-choices {
         transform: none;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-actions {
         left: max(4%, env(safe-area-inset-left));
         right: auto;
         bottom: max(12px, env(safe-area-inset-bottom));
@@ -3276,7 +3276,7 @@ html.restore-explore .explore-choices {
         gap: 10px;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         min-height: clamp(48px, 15dvh, 60px);
         padding: 9px 8px;
         font-size: clamp(9px, 2.7dvh, 11px);
@@ -3285,32 +3285,32 @@ html.restore-explore .explore-choices {
 }
 
 @media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         top: 48px;
         width: 37%;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         font-size: clamp(44px, 15dvh, 58px);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         margin-top: 10px;
         font-size: 13px;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         top: -15%;
         right: -2%;
         width: 42vw;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-actions {
         width: 57vw;
         bottom: max(8px, env(safe-area-inset-bottom));
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         min-height: 46px;
     }
 }
@@ -3643,19 +3643,19 @@ body.homepage #sortPanel .sort-drafting-anvil {
 
 /* MOBILE HOME LANDSCAPE — stronger headline and horizontal promise */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         top: clamp(52px, 14dvh, 68px);
         width: 43%;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         width: 4.25ch;
         max-width: 4.25ch;
         font-size: clamp(60px, 20dvh, 82px);
         line-height: .74;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         display: flex;
         flex-wrap: nowrap;
         width: max-content;
@@ -3666,12 +3666,12 @@ body.homepage #sortPanel .sort-drafting-anvil {
         white-space: nowrap;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines > div:nth-child(3) {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines > div:nth-child(3) {
         flex-basis: auto;
         font-style: italic;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         top: -15%;
         right: 1%;
         width: min(41vw, 365px);
@@ -3679,21 +3679,21 @@ body.homepage #sortPanel .sort-drafting-anvil {
 }
 
 @media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         top: 46px;
         width: 44%;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         font-size: clamp(54px, 18dvh, 70px);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         margin-top: 10px;
         font-size: 12px;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         top: -18%;
         right: 0;
         width: 39vw;
@@ -3702,31 +3702,31 @@ body.homepage #sortPanel .sort-drafting-anvil {
 
 /* MOBILE HOME LANDSCAPE — final balance pass */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         width: 46%;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         font-size: clamp(66px, 22dvh, 90px);
         line-height: .72;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         right: 5%;
         width: min(43vw, 382px);
     }
 }
 
 @media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         width: 47%;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         font-size: clamp(60px, 20dvh, 78px);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         right: 3%;
         width: 41vw;
     }
@@ -3734,30 +3734,30 @@ body.homepage #sortPanel .sort-drafting-anvil {
 
 /* MOBILE HOME LANDSCAPE — maximum headline pass */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         font-size: clamp(76px, 26dvh, 104px);
         line-height: .69;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         margin-top: clamp(7px, 2dvh, 10px);
     }
 }
 
 @media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         font-size: clamp(68px, 26dvh, 92px);
         line-height: .69;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         margin-top: 6px;
     }
 }
 
 /* MOBILE HOME LANDSCAPE — doubled promise text */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         font-size: clamp(24px, 6.6dvh, 28px);
         line-height: 1.08;
         letter-spacing: -.02em;
@@ -3765,14 +3765,14 @@ body.homepage #sortPanel .sort-drafting-anvil {
 }
 
 @media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         font-size: clamp(20px, 6.2dvh, 24px);
     }
 }
 
 /* MOBILE HOME LANDSCAPE — real-browser tagline clearance */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         position: fixed;
         left: max(4%, env(safe-area-inset-left));
         bottom: calc(max(12px, env(safe-area-inset-bottom)) + clamp(48px, 15dvh, 60px) + 10px);
@@ -3782,21 +3782,21 @@ body.homepage #sortPanel .sort-drafting-anvil {
 }
 
 @media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         bottom: calc(max(8px, env(safe-area-inset-bottom)) + 46px + 8px);
     }
 }
 
 /* MOBILE HOME LANDSCAPE — short-browser title clearance */
 @media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         font-size: clamp(64px, 23dvh, 84px);
     }
 }
 
 /* MOBILE HOME LANDSCAPE — resilient left-column grid */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         left: max(4%, env(safe-area-inset-left));
         top: max(46px, calc(env(safe-area-inset-top) + 38px));
         bottom: max(8px, env(safe-area-inset-bottom));
@@ -3804,7 +3804,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         height: auto;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel {
         position: relative;
         display: grid;
         grid-template-rows: minmax(0, 1fr) auto auto;
@@ -3814,7 +3814,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         min-height: 0;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         align-self: start;
         width: 4.25ch;
         max-width: 4.25ch;
@@ -3823,7 +3823,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         line-height: .69;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         position: static;
         align-self: end;
         width: max-content;
@@ -3834,7 +3834,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         white-space: nowrap;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-actions {
         position: static;
         align-self: end;
         display: grid;
@@ -3844,20 +3844,20 @@ body.homepage #sortPanel .sort-drafting-anvil {
         margin: 0;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         min-height: clamp(44px, 14dvh, 58px);
     }
 }
 
 /* MOBILE HOME LANDSCAPE — approved Concept C */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .landing {
         position: relative;
         isolation: isolate;
         overflow: hidden;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing::after {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .landing::after {
         content: "";
         position: absolute;
         top: 0;
@@ -3872,11 +3872,11 @@ body.homepage #sortPanel .sort-drafting-anvil {
         pointer-events: none;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2 {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2 {
         z-index: 1;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         top: -18%;
         right: auto;
         left: -7%;
@@ -3887,12 +3887,12 @@ body.homepage #sortPanel .sort-drafting-anvil {
         transform: none;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-drafting-curve,
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-drafting-cursor {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-drafting-curve,
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-drafting-cursor {
         opacity: .28;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-wordmark {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-wordmark {
         top: max(13%, calc(env(safe-area-inset-top) + 38px));
         right: max(4%, env(safe-area-inset-right));
         left: auto;
@@ -3904,7 +3904,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         text-align: center;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero {
         position: absolute;
         inset: 0;
         z-index: 3;
@@ -3912,7 +3912,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         height: 100%;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel {
         position: absolute;
         inset: 0;
         display: block;
@@ -3920,7 +3920,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         height: 100%;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         position: absolute;
         left: max(3.5%, env(safe-area-inset-left));
         bottom: max(5%, env(safe-area-inset-bottom));
@@ -3938,7 +3938,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         transform-origin: left bottom;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         position: absolute;
         top: 25%;
         right: max(3%, env(safe-area-inset-right));
@@ -3962,15 +3962,15 @@ body.homepage #sortPanel .sort-drafting-anvil {
         transform: none;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines > div {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines > div {
         display: block;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines > div:nth-child(3) {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines > div:nth-child(3) {
         font-style: italic;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-actions {
         position: absolute;
         right: max(2.2%, env(safe-area-inset-right));
         bottom: max(3%, env(safe-area-inset-bottom));
@@ -3983,7 +3983,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         margin: 0;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         width: 100%;
         min-height: clamp(48px, 15dvh, 64px);
         padding: 8px 6px;
@@ -3993,34 +3993,34 @@ body.homepage #sortPanel .sort-drafting-anvil {
 }
 
 @media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing::after {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .landing::after {
         width: 35%;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         top: -22%;
         left: -9%;
         width: 75vw;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         bottom: max(4%, env(safe-area-inset-bottom));
         font-size: clamp(56px, 19dvh, 76px);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         top: 24%;
         right: max(3%, env(safe-area-inset-right));
         width: 29%;
         font-size: clamp(14px, 4.4dvh, 18px);
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-actions {
         width: 30.5%;
         gap: 7px;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-button {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-button {
         min-height: clamp(44px, 14dvh, 54px);
     }
 }
@@ -4031,7 +4031,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
 }
 
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .landscape-title-rest {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .landscape-title-rest {
         display: block;
         white-space: nowrap;
     }
@@ -4039,13 +4039,13 @@ body.homepage #sortPanel .sort-drafting-anvil {
 
 /* Concept C — viewport-anchored final composition */
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing::after {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .landing::after {
         position: fixed !important;
         inset: 0 0 0 auto !important;
         width: 34vw !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         position: fixed !important;
         top: -56dvh !important;
         right: auto !important;
@@ -4056,7 +4056,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         height: auto !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-wordmark {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-wordmark {
         position: fixed !important;
         top: max(9dvh, calc(env(safe-area-inset-top) + 20px)) !important;
         right: auto !important;
@@ -4065,15 +4065,15 @@ body.homepage #sortPanel .sort-drafting-anvil {
         text-align: left !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .hero,
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .hero,
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel {
         position: fixed !important;
         inset: 0 !important;
         width: 100vw !important;
         height: 100dvh !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         position: fixed !important;
         top: auto !important;
         right: auto !important;
@@ -4084,7 +4084,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         font-size: clamp(106px, 35dvh, 151px) !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         position: fixed !important;
         top: 24dvh !important;
         right: max(3vw, env(safe-area-inset-right)) !important;
@@ -4095,7 +4095,7 @@ body.homepage #sortPanel .sort-drafting-anvil {
         font-size: clamp(24px, 7.05dvh, 32px) !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-actions {
         position: fixed !important;
         top: auto !important;
         right: max(2.2vw, env(safe-area-inset-right)) !important;
@@ -4106,22 +4106,22 @@ body.homepage #sortPanel .sort-drafting-anvil {
 }
 
 @media (max-width: 700px) and (max-height: 420px) and (orientation: landscape) {
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .landing::after {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .landing::after {
         width: 35vw !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) .fm-home-v2-drawing {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) .fm-home-v2-drawing {
         top: -60dvh !important;
         left: 5vw !important;
         width: 62vw !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-title {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-title {
         bottom: max(7dvh, env(safe-area-inset-bottom)) !important;
         font-size: clamp(95px, 33.6dvh, 132px) !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-lines {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-lines {
         top: 22dvh !important;
         right: max(3vw, env(safe-area-inset-right)) !important;
         width: 29vw !important;
@@ -4129,7 +4129,270 @@ body.homepage #sortPanel .sort-drafting-anvil {
         font-size: clamp(21px, 6.6dvh, 27px) !important;
     }
 
-    body.homepage:not(.explore-open):has(#introPanel.is-active) #introPanel .hero-actions {
+    body.homepage:not(.explore-open):has(:is(#introPanel, #sortPanel).is-active) #introPanel .hero-actions {
         width: 30.5vw !important;
+    }
+}
+
+/* =========================================================
+   MAKE ME A SITE — approved-state revision
+   The stage and blueprint remain identical to Home; only the
+   foreground copy changes. Rules remain isolated to sortPanel.
+   ========================================================= */
+
+body.homepage #sortPanel {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 3 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100svh !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+}
+
+body.homepage #sortPanel::before,
+body.homepage #sortPanel::after,
+body.homepage #sortPanel .sort-blueprint,
+body.homepage #sortPanel .sort-kicker,
+body.homepage #sortPanel .hero-back {
+    display: none !important;
+}
+
+body.homepage #sortPanel .sort-copy {
+    position: fixed !important;
+    z-index: 5 !important;
+    top: 31vh !important;
+    right: max(7vw, env(safe-area-inset-right)) !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: min(35vw, 610px) !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+body.homepage #sortPanel .sort-title {
+    max-width: 8ch !important;
+    margin: 0 0 clamp(18px, 2.4vh, 30px) !important;
+    transform: none !important;
+    background: none !important;
+    -webkit-text-fill-color: #f6eee2 !important;
+    color: #f6eee2 !important;
+    font-family: "Instrument Serif", Georgia, "Times New Roman", serif !important;
+    font-size: clamp(70px, 6vw, 116px) !important;
+    font-weight: 400 !important;
+    line-height: .88 !important;
+    letter-spacing: -.045em !important;
+    text-align: left !important;
+    filter: none !important;
+}
+
+body.homepage #sortPanel .sort-lines {
+    margin: 0 !important;
+    transform: none !important;
+    background: none !important;
+    -webkit-text-fill-color: #d88345 !important;
+    color: #d88345 !important;
+    font-family: "Instrument Serif", Georgia, "Times New Roman", serif !important;
+    font-size: clamp(30px, 2.55vw, 49px) !important;
+    font-style: italic !important;
+    line-height: 1 !important;
+    text-align: left !important;
+    filter: none !important;
+}
+
+body.homepage #sortPanel .sort-actions {
+    position: static !important;
+    display: block !important;
+    width: min(100%, 390px) !important;
+    margin: clamp(38px, 5.5vh, 66px) 0 0 !important;
+}
+
+body.homepage #sortPanel .sort-actions .hero-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 58px !important;
+    padding: 16px 22px !important;
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px) !important;
+    border: 1px solid rgba(226, 145, 73, .72) !important;
+    background: linear-gradient(135deg, #b96735, #dc914f 52%, #9a522c) !important;
+    color: #160e09 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(9px, .72vw, 12px) !important;
+    font-weight: 700 !important;
+    letter-spacing: clamp(2px, .24vw, 3.8px) !important;
+    text-transform: uppercase !important;
+    text-shadow: none !important;
+    box-shadow: inset 0 1px rgba(255, 224, 188, .3), 0 12px 28px rgba(0, 0, 0, .3) !important;
+}
+
+/* A light icon rail replaces the heavy pill on the second state. */
+body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
+    top: max(18px, env(safe-area-inset-top)) !important;
+    right: max(18px, env(safe-area-inset-right)) !important;
+    left: auto !important;
+    z-index: 10020 !important;
+    width: 48px !important;
+    height: auto !important;
+    padding: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    background: rgba(10, 9, 8, .42) !important;
+    border: 1px solid rgba(216, 139, 70, .36) !important;
+    border-radius: 0 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .22) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-nav::before,
+body.homepage:has(#sortPanel.is-active) .foundry-global-control + .foundry-global-control::before {
+    display: none !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-control {
+    display: grid !important;
+    width: 46px !important;
+    min-width: 46px !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-control + .foundry-global-control {
+    border-top: 1px solid rgba(216, 139, 70, .18) !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-control svg {
+    width: 25px !important;
+    height: 25px !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-menu {
+    gap: 4px !important;
+}
+
+body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
+    display: block !important;
+    width: 25px !important;
+    height: 2px !important;
+    border: 0 !important;
+    background: #d79450 !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    body.homepage #sortPanel .sort-copy {
+        top: auto !important;
+        right: max(22px, env(safe-area-inset-right)) !important;
+        bottom: max(22px, env(safe-area-inset-bottom)) !important;
+        left: max(28px, env(safe-area-inset-left)) !important;
+        width: auto !important;
+    }
+
+    body.homepage #sortPanel .sort-title {
+        max-width: 7ch !important;
+        margin-bottom: clamp(10px, 1.7svh, 17px) !important;
+        font-size: clamp(54px, 17vw, 78px) !important;
+        line-height: .86 !important;
+    }
+
+    body.homepage #sortPanel .sort-lines {
+        font-size: clamp(27px, 8.5vw, 39px) !important;
+    }
+
+    body.homepage #sortPanel .sort-actions {
+        width: 100% !important;
+        margin-top: clamp(24px, 4svh, 40px) !important;
+    }
+
+    body.homepage #sortPanel .sort-actions .hero-button {
+        min-height: clamp(52px, 7svh, 60px) !important;
+        font-size: clamp(9px, 2.55vw, 11px) !important;
+        letter-spacing: clamp(1.7px, .65vw, 2.8px) !important;
+    }
+}
+
+@media (max-width: 700px) and (orientation: portrait) and (max-height: 650px) {
+    body.homepage #sortPanel .sort-copy {
+        bottom: max(14px, env(safe-area-inset-bottom)) !important;
+    }
+
+    body.homepage #sortPanel .sort-title {
+        font-size: clamp(47px, 15vw, 62px) !important;
+    }
+
+    body.homepage #sortPanel .sort-lines {
+        font-size: clamp(24px, 7.4vw, 31px) !important;
+    }
+
+    body.homepage #sortPanel .sort-actions {
+        margin-top: 18px !important;
+    }
+
+    body.homepage #sortPanel .sort-actions .hero-button {
+        min-height: 48px !important;
+    }
+}
+
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    body.homepage #sortPanel .sort-copy {
+        top: 25dvh !important;
+        right: max(8vw, calc(env(safe-area-inset-right) + 54px)) !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 31vw !important;
+    }
+
+    body.homepage #sortPanel .sort-title {
+        margin-bottom: clamp(8px, 2dvh, 12px) !important;
+        font-size: clamp(47px, 14dvh, 62px) !important;
+        line-height: .86 !important;
+    }
+
+    body.homepage #sortPanel .sort-lines {
+        font-size: clamp(23px, 6.7dvh, 30px) !important;
+    }
+
+    body.homepage #sortPanel .sort-actions {
+        width: 100% !important;
+        margin-top: clamp(18px, 5dvh, 26px) !important;
+    }
+
+    body.homepage #sortPanel .sort-actions .hero-button {
+        min-height: 44px !important;
+        padding: 10px 12px !important;
+        font-size: 8px !important;
+        letter-spacing: 1.4px !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-nav {
+        top: max(10px, env(safe-area-inset-top)) !important;
+        right: max(10px, env(safe-area-inset-right)) !important;
+        width: 42px !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-control {
+        width: 40px !important;
+        min-width: 40px !important;
+        height: 40px !important;
+        min-height: 40px !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-control svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    body.homepage:has(#sortPanel.is-active) .foundry-global-menu span {
+        width: 22px !important;
     }
 }
