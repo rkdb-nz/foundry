@@ -3182,6 +3182,8 @@ body.explore-open .explore-screen::before {
 .explore-blueprint-guides { stroke: rgba(202, 119, 56, .23); stroke-width: 1; }
 .explore-blueprint-form { stroke: rgba(218, 132, 67, .16); stroke-width: 1; }
 
+.explore-boardroom-mobile-copy { display: none; }
+
 body.explore-open .explore-boardroom {
     width: min(650px, 100%);
     transform: none;
@@ -3304,6 +3306,8 @@ body.explore-open .explore-choice:focus-visible::after { transform: translateX(4
         padding: max(84px, calc(env(safe-area-inset-top) + 70px)) max(clamp(18px, 5vw, 28px), env(safe-area-inset-right)) max(24px, calc(env(safe-area-inset-bottom) + 18px)) max(clamp(18px, 5vw, 28px), env(safe-area-inset-left));
     }
     body.explore-open .explore-screen::before { display: none; }
+    body.explore-open .explore-boardroom-desktop-copy { display: none; }
+    body.explore-open .explore-boardroom-mobile-copy { display: block; }
     .explore-blueprint { position: fixed; inset: 18px; width: calc(100% - 36px); height: calc(100% - 36px); }
     .explore-blueprint-form { opacity: .45; }
     body.explore-open .explore-boardroom h2 { max-width: 11ch; margin-bottom: clamp(18px, 2.8svh, 28px); font-size: clamp(43px, 13.4vw, 68px); line-height: .92; }
