@@ -12,6 +12,7 @@ function prefersReducedMotion() {
 }
 
 function activateSortPanel() {
+    document.body.classList.add('sort-open');
     introPanel.classList.remove('is-active');
     introPanel.setAttribute('aria-hidden', 'true');
 
@@ -20,6 +21,8 @@ function activateSortPanel() {
 }
 
 function activateIntroPanel() {
+    document.documentElement.classList.remove('restore-sort');
+    document.body.classList.remove('sort-open');
     sortPanel.classList.remove('is-active');
     sortPanel.setAttribute('aria-hidden', 'true');
 
@@ -30,6 +33,10 @@ function activateIntroPanel() {
 function showSortPanel() {
     if (isTransitioning || sortPanel.classList.contains('is-active')) {
         return;
+    }
+
+    if (window.location.hash !== '#make-site') {
+        history.pushState({ foundryState: 'make-site' }, '', '#make-site');
     }
 
     if (prefersReducedMotion()) {
@@ -54,7 +61,13 @@ function showSortPanel() {
 
 function showIntroPanel() {
     document.documentElement.classList.remove('restore-explore');
+    document.documentElement.classList.remove('restore-sort');
     document.body.classList.remove('explore-open');
+    document.body.classList.remove('sort-open');
+
+    if (window.location.hash) {
+        history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    }
 
     if (exploreScreen) {
         exploreScreen.setAttribute('aria-hidden', 'true');
@@ -108,7 +121,11 @@ globalBackButton?.addEventListener('click', event => {
 
     event.preventDefault();
     event.stopImmediatePropagation();
-    showIntroPanel();
+    if (history.state?.foundryState === 'make-site') {
+        history.back();
+    } else {
+        showIntroPanel();
+    }
 }, true);
 
 drawerHome?.addEventListener('click', () => {
@@ -144,6 +161,10 @@ document.querySelectorAll('.drawer-link[href]').forEach(link => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash === '#explore' || window.location.hash === '#make-site') {
+        return;
+    }
+
     introPanel.classList.remove('is-arriving', 'home-return');
     introPanel.classList.add('landing-enter');
 
@@ -153,26 +174,32 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/* Restore Explore when returning from a subpage via /#explore */
+/* Restore landing states from their persistent URL hashes. */
 
-function restoreExploreFromHash() {
+function restoreStateFromHash() {
     if (window.location.hash === '#explore') {
         showExploreScreen();
+    } else if (window.location.hash === '#make-site') {
+        document.documentElement.classList.add('restore-sort');
+        document.body.classList.remove('explore-open');
+        exploreScreen.setAttribute('aria-hidden', 'true');
+        activateSortPanel();
     }
 }
 
-window.addEventListener('DOMContentLoaded', restoreExploreFromHash);
-window.addEventListener('hashchange', restoreExploreFromHash);
+restoreStateFromHash();
+window.addEventListener('DOMContentLoaded', restoreStateFromHash);
+window.addEventListener('hashchange', restoreStateFromHash);
 
 window.addEventListener('pageshow', () => {
-    if (window.location.hash === '#explore') {
-        showExploreScreen();
-    }
+    restoreStateFromHash();
 });
 
 window.addEventListener('popstate', () => {
     if (window.location.hash === '#explore') {
         showExploreScreen();
+    } else if (window.location.hash === '#make-site') {
+        restoreStateFromHash();
     } else {
         showIntroPanel();
     }
