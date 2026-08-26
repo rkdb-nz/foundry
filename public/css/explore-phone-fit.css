@@ -19,11 +19,11 @@
     }
 
     body.homepage.is-forging #introPanel {
-        animation: mobilePanelFadeOut 720ms cubic-bezier(.55, 0, .45, 1) both !important;
+        animation: mobilePanelFadeOut 420ms ease-in both !important;
     }
 
     body.homepage.is-forging #sortPanel.is-active {
-        animation: mobilePanelFadeIn 760ms cubic-bezier(.16, 1, .3, 1) both !important;
+        animation: mobilePanelFadeIn 520ms ease-out both !important;
     }
 
     body.homepage.is-forging #introPanel .hero-actions,
@@ -122,8 +122,9 @@ body.explore-open .explore-choice:first-child {
 
 /* =========================================================
    UNIFORM LANDING-STATE TRANSITION
-   Home, Make Me a Site and Let Me Choose all use the same
-   opacity-only fade. No movement, blur or forge sweep.
+   Home, Make Me a Site and Let Me Choose use the same
+   page fade cadence. The Home -> Make Me a Site route keeps
+   its forge animation layered over this fade.
    ========================================================= */
 
 @keyframes foundryStateFadeOut {
