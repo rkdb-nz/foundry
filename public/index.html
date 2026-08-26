@@ -12,10 +12,15 @@
     <link rel="stylesheet" href="./css/foundry-global-nav.css?v=landscape-drawer-v1">
     <link rel="stylesheet" href="./css/explore-phone-fit.css">
     <style>
-        @media (max-width: 700px) and (orientation: portrait) {
-            body.homepage:not(.home-ui-ready) #introPanel .hero-actions {
+        /* Critical mobile paint guard: controls never render before layout settles. */
+        @media (max-width: 800px) and (orientation: portrait),
+               (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+            body.homepage:not(.home-ui-ready) #introPanel .hero-actions,
+            body.homepage:not(.home-ui-ready) #sortPanel .sort-actions,
+            body.homepage:not(.home-ui-ready) #exploreScreen .explore-choices {
                 visibility: hidden !important;
                 opacity: 0 !important;
+                pointer-events: none !important;
             }
         }
     </style>
@@ -23,11 +28,20 @@
 <body class="homepage">
     <script>
         if (location.hash === "#explore") document.body.classList.add("explore-open");
-        window.addEventListener("load", () => {
-            requestAnimationFrame(() => requestAnimationFrame(() => {
-                document.body.classList.add("home-ui-ready");
-            }));
-        }, { once: true });
+        const revealHomeUI = () => {
+            const fontsReady = document.fonts?.ready || Promise.resolve();
+            Promise.resolve(fontsReady).catch(() => {}).then(() => {
+                requestAnimationFrame(() => requestAnimationFrame(() => {
+                    document.body.classList.add("home-ui-ready");
+                }));
+            });
+        };
+
+        if (document.readyState === "complete") {
+            revealHomeUI();
+        } else {
+            window.addEventListener("load", revealHomeUI, { once: true });
+        }
     </script>
     <main class="landing">
         <div class="fm-home-v2" aria-hidden="true">
