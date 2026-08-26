@@ -119,3 +119,49 @@ body.explore-open .explore-choice:first-child {
         white-space: nowrap !important;
     }
 }
+
+/* =========================================================
+   UNIFORM LANDING-STATE TRANSITION
+   Home, Make Me a Site and Let Me Choose all use the same
+   opacity-only fade. No movement, blur or forge sweep.
+   ========================================================= */
+
+@keyframes foundryStateFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes foundryStateFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body.homepage.state-fade-out #introPanel.is-active,
+body.homepage.state-fade-out #sortPanel.is-active,
+body.homepage.state-fade-out.explore-open #exploreScreen {
+    animation: foundryStateFadeOut 420ms ease-in both !important;
+    pointer-events: none !important;
+}
+
+body.homepage.state-fade-in #introPanel.is-active,
+body.homepage.state-fade-in #sortPanel.is-active,
+body.homepage.state-fade-in.explore-open #exploreScreen {
+    animation: foundryStateFadeIn 520ms ease-out both !important;
+}
+
+body.homepage.state-fade-out .hero-actions,
+body.homepage.state-fade-out .sort-actions,
+body.homepage.state-fade-out .explore-choices {
+    pointer-events: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.homepage.state-fade-out #introPanel.is-active,
+    body.homepage.state-fade-out #sortPanel.is-active,
+    body.homepage.state-fade-out.explore-open #exploreScreen,
+    body.homepage.state-fade-in #introPanel.is-active,
+    body.homepage.state-fade-in #sortPanel.is-active,
+    body.homepage.state-fade-in.explore-open #exploreScreen {
+        animation: none !important;
+    }
+}
