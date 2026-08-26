@@ -3448,6 +3448,141 @@ body.explore-open .foundry-global-menu span {
     }
 }
 
+/* Explore identity: match the approved white mobile wordmark. */
+.explore-wordmark { display: none; }
+
+@media (max-width: 800px) and (orientation: portrait) {
+    body.explore-open {
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    body.explore-open .landing {
+        height: 100dvh;
+        min-height: 100dvh;
+        overflow: hidden;
+    }
+
+    body.explore-open .explore-screen {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr);
+        align-content: stretch;
+        gap: clamp(10px, 2svh, 18px);
+        width: 100%;
+        height: 100dvh;
+        min-height: 0;
+        padding:
+            max(66px, calc(env(safe-area-inset-top) + 58px))
+            max(clamp(18px, 5vw, 28px), env(safe-area-inset-right))
+            max(12px, calc(env(safe-area-inset-bottom) + 8px))
+            max(clamp(18px, 5vw, 28px), env(safe-area-inset-left));
+        overflow: hidden;
+    }
+
+    body.explore-open .explore-wordmark {
+        display: block;
+        position: fixed;
+        top: max(22px, calc(env(safe-area-inset-top) + 14px));
+        left: max(24px, calc(env(safe-area-inset-left) + 18px));
+        z-index: 10;
+        color: #eee9e0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(11px, 3.15vw, 14px);
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: clamp(3.5px, 1.2vw, 5px);
+        white-space: nowrap;
+    }
+
+    body.explore-open .explore-boardroom {
+        min-height: 0;
+    }
+
+    body.explore-open .explore-kicker {
+        margin-bottom: clamp(8px, 1.4svh, 13px);
+        padding-bottom: 8px;
+        font-size: clamp(8px, 2.4vw, 10px);
+    }
+
+    body.explore-open .explore-boardroom h2 {
+        max-width: none;
+        margin-bottom: clamp(9px, 1.7svh, 15px);
+        font-size: clamp(38px, 11.5vw, 52px);
+        line-height: .9;
+    }
+
+    body.explore-open .explore-boardroom p {
+        max-width: none;
+        margin: 0;
+        font-size: clamp(14px, 4vw, 18px);
+        line-height: 1.42;
+    }
+
+    body.explore-open .explore-choices {
+        align-self: stretch;
+        display: grid;
+        grid-template-rows: repeat(4, minmax(44px, 1fr));
+        gap: clamp(6px, 1.2svh, 11px);
+        min-height: 0;
+    }
+
+    body.explore-open .explore-choice {
+        min-height: 44px;
+        height: 100%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}
+
+@media (max-width: 800px) and (orientation: portrait) and (max-height: 650px) {
+    body.explore-open .explore-screen {
+        gap: 8px;
+        padding-top: max(58px, calc(env(safe-area-inset-top) + 52px));
+        padding-bottom: max(8px, env(safe-area-inset-bottom));
+    }
+
+    body.explore-open .explore-wordmark {
+        top: max(17px, calc(env(safe-area-inset-top) + 10px));
+    }
+
+    body.explore-open .explore-kicker {
+        margin-bottom: 6px;
+        padding-bottom: 6px;
+    }
+
+    body.explore-open .explore-boardroom h2 {
+        margin-bottom: 7px;
+        font-size: clamp(36px, 11vw, 42px);
+        line-height: .87;
+    }
+
+    body.explore-open .explore-boardroom p {
+        font-size: clamp(13px, 3.8vw, 15px);
+        line-height: 1.32;
+    }
+
+    body.explore-open .explore-choices {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    body.explore-open .explore-wordmark {
+        display: block;
+        position: fixed;
+        top: max(15px, calc(env(safe-area-inset-top) + 9px));
+        left: max(22px, calc(env(safe-area-inset-left) + 16px));
+        z-index: 10;
+        color: #eee9e0;
+        font: 500 clamp(9px, 1.45vw, 12px)/1 Arial, Helvetica, sans-serif;
+        letter-spacing: clamp(3px, .65vw, 5px);
+        white-space: nowrap;
+    }
+}
+
 /* Keep the hamburger's bar geometry identical to the approved Home state. */
 body.homepage:has(#sortPanel.is-active) .foundry-global-menu {
     display: flex !important;
