@@ -19,8 +19,11 @@ function clearLegacyTransitionClasses() {
     document.body.classList.remove('is-forging', 'is-returning');
 }
 
-function activateSortPanel() {
-    clearLegacyTransitionClasses();
+function activateSortPanel({ preserveForge = false } = {}) {
+    if (!preserveForge) {
+        clearLegacyTransitionClasses();
+    }
+
     document.documentElement.classList.remove('restore-explore');
     document.body.classList.remove('explore-open');
     document.body.classList.add('sort-open');
@@ -91,6 +94,32 @@ function transitionTo(activateState) {
     }, STATE_FADE_OUT_MS);
 }
 
+function forgeHomeToSort() {
+    if (isTransitioning) {
+        return;
+    }
+
+    if (prefersReducedMotion()) {
+        activateSortPanel();
+        return;
+    }
+
+    isTransitioning = true;
+    sortButton.disabled = true;
+    document.body.classList.remove('state-fade-out', 'state-fade-in', 'is-returning');
+    document.body.classList.add('is-forging');
+
+    window.setTimeout(() => {
+        activateSortPanel({ preserveForge: true });
+    }, 1400);
+
+    window.setTimeout(() => {
+        document.body.classList.remove('is-forging');
+        sortButton.disabled = false;
+        isTransitioning = false;
+    }, 3200);
+}
+
 function showSortPanel() {
     if (sortPanel.classList.contains('is-active') && !document.body.classList.contains('explore-open')) {
         return;
@@ -100,7 +129,15 @@ function showSortPanel() {
         history.pushState({ foundryState: 'make-site' }, '', '#make-site');
     }
 
-    transitionTo(activateSortPanel);
+    const comingDirectlyFromHome =
+        introPanel.classList.contains('is-active') &&
+        !document.body.classList.contains('explore-open');
+
+    if (comingDirectlyFromHome) {
+        forgeHomeToSort();
+    } else {
+        transitionTo(activateSortPanel);
+    }
 }
 
 function showIntroPanel({ updateHistory = true } = {}) {
