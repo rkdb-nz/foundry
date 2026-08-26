@@ -12,18 +12,20 @@
     to { opacity: 0; }
 }
 
+/* Keep the forge visual, but make its page-to-page fade cadence identical to
+   the other landing transitions on every viewport. */
+body.homepage.is-forging #introPanel {
+    animation: mobilePanelFadeOut 420ms ease-in both !important;
+}
+
+body.homepage.is-forging #sortPanel.is-active {
+    animation: mobilePanelFadeIn 520ms ease-out both !important;
+}
+
 @media (max-width: 800px) and (orientation: portrait),
        (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
     body.homepage #introPanel.landing-enter {
         animation: mobilePanelFadeIn 1050ms ease-out both !important;
-    }
-
-    body.homepage.is-forging #introPanel {
-        animation: mobilePanelFadeOut 420ms ease-in both !important;
-    }
-
-    body.homepage.is-forging #sortPanel.is-active {
-        animation: mobilePanelFadeIn 520ms ease-out both !important;
     }
 
     body.homepage.is-forging #introPanel .hero-actions,
