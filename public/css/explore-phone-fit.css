@@ -62,7 +62,7 @@ body.explore-open .explore-choice:first-child {
 
     body.explore-open .explore-boardroom p {
         max-width: 40ch;
-        font-size: clamp(16px, 4.3vw, 19px);
+        font-size: clamp(18px, 4.8vw, 21px);
         line-height: 1.52;
     }
 
