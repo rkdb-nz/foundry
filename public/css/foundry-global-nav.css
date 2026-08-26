@@ -547,6 +547,52 @@ body.foundry-global-open .foundry-global-drawer {
   }
 }
 
+/* Shared landing drawer: fit every link comfortably in short landscape.
+   Applies equally to Home, Make Me a Site and Let Me Choose. */
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  .foundry-global-drawer {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(430px, 60vw);
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .foundry-global-drawer-inner {
+    height: auto;
+    min-height: 100%;
+    padding:
+      max(56px, calc(env(safe-area-inset-top) + 48px))
+      max(24px, calc(env(safe-area-inset-right) + 20px))
+      max(12px, env(safe-area-inset-bottom))
+      28px;
+  }
+
+  .foundry-global-kicker {
+    margin-bottom: 12px;
+    font-size: 9px;
+    letter-spacing: 3.5px;
+  }
+
+  .foundry-global-link {
+    min-height: 0;
+    padding: 7px 0;
+    font-size: clamp(14px, 2.15vw, 17px);
+    line-height: 1.08;
+  }
+
+  .foundry-global-menu-divider {
+    margin: 3px 0 !important;
+  }
+
+  .foundry-global-footer {
+    display: none;
+  }
+}
+
 
 /* =========================================================
    MOBILE HOME V2 NAV — initial landing state only
