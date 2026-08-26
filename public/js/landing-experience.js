@@ -1,18 +1,122 @@
 const sortButton = document.getElementById('sortButton');
+const exploreButton = document.getElementById('exploreButton');
 const backButton = document.getElementById('backButton');
 
 const introPanel = document.getElementById('introPanel');
 const sortPanel = document.getElementById('sortPanel');
 const exploreScreen = document.getElementById('exploreScreen');
 
+const LANDING_STATES = Object.freeze({
+    HOME: 'home',
+    MAKE_SITE: 'make-site',
+    EXPLORE: 'explore'
+});
+
+const TRANSITION_TIMING = Object.freeze({
+    exit: 300,
+    quiet: 80,
+    enter: 420,
+    get stateChange() {
+        return this.exit + this.quiet;
+    },
+    get total() {
+        return this.exit + this.quiet + this.enter;
+    }
+});
+
 let isTransitioning = false;
+let transitionTimers = [];
 
 function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
-function activateSortPanel() {
+function currentState() {
+    if (document.body.classList.contains('explore-open')) {
+        return LANDING_STATES.EXPLORE;
+    }
+
+    if (sortPanel.classList.contains('is-active') || document.body.classList.contains('sort-open')) {
+        return LANDING_STATES.MAKE_SITE;
+    }
+
+    return LANDING_STATES.HOME;
+}
+
+function stateFromHash() {
+    if (window.location.hash === '#make-site') {
+        return LANDING_STATES.MAKE_SITE;
+    }
+
+    if (window.location.hash === '#explore') {
+        return LANDING_STATES.EXPLORE;
+    }
+
+    return LANDING_STATES.HOME;
+}
+
+function historyStateFor(state) {
+    if (state === LANDING_STATES.MAKE_SITE) {
+        return { foundryState: 'make-site' };
+    }
+
+    if (state === LANDING_STATES.EXPLORE) {
+        return { foundryState: 'explore' };
+    }
+
+    return null;
+}
+
+function hashForState(state) {
+    if (state === LANDING_STATES.MAKE_SITE) {
+        return '#make-site';
+    }
+
+    if (state === LANDING_STATES.EXPLORE) {
+        return '#explore';
+    }
+
+    return '';
+}
+
+function updateHistory(state, mode = 'push') {
+    if (mode === 'none') {
+        return;
+    }
+
+    const hash = hashForState(state);
+    const destination = hash || `${window.location.pathname}${window.location.search}`;
+
+    if (mode === 'replace') {
+        history.replaceState(historyStateFor(state), '', destination);
+        return;
+    }
+
+    if (window.location.hash !== hash) {
+        history.pushState(historyStateFor(state), '', destination);
+    }
+}
+
+function activateHomeState() {
+    document.documentElement.classList.remove('restore-explore', 'restore-sort');
+    document.body.classList.remove('explore-open', 'sort-open');
+
+    sortPanel.classList.remove('is-active');
+    sortPanel.setAttribute('aria-hidden', 'true');
+
+    exploreScreen.setAttribute('aria-hidden', 'true');
+
+    introPanel.classList.add('is-active');
+    introPanel.setAttribute('aria-hidden', 'false');
+}
+
+function activateMakeSiteState() {
+    document.documentElement.classList.remove('restore-explore');
+    document.body.classList.remove('explore-open');
     document.body.classList.add('sort-open');
+
+    exploreScreen.setAttribute('aria-hidden', 'true');
+
     introPanel.classList.remove('is-active');
     introPanel.setAttribute('aria-hidden', 'true');
 
@@ -20,83 +124,149 @@ function activateSortPanel() {
     sortPanel.setAttribute('aria-hidden', 'false');
 }
 
-function activateIntroPanel() {
+function activateExploreState() {
     document.documentElement.classList.remove('restore-sort');
     document.body.classList.remove('sort-open');
+    document.body.classList.add('explore-open');
+
     sortPanel.classList.remove('is-active');
     sortPanel.setAttribute('aria-hidden', 'true');
 
     introPanel.classList.add('is-active');
-    introPanel.setAttribute('aria-hidden', 'false');
+    introPanel.setAttribute('aria-hidden', 'true');
+
+    exploreScreen.setAttribute('aria-hidden', 'false');
 }
 
-function showSortPanel() {
-    if (isTransitioning || sortPanel.classList.contains('is-active')) {
+function activateState(state) {
+    if (state === LANDING_STATES.MAKE_SITE) {
+        activateMakeSiteState();
         return;
     }
 
-    if (window.location.hash !== '#make-site') {
-        history.pushState({ foundryState: 'make-site' }, '', '#make-site');
+    if (state === LANDING_STATES.EXPLORE) {
+        activateExploreState();
+        return;
     }
 
-    if (prefersReducedMotion()) {
-        activateSortPanel();
-        return;
+    activateHomeState();
+}
+
+function clearTransitionTimers() {
+    transitionTimers.forEach(timer => window.clearTimeout(timer));
+    transitionTimers = [];
+}
+
+function clearTransitionClasses() {
+    document.body.classList.remove(
+        'landing-transitioning',
+        'landing-phase-exit',
+        'landing-phase-quiet',
+        'landing-phase-enter',
+        'landing-from-home',
+        'landing-from-make-site',
+        'landing-from-explore',
+        'landing-to-home',
+        'landing-to-make-site',
+        'landing-to-explore',
+        'is-forging',
+        'is-returning'
+    );
+}
+
+function finishTransition() {
+    clearTransitionTimers();
+    clearTransitionClasses();
+    sortButton.disabled = false;
+    isTransitioning = false;
+}
+
+function beginTransitionClasses(fromState, toState) {
+    clearTransitionClasses();
+
+    document.body.classList.add(
+        'landing-transitioning',
+        'landing-phase-exit',
+        `landing-from-${fromState}`,
+        `landing-to-${toState}`
+    );
+
+    if (fromState === LANDING_STATES.HOME && toState === LANDING_STATES.MAKE_SITE) {
+        document.body.classList.add('is-forging');
+    }
+
+    if (fromState === LANDING_STATES.MAKE_SITE && toState === LANDING_STATES.HOME) {
+        document.body.classList.add('is-returning');
+    }
+}
+
+function transitionToState(toState, { historyMode = 'push', immediate = false } = {}) {
+    const fromState = currentState();
+
+    if (isTransitioning || fromState === toState) {
+        if (!isTransitioning) {
+            updateHistory(toState, historyMode);
+        }
+        return false;
+    }
+
+    updateHistory(toState, historyMode);
+
+    if (immediate || prefersReducedMotion()) {
+        finishTransition();
+        activateState(toState);
+        return true;
     }
 
     isTransitioning = true;
     sortButton.disabled = true;
-    document.body.classList.add('is-forging');
+    beginTransitionClasses(fromState, toState);
 
-    window.setTimeout(() => {
-        activateSortPanel();
-    }, 1400);
+    transitionTimers.push(window.setTimeout(() => {
+        document.body.classList.remove('landing-phase-exit');
+        document.body.classList.add('landing-phase-quiet');
+    }, TRANSITION_TIMING.exit));
 
-    window.setTimeout(() => {
-        document.body.classList.remove('is-forging');
-        sortButton.disabled = false;
-        isTransitioning = false;
-    }, 3200);
+    transitionTimers.push(window.setTimeout(() => {
+        activateState(toState);
+        document.body.classList.remove('landing-phase-quiet');
+        document.body.classList.add('landing-phase-enter');
+    }, TRANSITION_TIMING.stateChange));
+
+    transitionTimers.push(window.setTimeout(() => {
+        finishTransition();
+    }, TRANSITION_TIMING.total));
+
+    return true;
 }
 
-function showIntroPanel() {
-    document.documentElement.classList.remove('restore-explore');
-    document.documentElement.classList.remove('restore-sort');
-    document.body.classList.remove('explore-open');
-    document.body.classList.remove('sort-open');
-
-    if (window.location.hash) {
-        history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
-    }
-
-    if (exploreScreen) {
-        exploreScreen.setAttribute('aria-hidden', 'true');
-    }
-
-    if (isTransitioning) {
-        return;
-    }
-
-    if (!sortPanel.classList.contains('is-active') || prefersReducedMotion()) {
-        activateIntroPanel();
-        return;
-    }
-
-    isTransitioning = true;
-    document.body.classList.add('is-returning');
-
-    window.setTimeout(() => {
-        activateIntroPanel();
-    }, 1200);
-
-    window.setTimeout(() => {
-        document.body.classList.remove('is-returning');
-        isTransitioning = false;
-    }, 2850);
+function showSortPanel(options = {}) {
+    closeDrawer();
+    return transitionToState(LANDING_STATES.MAKE_SITE, {
+        historyMode: options.historyMode || 'push',
+        immediate: Boolean(options.immediate)
+    });
 }
 
-sortButton.addEventListener('click', showSortPanel);
-backButton?.addEventListener('click', showIntroPanel);
+function showExploreScreen(options = {}) {
+    closeDrawer();
+    return transitionToState(LANDING_STATES.EXPLORE, {
+        historyMode: options.historyMode || 'push',
+        immediate: Boolean(options.immediate)
+    });
+}
+
+function showIntroPanel(options = {}) {
+    closeDrawer();
+    return transitionToState(LANDING_STATES.HOME, {
+        historyMode: options.historyMode || 'replace',
+        immediate: Boolean(options.immediate)
+    });
+}
+
+sortButton.addEventListener('click', () => showSortPanel());
+backButton?.addEventListener('click', () => showIntroPanel());
+exploreButton.addEventListener('click', () => showExploreScreen());
 
 
 /* =========================================================
@@ -113,14 +283,21 @@ function closeDrawer() {
     }
 }
 
-/* On landing state two, the global Back control returns to state one. */
+/* On landing state two, the global Back control returns through browser history. */
 globalBackButton?.addEventListener('click', event => {
+    if (isTransitioning) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        return;
+    }
+
     if (!sortPanel.classList.contains('is-active')) {
         return;
     }
 
     event.preventDefault();
     event.stopImmediatePropagation();
+
     if (history.state?.foundryState === 'make-site') {
         history.back();
     } else {
@@ -128,31 +305,14 @@ globalBackButton?.addEventListener('click', event => {
     }
 }, true);
 
+/* Let the 560ms global drawer close before beginning the landing-state movement. */
 drawerHome?.addEventListener('click', () => {
-    window.setTimeout(showIntroPanel, 600);
+    window.setTimeout(() => showIntroPanel(), 560);
 });
 
 drawerSite?.addEventListener('click', () => {
-    window.setTimeout(showSortPanel, 380);
+    window.setTimeout(() => showSortPanel(), 560);
 });
-
-
-/* LET ME CHOOSE */
-
-function showExploreScreen() {
-    closeDrawer();
-
-    if (window.location.hash !== '#explore') {
-        history.pushState(null, '', '#explore');
-    }
-
-    document.body.classList.add('explore-open');
-
-    introPanel.setAttribute('aria-hidden', 'true');
-    exploreScreen.setAttribute('aria-hidden', 'false');
-}
-
-exploreButton.addEventListener('click', showExploreScreen);
 
 
 /* Real navigation links close the drawer before the existing page transition runs. */
@@ -174,33 +334,24 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/* Restore landing states from their persistent URL hashes. */
+/* Restore landing states from their persistent URL hashes without replaying entry motion. */
 
 function restoreStateFromHash() {
-    if (window.location.hash === '#explore') {
-        showExploreScreen();
-    } else if (window.location.hash === '#make-site') {
-        document.documentElement.classList.add('restore-sort');
-        document.body.classList.remove('explore-open');
-        exploreScreen.setAttribute('aria-hidden', 'true');
-        activateSortPanel();
-    }
+    finishTransition();
+    activateState(stateFromHash());
 }
 
 restoreStateFromHash();
 window.addEventListener('DOMContentLoaded', restoreStateFromHash);
-window.addEventListener('hashchange', restoreStateFromHash);
+
+window.addEventListener('hashchange', () => {
+    transitionToState(stateFromHash(), { historyMode: 'none' });
+});
 
 window.addEventListener('pageshow', () => {
     restoreStateFromHash();
 });
 
 window.addEventListener('popstate', () => {
-    if (window.location.hash === '#explore') {
-        showExploreScreen();
-    } else if (window.location.hash === '#make-site') {
-        restoreStateFromHash();
-    } else {
-        showIntroPanel();
-    }
+    transitionToState(stateFromHash(), { historyMode: 'none' });
 });
