@@ -7,6 +7,11 @@
   display: none;
 }
 
+@keyframes boardroomMobileFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 @media (max-width: 700px) and (orientation: portrait) {
 
   html,
@@ -321,6 +326,36 @@
   }
 }
 
+/* Match the first three landing states in landscape: same white wordmark,
+   same page-fade cadence, and no separate Boardroom-only motion language. */
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  .boardroom-mobile-wordmark {
+    position: fixed;
+    top: max(12px, calc(env(safe-area-inset-top) + 8px));
+    right: auto;
+    left: max(20px, calc(env(safe-area-inset-left) + 14px));
+    z-index: 10030;
+    display: block;
+    width: auto;
+    margin: 0;
+    color: #eee9e0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(10px, 2.8dvh, 13px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: clamp(3.5px, .58vw, 5px);
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .boardroom,
+  .boardroom-mobile-wordmark {
+    animation: boardroomMobileFadeIn 520ms ease-out both;
+  }
+}
+
 @media (max-width: 380px) and (orientation: portrait) {
   .boardroom {
     padding-left: 16px;
@@ -347,5 +382,12 @@
 
   .board-main strong {
     font-size: 1.08rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boardroom,
+  .boardroom-mobile-wordmark {
+    animation: none !important;
   }
 }
