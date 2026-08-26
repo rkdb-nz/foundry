@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/bodoni-moda.css">
     <link rel="stylesheet" href="./css/landing-experience.css?v=mobile-fit-approved-v1">
     <link rel="stylesheet" href="./css/foundry-global-nav.css?v=landscape-drawer-v1">
-    <link rel="stylesheet" href="./css/explore-phone-fit.css?v=approved-v1">
+    <link rel="stylesheet" href="./css/explore-phone-fit.css?v=fixed-cta-root-v1">
     <style>
         /* Critical mobile paint guard: controls never render before layout settles. */
         @media (max-width: 800px) and (orientation: portrait),
@@ -33,17 +33,12 @@
 <body class="homepage">
     <script>
         if (location.hash === "#explore") document.body.classList.add("explore-open");
-        let homeUIRevealTimer;
-
         const revealHomeUI = () => {
-            window.clearTimeout(homeUIRevealTimer);
             const fontsReady = document.fonts?.ready || Promise.resolve();
             Promise.resolve(fontsReady).catch(() => {}).then(() => {
                 requestAnimationFrame(() => requestAnimationFrame(() => {
-                    homeUIRevealTimer = window.setTimeout(() => {
-                        document.body.classList.add("home-ui-ready");
-                        document.documentElement.classList.remove("foundry-ui-cloak");
-                    }, 350);
+                    document.body.classList.add("home-ui-ready");
+                    document.documentElement.classList.remove("foundry-ui-cloak");
                 }));
             });
         };
