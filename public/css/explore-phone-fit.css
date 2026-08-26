@@ -37,11 +37,18 @@
     }
 }
 
+/* One approved copper treatment for the primary action in every layout. */
+body.explore-open .explore-choice:first-child {
+    border-color: rgba(226, 145, 73, .72);
+    background: linear-gradient(135deg, #b96735, #dc914f 52%, #9a522c);
+    box-shadow: inset 0 1px rgba(255, 224, 188, .3), 0 12px 28px rgba(0, 0, 0, .3);
+}
+
 @media (max-width: 800px) and (orientation: portrait) {
     body.explore-open .explore-screen {
         grid-template-rows: auto auto;
         align-content: start;
-        gap: clamp(12px, 2.1svh, 20px);
+        gap: clamp(18px, 3svh, 28px);
         padding-bottom: max(22px, calc(env(safe-area-inset-bottom) + 14px));
     }
 
@@ -60,8 +67,8 @@
 
     body.explore-open .explore-choices {
         align-self: start;
-        grid-template-rows: repeat(4, clamp(50px, 7.2svh, 64px));
-        gap: clamp(7px, 1.15svh, 11px);
+        grid-template-rows: repeat(4, clamp(54px, 7.8svh, 68px));
+        gap: clamp(10px, 1.7svh, 16px);
     }
 
     body.explore-open .explore-choice {
