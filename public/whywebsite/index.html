@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../css/foundry-global-nav.css">
+  <link rel="stylesheet" href="../css/whywebsite-mobile-nav.css?v=why-mobile-nav-v1" media="(max-width: 700px)">
 </head>
 
 <body class="whywebsite-page">
@@ -56,6 +57,15 @@
     </section>
   </main>
   <script src="../script.js"></script>
-  <script src="../js/foundry-global-nav.js" data-root="../"></script>
+  <script>
+    (() => {
+      const navScript = document.createElement('script');
+      navScript.src = window.matchMedia('(max-width: 700px)').matches
+        ? '../js/foundry-global-nav.js?v=why-mobile-nav-v1'
+        : '../js/foundry-global-nav.js';
+      navScript.dataset.root = '../';
+      document.body.append(navScript);
+    })();
+  </script>
 </body>
 </html>
