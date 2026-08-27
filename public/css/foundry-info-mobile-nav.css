@@ -56,3 +56,25 @@ body.foundry-info-page .foundry-global-menu span {
   background: #d99a5d !important;
   box-shadow: none !important;
 }
+
+body.foundry-info-page .foundry-about-brand {
+  position: fixed;
+  top: max(22px, calc(env(safe-area-inset-top) + 14px));
+  left: max(24px, calc(env(safe-area-inset-left) + 18px));
+  display: block;
+  color: #eee9e0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(11px, 3.15vw, 14px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: clamp(3.5px, 1.2vw, 5px);
+  white-space: nowrap;
+}
+
+body.foundry-info-page .foundry-about-brand span {
+  display: none;
+}
+
+body.foundry-info-page .foundry-about-brand::after {
+  content: "ABOUT THE FOUNDRY";
+}
