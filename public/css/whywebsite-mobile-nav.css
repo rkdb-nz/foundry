@@ -1,13 +1,89 @@
-/* Why Have a Website — mobile navigation matches LET ME CHOOSE exactly. */
+/* Why Have a Website — mobile Story Flow treatment. */
+
+body.whywebsite-page {
+  background: #161616 !important;
+}
+
+body.whywebsite-page .whywebsite-desktop {
+  display: none !important;
+}
+
+body.whywebsite-page .whywebsite-mobile-story {
+  display: block;
+  min-height: 100svh;
+  padding: 14px 10px;
+  background: #161616;
+}
+
+body.whywebsite-page .whywebsite-mobile-inner {
+  position: relative;
+  min-height: calc(100svh - 28px);
+  overflow: hidden;
+  padding:
+    max(84px, calc(env(safe-area-inset-top) + 76px))
+    max(24px, calc(env(safe-area-inset-right) + 20px))
+    max(22px, calc(env(safe-area-inset-bottom) + 18px))
+    max(24px, calc(env(safe-area-inset-left) + 20px));
+  color: #24160f;
+  background:
+    radial-gradient(circle at 17% 11%, rgba(255,255,255,.62), transparent 26%),
+    radial-gradient(circle at 82% 88%, rgba(190,121,55,.08), transparent 28%),
+    repeating-linear-gradient(18deg, rgba(98,58,29,.018) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(104deg, rgba(255,255,255,.026) 0 1px, transparent 1px 9px),
+    linear-gradient(145deg, #f7ead4 0%, #f4e4ca 47%, #edd8b9 100%);
+  box-shadow: 0 18px 50px rgba(0,0,0,.45);
+}
+
+body.whywebsite-page .whywebsite-mobile-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .34;
+  background:
+    radial-gradient(circle at 40% 30%, rgba(94,54,26,.035) 0 1px, transparent 1px 4px),
+    radial-gradient(circle at 70% 63%, rgba(255,255,255,.10) 0 1px, transparent 1px 5px);
+  mix-blend-mode: multiply;
+}
+
+body.whywebsite-page .whywebsite-mobile-inner > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.whywebsite-page .why-foundry-wordmark {
+  position: fixed !important;
+  top: max(36px, calc(env(safe-area-inset-top) + 28px)) !important;
+  left: max(34px, calc(env(safe-area-inset-left) + 28px)) !important;
+  z-index: 10030 !important;
+  width: 148px;
+  color: #24160f !important;
+  text-shadow: none !important;
+  font-size: 0 !important;
+  line-height: 1.28 !important;
+  white-space: pre-line;
+  text-decoration: none;
+}
+
+body.whywebsite-page .why-foundry-wordmark::after {
+  content: "WHY HAVE A\A WEBSITE?";
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(12px, 3.2vw, 14px);
+  font-weight: 500;
+  line-height: 1.32;
+  letter-spacing: clamp(3.7px, 1.1vw, 5px);
+}
+
 body.whywebsite-page .foundry-global-nav {
-  top: max(8px, env(safe-area-inset-top)) !important;
-  right: max(10px, env(safe-area-inset-right)) !important;
+  position: fixed !important;
+  top: max(28px, calc(env(safe-area-inset-top) + 20px)) !important;
+  right: max(24px, calc(env(safe-area-inset-right) + 18px)) !important;
   left: auto !important;
-  z-index: 10020 !important;
+  z-index: 10040 !important;
   display: grid !important;
-  grid-template-columns: repeat(3, 48px) !important;
-  width: 144px !important;
-  height: 48px !important;
+  grid-template-columns: repeat(3, 46px) !important;
+  width: 138px !important;
+  height: 46px !important;
   padding: 0 !important;
   border: 0 !important;
   border-radius: 0 !important;
@@ -26,10 +102,10 @@ body.whywebsite-page .foundry-global-control + .foundry-global-control::before {
 body.whywebsite-page .foundry-global-control,
 body.whywebsite-page .foundry-global-menu {
   display: grid !important;
-  width: 48px !important;
-  min-width: 48px !important;
-  height: 48px !important;
-  min-height: 48px !important;
+  width: 46px !important;
+  min-width: 46px !important;
+  height: 46px !important;
+  min-height: 46px !important;
   padding: 0 !important;
   border: 0 !important;
   border-radius: 0 !important;
@@ -50,45 +126,203 @@ body.whywebsite-page .foundry-global-menu {
 
 body.whywebsite-page .foundry-global-menu span {
   display: block !important;
-  width: 28px !important;
+  width: 29px !important;
   height: 2px !important;
   border: 0 !important;
-  background: #92552f !important;
+  background: #a65d2d !important;
   box-shadow: none !important;
 }
 
 body.whywebsite-page .foundry-global-back svg {
-  stroke: #75411f !important;
+  stroke: #a65d2d !important;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
 }
 
 body.whywebsite-page .foundry-global-home svg {
-  filter: brightness(.7) saturate(1.05) contrast(1.08) drop-shadow(0 2px 2px rgba(0,0,0,.5)) !important;
+  filter: sepia(.9) saturate(1.6) hue-rotate(338deg) brightness(.72) contrast(1.08) drop-shadow(0 1px 1px rgba(0,0,0,.25)) !important;
 }
 
-body.whywebsite-page .why-foundry-wordmark {
-  top: max(22px, calc(env(safe-area-inset-top) + 14px));
-  left: max(24px, calc(env(safe-area-inset-left) + 18px));
-  color: #1d130d;
-  text-shadow: none;
-  font-size: 0;
-  line-height: 1.28;
-  white-space: pre-line;
+body.whywebsite-page .whywebsite-mobile-story h1 {
+  margin: 0;
+  color: #24160f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.45rem, 14.5vw, 5.2rem);
+  font-weight: 400;
+  line-height: .93;
+  letter-spacing: -.055em;
 }
 
-body.whywebsite-page .whywebsite-copy {
-  padding-top: 4rem;
+body.whywebsite-page .whywebsite-copper-rule {
+  width: 66px;
+  height: 3px;
+  margin: 28px 0 24px;
+  background: linear-gradient(90deg, #aa5b25, #d58b4f);
+  border-radius: 999px;
 }
 
-body.whywebsite-page .why-foundry-wordmark::after {
-  content: "WHY HAVE A\A WEBSITE?";
+body.whywebsite-page .whywebsite-mobile-intro {
+  margin: 0 0 26px;
+  color: #24160f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 6vw, 2rem);
+  line-height: 1.18;
+}
+
+body.whywebsite-page .whywebsite-steps {
+  position: relative;
+  display: grid;
+  gap: 22px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+body.whywebsite-page .whywebsite-steps::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  bottom: 25px;
+  left: 23px;
+  width: 2px;
+  background: repeating-linear-gradient(to bottom, #a85c2a 0 8px, transparent 8px 15px);
+}
+
+body.whywebsite-page .whywebsite-steps li {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap: 22px;
+  min-height: 48px;
+}
+
+body.whywebsite-page .whywebsite-steps span {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255,211,163,.62);
+  border-radius: 50%;
+  color: #fff5e7;
+  background:
+    radial-gradient(circle at 34% 30%, rgba(255,190,114,.55), transparent 27%),
+    linear-gradient(145deg, #bd6d29 0%, #8f3f13 68%, #702b0c 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.42),
+    0 3px 7px rgba(91,40,11,.22);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(11px, 3.15vw, 14px);
-  font-weight: 500;
-  line-height: 1.28;
-  letter-spacing: clamp(3.5px, 1.2vw, 5px);
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
-/* The page name now lives in the top-left wordmark on mobile. */
-body.whywebsite-page .whywebsite-kicker {
-  display: none !important;
+body.whywebsite-page .whywebsite-steps p {
+  margin: 0;
+  color: #24160f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 5.45vw, 1.85rem);
+  line-height: 1.1;
+}
+
+body.whywebsite-page .whywebsite-mobile-value {
+  margin: 0 0 24px;
+  color: #24160f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.18rem, 4.85vw, 1.6rem);
+  line-height: 1.38;
+}
+
+body.whywebsite-page .whywebsite-mobile-pill {
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  align-items: center;
+  gap: 14px;
+  min-height: 96px;
+  padding: 14px 20px 14px 14px;
+  border: 2px solid rgba(241,176,104,.85);
+  border-radius: 20px;
+  color: #fff6e9;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255,187,110,.38), transparent 24%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 4px),
+    linear-gradient(145deg, #b86227 0%, #8f431b 58%, #753311 100%);
+  box-shadow:
+    0 10px 20px rgba(82,40,14,.30),
+    inset 0 1px 0 rgba(255,255,255,.36),
+    inset 0 0 0 2px rgba(84,36,13,.28);
+}
+
+body.whywebsite-page .whywebsite-mobile-pill img {
+  display: block;
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  filter: sepia(1) saturate(.45) brightness(1.8) contrast(.82);
+  opacity: .92;
+}
+
+body.whywebsite-page .whywebsite-mobile-pill p {
+  margin: 0;
+  color: #fff6e9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.1rem, 4.6vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+@media (max-width: 390px) {
+  body.whywebsite-page .whywebsite-mobile-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body.whywebsite-page .why-foundry-wordmark {
+    left: 28px !important;
+  }
+
+  body.whywebsite-page .foundry-global-nav {
+    right: 18px !important;
+  }
+
+  body.whywebsite-page .whywebsite-steps {
+    gap: 18px;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-pill {
+    grid-template-columns: 56px 1fr;
+    gap: 12px;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-pill img {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 700px) {
+  body.whywebsite-page .whywebsite-mobile-story {
+    padding: 10px;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-inner {
+    min-height: calc(100svh - 20px);
+    padding-top: 72px;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-story h1 {
+    font-size: clamp(2.8rem, 8vw, 4.2rem);
+  }
+
+  body.whywebsite-page .whywebsite-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 24px;
+  }
+
+  body.whywebsite-page .whywebsite-steps::before {
+    display: none;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-value br {
+    display: none;
+  }
 }
