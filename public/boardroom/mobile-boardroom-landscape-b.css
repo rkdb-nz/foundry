@@ -18,8 +18,8 @@
     background-image:
       linear-gradient(90deg,
         rgba(5, 5, 5, .20) 0%,
-        rgba(5, 5, 5, .30) 38%,
-        rgba(5, 5, 5, .76) 56%,
+        rgba(5, 5, 5, .30) 35%,
+        rgba(5, 5, 5, .76) 55%,
         rgba(5, 5, 5, .92) 100%),
       url("../assets/images/boardroom.webp");
     background-position: center center;
@@ -29,8 +29,8 @@
 
   .page-shade {
     background:
-      radial-gradient(circle at 30% 42%, rgba(188, 110, 43, .10), transparent 28%),
-      linear-gradient(90deg, rgba(0,0,0,.10), rgba(0,0,0,.38) 52%, rgba(0,0,0,.68));
+      radial-gradient(circle at 28% 42%, rgba(188, 110, 43, .10), transparent 28%),
+      linear-gradient(90deg, rgba(0,0,0,.10), rgba(0,0,0,.34) 49%, rgba(0,0,0,.68));
   }
 
   .boardroom-mobile-wordmark {
@@ -57,7 +57,7 @@
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: minmax(270px, 40%) minmax(0, 60%);
+    grid-template-columns: minmax(250px, 37%) minmax(0, 63%);
     gap: 0;
     width: 100vw;
     height: 100dvh;
@@ -73,7 +73,7 @@
     height: 100%;
     padding:
       max(58px, calc(env(safe-area-inset-top) + 48px))
-      clamp(20px, 3.2vw, 42px)
+      clamp(18px, 2.6vw, 34px)
       max(28px, calc(env(safe-area-inset-bottom) + 18px))
       max(30px, calc(env(safe-area-inset-left) + 22px));
   }
@@ -129,18 +129,20 @@
   .boards {
     position: relative;
     align-self: stretch;
+    justify-self: stretch;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(6px, .9vw, 11px);
-    width: auto;
+    gap: clamp(9px, 1.25vw, 14px);
+    width: 100%;
     max-width: none;
+    min-width: 0;
     height: 100%;
     min-height: 0;
     padding:
       max(64px, calc(env(safe-area-inset-top) + 54px))
       max(18px, calc(env(safe-area-inset-right) + 12px))
       max(22px, calc(env(safe-area-inset-bottom) + 14px))
-      clamp(8px, 1.4vw, 16px);
+      clamp(14px, 2vw, 20px);
     transform: none;
   }
 
@@ -166,10 +168,10 @@
     min-width: 0;
     height: 100%;
     min-height: 0;
-    padding: clamp(12px, 2.6dvh, 18px) 5px clamp(10px, 2.2dvh, 16px);
+    padding: clamp(12px, 2.6dvh, 18px) clamp(7px, 1vw, 11px) clamp(10px, 2.2dvh, 16px);
     overflow: hidden;
     border: 1px solid rgba(210, 169, 116, .30);
-    border-radius: 7px;
+    border-radius: 8px;
     background:
       linear-gradient(180deg, rgba(255,255,255,.025), transparent 18%),
       rgba(9, 9, 8, .64);
@@ -205,7 +207,7 @@
     padding: 0;
     color: rgba(236, 226, 214, .68);
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(19px, 3.2vw, 28px);
+    font-size: clamp(21px, 3.4vw, 30px);
     font-weight: 400;
     line-height: 1;
   }
@@ -214,8 +216,8 @@
     position: static;
     grid-row: 2;
     display: block !important;
-    width: clamp(26px, 4.2vw, 37px);
-    height: clamp(26px, 4.2vw, 37px);
+    width: clamp(31px, 4.8vw, 42px);
+    height: clamp(31px, 4.8vw, 42px);
     margin-top: clamp(8px, 2dvh, 13px);
     border: 1px solid rgba(255,255,255,.20);
     border-radius: 7px;
