@@ -1,0 +1,119 @@
+/* Why Have a Website — phone landscape Story Flow fit.
+   Uses the approved portrait treatment in short mobile landscape viewports. */
+
+@media (orientation: landscape) and (max-width: 1100px) and (max-height: 700px) {
+  body.whywebsite-page .whywebsite-mobile-story {
+    min-height: 100svh;
+    padding: 10px;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-inner {
+    min-height: calc(100svh - 20px);
+    padding:
+      max(68px, calc(env(safe-area-inset-top) + 60px))
+      max(24px, calc(env(safe-area-inset-right) + 20px))
+      max(18px, calc(env(safe-area-inset-bottom) + 14px))
+      max(24px, calc(env(safe-area-inset-left) + 20px));
+    overflow: visible;
+  }
+
+  body.whywebsite-page .why-foundry-wordmark {
+    top: max(24px, calc(env(safe-area-inset-top) + 16px)) !important;
+    left: max(28px, calc(env(safe-area-inset-left) + 22px)) !important;
+  }
+
+  body.whywebsite-page .why-foundry-wordmark::after {
+    font-size: 11px;
+    letter-spacing: 3.4px;
+  }
+
+  body.whywebsite-page .foundry-global-nav {
+    top: max(18px, calc(env(safe-area-inset-top) + 12px)) !important;
+    right: max(20px, calc(env(safe-area-inset-right) + 14px)) !important;
+    grid-template-columns: repeat(3, 42px) !important;
+    width: 126px !important;
+    height: 42px !important;
+  }
+
+  body.whywebsite-page .foundry-global-control,
+  body.whywebsite-page .foundry-global-menu {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-story h1 {
+    font-size: clamp(2.35rem, 6vw, 3.35rem);
+    line-height: .92;
+  }
+
+  body.whywebsite-page .whywebsite-copper-rule {
+    width: 52px;
+    height: 2px;
+    margin: 10px 0;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-intro {
+    margin-bottom: 12px;
+    font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+    line-height: 1.12;
+  }
+
+  body.whywebsite-page .whywebsite-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 24px;
+    margin-bottom: 12px;
+  }
+
+  body.whywebsite-page .whywebsite-steps::before {
+    display: none;
+  }
+
+  body.whywebsite-page .whywebsite-steps li {
+    grid-template-columns: 36px 1fr;
+    gap: 12px;
+    min-height: 36px;
+  }
+
+  body.whywebsite-page .whywebsite-steps span {
+    width: 36px;
+    height: 36px;
+    font-size: .95rem;
+  }
+
+  body.whywebsite-page .whywebsite-steps p {
+    font-size: clamp(.98rem, 2.2vw, 1.18rem);
+    line-height: 1.06;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-value {
+    max-width: 760px;
+    margin-bottom: 12px;
+    font-size: clamp(.78rem, 1.8vw, .94rem);
+    line-height: 1.32;
+  }
+
+  body.whywebsite-page .whywebsite-value-line {
+    white-space: normal;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-pill {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 64px;
+    max-width: 520px;
+    padding: 8px 14px 8px 10px;
+    border-radius: 15px;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-pill img {
+    width: 40px;
+    height: 40px;
+  }
+
+  body.whywebsite-page .whywebsite-mobile-pill p {
+    font-size: clamp(.85rem, 2vw, 1rem);
+    line-height: 1.18;
+  }
+}
