@@ -1,0 +1,316 @@
+/* =========================================================
+   THE FOUNDRY — BOARDROOM LANDSCAPE B
+   Approved mobile-landscape composition only.
+   Portrait and desktop remain untouched.
+   ========================================================= */
+
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    background: #080706;
+  }
+
+  body {
+    background-image:
+      linear-gradient(90deg,
+        rgba(5, 5, 5, .20) 0%,
+        rgba(5, 5, 5, .30) 38%,
+        rgba(5, 5, 5, .76) 56%,
+        rgba(5, 5, 5, .92) 100%),
+      url("../assets/images/boardroom.webp");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .page-shade {
+    background:
+      radial-gradient(circle at 30% 42%, rgba(188, 110, 43, .10), transparent 28%),
+      linear-gradient(90deg, rgba(0,0,0,.10), rgba(0,0,0,.38) 52%, rgba(0,0,0,.68));
+  }
+
+  .boardroom-mobile-wordmark {
+    position: fixed !important;
+    top: max(15px, calc(env(safe-area-inset-top) + 9px)) !important;
+    left: max(30px, calc(env(safe-area-inset-left) + 20px)) !important;
+    right: auto !important;
+    z-index: 10030 !important;
+    display: block !important;
+    width: auto !important;
+    margin: 0 !important;
+    color: #eee9e0 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(9px, 1.45vw, 12px) !important;
+    font-weight: 500 !important;
+    line-height: 1 !important;
+    letter-spacing: clamp(3px, .65vw, 5px) !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+  }
+
+  .boardroom {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(270px, 40%) minmax(0, 60%);
+    gap: 0;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    height: 100%;
+    padding:
+      max(58px, calc(env(safe-area-inset-top) + 48px))
+      clamp(20px, 3.2vw, 42px)
+      max(28px, calc(env(safe-area-inset-bottom) + 18px))
+      max(30px, calc(env(safe-area-inset-left) + 22px));
+  }
+
+  .eyebrow {
+    margin: 0 0 clamp(10px, 2.2dvh, 16px);
+    color: #d88a2d;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(7px, 1.05vw, 9px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: .27em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    max-width: 7.4ch;
+    margin: 0;
+    color: #f4eee6;
+    font-size: clamp(43px, 7.2vw, 66px);
+    font-weight: 400;
+    line-height: .88;
+    letter-spacing: -.045em;
+    text-shadow: 0 5px 22px rgba(0,0,0,.60);
+  }
+
+  .intro-rule {
+    width: 43px;
+    height: 2px;
+    margin: clamp(15px, 3dvh, 23px) 0 clamp(13px, 2.6dvh, 20px);
+    background: #d88a2d;
+    box-shadow: 0 0 12px rgba(216,138,45,.22);
+  }
+
+  .intro-copy {
+    max-width: 28ch;
+    color: rgba(244, 234, 220, .86);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(12px, 1.75vw, 15px);
+    line-height: 1.45;
+    text-shadow: 0 2px 10px rgba(0,0,0,.68);
+  }
+
+  .intro-copy p {
+    display: none !important;
+    margin: 0;
+  }
+
+  .intro-copy p:first-child {
+    display: block !important;
+  }
+
+  .boards {
+    position: relative;
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(6px, .9vw, 11px);
+    width: auto;
+    max-width: none;
+    height: 100%;
+    min-height: 0;
+    padding:
+      max(64px, calc(env(safe-area-inset-top) + 54px))
+      max(18px, calc(env(safe-area-inset-right) + 12px))
+      max(22px, calc(env(safe-area-inset-bottom) + 14px))
+      clamp(8px, 1.4vw, 16px);
+    transform: none;
+  }
+
+  .boards::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(203,145,82,.18) 22%, rgba(203,145,82,.18) 78%, transparent);
+  }
+
+  .board-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    align-items: start;
+    justify-items: center;
+    gap: 0;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    min-height: 0;
+    padding: clamp(12px, 2.6dvh, 18px) 5px clamp(10px, 2.2dvh, 16px);
+    overflow: hidden;
+    border: 1px solid rgba(210, 169, 116, .30);
+    border-radius: 7px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.025), transparent 18%),
+      rgba(9, 9, 8, .64);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.035),
+      0 10px 28px rgba(0,0,0,.24);
+    text-decoration: none;
+    transform: none;
+  }
+
+  .board-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(216,138,45,.018), transparent 26%, transparent 74%, rgba(216,138,45,.018));
+  }
+
+  .board-card::after,
+  .glass-layer,
+  .board-description,
+  .board-main strong {
+    display: none !important;
+  }
+
+  .board-number {
+    position: static;
+    grid-row: 1;
+    align-self: auto;
+    justify-self: center;
+    padding: 0;
+    color: rgba(236, 226, 214, .68);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(19px, 3.2vw, 28px);
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .board-icon {
+    position: static;
+    grid-row: 2;
+    display: block !important;
+    width: clamp(26px, 4.2vw, 37px);
+    height: clamp(26px, 4.2vw, 37px);
+    margin-top: clamp(8px, 2dvh, 13px);
+    border: 1px solid rgba(255,255,255,.20);
+    border-radius: 7px;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.16),
+      inset 0 -2px 0 rgba(0,0,0,.34),
+      0 5px 8px rgba(0,0,0,.34);
+  }
+
+  .board-card:nth-child(1) .board-icon {
+    background: linear-gradient(145deg, #414141, #262626);
+  }
+
+  .board-card:nth-child(2) .board-icon {
+    background: linear-gradient(145deg, #fffdf5, #e8e2d6);
+  }
+
+  .board-card:nth-child(3) .board-icon {
+    background: linear-gradient(145deg, #b4aaa0, #77716b);
+  }
+
+  .board-card:nth-child(4) .board-icon {
+    background: linear-gradient(145deg, #c77c42, #8f4b24);
+  }
+
+  .board-main {
+    position: static;
+    grid-row: 3;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5px 0;
+  }
+
+  .board-label {
+    display: block;
+    margin: 0;
+    color: rgba(238, 231, 222, .72);
+    font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+    font-size: clamp(10px, 1.55vw, 14px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .20em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .board-card:nth-child(4) {
+    border-color: rgba(216, 138, 45, .54);
+    background:
+      linear-gradient(180deg, rgba(173, 104, 41, .055), transparent 28%),
+      rgba(11, 12, 9, .72);
+  }
+
+  .board-card:nth-child(4) .board-number,
+  .board-card:nth-child(4) .board-label {
+    color: #c7803f;
+  }
+
+  .board-arrow {
+    position: static;
+    grid-row: 4;
+    align-self: end;
+    justify-self: center;
+    color: #d88a2d;
+    font-size: clamp(17px, 2.7vw, 23px);
+    line-height: 1;
+    transform: none;
+  }
+
+  .board-card:hover,
+  .board-card:focus-visible {
+    border-color: rgba(216, 138, 45, .74);
+    background-color: rgba(20, 16, 12, .78);
+    transform: translateY(-2px);
+  }
+
+  .board-card:focus-visible {
+    outline: 1px solid rgba(218, 153, 82, .90);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boardroom,
+  .boardroom-mobile-wordmark,
+  .board-card {
+    animation: none !important;
+    transition: none !important;
+  }
+}
