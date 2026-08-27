@@ -62,16 +62,16 @@ body.whywebsite-page .why-foundry-wordmark {
   left: max(24px, calc(env(safe-area-inset-left) + 18px));
   color: #eee9e0;
   font-size: 0;
-  line-height: 1;
-  white-space: nowrap;
+  line-height: 1.28;
+  white-space: pre-line;
 }
 
 body.whywebsite-page .why-foundry-wordmark::after {
-  content: "WHY HAVE A WEBSITE?";
+  content: "WHY HAVE A\A WEBSITE?";
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(11px, 3.15vw, 14px);
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.28;
   letter-spacing: clamp(3.5px, 1.2vw, 5px);
 }
 
