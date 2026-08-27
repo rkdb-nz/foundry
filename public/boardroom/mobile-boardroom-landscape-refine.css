@@ -1,0 +1,56 @@
+/* Boardroom landscape refinement: combine number + colour swatch, remove arrows,
+   and give the vertical board names more room and presence. */
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  .board-card {
+    grid-template-rows: auto 1fr;
+    padding-top: clamp(12px, 2.4dvh, 16px);
+    padding-bottom: clamp(12px, 2.4dvh, 16px);
+  }
+
+  .board-number {
+    position: absolute;
+    top: clamp(20px, 4.2dvh, 26px);
+    left: 50%;
+    z-index: 3;
+    width: clamp(31px, 4.8vw, 42px);
+    height: clamp(31px, 4.8vw, 42px);
+    display: grid;
+    place-items: center;
+    padding: 0;
+    margin: 0;
+    transform: translateX(-50%);
+    color: rgba(244, 238, 230, .90);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(15px, 2.2vw, 20px);
+    font-weight: 400;
+    line-height: 1;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, .82);
+    pointer-events: none;
+  }
+
+  .board-icon {
+    grid-row: 1;
+    width: clamp(42px, 5.6vw, 50px);
+    height: clamp(42px, 5.6vw, 50px);
+    margin-top: 0;
+  }
+
+  .board-main {
+    grid-row: 2;
+    align-self: stretch;
+    padding: clamp(8px, 1.8dvh, 12px) 0 0;
+  }
+
+  .board-label {
+    font-size: clamp(12px, 1.8vw, 16px);
+    letter-spacing: .22em;
+  }
+
+  .board-arrow {
+    display: none !important;
+  }
+
+  .board-card:nth-child(4) .board-number {
+    color: #f0c79c;
+  }
+}
