@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../css/foundry-info.css">
   <link rel="stylesheet" href="../css/foundry-global-nav.css">
-  <link rel="stylesheet" href="../css/foundry-info-mobile-nav.css?v=about-mobile-nav-v4" media="(max-width: 700px)">
+  <link rel="stylesheet" href="../css/foundry-info-mobile-nav.css?v=about-mobile-nav-v5" media="(max-width: 700px)">
 </head>
 <body class="foundry-info-page">
   <header class="foundry-about-header">
@@ -67,7 +67,7 @@
     (() => {
       const navScript = document.createElement('script');
       navScript.src = window.matchMedia('(max-width: 700px)').matches
-        ? '../js/foundry-global-nav.js?v=about-mobile-nav-v4'
+        ? '../js/foundry-global-nav.js?v=about-mobile-nav-v5'
         : '../js/foundry-global-nav.js';
       navScript.dataset.root = '../';
       document.body.append(navScript);
