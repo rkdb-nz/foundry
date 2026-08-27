@@ -1,0 +1,14 @@
+/* Boardroom narrow portrait fit: keep the approved two-column composition,
+   but give the fixed top-right navigation clear breathing room. */
+@media (min-width: 701px) and (max-width: 900px) and (orientation: portrait) {
+  .boards {
+    transform: translateY(72px) !important;
+    gap: 12px !important;
+  }
+
+  .board-card {
+    min-height: 136px !important;
+    padding-top: 17px !important;
+    padding-bottom: 17px !important;
+  }
+}
