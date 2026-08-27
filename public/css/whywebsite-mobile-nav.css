@@ -234,9 +234,9 @@ body.whywebsite-page .whywebsite-mobile-value {
 
 body.whywebsite-page .whywebsite-mobile-pill {
   display: grid;
-  grid-template-columns: 66px 1fr;
+  grid-template-columns: 54px 1fr;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   min-height: 96px;
   padding: 14px 20px 14px 14px;
   border: 2px solid rgba(241,176,104,.85);
@@ -254,8 +254,8 @@ body.whywebsite-page .whywebsite-mobile-pill {
 
 body.whywebsite-page .whywebsite-mobile-pill img {
   display: block;
-  width: 62px;
-  height: 62px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   filter: sepia(1) saturate(.45) brightness(1.8) contrast(.82);
   opacity: .92;
@@ -265,9 +265,9 @@ body.whywebsite-page .whywebsite-mobile-pill p {
   margin: 0;
   color: #fff6e9;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.1rem, 4.6vw, 1.5rem);
+  font-size: clamp(1rem, 4vw, 1.25rem);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.28;
 }
 
 @media (max-width: 390px) {
@@ -289,13 +289,13 @@ body.whywebsite-page .whywebsite-mobile-pill p {
   }
 
   body.whywebsite-page .whywebsite-mobile-pill {
-    grid-template-columns: 56px 1fr;
+    grid-template-columns: 50px 1fr;
     gap: 12px;
   }
 
   body.whywebsite-page .whywebsite-mobile-pill img {
-    width: 54px;
-    height: 54px;
+    width: 48px;
+    height: 48px;
   }
 }
 
