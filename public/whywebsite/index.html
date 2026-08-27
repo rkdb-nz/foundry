@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../css/foundry-global-nav.css">
   <style>.whywebsite-mobile-story{display:none}</style>
-  <link rel="stylesheet" href="../css/whywebsite-mobile-nav.css?v=why-story-flow-v4" media="(max-width: 700px)">
-  <link rel="stylesheet" href="../css/whywebsite-mobile-fit.css?v=why-story-fit-v2" media="(max-width: 700px)">
+  <link rel="stylesheet" href="../css/whywebsite-mobile-nav.css?v=why-story-flow-v4" media="(max-width: 700px), (orientation: landscape) and (max-width: 1100px) and (max-height: 700px)">
+  <link rel="stylesheet" href="../css/whywebsite-mobile-fit.css?v=why-story-fit-v2" media="(max-width: 700px), (orientation: landscape) and (max-width: 1100px) and (max-height: 700px)">
+  <link rel="stylesheet" href="../css/whywebsite-landscape-fit.css?v=why-landscape-story-v1" media="(orientation: landscape) and (max-width: 1100px) and (max-height: 700px)">
 </head>
 
 <body class="whywebsite-page">
@@ -89,7 +90,10 @@
   <script>
     (() => {
       const navScript = document.createElement('script');
-      navScript.src = window.matchMedia('(max-width: 700px)').matches
+      const mobileStory = window.matchMedia(
+        '(max-width: 700px), (orientation: landscape) and (max-width: 1100px) and (max-height: 700px)'
+      ).matches;
+      navScript.src = mobileStory
         ? '../js/foundry-global-nav.js?v=why-story-flow-v4'
         : '../js/foundry-global-nav.js';
       navScript.dataset.root = '../';
