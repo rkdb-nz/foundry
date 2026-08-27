@@ -124,24 +124,31 @@ body.explore-open .explore-choice:first-child {
 
 /* =========================================================
    HOME -> LET ME CHOOSE TRUE CROSSFADE
-   Both states are painted for the entire handover. Home fades out while
-   Explore fades in concurrently, so no frame can expose the body background.
+   Explore fades in over its own resolved background. The outgoing V2 state is
+   removed at the handover boundary because its state-scoped selectors release
+   as soon as explore-open is applied; allowing it to continue painting would
+   expose the legacy landing fallback underneath.
    ========================================================= */
-
-@keyframes foundryExploreHomeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
 
 @keyframes foundryExploreIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
+/* Never permit the legacy landing artwork or legacy Home presentation to paint
+   during this handover. Explore's background is the only surface underneath. */
+body.homepage.explore-open.explore-crossfade .landing {
+    background: linear-gradient(180deg, #111210 0%, #090a09 100%) !important;
+}
+
+body.homepage.explore-open.explore-crossfade .brand,
+body.homepage.explore-open.explore-crossfade .fm-home-v2,
 body.homepage.explore-open.explore-crossfade #introPanel.is-active {
-    visibility: visible !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
     pointer-events: none !important;
-    animation: foundryExploreHomeOut 520ms ease-in-out both !important;
+    animation: none !important;
+    transition: none !important;
 }
 
 body.homepage.explore-open.explore-crossfade #exploreScreen {
@@ -167,7 +174,7 @@ body.homepage.explore-open.explore-crossfade-complete #exploreScreen {
 /* =========================================================
    UNIFORM LANDING-STATE TRANSITION
    Other landing-state routes keep the approved sequential fade cadence.
-   Home -> Let Me Choose bypasses this and uses the true crossfade above.
+   Home -> Let Me Choose bypasses this and uses the Explore handover above.
    ========================================================= */
 
 @keyframes foundryStateFadeOut {
@@ -205,11 +212,6 @@ body.homepage.state-fade-out .explore-choices {
     body.homepage.state-fade-out.explore-open #exploreScreen,
     body.homepage.state-fade-in #introPanel.is-active,
     body.homepage.state-fade-in #sortPanel.is-active,
-    body.homepage.state-fade-in.explore-open #exploreScreen {
-        animation: none !important;
-    }
-
-    body.homepage.explore-open.explore-crossfade #introPanel.is-active,
     body.homepage.explore-open.explore-crossfade #exploreScreen {
         animation: none !important;
     }
