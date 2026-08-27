@@ -217,6 +217,7 @@ body.homepage.state-fade-out.explore-open #exploreScreen {
 }
 
 body.homepage.state-fade-in #introPanel.is-active,
+body.homepage.state-fade-in .fm-home-v2,
 body.homepage.state-fade-in #sortPanel.is-active,
 body.homepage.state-fade-in.explore-open #exploreScreen {
     animation: foundryStateFadeIn 520ms ease-out both !important;
