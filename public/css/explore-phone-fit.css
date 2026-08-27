@@ -157,6 +157,15 @@ body.homepage.explore-open.explore-crossfade .landing::after {
     transition: opacity 520ms ease-in-out !important;
 }
 
+/* Once the overlap finishes, pin Explore at its resolved state instead of
+   allowing the older 1100ms Explore entrance animation to start again. */
+body.homepage.explore-open.explore-crossfade-complete #exploreScreen {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    animation: none !important;
+}
+
 /* =========================================================
    UNIFORM LANDING-STATE TRANSITION
    Other landing-state routes keep the approved sequential fade cadence.
