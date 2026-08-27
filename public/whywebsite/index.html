@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../css/foundry-global-nav.css">
   <style>.whywebsite-mobile-story{display:none}</style>
-  <link rel="stylesheet" href="../css/whywebsite-mobile-nav.css?v=why-story-flow-v1" media="(max-width: 700px)">
+  <link rel="stylesheet" href="../css/whywebsite-mobile-nav.css?v=why-story-flow-v2" media="(max-width: 700px)">
 </head>
 
 <body class="whywebsite-page">
@@ -91,7 +91,7 @@
     (() => {
       const navScript = document.createElement('script');
       navScript.src = window.matchMedia('(max-width: 700px)').matches
-        ? '../js/foundry-global-nav.js?v=why-story-flow-v1'
+        ? '../js/foundry-global-nav.js?v=why-story-flow-v2'
         : '../js/foundry-global-nav.js';
       navScript.dataset.root = '../';
       document.body.append(navScript);
