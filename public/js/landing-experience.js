@@ -78,6 +78,24 @@ function activateExploreScreen() {
     exploreScreen?.setAttribute('aria-hidden', 'false');
 }
 
+function afterCurtainFade(duration, callback) {
+    let finished = false;
+
+    const finish = event => {
+        if (finished || (event && (event.target !== landingStateBlackout || event.propertyName !== 'opacity'))) {
+            return;
+        }
+
+        finished = true;
+        landingStateBlackout.removeEventListener('transitionend', finish);
+        window.clearTimeout(fallback);
+        callback();
+    };
+
+    const fallback = window.setTimeout(() => finish(), duration + 150);
+    landingStateBlackout.addEventListener('transitionend', finish);
+}
+
 function transitionTo(activateState) {
     if (isTransitioning) {
         return;
@@ -100,7 +118,7 @@ function transitionTo(activateState) {
     void landingStateBlackout.offsetWidth;
     landingStateBlackout.classList.add('is-fading-to-black');
 
-    window.setTimeout(() => {
+    afterCurtainFade(STATE_FADE_OUT_MS, () => {
         landingStateBlackout.className = 'landing-state-blackout is-black';
         activateState();
 
@@ -108,13 +126,13 @@ function transitionTo(activateState) {
             requestAnimationFrame(() => {
                 landingStateBlackout.className = 'landing-state-blackout is-fading-from-black';
 
-                window.setTimeout(() => {
+                afterCurtainFade(STATE_FADE_IN_MS, () => {
                     landingStateBlackout.className = 'landing-state-blackout';
                     isTransitioning = false;
-                }, STATE_FADE_IN_MS);
+                });
             });
         });
-    }, STATE_FADE_OUT_MS);
+    });
 }
 
 function transitionHomeToExplore() {
