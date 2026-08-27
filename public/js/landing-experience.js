@@ -25,7 +25,7 @@ function activateSortPanel({ preserveForge = false } = {}) {
     }
 
     document.documentElement.classList.remove('restore-explore');
-    document.body.classList.remove('explore-open');
+    document.body.classList.remove('explore-open', 'explore-preload');
     document.body.classList.add('sort-open');
 
     exploreScreen?.setAttribute('aria-hidden', 'true');
@@ -40,7 +40,7 @@ function activateSortPanel({ preserveForge = false } = {}) {
 function activateIntroPanel() {
     clearLegacyTransitionClasses();
     document.documentElement.classList.remove('restore-explore', 'restore-sort');
-    document.body.classList.remove('explore-open', 'sort-open');
+    document.body.classList.remove('explore-open', 'explore-preload', 'sort-open');
 
     sortPanel.classList.remove('is-active');
     sortPanel.setAttribute('aria-hidden', 'true');
@@ -56,6 +56,7 @@ function activateExploreScreen() {
     document.documentElement.classList.remove('restore-sort');
     document.body.classList.remove('sort-open');
     document.body.classList.add('explore-open');
+    document.body.classList.remove('explore-preload');
 
     introPanel.classList.remove('is-active');
     introPanel.setAttribute('aria-hidden', 'true');
@@ -164,6 +165,9 @@ function showExploreScreen() {
         history.pushState({ foundryState: 'explore' }, '', '#explore');
     }
 
+    /* Start the Explore wallpaper underneath the outgoing state so the
+       transition never exposes the body's near-black fallback colour. */
+    document.body.classList.add('explore-preload');
     transitionTo(activateExploreScreen);
 }
 
