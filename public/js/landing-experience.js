@@ -5,11 +5,10 @@ const backButton = document.getElementById('backButton');
 const introPanel = document.getElementById('introPanel');
 const sortPanel = document.getElementById('sortPanel');
 const exploreScreen = document.getElementById('exploreScreen');
+const landingStateBlackout = document.getElementById('landingStateBlackout');
 
 const STATE_FADE_OUT_MS = 420;
 const STATE_FADE_IN_MS = 520;
-const EXPLORE_FADE_OUT_MS = STATE_FADE_OUT_MS;
-const EXPLORE_FADE_IN_MS = STATE_FADE_IN_MS;
 
 let isTransitioning = false;
 
@@ -91,63 +90,35 @@ function transitionTo(activateState) {
         return;
     }
 
+    if (!landingStateBlackout) {
+        activateState();
+        return;
+    }
+
     isTransitioning = true;
-    document.body.classList.remove('state-fade-in');
-    document.body.classList.add('state-fade-out');
+    landingStateBlackout.className = 'landing-state-blackout';
+    void landingStateBlackout.offsetWidth;
+    landingStateBlackout.classList.add('is-fading-to-black');
 
     window.setTimeout(() => {
+        landingStateBlackout.className = 'landing-state-blackout is-black';
         activateState();
-        document.body.classList.remove('state-fade-out');
-        document.body.classList.add('state-fade-in');
 
-        window.setTimeout(() => {
-            document.body.classList.remove('state-fade-in');
-            isTransitioning = false;
-        }, STATE_FADE_IN_MS);
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                landingStateBlackout.className = 'landing-state-blackout is-fading-from-black';
+
+                window.setTimeout(() => {
+                    landingStateBlackout.className = 'landing-state-blackout';
+                    isTransitioning = false;
+                }, STATE_FADE_IN_MS);
+            });
+        });
     }, STATE_FADE_OUT_MS);
 }
 
 function transitionHomeToExplore() {
-    if (isTransitioning) {
-        return;
-    }
-
-    if (prefersReducedMotion()) {
-        activateExploreScreen();
-        return;
-    }
-
-    isTransitioning = true;
-    clearLegacyTransitionClasses();
-    document.body.classList.remove(
-        'state-fade-out',
-        'state-fade-in',
-        'sort-open',
-        'explore-crossfade',
-        'explore-crossfade-complete'
-    );
-
-    /* Match the approved landing cadence: Home fades out first for 420ms.
-       The Explore surface is pre-painted underneath so neither the body nor
-       the legacy landing artwork can appear at the state swap. */
-    document.body.classList.add('explore-transitioning');
-    introPanel.setAttribute('aria-hidden', 'true');
-
-    window.setTimeout(() => {
-        introPanel.classList.remove('is-active');
-        sortPanel.classList.remove('is-active');
-        sortPanel.setAttribute('aria-hidden', 'true');
-
-        document.body.classList.remove('explore-transitioning');
-        document.body.classList.add('explore-open', 'explore-crossfade');
-        exploreScreen?.setAttribute('aria-hidden', 'false');
-
-        window.setTimeout(() => {
-            document.body.classList.remove('explore-crossfade');
-            document.body.classList.add('explore-crossfade-complete');
-            isTransitioning = false;
-        }, EXPLORE_FADE_IN_MS);
-    }, EXPLORE_FADE_OUT_MS);
+    transitionTo(activateExploreScreen);
 }
 
 function forgeHomeToSort() {
