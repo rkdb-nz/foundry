@@ -8,6 +8,7 @@ const exploreScreen = document.getElementById('exploreScreen');
 
 const STATE_FADE_OUT_MS = 420;
 const STATE_FADE_IN_MS = 520;
+const EXPLORE_CROSSFADE_MS = 520;
 
 let isTransitioning = false;
 
@@ -20,7 +21,7 @@ function clearLegacyTransitionClasses() {
 }
 
 function clearExploreTransitionClass() {
-    document.body.classList.remove('explore-transitioning');
+    document.body.classList.remove('explore-transitioning', 'explore-crossfade');
 }
 
 function activateSortPanel({ preserveForge = false } = {}) {
@@ -101,6 +102,35 @@ function transitionTo(activateState) {
     }, STATE_FADE_OUT_MS);
 }
 
+function crossfadeHomeToExplore() {
+    if (isTransitioning) {
+        return;
+    }
+
+    if (prefersReducedMotion()) {
+        activateExploreScreen();
+        return;
+    }
+
+    isTransitioning = true;
+    clearLegacyTransitionClasses();
+    document.body.classList.remove('state-fade-out', 'state-fade-in', 'sort-open', 'explore-transitioning');
+
+    /* Keep Home alive while Explore becomes visible. CSS crossfades both
+       states simultaneously, so there is never a zero-content frame. */
+    document.body.classList.add('explore-open', 'explore-crossfade');
+    exploreScreen?.setAttribute('aria-hidden', 'false');
+    introPanel.setAttribute('aria-hidden', 'true');
+
+    window.setTimeout(() => {
+        introPanel.classList.remove('is-active');
+        sortPanel.classList.remove('is-active');
+        sortPanel.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('explore-crossfade');
+        isTransitioning = false;
+    }, EXPLORE_CROSSFADE_MS);
+}
+
 function forgeHomeToSort() {
     if (isTransitioning) {
         return;
@@ -171,11 +201,15 @@ function showExploreScreen() {
         history.pushState({ foundryState: 'explore' }, '', '#explore');
     }
 
-    if (!prefersReducedMotion()) {
-        document.body.classList.add('explore-transitioning');
-    }
+    const comingDirectlyFromHome =
+        introPanel.classList.contains('is-active') &&
+        !document.body.classList.contains('sort-open');
 
-    transitionTo(activateExploreScreen);
+    if (comingDirectlyFromHome) {
+        crossfadeHomeToExplore();
+    } else {
+        transitionTo(activateExploreScreen);
+    }
 }
 
 sortButton?.addEventListener('click', showSortPanel);
