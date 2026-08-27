@@ -8,7 +8,8 @@ const exploreScreen = document.getElementById('exploreScreen');
 
 const STATE_FADE_OUT_MS = 420;
 const STATE_FADE_IN_MS = 520;
-const EXPLORE_CROSSFADE_MS = 520;
+const EXPLORE_FADE_OUT_MS = STATE_FADE_OUT_MS;
+const EXPLORE_FADE_IN_MS = STATE_FADE_IN_MS;
 
 let isTransitioning = false;
 
@@ -21,7 +22,11 @@ function clearLegacyTransitionClasses() {
 }
 
 function clearExploreTransitionClass() {
-    document.body.classList.remove('explore-transitioning', 'explore-crossfade', 'explore-crossfade-complete');
+    document.body.classList.remove(
+        'explore-transitioning',
+        'explore-crossfade',
+        'explore-crossfade-complete'
+    );
 }
 
 function activateSortPanel({ preserveForge = false } = {}) {
@@ -102,7 +107,7 @@ function transitionTo(activateState) {
     }, STATE_FADE_OUT_MS);
 }
 
-function crossfadeHomeToExplore() {
+function transitionHomeToExplore() {
     if (isTransitioning) {
         return;
     }
@@ -118,24 +123,31 @@ function crossfadeHomeToExplore() {
         'state-fade-out',
         'state-fade-in',
         'sort-open',
-        'explore-transitioning',
+        'explore-crossfade',
         'explore-crossfade-complete'
     );
 
-    /* Keep Home alive while Explore becomes visible. CSS crossfades both
-       states simultaneously, so there is never a zero-content frame. */
-    document.body.classList.add('explore-open', 'explore-crossfade');
-    exploreScreen?.setAttribute('aria-hidden', 'false');
+    /* Match the approved landing cadence: Home fades out first for 420ms.
+       The Explore surface is pre-painted underneath so neither the body nor
+       the legacy landing artwork can appear at the state swap. */
+    document.body.classList.add('explore-transitioning');
     introPanel.setAttribute('aria-hidden', 'true');
 
     window.setTimeout(() => {
         introPanel.classList.remove('is-active');
         sortPanel.classList.remove('is-active');
         sortPanel.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('explore-crossfade');
-        document.body.classList.add('explore-crossfade-complete');
-        isTransitioning = false;
-    }, EXPLORE_CROSSFADE_MS);
+
+        document.body.classList.remove('explore-transitioning');
+        document.body.classList.add('explore-open', 'explore-crossfade');
+        exploreScreen?.setAttribute('aria-hidden', 'false');
+
+        window.setTimeout(() => {
+            document.body.classList.remove('explore-crossfade');
+            document.body.classList.add('explore-crossfade-complete');
+            isTransitioning = false;
+        }, EXPLORE_FADE_IN_MS);
+    }, EXPLORE_FADE_OUT_MS);
 }
 
 function forgeHomeToSort() {
@@ -213,7 +225,7 @@ function showExploreScreen() {
         !document.body.classList.contains('sort-open');
 
     if (comingDirectlyFromHome) {
-        crossfadeHomeToExplore();
+        transitionHomeToExplore();
     } else {
         transitionTo(activateExploreScreen);
     }
