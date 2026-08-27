@@ -44,6 +44,14 @@
     transition: opacity 520ms ease-out;
 }
 
+/* The old bare-wall layer used a 1.2s opacity transition. On Explore -> Home
+   it outlived the blackout and exposed barebackground.webp. The dedicated
+   curtain now owns every landing-state fade, so this legacy surface must
+   resolve immediately while the viewport is still fully black. */
+body.homepage .landing::after {
+    transition: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .landing-state-blackout {
         transition: none !important;
