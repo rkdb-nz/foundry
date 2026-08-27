@@ -27,6 +27,7 @@ function clearExploreTransitionClass() {
         'explore-crossfade',
         'explore-crossfade-complete',
         'explore-returning',
+        'explore-home-prep',
         'explore-home-in'
     );
 }
@@ -128,6 +129,7 @@ function transitionHomeToExplore() {
         'explore-crossfade',
         'explore-crossfade-complete',
         'explore-returning',
+        'explore-home-prep',
         'explore-home-in'
     );
 
@@ -169,9 +171,14 @@ function transitionExploreToHome() {
         'state-fade-out',
         'state-fade-in',
         'explore-transitioning',
-        'explore-crossfade'
+        'explore-crossfade',
+        'explore-home-in'
     );
-    document.body.classList.add('explore-returning');
+
+    /* Pre-arm Home at zero opacity BEFORE Explore starts leaving. This class
+       stays in place across the state swap, so there is no browser paint where
+       the blueprint can appear by itself at full opacity. */
+    document.body.classList.add('explore-returning', 'explore-home-prep');
     exploreScreen?.setAttribute('aria-hidden', 'true');
 
     window.setTimeout(() => {
@@ -188,12 +195,19 @@ function transitionExploreToHome() {
         sortPanel.setAttribute('aria-hidden', 'true');
         introPanel.classList.add('is-active');
         introPanel.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('explore-home-in');
 
-        window.setTimeout(() => {
-            document.body.classList.remove('explore-home-in');
-            isTransitioning = false;
-        }, EXPLORE_FADE_IN_MS);
+        /* Let the zero-opacity Home state paint once, then begin the fade-in. */
+        window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+                document.body.classList.remove('explore-home-prep');
+                document.body.classList.add('explore-home-in');
+
+                window.setTimeout(() => {
+                    document.body.classList.remove('explore-home-in');
+                    isTransitioning = false;
+                }, EXPLORE_FADE_IN_MS);
+            });
+        });
     }, EXPLORE_FADE_OUT_MS);
 }
 
