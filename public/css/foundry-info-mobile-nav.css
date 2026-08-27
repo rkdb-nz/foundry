@@ -78,3 +78,8 @@ body.foundry-info-page .foundry-about-brand span {
 body.foundry-info-page .foundry-about-brand::after {
   content: "ABOUT THE\A FOUNDRY";
 }
+
+/* The page name now lives only in the top-left mobile header. */
+body.foundry-info-page .foundry-about-eyebrow {
+  display: none !important;
+}
