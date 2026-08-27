@@ -7,12 +7,16 @@
   <meta name="description" content="The Foundry is a Tauranga web design studio shaped by one idea: simplicity, done well.">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../css/foundry-info.css">
-  <link rel="stylesheet" href="../css/foundry-global-nav.css?v=standard-nav-v1">
+  <link rel="stylesheet" href="../css/foundry-global-nav.css">
+  <link rel="stylesheet" href="../css/foundry-global-nav.css?v=about-mobile-nav-v1" media="(max-width: 700px)">
 </head>
 <body class="foundry-info-page">
   <header class="foundry-about-header">
     <a class="foundry-about-brand" href="../" aria-label="The Foundry home">
       <span>THE</span><span>FOUNDRY</span>
+    </a>
+    <a class="foundry-about-menu" href="../#explore" aria-label="Back to Explore">
+      <span></span><span></span><span></span>
     </a>
   </header>
 
@@ -54,10 +58,20 @@
           </div>
         </section>
 
+        <a class="foundry-about-back" href="../#explore"><span aria-hidden="true">←</span> Back</a>
       </div>
     </section>
   </main>
   <script src="../script.js"></script>
-  <script src="../js/foundry-global-nav.js?v=standard-nav-v1" data-root="../"></script>
+  <script>
+    (() => {
+      const navScript = document.createElement('script');
+      navScript.src = window.matchMedia('(max-width: 700px)').matches
+        ? '../js/foundry-global-nav.js?v=about-mobile-nav-v1'
+        : '../js/foundry-global-nav.js';
+      navScript.dataset.root = '../';
+      document.body.append(navScript);
+    })();
+  </script>
 </body>
 </html>
