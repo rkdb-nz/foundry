@@ -19,11 +19,16 @@ function clearLegacyTransitionClasses() {
     document.body.classList.remove('is-forging', 'is-returning');
 }
 
+function clearExploreTransitionClass() {
+    document.body.classList.remove('explore-transitioning');
+}
+
 function activateSortPanel({ preserveForge = false } = {}) {
     if (!preserveForge) {
         clearLegacyTransitionClasses();
     }
 
+    clearExploreTransitionClass();
     document.documentElement.classList.remove('restore-explore');
     document.body.classList.remove('explore-open');
     document.body.classList.add('sort-open');
@@ -39,6 +44,7 @@ function activateSortPanel({ preserveForge = false } = {}) {
 
 function activateIntroPanel() {
     clearLegacyTransitionClasses();
+    clearExploreTransitionClass();
     document.documentElement.classList.remove('restore-explore', 'restore-sort');
     document.body.classList.remove('explore-open', 'sort-open');
 
@@ -56,6 +62,7 @@ function activateExploreScreen() {
     document.documentElement.classList.remove('restore-sort');
     document.body.classList.remove('sort-open');
     document.body.classList.add('explore-open');
+    clearExploreTransitionClass();
 
     introPanel.classList.remove('is-active');
     introPanel.setAttribute('aria-hidden', 'true');
@@ -162,6 +169,10 @@ function showExploreScreen() {
 
     if (window.location.hash !== '#explore') {
         history.pushState({ foundryState: 'explore' }, '', '#explore');
+    }
+
+    if (!prefersReducedMotion()) {
+        document.body.classList.add('explore-transitioning');
     }
 
     transitionTo(activateExploreScreen);
