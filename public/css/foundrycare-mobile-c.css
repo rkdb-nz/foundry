@@ -1,0 +1,316 @@
+/* FOUNDRYCARE — portrait/mobile Concept C preview.
+   Desktop is intentionally untouched. */
+
+@media (max-width: 1050px) {
+  html,
+  body.foundrycare-page {
+    min-height: 100%;
+    overflow-x: hidden;
+    background: #ead9c2;
+  }
+
+  body.foundrycare-page {
+    --fc-mobile-ink: #2b1c12;
+    --fc-mobile-body: #473426;
+    --fc-mobile-bronze: #a86129;
+    --fc-mobile-line: rgba(79, 50, 31, .17);
+  }
+
+  .foundrycare-main {
+    min-height: 100%;
+  }
+
+  .foundrycare-scene {
+    min-height: 100svh;
+    background-image: url("../assets/backgrounds/foundrycare.webp") !important;
+    background-position: center top !important;
+    background-size: cover !important;
+    background-attachment: scroll !important;
+  }
+
+  .foundrycare-scene::before {
+    display: none !important;
+  }
+
+  /* Keep only the normal Foundry mobile header/navigation. */
+  .foundrycare-header {
+    z-index: 10010;
+    padding: max(8px, env(safe-area-inset-top)) 18px 0 !important;
+  }
+
+  .foundrycare-brand {
+    position: relative;
+    z-index: 10021;
+    color: #2b1c12 !important;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(15px, 4.1vw, 19px);
+    font-weight: 400;
+    line-height: .88;
+    letter-spacing: .11em;
+  }
+
+  .foundrycare-menu {
+    display: none !important;
+  }
+
+  /* Match the established 3-button mobile Foundry nav. */
+  body.foundrycare-page .foundry-global-nav {
+    top: max(8px, env(safe-area-inset-top)) !important;
+    right: max(10px, env(safe-area-inset-right)) !important;
+    left: auto !important;
+    z-index: 10020 !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 48px) !important;
+    width: 144px !important;
+    height: 48px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    clip-path: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  body.foundrycare-page .foundry-global-nav::before,
+  body.foundrycare-page .foundry-global-control + .foundry-global-control::before {
+    display: none !important;
+  }
+
+  body.foundrycare-page .foundry-global-control,
+  body.foundrycare-page .foundry-global-menu {
+    display: grid !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  body.foundrycare-page .foundry-global-control + .foundry-global-control {
+    border: 0 !important;
+  }
+
+  body.foundrycare-page .foundry-global-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+  }
+
+  body.foundrycare-page .foundry-global-menu span {
+    display: block !important;
+    width: 28px !important;
+    height: 2px !important;
+    border: 0 !important;
+    background: #92552f !important;
+    box-shadow: none !important;
+  }
+
+  body.foundrycare-page .foundry-global-back svg {
+    stroke: #75411f !important;
+  }
+
+  body.foundrycare-page .foundry-global-home svg {
+    filter: brightness(.7) saturate(1.05) contrast(1.08) drop-shadow(0 2px 2px rgba(0,0,0,.5)) !important;
+  }
+
+  .foundrycare-content {
+    position: relative !important;
+    inset: auto !important;
+    width: min(100% - 34px, 620px) !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+    padding: 94px 0 34px !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    color: var(--fc-mobile-ink) !important;
+  }
+
+  /* Concept C acrylic FoundryCare plaque, flat: no shadow effects. */
+  .foundrycare-content::before {
+    content: "FOUNDRYCARE" !important;
+    position: relative !important;
+    inset: auto !important;
+    width: min(100%, 390px) !important;
+    min-height: 84px !important;
+    margin: 0 0 22px !important;
+    padding: 0 18px 0 82px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    background-color: rgba(255, 249, 239, .26) !important;
+    background-image: url("../assets/brand/anvil-mark.svg") !important;
+    background-repeat: no-repeat !important;
+    background-position: 22px center !important;
+    background-size: 46px auto !important;
+    border: 1px solid rgba(79, 50, 31, .22) !important;
+    color: var(--fc-mobile-ink) !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(1.25rem, 5.8vw, 1.75rem) !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: .035em !important;
+    text-align: left !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .foundrycare-kicker {
+    margin: 0 0 9px !important;
+    color: var(--fc-mobile-bronze) !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: .67rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: .29em !important;
+  }
+
+  .foundrycare-content h1 {
+    margin: 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    color: var(--fc-mobile-ink) !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(3rem, 13.6vw, 4.65rem) !important;
+    font-weight: 400 !important;
+    line-height: .92 !important;
+    letter-spacing: -.055em !important;
+  }
+
+  .foundrycare-intro {
+    max-width: 540px !important;
+    margin: 18px 0 0 !important;
+    color: var(--fc-mobile-ink) !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(.94rem, 3.7vw, 1.07rem) !important;
+    line-height: 1.42 !important;
+  }
+
+  .foundrycare-intro strong {
+    color: var(--fc-mobile-ink) !important;
+    font-weight: 700 !important;
+  }
+
+  .foundrycare-promise {
+    margin: 10px 0 17px !important;
+    color: var(--fc-mobile-ink) !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: .67rem !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    letter-spacing: .04em !important;
+  }
+
+  .foundrycare-services {
+    width: 100% !important;
+    max-width: none !important;
+    display: block !important;
+    border: 1px solid var(--fc-mobile-line) !important;
+    background: rgba(255, 249, 239, .16) !important;
+  }
+
+  .foundrycare-services article,
+  .foundrycare-services article:nth-child(even) {
+    position: relative !important;
+    min-height: 82px !important;
+    padding: 13px 18px 13px 70px !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--fc-mobile-line) !important;
+    background: transparent !important;
+  }
+
+  .foundrycare-services article:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .foundrycare-services article::before,
+  .foundrycare-services article::after {
+    display: none !important;
+  }
+
+  .foundrycare-service-icon {
+    position: absolute !important;
+    left: 16px !important;
+    top: 50% !important;
+    width: 36px !important;
+    height: 36px !important;
+    margin: 0 !important;
+    transform: translateY(-50%) !important;
+    color: var(--fc-mobile-bronze) !important;
+  }
+
+  .foundrycare-service-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 1.55 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+  }
+
+  .foundrycare-services h2 {
+    min-height: 0 !important;
+    margin: 0 0 4px !important;
+    color: var(--fc-mobile-ink) !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(1rem, 4vw, 1.12rem) !important;
+    font-weight: 400 !important;
+    line-height: 1.1 !important;
+    text-align: left !important;
+  }
+
+  .foundrycare-services h2 br {
+    display: none !important;
+  }
+
+  .foundrycare-services p {
+    margin: 0 !important;
+    color: var(--fc-mobile-body) !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(.72rem, 3vw, .82rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  .foundrycare-actions {
+    display: none !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .foundrycare-content {
+    width: calc(100% - 30px) !important;
+    padding-top: 90px !important;
+  }
+
+  .foundrycare-content::before {
+    width: 100% !important;
+    min-height: 76px !important;
+    margin-bottom: 18px !important;
+    padding-left: 74px !important;
+    background-position: 18px center !important;
+    background-size: 41px auto !important;
+  }
+
+  .foundrycare-services article,
+  .foundrycare-services article:nth-child(even) {
+    min-height: 78px !important;
+    padding-left: 64px !important;
+  }
+
+  .foundrycare-service-icon {
+    left: 15px !important;
+    width: 33px !important;
+    height: 33px !important;
+  }
+}
