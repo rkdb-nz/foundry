@@ -1,7 +1,7 @@
 /* =========================================================
-   THE FOUNDRY — BOARDROOM LANDSCAPE B
-   Single authoritative mobile-landscape composition.
-   Portrait and desktop remain untouched.
+   THE FOUNDRY — BOARDROOM LANDSCAPE
+   Approved Option 4. Single authoritative mobile-landscape
+   composition. Portrait and desktop remain untouched.
    ========================================================= */
 
 @media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
@@ -11,47 +11,65 @@
     height: 100%;
     min-height: 100%;
     overflow: hidden;
-    background: #080706;
+    background: #080808;
   }
 
   body {
-    background-image:
-      linear-gradient(90deg,
-        rgba(5, 5, 5, .20) 0%,
-        rgba(5, 5, 5, .30) 35%,
-        rgba(5, 5, 5, .76) 55%,
-        rgba(5, 5, 5, .92) 100%),
-      url("../assets/images/boardroom.webp");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background:
+      radial-gradient(circle at 19% 48%, rgba(127, 79, 35, .055), transparent 31%),
+      radial-gradient(circle at 77% 44%, rgba(255, 255, 255, .018), transparent 34%),
+      linear-gradient(90deg, #0a0908 0%, #080808 39%, #090909 100%);
   }
 
+  /* Quiet blueprint / forged-paper atmosphere. */
   .page-shade {
+    opacity: 1;
     background:
-      radial-gradient(circle at 28% 42%, rgba(188, 110, 43, .10), transparent 28%),
-      linear-gradient(90deg, rgba(0,0,0,.10), rgba(0,0,0,.34) 49%, rgba(0,0,0,.68));
+      linear-gradient(90deg,
+        rgba(0,0,0,.08) 0%,
+        rgba(0,0,0,.04) 37.5%,
+        rgba(0,0,0,.44) 37.6%,
+        rgba(0,0,0,.10) 37.8%,
+        rgba(0,0,0,.08) 100%),
+      repeating-linear-gradient(0deg,
+        transparent 0,
+        transparent 51px,
+        rgba(187, 128, 68, .018) 52px,
+        transparent 53px),
+      repeating-linear-gradient(90deg,
+        transparent 0,
+        transparent 65px,
+        rgba(187, 128, 68, .018) 66px,
+        transparent 67px),
+      radial-gradient(circle at 24% 56%, rgba(193, 118, 47, .045), transparent 29%);
+  }
+
+  body::after {
+    box-shadow:
+      inset 0 0 90px rgba(0, 0, 0, .26),
+      inset 0 -52px 86px rgba(0, 0, 0, .30);
   }
 
   .boardroom-mobile-wordmark {
     position: fixed !important;
-    top: max(15px, calc(env(safe-area-inset-top) + 9px)) !important;
-    left: max(18px, calc(env(safe-area-inset-left) + 14px)) !important;
+    top: max(16px, calc(env(safe-area-inset-top) + 10px)) !important;
+    left: max(22px, calc(env(safe-area-inset-left) + 16px)) !important;
     right: auto !important;
     z-index: 10030 !important;
     display: block !important;
     width: auto !important;
     margin: 0 !important;
-    color: #eee9e0 !important;
+    color: #f0ede8 !important;
     font-family: Arial, Helvetica, sans-serif !important;
-    font-size: clamp(9px, 1.45vw, 12px) !important;
+    font-size: clamp(10px, 1.48vw, 12px) !important;
     font-weight: 500 !important;
     line-height: 1 !important;
-    letter-spacing: clamp(3px, .65vw, 5px) !important;
+    letter-spacing: clamp(3.3px, .68vw, 5.2px) !important;
     text-align: left !important;
     text-decoration: none !important;
     text-transform: uppercase !important;
     white-space: nowrap !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,.72);
   }
 
   .boardroom-mobile-wordmark::after {
@@ -62,7 +80,7 @@
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: minmax(250px, 37%) minmax(0, 63%);
+    grid-template-columns: minmax(270px, 39%) minmax(0, 61%);
     gap: 0;
     width: 100vw;
     height: 100dvh;
@@ -71,16 +89,33 @@
   }
 
   .intro {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-width: 0;
     height: 100%;
     padding:
-      max(44px, calc(env(safe-area-inset-top) + 36px))
-      clamp(18px, 2.6vw, 34px)
-      max(20px, calc(env(safe-area-inset-bottom) + 14px))
-      max(30px, calc(env(safe-area-inset-left) + 22px));
+      max(54px, calc(env(safe-area-inset-top) + 44px))
+      clamp(24px, 3.15vw, 38px)
+      max(24px, calc(env(safe-area-inset-bottom) + 16px))
+      max(34px, calc(env(safe-area-inset-left) + 26px));
+  }
+
+  .intro::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(195, 126, 57, .12) 16%,
+      rgba(195, 126, 57, .28) 50%,
+      rgba(195, 126, 57, .10) 84%,
+      transparent 100%);
+    box-shadow: 0 0 18px rgba(195,126,57,.035);
   }
 
   .eyebrow {
@@ -88,30 +123,34 @@
   }
 
   h1 {
-    max-width: 7.4ch;
+    max-width: 6.4ch;
     margin: 0;
-    color: #f4eee6;
-    font-size: clamp(43px, 7.2vw, 66px);
+    color: #f4f0e9;
+    font-size: clamp(48px, 7.4vw, 67px);
     font-weight: 400;
     line-height: .88;
-    letter-spacing: -.045em;
-    text-shadow: 0 5px 22px rgba(0,0,0,.60);
+    letter-spacing: -.047em;
+    text-shadow: 0 5px 24px rgba(0,0,0,.62);
+  }
+
+  h1 span {
+    color: #d8892f;
   }
 
   .intro-rule {
-    width: 43px;
+    width: 46px;
     height: 2px;
-    margin: clamp(15px, 3dvh, 23px) 0 clamp(13px, 2.6dvh, 20px);
-    background: #d88a2d;
-    box-shadow: 0 0 12px rgba(216,138,45,.22);
+    margin: clamp(15px, 3dvh, 22px) 0 clamp(14px, 2.6dvh, 19px);
+    background: #d8892f;
+    box-shadow: 0 0 14px rgba(216,137,47,.25);
   }
 
   .intro-copy {
-    max-width: 29ch;
-    color: rgba(244, 234, 220, .86);
+    max-width: 31ch;
+    color: rgba(244, 239, 231, .86);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: clamp(11.5px, 1.68vw, 14px);
-    line-height: 1.42;
+    font-size: clamp(11.8px, 1.68vw, 14px);
+    line-height: 1.48;
     text-shadow: 0 2px 10px rgba(0,0,0,.68);
   }
 
@@ -126,14 +165,16 @@
   }
 
   .intro-copy p:last-child {
-    margin-top: clamp(9px, 1.8dvh, 13px);
-    color: rgba(250, 238, 221, .95);
+    margin-top: clamp(11px, 2.2dvh, 16px);
+    color: #f3eee7;
+    font-weight: 700;
   }
 
   .intro-copy p:last-child em {
-    color: #f4eee6;
+    color: #f5eee5;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.08em;
+    font-size: 1.09em;
+    font-weight: 400;
   }
 
   .boards {
@@ -142,63 +183,70 @@
     justify-self: stretch;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(9px, 1.25vw, 14px);
+    gap: clamp(10px, 1.3vw, 15px);
     width: 100%;
     max-width: none;
     min-width: 0;
     height: 100%;
     min-height: 0;
     padding:
-      max(64px, calc(env(safe-area-inset-top) + 54px))
-      max(18px, calc(env(safe-area-inset-right) + 12px))
-      max(22px, calc(env(safe-area-inset-bottom) + 14px))
-      clamp(14px, 2vw, 20px);
+      max(72px, calc(env(safe-area-inset-top) + 62px))
+      max(26px, calc(env(safe-area-inset-right) + 18px))
+      max(28px, calc(env(safe-area-inset-bottom) + 20px))
+      clamp(28px, 3.3vw, 38px);
     transform: none;
   }
 
   .boards::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 1px;
-    background: linear-gradient(180deg, transparent, rgba(203,145,82,.18) 22%, rgba(203,145,82,.18) 78%, transparent);
+    display: none;
   }
 
   .board-card {
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 54px minmax(0, 1fr);
+    grid-template-rows: clamp(55px, 12dvh, 64px) minmax(0, 1fr);
     justify-items: center;
     align-items: stretch;
     width: 100%;
     min-width: 0;
     height: 100%;
     min-height: 0;
-    padding: clamp(12px, 2.4dvh, 16px) clamp(7px, 1vw, 11px);
+    padding: clamp(13px, 2.7dvh, 17px) clamp(7px, 1vw, 11px) clamp(12px, 2.4dvh, 16px);
     overflow: hidden;
-    border: 1px solid rgba(210, 169, 116, .30);
-    border-radius: 8px;
+    border: 1px solid rgba(214, 196, 175, .25);
+    border-radius: 10px;
     background:
-      linear-gradient(180deg, rgba(255,255,255,.025), transparent 18%),
-      rgba(9, 9, 8, .64);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+      linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.012) 28%, rgba(0,0,0,.08)),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.009) 0 1px, transparent 1px 4px),
+      rgba(16, 16, 15, .72);
+    -webkit-backdrop-filter: blur(7px) saturate(.82);
+    backdrop-filter: blur(7px) saturate(.82);
     box-shadow:
-      inset 0 1px 0 rgba(255,255,255,.035),
-      0 10px 28px rgba(0,0,0,.24);
+      inset 0 1px 0 rgba(255,255,255,.055),
+      inset 0 -1px 0 rgba(0,0,0,.42),
+      0 14px 32px rgba(0,0,0,.26);
+    color: #eee9e2;
     text-decoration: none;
     transform: none;
+    isolation: isolate;
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background 180ms ease,
+      box-shadow 180ms ease;
   }
 
   .board-card::before {
     content: "";
     position: absolute;
-    inset: 0;
+    inset: 1px;
+    z-index: -1;
+    border-radius: 9px;
     pointer-events: none;
-    background: linear-gradient(90deg, rgba(216,138,45,.018), transparent 26%, transparent 74%, rgba(216,138,45,.018));
+    background:
+      radial-gradient(circle at 50% 10%, rgba(255,255,255,.035), transparent 30%),
+      linear-gradient(90deg, rgba(216,138,45,.015), transparent 30%, transparent 70%, rgba(216,138,45,.012));
   }
 
   .board-card::after,
@@ -209,58 +257,87 @@
     display: none !important;
   }
 
-  /* Number and swatch share the exact same grid cell. No absolute positioning. */
+  /* The number and material sample occupy one exact grid cell. */
   .board-number,
   .board-icon {
     grid-column: 1;
     grid-row: 1;
     align-self: start;
     justify-self: center;
-    width: clamp(42px, 5.6vw, 50px);
-    height: clamp(42px, 5.6vw, 50px);
+    width: clamp(46px, 5.8vw, 54px);
+    height: clamp(46px, 5.8vw, 54px);
     margin: 0;
   }
 
   .board-icon {
     position: static;
     display: block !important;
-    border: 1px solid rgba(255,255,255,.20);
-    border-radius: 7px;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 8px;
     box-shadow:
-      inset 0 1px 0 rgba(255,255,255,.16),
-      inset 0 -2px 0 rgba(0,0,0,.34),
-      0 5px 8px rgba(0,0,0,.34);
+      inset 0 1px 0 rgba(255,255,255,.18),
+      inset 0 -3px 0 rgba(0,0,0,.34),
+      0 8px 12px rgba(0,0,0,.40),
+      0 12px 15px -10px rgba(216,138,45,.32);
   }
 
   .board-number {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: grid;
     place-items: center;
     padding: 0;
-    color: rgba(244, 238, 230, .92);
+    color: rgba(248, 243, 236, .94);
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(15px, 2.2vw, 20px);
+    font-size: clamp(20px, 2.8vw, 25px);
     font-weight: 400;
     line-height: 1;
-    text-shadow: 0 1px 4px rgba(0,0,0,.88);
+    text-shadow: 0 1px 4px rgba(0,0,0,.90);
     pointer-events: none;
   }
 
+  .board-number::after {
+    content: "";
+    position: absolute;
+    left: 22%;
+    right: 22%;
+    bottom: -5px;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(224, 137, 52, .72);
+    box-shadow:
+      0 0 5px rgba(224,137,52,.72),
+      0 3px 10px rgba(224,137,52,.48);
+    opacity: .72;
+  }
+
   .board-card:nth-child(1) .board-icon {
-    background: linear-gradient(145deg, #414141, #262626);
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.08), transparent 38%),
+      linear-gradient(145deg, #3d3f41, #202123);
   }
 
   .board-card:nth-child(2) .board-icon {
-    background: linear-gradient(145deg, #fffdf5, #e8e2d6);
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.32), transparent 40%),
+      linear-gradient(145deg, #f5f0e5, #d9d0c1);
+  }
+
+  .board-card:nth-child(2) .board-number {
+    color: #171513;
+    text-shadow: 0 1px rgba(255,255,255,.55);
   }
 
   .board-card:nth-child(3) .board-icon {
-    background: linear-gradient(145deg, #b4aaa0, #77716b);
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.18), transparent 40%),
+      linear-gradient(145deg, #b29b89, #796656);
   }
 
   .board-card:nth-child(4) .board-icon {
-    background: linear-gradient(145deg, #75918f, #476764);
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.16), transparent 40%),
+      linear-gradient(145deg, #728e89, #3f615e);
   }
 
   .board-main {
@@ -273,15 +350,15 @@
     min-width: 0;
     width: 100%;
     height: 100%;
-    padding: 4px 0 0;
+    padding: clamp(5px, 1.2dvh, 8px) 0 0;
   }
 
   .board-label {
     display: block;
     margin: 0;
-    color: rgba(238, 231, 222, .78);
+    color: rgba(240, 235, 228, .84);
     font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
-    font-size: clamp(13px, 1.9vw, 17px);
+    font-size: clamp(13px, 1.88vw, 17px);
     font-weight: 700;
     line-height: 1;
     letter-spacing: .20em;
@@ -289,33 +366,72 @@
     white-space: nowrap;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    text-shadow: 0 2px 7px rgba(0,0,0,.52);
   }
 
+  /* Springboard is the warm focal card from the approved concept. */
   .board-card:nth-child(4) {
-    border-color: rgba(216, 138, 45, .54);
+    border-color: rgba(218, 132, 38, .76);
     background:
-      linear-gradient(180deg, rgba(173, 104, 41, .055), transparent 28%),
-      rgba(11, 12, 9, .72);
+      radial-gradient(circle at 50% 92%, rgba(211, 117, 32, .075), transparent 31%),
+      linear-gradient(180deg, rgba(178,105,39,.048), rgba(255,255,255,.012) 28%, rgba(0,0,0,.07)),
+      rgba(17, 16, 14, .78);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.05),
+      inset 0 -1px 0 rgba(224,135,42,.32),
+      0 14px 34px rgba(0,0,0,.27),
+      0 0 18px rgba(204,111,27,.035);
   }
 
-  .board-card:nth-child(4) .board-number {
-    color: #f3ded0;
+  .board-card:nth-child(4)::before {
+    background:
+      radial-gradient(circle at 50% 100%, rgba(224,133,40,.10), transparent 24%),
+      linear-gradient(90deg, rgba(216,138,45,.025), transparent 28%, transparent 72%, rgba(216,138,45,.022));
+  }
+
+  .board-card:nth-child(4) .board-number::after {
+    background: rgba(222, 202, 137, .82);
+    box-shadow:
+      0 0 6px rgba(222,202,137,.78),
+      0 4px 12px rgba(222,202,137,.40);
   }
 
   .board-card:nth-child(4) .board-label {
-    color: #d88a2d;
+    color: #df842c;
+  }
+
+  .board-card:nth-child(4)::after {
+    content: "";
+    display: block !important;
+    position: absolute;
+    left: 24%;
+    right: 24%;
+    bottom: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: #e08328;
+    box-shadow:
+      0 0 5px rgba(224,131,40,.85),
+      0 -3px 14px rgba(224,131,40,.52);
   }
 
   .board-card:hover,
   .board-card:focus-visible {
-    border-color: rgba(216, 138, 45, .74);
-    background-color: rgba(20, 16, 12, .78);
+    border-color: rgba(218, 145, 68, .82);
     transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.06),
+      0 16px 35px rgba(0,0,0,.32),
+      0 0 18px rgba(212,128,41,.06);
+  }
+
+  .board-card:active {
+    transform: translateY(0) scale(.992);
   }
 
   .board-card:focus-visible {
-    outline: 1px solid rgba(218, 153, 82, .90);
-    outline-offset: 2px;
+    outline: 1px solid rgba(222, 151, 79, .92);
+    outline-offset: 3px;
   }
 }
 
