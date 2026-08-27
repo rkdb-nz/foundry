@@ -140,14 +140,12 @@ body.explore-open .explore-choice:first-child {
 
 body.homepage.explore-open.explore-crossfade #introPanel.is-active {
     visibility: visible !important;
-    opacity: 1 !important;
     pointer-events: none !important;
     animation: foundryExploreHomeOut 520ms ease-in-out both !important;
 }
 
 body.homepage.explore-open.explore-crossfade #exploreScreen {
     visibility: visible !important;
-    opacity: 1 !important;
     pointer-events: none !important;
     animation: foundryExploreIn 520ms ease-in-out both !important;
 }
@@ -202,8 +200,6 @@ body.homepage.state-fade-out .explore-choices {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    body.homepage.explore-open.explore-crossfade #introPanel.is-active,
-    body.homepage.explore-open.explore-crossfade #exploreScreen,
     body.homepage.state-fade-out #introPanel.is-active,
     body.homepage.state-fade-out #sortPanel.is-active,
     body.homepage.state-fade-out.explore-open #exploreScreen,
@@ -213,7 +209,8 @@ body.homepage.state-fade-out .explore-choices {
         animation: none !important;
     }
 
-    body.homepage.explore-open.explore-crossfade .landing::after {
-        transition: none !important;
+    body.homepage.explore-open.explore-crossfade #introPanel.is-active,
+    body.homepage.explore-open.explore-crossfade #exploreScreen {
+        animation: none !important;
     }
 }
