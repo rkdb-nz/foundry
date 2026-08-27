@@ -60,10 +60,15 @@ body.whywebsite-page .foundry-global-menu span {
 body.whywebsite-page .why-foundry-wordmark {
   top: max(22px, calc(env(safe-area-inset-top) + 14px));
   left: max(24px, calc(env(safe-area-inset-left) + 18px));
-  color: #eee9e0;
+  color: #1d130d;
+  text-shadow: none;
   font-size: 0;
   line-height: 1.28;
   white-space: pre-line;
+}
+
+body.whywebsite-page .whywebsite-copy {
+  padding-top: 4rem;
 }
 
 body.whywebsite-page .why-foundry-wordmark::after {
