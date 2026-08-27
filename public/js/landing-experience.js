@@ -25,7 +25,9 @@ function clearExploreTransitionClass() {
     document.body.classList.remove(
         'explore-transitioning',
         'explore-crossfade',
-        'explore-crossfade-complete'
+        'explore-crossfade-complete',
+        'explore-returning',
+        'explore-home-in'
     );
 }
 
@@ -124,12 +126,13 @@ function transitionHomeToExplore() {
         'state-fade-in',
         'sort-open',
         'explore-crossfade',
-        'explore-crossfade-complete'
+        'explore-crossfade-complete',
+        'explore-returning',
+        'explore-home-in'
     );
 
-    /* Match the approved landing cadence: Home fades out first for 420ms.
-       The Explore surface is pre-painted underneath so neither the body nor
-       the legacy landing artwork can appear at the state swap. */
+    /* Home fades out for the same 420ms cadence used everywhere else.
+       The dark Explore surface is already painted underneath. */
     document.body.classList.add('explore-transitioning');
     introPanel.setAttribute('aria-hidden', 'true');
 
@@ -145,6 +148,50 @@ function transitionHomeToExplore() {
         window.setTimeout(() => {
             document.body.classList.remove('explore-crossfade');
             document.body.classList.add('explore-crossfade-complete');
+            isTransitioning = false;
+        }, EXPLORE_FADE_IN_MS);
+    }, EXPLORE_FADE_OUT_MS);
+}
+
+function transitionExploreToHome() {
+    if (isTransitioning) {
+        return;
+    }
+
+    if (prefersReducedMotion()) {
+        activateIntroPanel();
+        return;
+    }
+
+    isTransitioning = true;
+    clearLegacyTransitionClasses();
+    document.body.classList.remove(
+        'state-fade-out',
+        'state-fade-in',
+        'explore-transitioning',
+        'explore-crossfade'
+    );
+    document.body.classList.add('explore-returning');
+    exploreScreen?.setAttribute('aria-hidden', 'true');
+
+    window.setTimeout(() => {
+        document.documentElement.classList.remove('restore-explore', 'restore-sort');
+        document.body.classList.remove(
+            'explore-open',
+            'explore-returning',
+            'explore-crossfade-complete',
+            'sort-open'
+        );
+
+        exploreScreen?.setAttribute('aria-hidden', 'true');
+        sortPanel.classList.remove('is-active');
+        sortPanel.setAttribute('aria-hidden', 'true');
+        introPanel.classList.add('is-active');
+        introPanel.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('explore-home-in');
+
+        window.setTimeout(() => {
+            document.body.classList.remove('explore-home-in');
             isTransitioning = false;
         }, EXPLORE_FADE_IN_MS);
     }, EXPLORE_FADE_OUT_MS);
@@ -203,6 +250,11 @@ function showIntroPanel({ updateHistory = true } = {}) {
 
     if (introPanel.classList.contains('is-active') && !document.body.classList.contains('explore-open')) {
         activateIntroPanel();
+        return;
+    }
+
+    if (document.body.classList.contains('explore-open')) {
+        transitionExploreToHome();
         return;
     }
 
@@ -314,7 +366,11 @@ function restoreStateFromHash({ animate = false } = {}) {
         }
     } else if (!introPanel.classList.contains('is-active') || document.body.classList.contains('explore-open')) {
         if (animate) {
-            transitionTo(activateIntroPanel);
+            if (document.body.classList.contains('explore-open')) {
+                transitionExploreToHome();
+            } else {
+                transitionTo(activateIntroPanel);
+            }
         } else {
             activateIntroPanel();
         }
