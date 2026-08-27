@@ -63,6 +63,7 @@ body.foundry-info-page .foundry-about-header {
 
 body.foundry-info-page .foundry-about-brand {
   position: static;
+  transform: translateY(-18px);
   display: block;
   color: #eee9e0;
   font-family: Arial, Helvetica, sans-serif;
