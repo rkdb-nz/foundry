@@ -158,6 +158,16 @@ body.homepage.state-fade-out .explore-choices {
     pointer-events: none !important;
 }
 
+/* Mobile Home's drafting composition is outside #introPanel. Fade it with the
+   outgoing Home panel so explore-open never tears down a fully opaque layer in
+   a single paint. This preserves the existing 420ms cadence and Explore fade. */
+@media (prefers-reduced-motion: no-preference) and (max-width: 800px) and (orientation: portrait),
+       (prefers-reduced-motion: no-preference) and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    body.homepage.state-fade-out:has(#introPanel.is-active) .fm-home-v2 {
+        animation: foundryStateFadeOut 420ms ease-in both !important;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     body.homepage.state-fade-out #introPanel.is-active,
     body.homepage.state-fade-out #sortPanel.is-active,
@@ -166,23 +176,5 @@ body.homepage.state-fade-out .explore-choices {
     body.homepage.state-fade-in #sortPanel.is-active,
     body.homepage.state-fade-in.explore-open #exploreScreen {
         animation: none !important;
-    }
-}
-
-/* Home -> Explore handoff guard.
-   The state switch occurs after the outgoing panel has reached opacity: 0.
-   Explore's generic fade also begins at opacity: 0, which leaves one paint
-   containing only the near-black Explore landing background. Keep the same
-   520ms fade/easing, but begin the mobile Explore panel just above zero so
-   there is never a background-only black frame. */
-@keyframes foundryExploreStateFadeIn {
-    from { opacity: .16; }
-    to { opacity: 1; }
-}
-
-@media (prefers-reduced-motion: no-preference) and (max-width: 800px) and (orientation: portrait),
-       (prefers-reduced-motion: no-preference) and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-    body.homepage.state-fade-in.explore-open #exploreScreen {
-        animation: foundryExploreStateFadeIn 520ms ease-out both !important;
     }
 }
