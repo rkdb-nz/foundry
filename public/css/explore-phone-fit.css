@@ -222,6 +222,16 @@ body.homepage.state-fade-in.explore-open #exploreScreen {
     animation: foundryStateFadeIn 520ms ease-out both !important;
 }
 
+/* Explore -> Home: while the approved V2 Home fades in, explicitly keep the
+   legacy landing artwork out of the render tree. This closes the single-frame
+   gap created when explore-open is removed at the state swap. */
+body.homepage.state-fade-in:not(.explore-open):has(#introPanel.is-active) .landing {
+    background:
+        radial-gradient(circle at 72% 26%, rgba(68, 47, 29, .12), transparent 33%),
+        radial-gradient(circle at 28% 72%, rgba(44, 38, 31, .10), transparent 38%),
+        linear-gradient(180deg, #111210 0%, #090a09 100%) !important;
+}
+
 body.homepage.state-fade-out .hero-actions,
 body.homepage.state-fade-out .sort-actions,
 body.homepage.state-fade-out .explore-choices {
