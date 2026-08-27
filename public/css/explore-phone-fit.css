@@ -122,6 +122,14 @@ body.explore-open .explore-choice:first-child {
     }
 }
 
+/* Prime the Explore wallpaper during the outgoing homepage fade. This keeps a
+   painted surface under the transition so the state swap never exposes the
+   dark body background for a frame. */
+body.homepage.explore-transitioning .landing::after {
+    opacity: 1 !important;
+    transition: opacity 420ms ease-in !important;
+}
+
 /* =========================================================
    UNIFORM LANDING-STATE TRANSITION
    Home, Make Me a Site and Let Me Choose use the same
