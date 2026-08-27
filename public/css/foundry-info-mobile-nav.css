@@ -57,10 +57,12 @@ body.foundry-info-page .foundry-global-menu span {
   box-shadow: none !important;
 }
 
+body.foundry-info-page .foundry-about-header {
+  padding: max(8px, env(safe-area-inset-top)) 18px 0 !important;
+}
+
 body.foundry-info-page .foundry-about-brand {
-  position: fixed;
-  top: max(22px, calc(env(safe-area-inset-top) + 14px));
-  left: max(24px, calc(env(safe-area-inset-left) + 18px));
+  position: static;
   display: block;
   color: #eee9e0;
   font-family: Arial, Helvetica, sans-serif;
