@@ -36,7 +36,7 @@
   .boardroom-mobile-wordmark {
     position: fixed !important;
     top: max(15px, calc(env(safe-area-inset-top) + 9px)) !important;
-    left: max(30px, calc(env(safe-area-inset-left) + 20px)) !important;
+    left: max(18px, calc(env(safe-area-inset-left) + 14px)) !important;
     right: auto !important;
     z-index: 10030 !important;
     display: block !important;
@@ -48,6 +48,7 @@
     font-weight: 500 !important;
     line-height: 1 !important;
     letter-spacing: clamp(3px, .65vw, 5px) !important;
+    text-align: left !important;
     text-decoration: none !important;
     text-transform: uppercase !important;
     white-space: nowrap !important;
@@ -55,12 +56,15 @@
 
   .boardroom-mobile-wordmark::after {
     content: "THE BOARDROOM";
+    display: block;
+    width: max-content;
     color: #eee9e0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(9px, 1.45vw, 12px);
     font-weight: 500;
     line-height: 1;
     letter-spacing: clamp(3px, .65vw, 5px);
+    text-align: left;
   }
 
   .boardroom {
