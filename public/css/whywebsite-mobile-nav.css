@@ -53,8 +53,16 @@ body.whywebsite-page .foundry-global-menu span {
   width: 28px !important;
   height: 2px !important;
   border: 0 !important;
-  background: #d99a5d !important;
+  background: #92552f !important;
   box-shadow: none !important;
+}
+
+body.whywebsite-page .foundry-global-back svg {
+  stroke: #75411f !important;
+}
+
+body.whywebsite-page .foundry-global-home svg {
+  filter: brightness(.7) saturate(1.05) contrast(1.08) drop-shadow(0 2px 2px rgba(0,0,0,.5)) !important;
 }
 
 body.whywebsite-page .why-foundry-wordmark {
