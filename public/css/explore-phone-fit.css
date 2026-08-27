@@ -122,19 +122,45 @@ body.explore-open .explore-choice:first-child {
     }
 }
 
-/* Prime the Explore wallpaper during the outgoing homepage fade. This keeps a
-   painted surface under the transition so the state swap never exposes the
-   dark body background for a frame. */
-body.homepage.explore-transitioning .landing::after {
+/* =========================================================
+   HOME -> LET ME CHOOSE TRUE CROSSFADE
+   Both states are painted for the entire handover. Home fades out while
+   Explore fades in concurrently, so no frame can expose the body background.
+   ========================================================= */
+
+@keyframes foundryExploreHomeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes foundryExploreIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body.homepage.explore-open.explore-crossfade #introPanel.is-active {
+    visibility: visible !important;
     opacity: 1 !important;
-    transition: opacity 420ms ease-in !important;
+    pointer-events: none !important;
+    animation: foundryExploreHomeOut 520ms ease-in-out both !important;
+}
+
+body.homepage.explore-open.explore-crossfade #exploreScreen {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+    animation: foundryExploreIn 520ms ease-in-out both !important;
+}
+
+body.homepage.explore-open.explore-crossfade .landing::after {
+    opacity: 1 !important;
+    transition: opacity 520ms ease-in-out !important;
 }
 
 /* =========================================================
    UNIFORM LANDING-STATE TRANSITION
-   Home, Make Me a Site and Let Me Choose use the same
-   page fade cadence. The Home -> Make Me a Site route keeps
-   its forge animation layered over this fade.
+   Other landing-state routes keep the approved sequential fade cadence.
+   Home -> Let Me Choose bypasses this and uses the true crossfade above.
    ========================================================= */
 
 @keyframes foundryStateFadeOut {
@@ -167,6 +193,8 @@ body.homepage.state-fade-out .explore-choices {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    body.homepage.explore-open.explore-crossfade #introPanel.is-active,
+    body.homepage.explore-open.explore-crossfade #exploreScreen,
     body.homepage.state-fade-out #introPanel.is-active,
     body.homepage.state-fade-out #sortPanel.is-active,
     body.homepage.state-fade-out.explore-open #exploreScreen,
@@ -174,5 +202,9 @@ body.homepage.state-fade-out .explore-choices {
     body.homepage.state-fade-in #sortPanel.is-active,
     body.homepage.state-fade-in.explore-open #exploreScreen {
         animation: none !important;
+    }
+
+    body.homepage.explore-open.explore-crossfade .landing::after {
+        transition: none !important;
     }
 }
