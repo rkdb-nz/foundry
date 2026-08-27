@@ -21,7 +21,7 @@ function clearLegacyTransitionClasses() {
 }
 
 function clearExploreTransitionClass() {
-    document.body.classList.remove('explore-transitioning', 'explore-crossfade');
+    document.body.classList.remove('explore-transitioning', 'explore-crossfade', 'explore-crossfade-complete');
 }
 
 function activateSortPanel({ preserveForge = false } = {}) {
@@ -114,7 +114,13 @@ function crossfadeHomeToExplore() {
 
     isTransitioning = true;
     clearLegacyTransitionClasses();
-    document.body.classList.remove('state-fade-out', 'state-fade-in', 'sort-open', 'explore-transitioning');
+    document.body.classList.remove(
+        'state-fade-out',
+        'state-fade-in',
+        'sort-open',
+        'explore-transitioning',
+        'explore-crossfade-complete'
+    );
 
     /* Keep Home alive while Explore becomes visible. CSS crossfades both
        states simultaneously, so there is never a zero-content frame. */
@@ -127,6 +133,7 @@ function crossfadeHomeToExplore() {
         sortPanel.classList.remove('is-active');
         sortPanel.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('explore-crossfade');
+        document.body.classList.add('explore-crossfade-complete');
         isTransitioning = false;
     }, EXPLORE_CROSSFADE_MS);
 }
