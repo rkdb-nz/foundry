@@ -12,6 +12,44 @@
     to { opacity: 0; }
 }
 
+/* A dedicated viewport curtain owns landing-state swaps. It is deliberately
+   independent of .landing and its legacy/responsive artwork, so those layers
+   can never become visible while Home and Explore exchange state. */
+.landing-state-blackout {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483647;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    background: #000;
+    pointer-events: none;
+}
+
+.landing-state-blackout.is-fading-to-black {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 420ms ease-in;
+}
+
+.landing-state-blackout.is-black {
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+}
+
+.landing-state-blackout.is-fading-from-black {
+    visibility: visible;
+    opacity: 0;
+    transition: opacity 520ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .landing-state-blackout {
+        transition: none !important;
+    }
+}
+
 /* Keep the forge visual, but make its page-to-page fade cadence identical to
    the other landing transitions on every viewport. */
 body.homepage.is-forging #introPanel {
