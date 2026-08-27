@@ -66,9 +66,9 @@ body.foundry-info-page .foundry-about-brand {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(11px, 3.15vw, 14px);
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.28;
   letter-spacing: clamp(3.5px, 1.2vw, 5px);
-  white-space: nowrap;
+  white-space: pre-line;
 }
 
 body.foundry-info-page .foundry-about-brand span {
@@ -76,5 +76,5 @@ body.foundry-info-page .foundry-about-brand span {
 }
 
 body.foundry-info-page .foundry-about-brand::after {
-  content: "ABOUT THE FOUNDRY";
+  content: "ABOUT THE\A FOUNDRY";
 }

@@ -74,3 +74,8 @@ body.whywebsite-page .why-foundry-wordmark::after {
   line-height: 1;
   letter-spacing: clamp(3.5px, 1.2vw, 5px);
 }
+
+/* The page name now lives in the top-left wordmark on mobile. */
+body.whywebsite-page .whywebsite-kicker {
+  display: none !important;
+}
