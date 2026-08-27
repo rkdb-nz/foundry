@@ -1,0 +1,9 @@
+/* Board Table preview: decorative elements may extend beyond the viewport, but the page itself must never pan horizontally. */
+@media (max-width: 700px) and (orientation: portrait) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+}
