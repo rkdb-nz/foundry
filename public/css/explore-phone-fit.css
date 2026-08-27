@@ -12,14 +12,6 @@
     to { opacity: 0; }
 }
 
-/* While Home fades away, bring the Let Me Choose wallpaper up underneath it.
-   This prevents the near-black body fallback from ever becoming the visible
-   frame between the two states. */
-body.homepage.explore-preload .landing::after {
-    opacity: 1 !important;
-    transition: opacity 420ms ease-in !important;
-}
-
 /* Keep the forge visual, but make its page-to-page fade cadence identical to
    the other landing transitions on every viewport. */
 body.homepage.is-forging #introPanel {
@@ -174,9 +166,5 @@ body.homepage.state-fade-out .explore-choices {
     body.homepage.state-fade-in #sortPanel.is-active,
     body.homepage.state-fade-in.explore-open #exploreScreen {
         animation: none !important;
-    }
-
-    body.homepage.explore-preload .landing::after {
-        transition: none !important;
     }
 }
