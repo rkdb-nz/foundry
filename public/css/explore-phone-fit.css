@@ -123,11 +123,11 @@ body.explore-open .explore-choice:first-child {
 }
 
 /* =========================================================
-   HOME -> LET ME CHOOSE TRUE CROSSFADE
-   Explore fades in over its own resolved background. The outgoing V2 state is
-   removed at the handover boundary because its state-scoped selectors release
-   as soon as explore-open is applied; allowing it to continue painting would
-   expose the legacy landing fallback underneath.
+   HOME -> LET ME CHOOSE
+   Match the approved Home -> Make Me a Site panel cadence exactly:
+   420ms ease-in out, then 520ms ease-out in. The Explore surface is
+   pre-painted during the outgoing fade so neither the body background nor
+   the legacy landing artwork can appear at the state swap.
    ========================================================= */
 
 @keyframes foundryExploreIn {
@@ -135,15 +135,38 @@ body.explore-open .explore-choice:first-child {
     to { opacity: 1; }
 }
 
-/* Never permit the legacy landing artwork or legacy Home presentation to paint
-   during this handover. Explore's background is the only surface underneath. */
+body.homepage.explore-transitioning #introPanel.is-active {
+    animation: mobilePanelFadeOut 420ms ease-in both !important;
+    pointer-events: none !important;
+}
+
+body.homepage.explore-transitioning #introPanel .hero-actions {
+    pointer-events: none !important;
+}
+
+/* Paint the resolved Explore surface underneath Home while Home fades out.
+   This overlay reaches full opacity before explore-open releases the V2 rules,
+   so the old landing artwork can never become visible. */
+body.homepage.explore-transitioning .landing::after {
+    z-index: 2 !important;
+    background: linear-gradient(180deg, #111210 0%, #090a09 100%) !important;
+    opacity: 1 !important;
+    transition: opacity 420ms ease-in !important;
+}
+
+body.homepage.explore-transitioning .hero,
+body.homepage.explore-transitioning .foundry-global-nav {
+    z-index: 3;
+}
+
+/* Never permit the legacy landing artwork to paint once Explore takes over. */
 body.homepage.explore-open.explore-crossfade .landing {
     background: linear-gradient(180deg, #111210 0%, #090a09 100%) !important;
 }
 
 body.homepage.explore-open.explore-crossfade .brand,
 body.homepage.explore-open.explore-crossfade .fm-home-v2,
-body.homepage.explore-open.explore-crossfade #introPanel.is-active {
+body.homepage.explore-open.explore-crossfade #introPanel {
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
@@ -154,15 +177,15 @@ body.homepage.explore-open.explore-crossfade #introPanel.is-active {
 body.homepage.explore-open.explore-crossfade #exploreScreen {
     visibility: visible !important;
     pointer-events: none !important;
-    animation: foundryExploreIn 520ms ease-in-out both !important;
+    animation: foundryExploreIn 520ms ease-out both !important;
 }
 
 body.homepage.explore-open.explore-crossfade .landing::after {
     opacity: 1 !important;
-    transition: opacity 520ms ease-in-out !important;
+    transition: none !important;
 }
 
-/* Once the overlap finishes, pin Explore at its resolved state instead of
+/* Once the entrance finishes, pin Explore at its resolved state instead of
    allowing the older 1100ms Explore entrance animation to start again. */
 body.homepage.explore-open.explore-crossfade-complete #exploreScreen {
     visibility: visible !important;
@@ -174,7 +197,6 @@ body.homepage.explore-open.explore-crossfade-complete #exploreScreen {
 /* =========================================================
    UNIFORM LANDING-STATE TRANSITION
    Other landing-state routes keep the approved sequential fade cadence.
-   Home -> Let Me Choose bypasses this and uses the Explore handover above.
    ========================================================= */
 
 @keyframes foundryStateFadeOut {
@@ -212,6 +234,7 @@ body.homepage.state-fade-out .explore-choices {
     body.homepage.state-fade-out.explore-open #exploreScreen,
     body.homepage.state-fade-in #introPanel.is-active,
     body.homepage.state-fade-in #sortPanel.is-active,
+    body.homepage.explore-transitioning #introPanel.is-active,
     body.homepage.explore-open.explore-crossfade #exploreScreen {
         animation: none !important;
     }
