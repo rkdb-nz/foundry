@@ -287,6 +287,7 @@
     display: grid;
     place-items: center;
     padding: 0;
+    transform: translateY(-2px);
     color: rgba(248, 243, 236, .94);
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(20px, 2.8vw, 25px);
@@ -359,7 +360,7 @@
     color: rgba(240, 235, 228, .84);
     font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
     font-size: clamp(13px, 1.88vw, 17px);
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1;
     letter-spacing: .20em;
     text-transform: uppercase;
