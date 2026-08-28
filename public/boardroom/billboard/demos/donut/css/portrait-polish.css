@@ -115,7 +115,7 @@
   .feature-copy {
     min-height:0 !important;
     padding:1px clamp(5px,1.7vw,8px) 1px 0 !important;
-    overflow:hidden !important;
+    overflow:visible !important;
   }
 
   .feature-copy h2 {
@@ -126,20 +126,48 @@
 
   .feature-copy p {
     margin:0 !important;
+    display:block !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    -webkit-line-clamp:unset !important;
     font-size:clamp(8.5px,min(2.45vw,1.12dvh),11px) !important;
-    line-height:1.05 !important;
+    line-height:1.08 !important;
   }
 }
 
 @media (max-width:760px) and (orientation:portrait) and (max-height:720px) {
   .site {
-    grid-template-rows:clamp(58px,8dvh,72px) minmax(0,22fr) minmax(0,29fr) minmax(0,41fr) !important;
+    grid-template-rows:clamp(58px,8dvh,72px) minmax(0,21fr) minmax(0,28fr) minmax(0,43fr) !important;
   }
+
   .mobile-flourish { display:none !important; }
-  .mobile-message h1 { font-size:clamp(31px,min(9.8vw,5.45dvh),48px) !important; }
+
+  .mobile-message h1 {
+    font-size:clamp(31px,min(9.8vw,5.45dvh),48px) !important;
+  }
+
+  .features {
+    gap:3px !important;
+    padding-top:3px !important;
+  }
+
+  .feature-card,
+  .feature-card:nth-child(even) {
+    grid-template-columns:clamp(36px,9.8vw,46px) minmax(0,1fr) !important;
+  }
+
+  .feature-icon {
+    width:clamp(29px,7.8vw,36px) !important;
+    font-size:clamp(16px,4.3vw,20px) !important;
+  }
+
+  .feature-copy h2 {
+    font-size:clamp(11px,min(3.15vw,1.48dvh),15px) !important;
+  }
+
   .feature-copy p {
-    white-space:nowrap !important;
-    overflow:hidden !important;
-    text-overflow:ellipsis !important;
+    font-size:clamp(8px,min(2.3vw,1.08dvh),10.5px) !important;
+    line-height:1.06 !important;
   }
 }
