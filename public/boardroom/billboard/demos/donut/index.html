@@ -30,46 +30,44 @@
       .donut-demo-shell .foundry-demo-return {
         position:fixed !important;
         z-index:2147483647 !important;
-        top:clamp(108px,16dvh,150px) !important;
+        top:clamp(118px,16dvh,154px) !important;
         left:0 !important;
-        width:42px !important;
-        height:72px !important;
-        min-height:72px !important;
+        width:34px !important;
+        height:58px !important;
+        min-height:58px !important;
         margin:0 !important;
-        padding:0 !important;
+        padding:0 2px 0 0 !important;
         display:grid !important;
         place-items:center !important;
-        border:1px solid rgba(222,111,54,.42) !important;
+        border:1px solid rgba(222,111,54,.36) !important;
         border-left:0 !important;
-        border-radius:0 14px 14px 0 !important;
-        background:linear-gradient(145deg,#2b211b 0%,#171311 62%,#211815 100%) !important;
+        border-radius:0 12px 12px 0 !important;
+        background:linear-gradient(145deg,#29211d 0%,#171311 64%,#221814 100%) !important;
         box-shadow:
-          0 0 0 1px rgba(222,111,54,.12),
-          0 0 12px rgba(222,111,54,.42),
-          4px 8px 18px rgba(0,0,0,.26) !important;
-        opacity:1 !important;
+          0 0 0 1px rgba(222,111,54,.08),
+          0 0 9px rgba(222,111,54,.34),
+          3px 7px 15px rgba(0,0,0,.22) !important;
+        opacity:.98 !important;
         overflow:visible !important;
         animation:donut-edge-glow 2.8s ease-in-out infinite !important;
       }
 
-      .donut-demo-shell .foundry-demo-return img {
+      .donut-demo-shell .foundry-demo-return::before {
+        content:none !important;
         display:none !important;
       }
 
-      .donut-demo-shell .foundry-demo-return::before {
-        content:"‹‹" !important;
+      .donut-demo-shell .foundry-demo-return img {
         display:block !important;
-        width:auto !important;
+        width:26px !important;
         height:auto !important;
-        background:none !important;
+        max-width:none !important;
+        margin:0 !important;
+        padding:0 !important;
         border:0 !important;
-        color:#df7138 !important;
-        font:700 29px/1 Arial,sans-serif !important;
-        letter-spacing:-7px !important;
-        transform:translateX(-3px) !important;
-        text-shadow:
-          0 0 6px rgba(240,133,74,.72),
-          0 0 14px rgba(222,111,54,.52) !important;
+        opacity:.96 !important;
+        filter:drop-shadow(0 0 4px rgba(226,112,50,.58)) !important;
+        transform:none !important;
       }
 
       .donut-demo-shell .foundry-demo-return:hover,
@@ -83,15 +81,15 @@
       @keyframes donut-edge-glow {
         0%,100% {
           box-shadow:
-            0 0 0 1px rgba(222,111,54,.12),
-            0 0 10px rgba(222,111,54,.34),
-            4px 8px 18px rgba(0,0,0,.26);
+            0 0 0 1px rgba(222,111,54,.08),
+            0 0 8px rgba(222,111,54,.28),
+            3px 7px 15px rgba(0,0,0,.22);
         }
         50% {
           box-shadow:
-            0 0 0 1px rgba(240,133,74,.35),
-            0 0 24px rgba(222,111,54,.78),
-            4px 8px 18px rgba(0,0,0,.26);
+            0 0 0 1px rgba(240,133,74,.28),
+            0 0 18px rgba(222,111,54,.64),
+            3px 7px 15px rgba(0,0,0,.22);
         }
       }
     }
@@ -100,15 +98,15 @@
       .donut-demo-shell .foundry-demo-return {
         animation:none !important;
         box-shadow:
-          0 0 0 1px rgba(240,133,74,.28),
-          0 0 15px rgba(222,111,54,.52),
-          4px 8px 18px rgba(0,0,0,.26) !important;
+          0 0 0 1px rgba(240,133,74,.24),
+          0 0 12px rgba(222,111,54,.44),
+          3px 7px 15px rgba(0,0,0,.22) !important;
       }
     }
   </style>
 </head>
 <body>
 <a class="foundry-demo-return" href="../../index.html" aria-label="Back to Billboard"><img src="../../../../assets/images/backarrow.webp" alt=""></a>
-<iframe class="foundry-demo-frame" src="site.html?v=donut-portrait-6" title="Donut — Billboard demo"></iframe>
+<iframe class="foundry-demo-frame" src="site.html?v=donut-portrait-7" title="Donut — Billboard demo"></iframe>
 </body>
 </html>
