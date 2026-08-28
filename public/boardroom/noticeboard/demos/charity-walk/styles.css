@@ -102,3 +102,97 @@
   overflow:hidden;
   box-sizing:border-box;
 }
+
+/* Fixed-screen mobile compositions. Desktop above 900px remains unchanged. */
+@media(max-width:900px){
+  html,body{width:100%;height:100%;height:100dvh;min-height:0;overflow:hidden!important;overscroll-behavior:none}
+  body{position:relative;min-height:0}
+
+  .site-header{position:absolute;inset:0 0 auto;height:clamp(44px,7dvh,54px);padding:0 clamp(14px,4vw,22px) 0 clamp(44px,7vw,64px);z-index:20}
+  .brand{font-size:clamp(17px,3dvh,22px)}
+  .brand-sub{display:none}
+  .header-donate{height:clamp(30px,4.8dvh,36px);padding:0 15px;font-size:9px}
+
+  .layout{position:absolute;top:clamp(44px,7dvh,54px);right:0;bottom:clamp(36px,6dvh,44px);left:0;height:auto;min-height:0;margin:0;padding:7px;overflow:hidden!important}
+  .hero,.card{border-radius:13px}
+  .center-col,.right-col{height:100%;min-height:0;overflow:hidden;gap:7px}
+
+  .journal-card,.message-card,.boots-card{display:none!important}
+  .card-about,.next-stop-card{min-height:0!important;height:100%;flex:none}
+
+  .hero-content{padding:clamp(16px,3dvh,22px)}
+  .hero-title{font-size:clamp(38px,8dvh,54px)}
+  .hero-sub{margin-top:7px;font-size:clamp(11px,1.9dvh,14px)}
+  .btn{height:clamp(34px,5.5dvh,40px);padding:0 16px;font-size:9px}
+  .btn-yellow{margin-top:10px}
+  .hero-meta{margin-top:9px;font-size:8px;letter-spacing:.08em}
+
+  .card-about{display:grid}
+  .about-text{min-height:0;overflow:hidden;padding:12px 12px 31px}
+  .about-text h2{font-size:clamp(20px,3.8dvh,28px);margin:0 0 7px}
+  .about-text p{display:none}
+  .about-text .freely-edit{display:block;min-height:25px;padding:6px 4px;font-size:clamp(7px,1.35dvh,10px);line-height:12px}
+  .about-text p:nth-of-type(2){display:block;margin:0;font-size:clamp(8px,1.45dvh,10px);line-height:1.35}
+
+  .next-stop-card{padding:clamp(10px,2dvh,15px);border-top-width:3px}
+  .next-stop-head h2{font-size:clamp(19px,3.5dvh,24px)}
+  .next-stop-route{gap:6px;margin-top:9px;padding-top:8px}
+  .next-stop-route div span{font-size:7px}
+  .next-stop-route strong{font-size:clamp(13px,2.6dvh,17px)}
+  .next-stop-distance{margin-top:7px;font-size:8px}
+
+  .mobile-foot{position:absolute;z-index:30;left:0;right:0;bottom:0;height:clamp(36px,6dvh,44px);display:flex;align-items:center;overflow:hidden;padding:0;border-top:1px solid var(--stone-dark);background:#fff;color:var(--blue);font-variant:all-small-caps;letter-spacing:.12em;font-size:clamp(8px,1.35dvh,10px)}
+  .mobile-foot-track{width:max-content;display:flex;align-items:center;gap:18px;white-space:nowrap;animation:charityTicker 22s linear infinite}
+  .mobile-foot-track>*{font:inherit;font-style:normal;white-space:nowrap}
+  .mobile-foot-track b{color:var(--green);font-weight:700}
+  .mobile-foot-track i{color:#555}
+  .mobile-foot-track>*::before{content:"●";margin-right:18px;color:var(--yellow)}
+
+  @keyframes charityTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+}
+
+@media(max-width:900px) and (orientation:portrait){
+  .layout{display:grid;grid-template-columns:1fr;grid-template-rows:46% 20% 34%;gap:7px}
+  .hero{grid-row:1;min-height:0!important;height:100%;grid-column:auto}
+  .hero img{object-position:55% 38%}
+  .center-col{grid-row:3}
+  .right-col{grid-row:2}
+
+  .card-about{grid-template-columns:38% 62%}
+  .about-portrait{height:100%;min-height:0}
+  .about-portrait img{object-position:50% 28%}
+
+  .next-stop-route{grid-template-columns:1fr auto 1.2fr}
+}
+
+@media(max-width:900px) and (orientation:landscape){
+  .site-header{height:clamp(40px,12dvh,48px)}
+  .layout{top:clamp(40px,12dvh,48px);bottom:clamp(32px,10dvh,38px);display:grid;grid-template-columns:42% 31% 27%;gap:7px;padding:7px}
+  .hero{grid-column:1;min-height:0!important;height:100%}
+  .hero img{object-position:55% 38%}
+  .center-col{grid-column:2}
+  .right-col{grid-column:3}
+
+  .hero-content{padding:clamp(12px,4dvh,18px)}
+  .hero-title{font-size:clamp(30px,11dvh,44px)}
+  .hero-sub{font-size:clamp(9px,3dvh,12px)}
+  .btn{height:clamp(28px,8.5dvh,34px);margin-top:7px;font-size:8px}
+  .hero-meta{margin-top:6px;font-size:7px}
+
+  .card-about{grid-template-columns:1fr;grid-template-rows:42% 58%}
+  .about-portrait{height:100%;min-height:0}
+  .about-text{padding:8px 9px 26px}
+  .about-text h2{font-size:clamp(17px,6dvh,23px);margin-bottom:4px}
+  .about-text p:nth-of-type(2){font-size:clamp(7px,2.35dvh,9px);line-height:1.25}
+
+  .next-stop-card{padding:clamp(8px,2.7dvh,12px)}
+  .next-stop-route{grid-template-columns:1fr;align-items:start;margin-top:7px;padding-top:6px}
+  .route-arrow{display:none}
+  .next-stop-route div span{margin-bottom:1px}
+  .next-stop-route strong{font-size:clamp(12px,4.2dvh,16px)}
+  .next-stop-distance{margin-top:5px}
+
+  .mobile-foot{height:clamp(32px,10dvh,38px);font-size:clamp(7px,2.4dvh,9px)}
+}
+
+@media(max-width:900px) and (prefers-reduced-motion:reduce){.mobile-foot-track{animation:none}}
