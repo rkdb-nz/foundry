@@ -2,8 +2,25 @@
   const site = document.getElementById('site');
   const triggers = [...document.querySelectorAll('[data-overlay]')];
   const overlays = [...document.querySelectorAll('.overlay')];
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
   let lastTrigger = null;
   let closeTimer = null;
+
+  function closeMobileMenu() {
+    if (!mobileMenuToggle || !mobileMenuPanel) return;
+    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    mobileMenuToggle.setAttribute('aria-label', 'Open menu');
+    mobileMenuPanel.hidden = true;
+  }
+
+  function toggleMobileMenu() {
+    if (!mobileMenuToggle || !mobileMenuPanel) return;
+    const opening = mobileMenuToggle.getAttribute('aria-expanded') !== 'true';
+    mobileMenuToggle.setAttribute('aria-expanded', String(opening));
+    mobileMenuToggle.setAttribute('aria-label', opening ? 'Close menu' : 'Open menu');
+    mobileMenuPanel.hidden = !opening;
+  }
 
   function resetOverlay(overlay) {
     overlay.classList.remove('is-opening', 'is-open', 'is-closing');
@@ -18,6 +35,7 @@
     const overlay = document.getElementById(`overlay-${name}`);
     if (!overlay) return;
 
+    closeMobileMenu();
     clearTimeout(closeTimer);
     overlays.forEach(other => {
       if (other !== overlay) hideImmediately(other);
@@ -58,6 +76,8 @@
     }, 500);
   }
 
+  mobileMenuToggle?.addEventListener('click', toggleMobileMenu);
+
   triggers.forEach(trigger => {
     trigger.addEventListener('click', () => openOverlay(trigger.dataset.overlay, trigger));
   });
@@ -74,8 +94,19 @@
     }
   });
 
+  document.addEventListener('click', event => {
+    if (!mobileMenuPanel || mobileMenuPanel.hidden) return;
+    if (mobileMenuPanel.contains(event.target) || mobileMenuToggle?.contains(event.target)) return;
+    closeMobileMenu();
+  });
+
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
+      if (mobileMenuPanel && !mobileMenuPanel.hidden) {
+        closeMobileMenu();
+        mobileMenuToggle?.focus();
+        return;
+      }
       closeAll();
       return;
     }
@@ -110,6 +141,7 @@
 
   site.querySelector('.brand')?.addEventListener('click', event => {
     event.preventDefault();
+    closeMobileMenu();
     closeAll(false);
   });
 })();
