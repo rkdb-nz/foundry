@@ -828,6 +828,50 @@
   .hotspots { left:32% !important; }
 }
 
+/* Card photos must survive the legacy short-height subtitle suppression rules,
+   which also target spans with !important at real phone viewport heights. */
+@media (max-width:900px), (orientation:landscape) and (max-height:520px) and (max-width:1000px) {
+  .mobile-home .mobile-highlights article > span.highlight-photo {
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    background-repeat:no-repeat !important;
+    background-size:cover !important;
+    background-position:center !important;
+    filter:brightness(1.12) saturate(1.18) contrast(1.04) !important;
+  }
+}
+
+@media (max-width:900px) and (orientation:portrait) {
+  .mobile-home .mobile-highlights article {
+    grid-template-columns:minmax(0,50%) minmax(0,50%) !important;
+    grid-template-rows:1fr !important;
+  }
+  .mobile-home .mobile-highlights article > span.highlight-photo {
+    grid-column:2 !important;
+    grid-row:1 !important;
+    width:auto !important;
+    height:auto !important;
+    margin:5px !important;
+  }
+}
+
+@media (orientation:landscape) and (max-height:520px) and (max-width:1000px) {
+  .mobile-home .mobile-highlights article {
+    grid-template-columns:1fr !important;
+    grid-template-rows:minmax(0,43%) minmax(0,57%) !important;
+  }
+  .mobile-home .mobile-highlights article > span.highlight-photo {
+    grid-column:1 !important;
+    grid-row:2 !important;
+    width:auto !important;
+    height:auto !important;
+    margin:0 5px 5px !important;
+  }
+}
+
 /* Deterministic extracted-asset authority. No full-poster sprite positioning is
    used for visible mobile components below this point. */
 @media (max-width:900px), (orientation:landscape) and (max-height:520px) and (max-width:1000px) {
