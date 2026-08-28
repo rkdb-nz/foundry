@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=charity-mobile-fixed-1" />
 </head>
 <body>
   <header class="site-header">
@@ -123,7 +123,12 @@
     </div>
   </main>
 
-  <footer class="mobile-foot">Walking Te Araroa for the Cancer Society <span>On the Road</span></footer>
+  <footer class="mobile-foot" aria-label="Current campaign notice">
+    <div class="mobile-foot-track">
+      <span>Walking Te Araroa for the Cancer Society</span><b>On the Road</b><i>Next stop: National Park</i>
+      <span aria-hidden="true">Walking Te Araroa for the Cancer Society</span><b aria-hidden="true">On the Road</b><i aria-hidden="true">Next stop: National Park</i>
+    </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
