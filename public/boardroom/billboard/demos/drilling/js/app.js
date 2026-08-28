@@ -6,8 +6,10 @@
   const backdrop = document.querySelector('.menu-backdrop');
   const links = [...document.querySelectorAll('.drawer-link')];
   const panels = [...document.querySelectorAll('.drawer-panel')];
+  let menuOpener = null;
 
   function openMenu() {
+    menuOpener = document.activeElement;
     body.classList.add('menu-open');
     toggle?.setAttribute('aria-expanded', 'true');
     drawer?.setAttribute('aria-hidden', 'false');
@@ -18,7 +20,7 @@
     body.classList.remove('menu-open');
     toggle?.setAttribute('aria-expanded', 'false');
     drawer?.setAttribute('aria-hidden', 'true');
-    toggle?.focus({preventScroll:true});
+    (menuOpener instanceof HTMLElement ? menuOpener : toggle)?.focus({preventScroll:true});
   }
 
   function showPanel(name) {
@@ -40,6 +42,20 @@
 
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && body.classList.contains('menu-open')) closeMenu();
+    if (event.key === 'Tab' && body.classList.contains('menu-open') && drawer) {
+      const focusable = [...drawer.querySelectorAll('button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled]),a[href]')]
+        .filter(element => element.offsetParent !== null);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus({preventScroll:true});
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus({preventScroll:true});
+      }
+    }
   });
 
   document.getElementById('quote-form')?.addEventListener('submit', event => {
