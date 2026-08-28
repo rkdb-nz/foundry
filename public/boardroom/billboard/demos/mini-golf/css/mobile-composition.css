@@ -708,3 +708,122 @@
   .mobile-home { grid-template-rows:12% 22% 25% minmax(0,32%) 9% !important; }
   .mobile-details small { display:none; }
 }
+
+/* Phone-render correction: exact crop geometry from the approved 1536x1024
+   Mini Golf composite. This layer is intentionally last and page-only. */
+@media (max-width:900px), (orientation:landscape) and (max-height:520px) and (max-width:1000px) {
+  .mobile-home { isolation:isolate !important; }
+  .mobile-home::before {
+    z-index:-2 !important;
+    background:linear-gradient(rgba(0,25,13,.82),rgba(0,25,13,.82)),url('../assets/images/puttputt-hero.webp') center/cover no-repeat !important;
+  }
+
+  .mobile-identity {
+    position:relative;
+    align-self:stretch;
+    background-image:url('../assets/images/puttputt-hero.webp');
+    background-repeat:no-repeat;
+    background-size:512% auto;
+    background-position:3.2% 2.7%;
+  }
+  .mobile-identity .mobile-brand,
+  .mobile-identity .mobile-location { opacity:0 !important; }
+
+  .mobile-palm {
+    overflow:hidden;
+    color:transparent !important;
+    background-image:url('../assets/images/puttputt-hero.webp');
+    background-repeat:no-repeat;
+    background-size:1536% auto;
+    background-position:21.3% 2.4%;
+    filter:none !important;
+  }
+
+  .mobile-hero-photo {
+    background-size:192% auto !important;
+    background-position:48% 18% !important;
+    filter:brightness(1.12) saturate(1.15) !important;
+  }
+
+  .highlight-photo {
+    background-size:768% auto !important;
+    background-position-x:98% !important;
+    filter:brightness(1.12) saturate(1.1);
+  }
+  .highlight--course .highlight-photo { background-position-y:18% !important; }
+  .highlight--parties .highlight-photo { background-position-y:43% !important; }
+  .highlight--snacks .highlight-photo { background-position-y:66% !important; }
+
+  .mobile-highlights article > div {
+    grid-template-columns:clamp(38px,12%,56px) minmax(0,1fr) !important;
+  }
+  .mobile-highlights strong {
+    min-width:0;
+    white-space:nowrap;
+  }
+  .mobile-home h1 {
+    width:120%;
+    transform:scaleX(.82) !important;
+    font-style:italic !important;
+  }
+  .mobile-details > div:first-child b {
+    position:relative;
+    width:18px;
+    height:22px;
+    color:transparent !important;
+  }
+  .mobile-details > div:first-child b::before {
+    content:"";
+    position:absolute;
+    inset:1px 2px 5px;
+    border-radius:50% 50% 50% 0;
+    background:#087035;
+    transform:rotate(-45deg);
+  }
+  .mobile-details > div:first-child b::after {
+    content:"";
+    position:absolute;
+    left:7px;
+    top:5px;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:#f4e8ca;
+  }
+}
+
+@media (max-width:900px) and (orientation:portrait) {
+  .mobile-header { grid-template-columns:minmax(0,1fr) clamp(58px,17vw,82px) clamp(54px,15vw,70px) !important; }
+  .mobile-identity { width:min(72vw,340px); background-size:500% auto; }
+  .mobile-palm { width:clamp(58px,17vw,82px); height:clamp(68px,18vw,90px); justify-self:center; }
+  .mobile-home h1 { font-size:clamp(48px,min(14vw,8.2dvh),72px) !important; letter-spacing:-.035em !important; }
+  .mobile-kicker { font-size:clamp(13px,min(3.6vw,1.9dvh),18px) !important; }
+  .mobile-tagline { font-size:clamp(16px,min(4.8vw,2.55dvh),24px) !important; }
+  .mobile-book { width:min(62vw,285px); font-size:clamp(18px,min(4.8vw,2.7dvh),24px); }
+
+  .mobile-highlights article { grid-template-columns:51% 49% !important; }
+  .mobile-highlights article > div { padding:5px 9px !important; gap:7px !important; }
+  .mobile-highlights strong { font-size:clamp(15px,min(4.2vw,2.3dvh),21px) !important; }
+  .highlight-photo { margin:5px !important; }
+  .mobile-details { padding:4px !important; }
+  .mobile-details > div { padding:2px 4px !important; }
+}
+
+@media (orientation:landscape) and (max-height:520px) and (max-width:1000px) {
+  .mobile-home { grid-template-rows:16% 48% 27% 9% !important; }
+  .mobile-header { grid-template-columns:25% 7% 1fr !important; }
+  .mobile-identity { width:100%; background-size:500% auto; }
+  .mobile-palm { width:clamp(42px,6vw,66px); height:clamp(46px,11dvh,70px); justify-self:center; }
+  .mobile-home h1 { font-size:clamp(42px,min(6vw,13dvh),70px) !important; letter-spacing:-.025em !important; }
+  .mobile-kicker { font-size:clamp(10px,min(1.45vw,3.1dvh),15px) !important; }
+  .mobile-tagline { font-size:clamp(14px,min(2.1vw,4.4dvh),22px) !important; }
+  .mobile-book { width:min(58%,235px); font-size:clamp(15px,min(2.2vw,4.7dvh),23px); }
+  .mobile-hero-photo { background-size:145% auto !important; background-position:92% 18% !important; }
+
+  .mobile-highlights article { grid-template-rows:45% 55% !important; }
+  .mobile-highlights article > div { padding:3px 7px !important; gap:5px !important; }
+  .mobile-highlights strong { font-size:clamp(12px,min(1.65vw,3.8dvh),18px) !important; }
+  .highlight-photo { margin:0 5px 5px !important; }
+  .mobile-details { margin-left:max(6vw,env(safe-area-inset-left)) !important; margin-right:max(6vw,env(safe-area-inset-right)) !important; }
+  .hotspots { left:32% !important; }
+}

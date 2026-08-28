@@ -6,8 +6,22 @@
   <meta name="theme-color" content="#111111">
   <meta name="description" content="Deepcore Drilling — specialist drilling, delivered with precision.">
   <title>Deepcore Drilling | Specialist Drilling</title>
+  <script>
+    (() => {
+      const syncOrientation = () => {
+        const viewport = window.visualViewport;
+        const width = viewport?.width || window.innerWidth;
+        const height = viewport?.height || window.innerHeight;
+        document.documentElement.classList.toggle('mobile-portrait', height >= width);
+        document.documentElement.classList.toggle('mobile-landscape', width > height);
+      };
+      syncOrientation();
+      window.addEventListener('resize', syncOrientation, {passive:true});
+      window.visualViewport?.addEventListener('resize', syncOrientation, {passive:true});
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css?v=2">
-  <link rel="stylesheet" href="css/mobile-fluid.css?v=4">
+  <link rel="stylesheet" href="css/mobile-fluid.css?v=5">
 </head>
 <body>
   <main class="viewport" aria-label="Deepcore Drilling">
