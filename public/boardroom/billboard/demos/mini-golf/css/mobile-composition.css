@@ -877,12 +877,12 @@
 @media (max-width:900px), (orientation:landscape) and (max-height:520px) and (max-width:1000px) {
   .mobile-identity {
     width:auto !important;
-    background-image:url('../assets/images/mobile-logo.webp') !important;
+    background-image:url('../assets/images/mobile-logo-transparent.webp?v=2') !important;
     background-size:contain !important;
     background-position:left center !important;
   }
   .mobile-palm {
-    background-image:url('../assets/images/mobile-palm.webp') !important;
+    background-image:url('../assets/images/mobile-palm-transparent.webp') !important;
     background-size:contain !important;
     background-position:center !important;
   }
