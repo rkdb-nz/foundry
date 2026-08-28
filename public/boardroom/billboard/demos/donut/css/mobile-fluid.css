@@ -1,0 +1,190 @@
+/* Fluid fixed-screen mobile overrides for Billboard / Donut.
+   Desktop remains untouched. Test viewports are examples, never targets. */
+
+@media (max-width: 760px) and (orientation: portrait) {
+  html,
+  body,
+  .viewport,
+  .site {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .viewport,
+  .site {
+    width: 100vw;
+    height: 100dvh;
+  }
+
+  .site {
+    grid-template-rows:
+      clamp(124px, 19dvh, 168px)
+      minmax(0, 39fr)
+      minmax(0, 42fr);
+  }
+
+  .topbar {
+    grid-template-rows: clamp(40px, 6.2dvh, 56px) minmax(0, 1fr);
+    gap: clamp(3px, .7dvh, 6px);
+    padding:
+      max(clamp(4px, .65dvh, 7px), env(safe-area-inset-top))
+      max(clamp(7px, 2vw, 11px), env(safe-area-inset-right))
+      clamp(5px, .8dvh, 8px)
+      max(clamp(7px, 2vw, 11px), env(safe-area-inset-left));
+  }
+
+  .brand {
+    width: clamp(128px, 43vw, 190px);
+  }
+
+  .nav {
+    gap: clamp(3px, 1vw, 6px);
+    grid-template-rows: repeat(2, minmax(44px, 1fr));
+  }
+
+  .nav-button {
+    min-height: 44px;
+    padding-inline: clamp(3px, 1vw, 7px);
+    font-size: clamp(10px, min(2.7vw, 1.55dvh), 12px);
+  }
+
+  .nav-button--cta {
+    font-size: clamp(10px, min(2.9vw, 1.7dvh), 12px);
+  }
+
+  .hero img {
+    object-position: 51% clamp(42%, 48%, 52%);
+  }
+
+  .features {
+    gap: clamp(3px, .7dvh, 6px);
+    padding:
+      clamp(4px, .8dvh, 7px)
+      max(clamp(7px, 2vw, 10px), env(safe-area-inset-right))
+      max(clamp(6px, .9dvh, 9px), env(safe-area-inset-bottom))
+      max(clamp(7px, 2vw, 10px), env(safe-area-inset-left));
+  }
+
+  .feature-card,
+  .feature-card:nth-child(even) {
+    grid-template-columns:
+      clamp(34px, 10vw, 46px)
+      minmax(0, 1fr)
+      clamp(86px, 29vw, 128px);
+    border-radius: clamp(8px, 2.4vw, 11px);
+  }
+
+  .feature-icon {
+    width: clamp(27px, 8vw, 34px);
+    font-size: clamp(15px, 4.5vw, 19px);
+  }
+
+  .feature-copy {
+    padding: clamp(3px, .65dvh, 6px) clamp(5px, 1.6vw, 9px) clamp(3px, .65dvh, 6px) 0;
+  }
+
+  .feature-copy h2 {
+    margin-bottom: clamp(1px, .35dvh, 4px);
+    font-size: clamp(13px, min(3.8vw, 2.05dvh), 17px);
+  }
+
+  .feature-copy p {
+    font-size: clamp(10px, min(2.65vw, 1.5dvh), 12px);
+    line-height: 1.16;
+  }
+}
+
+@media (max-width: 760px) and (orientation: portrait) and (max-height: 780px) {
+  .site {
+    grid-template-rows: clamp(120px, 18.5dvh, 148px) minmax(0, 41fr) minmax(0, 41fr);
+  }
+
+  .feature-copy p {
+    -webkit-line-clamp: 1;
+  }
+}
+
+@media (max-width: 760px) and (orientation: portrait) and (max-height: 735px) {
+  .feature-copy p {
+    display: none;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 960px) {
+  html,
+  body,
+  .viewport,
+  .site {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .viewport,
+  .site {
+    width: 100vw;
+    height: 100dvh;
+  }
+
+  .site {
+    grid-template-columns: minmax(0, 1.45fr) minmax(285px, .95fr);
+    grid-template-rows: clamp(58px, 18dvh, 72px) minmax(0, 1fr);
+  }
+
+  .topbar {
+    grid-template-columns: clamp(108px, 16vw, 150px) minmax(0, 1fr);
+    gap: clamp(5px, 1vw, 10px);
+    padding:
+      max(clamp(4px, 1.3dvh, 6px), env(safe-area-inset-top))
+      max(clamp(7px, 1.2vw, 12px), env(safe-area-inset-right))
+      clamp(4px, 1.1dvh, 6px)
+      max(clamp(7px, 1.2vw, 12px), env(safe-area-inset-left));
+  }
+
+  .nav {
+    gap: clamp(3px, .65vw, 7px);
+  }
+
+  .nav-button {
+    min-height: 44px;
+    padding-inline: clamp(2px, .55vw, 6px);
+    font-size: clamp(9px, min(1.2vw, 2.8dvh), 11px);
+  }
+
+  .nav-button--cta {
+    font-size: clamp(9px, min(1.35vw, 3dvh), 12px);
+  }
+
+  .features {
+    gap: clamp(3px, 1dvh, 6px);
+    padding:
+      clamp(4px, 1.3dvh, 7px)
+      max(clamp(5px, .9vw, 9px), env(safe-area-inset-right))
+      max(clamp(5px, 1.2dvh, 8px), env(safe-area-inset-bottom))
+      clamp(5px, .9vw, 9px);
+  }
+
+  .feature-card,
+  .feature-card:nth-child(even) {
+    grid-template-columns:
+      clamp(28px, 4.3vw, 38px)
+      minmax(0, 1fr)
+      clamp(72px, 10vw, 108px);
+  }
+
+  .feature-icon {
+    width: clamp(24px, 3.7vw, 30px);
+    font-size: clamp(14px, 2.4vw, 17px);
+  }
+
+  .feature-copy {
+    padding: clamp(2px, .9dvh, 5px) clamp(4px, .7vw, 7px) clamp(2px, .9dvh, 5px) 0;
+  }
+
+  .feature-copy h2 {
+    font-size: clamp(12px, min(1.7vw, 4dvh), 16px);
+  }
+}
