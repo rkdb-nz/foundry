@@ -105,7 +105,11 @@
  body.mini-golf-final .mobile-home{
   grid-template-columns:46% 54%!important;
   grid-template-rows:63% 27% 10%!important;
-  background:#032313!important
+  background-color:#032313!important;
+  background-image:url('../assets/images/mobile-hero.webp?v=4')!important;
+  background-position:right top!important;
+  background-size:58% 63%!important;
+  background-repeat:no-repeat!important
  }
  body.mini-golf-final .mobile-header{
   position:absolute!important;inset:0 0 auto 0!important;height:15%!important;
@@ -125,7 +129,8 @@
   clip-path:ellipse(88% 79% at 58% 49%)!important;
   background-image:url('../assets/images/mobile-hero.webp?v=3')!important;
   background-position:center 51%!important;background-size:cover!important;
-  filter:brightness(1.12) saturate(1.16)!important
+  filter:brightness(1.12) saturate(1.16)!important;
+  visibility:hidden!important
  }
  body.mini-golf-final .mobile-kicker{font-size:clamp(10px,min(1.5vw,3.1dvh),15px)!important}
  body.mini-golf-final .mobile-home h1{width:111%!important;font-size:clamp(48px,min(8.7vw,16dvh),100px)!important;transform:scaleX(.9)!important}
