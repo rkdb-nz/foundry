@@ -739,6 +739,282 @@ body.overlay-open .features {
   pointer-events: auto !important;
 }
 
+/* Billboard mobile rule: the landing page is a true fixed-screen
+   recomposition. Never scale, letterbox or transform the desktop canvas. */
+@media (max-width: 760px) and (orientation: portrait) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .viewport,
+  .site {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .viewport { display: block; }
+
+  .site {
+    display: grid;
+    grid-template-rows: minmax(142px, 18.5%) minmax(0, 40%) minmax(0, 41.5%);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .site::after { position: absolute; }
+
+  .topbar {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(42px, 43%) minmax(0, 57%);
+    gap: 5px;
+    padding: max(5px, env(safe-area-inset-top)) 8px 7px;
+    overflow: hidden;
+  }
+
+  .brand {
+    display: block;
+    width: min(190px, 48vw);
+    height: 100%;
+    justify-self: center;
+  }
+
+  .brand img { object-position: center; }
+
+  .nav {
+    min-height: 0;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(44px, 1fr));
+    gap: 5px;
+  }
+
+  .nav-button {
+    grid-column: span 2;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    height: 100%;
+    padding: 0 5px;
+    font-size: clamp(11px, 2.45vw, 12px);
+    line-height: 1.05;
+    white-space: normal;
+  }
+
+  .nav-button:nth-child(4),
+  .nav-button:nth-child(5) { grid-column: span 3; }
+  .nav-button--cta { font-size: clamp(10px, 2.8vw, 12px); }
+  .nav-icon { display: none; }
+
+  .hero {
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+
+  .hero img {
+    object-position: 51% 48%;
+  }
+
+  .features {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+    padding: 6px 8px max(7px, env(safe-area-inset-bottom));
+    overflow: hidden;
+  }
+
+  .feature-card,
+  .feature-card:nth-child(even) {
+    width: 100%;
+    min-height: 0;
+    grid-template-columns: 46px minmax(0, 1fr) 29%;
+    grid-template-areas: "icon copy image";
+    place-items: stretch;
+    text-align: left;
+    border-radius: 10px;
+  }
+
+  .feature-icon {
+    grid-area: icon;
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    width: 32px;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .feature-copy {
+    grid-area: copy;
+    align-self: center;
+    min-width: 0;
+    padding: 5px 7px 5px 0;
+  }
+
+  .feature-copy h2 {
+    margin: 0 0 3px;
+    font-size: clamp(13px, 3.7vw, 17px);
+    line-height: .98;
+  }
+
+  .feature-copy p {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: clamp(11px, 2.55vw, 12px);
+    line-height: 1.18;
+  }
+
+  .feature-rule { display: none; }
+
+  .feature-card img {
+    grid-area: image;
+    display: block;
+    min-width: 0;
+    height: 100%;
+    object-position: center;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 960px) {
+  html,
+  body,
+  .viewport,
+  .site {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .viewport { display: block; }
+
+  .site {
+    display: grid;
+    grid-template-columns: 57% 43%;
+    grid-template-rows: 66px minmax(0, 1fr);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .site::after { position: absolute; }
+
+  .topbar {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    gap: 8px;
+    padding: max(5px, env(safe-area-inset-top)) 9px 5px;
+    overflow: hidden;
+  }
+
+  .brand { display: block; width: 100%; height: 100%; }
+
+  .nav {
+    min-width: 0;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .nav-button {
+    min-width: 0;
+    min-height: 44px;
+    height: 100%;
+    padding: 0 4px;
+    font-size: clamp(10px, 1.25vw, 11px);
+    line-height: 1.05;
+    white-space: normal;
+  }
+
+  .nav-button--cta { font-size: clamp(9px, 1.45vw, 12px); }
+  .nav-icon { display: none; }
+
+  .hero {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+
+  .hero img { object-position: 51% 48%; }
+
+  .features {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+    padding: 6px 7px max(6px, env(safe-area-inset-bottom));
+    overflow: hidden;
+  }
+
+  .feature-card,
+  .feature-card:nth-child(even) {
+    width: 100%;
+    min-height: 0;
+    grid-template-columns: 38px minmax(0, 1fr) 27%;
+    grid-template-areas: "icon copy image";
+    text-align: left;
+    border-radius: 9px;
+  }
+
+  .feature-icon {
+    grid-area: icon;
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    width: 28px;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .feature-copy {
+    grid-area: copy;
+    align-self: center;
+    min-width: 0;
+    padding: 4px 5px 4px 0;
+  }
+
+  .feature-copy h2 {
+    margin: 0 0 2px;
+    font-size: clamp(13px, 1.7vw, 16px);
+    line-height: .95;
+  }
+
+  .feature-copy p { display: none; }
+
+  .feature-rule { display: none; }
+  .feature-card img { grid-area: image; display: block; height: 100%; min-width: 0; }
+
+  .overlay { position: fixed; inset: 0; }
+  .overlay-panel,
+  .overlay-panel--split,
+  .overlay-panel--order {
+    height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
 /* FINAL Donut reveal blur:
    blur the page BEHIND the sheet, never the sheet itself */
 .overlay {

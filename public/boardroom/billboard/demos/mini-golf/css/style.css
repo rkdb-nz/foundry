@@ -841,3 +841,187 @@ body,
     grid-column: 1 / -1;
   }
 }
+
+/* =========================================================
+   BILLBOARD FIXED-SCREEN MOBILE STANDARD
+   The landing page is composed inside one viewport. Nothing
+   here scales the desktop stage or turns the landing into a feed.
+   Dialogs remain independently scrollable when their content needs it.
+   ========================================================= */
+@media (max-width: 900px), (max-height: 500px) {
+  html,
+  body,
+  .viewport,
+  .stage {
+    width: 100%;
+    height: 100%;
+    min-height: 0 !important;
+    max-height: 100%;
+    overflow: hidden !important;
+  }
+
+  .viewport,
+  .stage {
+    width: 100vw !important;
+    height: 100svh !important;
+  }
+
+  @supports (height: 100dvh) {
+    .viewport,
+    .stage {
+      height: 100dvh !important;
+    }
+  }
+
+  .mobile-home {
+    position: absolute;
+    inset: 0;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .hotspots {
+    max-height: calc(100% - 16px);
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  .artwork {
+    object-position: 58% center !important;
+  }
+
+  .stage::before {
+    background:
+      linear-gradient(180deg, rgba(1, 21, 14, .94) 0%, rgba(1, 21, 14, .28) 33%, rgba(1, 21, 14, .82) 100%),
+      linear-gradient(90deg, rgba(1, 21, 14, .44), transparent 82%);
+  }
+
+  .mobile-home {
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr) auto 126px;
+    align-items: start;
+    gap: 0;
+    padding: max(22px, env(safe-area-inset-top)) 20px max(10px, env(safe-area-inset-bottom));
+  }
+
+  .mobile-brand {
+    font-size: clamp(31px, 9.2vw, 40px);
+  }
+
+  .mobile-location {
+    margin-top: 7px;
+  }
+
+  .mobile-hero-copy {
+    align-self: center;
+    margin: 0;
+    transform: translateY(-1.5vh);
+  }
+
+  .mobile-home h1 {
+    font-size: clamp(61px, 19vw, 82px);
+  }
+
+  .mobile-intro {
+    font-size: clamp(16px, 4.4vw, 19px);
+  }
+
+  .mobile-highlights {
+    align-self: end;
+    margin-bottom: 9px;
+  }
+
+  .mobile-highlights article {
+    min-height: 62px;
+  }
+
+  .hotspots {
+    right: max(12px, env(safe-area-inset-right)) !important;
+    bottom: max(10px, env(safe-area-inset-bottom)) !important;
+    left: max(12px, env(safe-area-inset-left)) !important;
+    height: 116px;
+    padding: 7px;
+  }
+
+  .hotspot,
+  .hotspot--course,
+  .hotspot--story,
+  .hotspot--events,
+  .hotspot--book {
+    height: 47px !important;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .artwork {
+    object-position: 54% 53% !important;
+  }
+
+  .stage::before {
+    background:
+      linear-gradient(90deg, rgba(1, 21, 14, .94) 0%, rgba(1, 21, 14, .58) 49%, rgba(1, 21, 14, .18) 100%),
+      linear-gradient(180deg, rgba(1, 21, 14, .64), transparent 44%, rgba(1, 21, 14, .58));
+  }
+
+  .mobile-home {
+    display: grid;
+    grid-template-columns: minmax(250px, .9fr) minmax(300px, 1.1fr);
+    grid-template-rows: auto minmax(0, 1fr) 64px;
+    column-gap: clamp(22px, 4vw, 44px);
+    padding: max(14px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+  }
+
+  .mobile-brand {
+    font-size: clamp(27px, 7.6vh, 34px);
+  }
+
+  .mobile-location {
+    align-self: center;
+    margin: 0;
+    font-size: 11px;
+    text-align: right;
+  }
+
+  .mobile-hero-copy {
+    align-self: center;
+    margin: 0;
+  }
+
+  .mobile-home h1 {
+    font-size: clamp(49px, 16vh, 66px);
+  }
+
+  .mobile-intro {
+    font-size: 15px;
+    line-height: 1.24;
+  }
+
+  .mobile-highlights {
+    align-self: center;
+  }
+
+  .mobile-highlights article {
+    min-height: 54px;
+    padding: 8px 10px;
+  }
+
+  .hotspots {
+    right: max(18px, env(safe-area-inset-right)) !important;
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    left: max(18px, env(safe-area-inset-left)) !important;
+    width: auto;
+    height: 56px;
+    transform: none;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 5px;
+  }
+
+  .hotspot,
+  .hotspot--course,
+  .hotspot--story,
+  .hotspot--events,
+  .hotspot--book {
+    height: 44px !important;
+  }
+}
