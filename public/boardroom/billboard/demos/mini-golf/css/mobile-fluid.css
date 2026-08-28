@@ -1,0 +1,205 @@
+/* Fluid fixed-screen mobile overrides for Billboard / Mini Golf.
+   Desktop remains untouched; mobile adapts continuously to the visible viewport. */
+
+@media (max-width: 900px), (max-height: 500px) {
+  html,
+  body,
+  .viewport,
+  .stage {
+    width: 100%;
+    height: 100%;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .viewport,
+  .stage {
+    width: 100vw !important;
+    height: 100dvh !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  .mobile-home {
+    grid-template-rows:
+      auto
+      auto
+      minmax(0, 1fr)
+      auto
+      clamp(104px, 14dvh, 132px);
+    padding:
+      max(clamp(16px, 2.7dvh, 24px), env(safe-area-inset-top))
+      max(clamp(15px, 5vw, 22px), env(safe-area-inset-right))
+      max(clamp(8px, 1.4dvh, 12px), env(safe-area-inset-bottom))
+      max(clamp(15px, 5vw, 22px), env(safe-area-inset-left));
+  }
+
+  .mobile-brand {
+    font-size: clamp(28px, min(9.2vw, 5.1dvh), 40px);
+  }
+
+  .mobile-location {
+    margin-top: clamp(4px, .9dvh, 8px);
+    font-size: clamp(10px, min(2.9vw, 1.55dvh), 12px);
+  }
+
+  .mobile-hero-copy {
+    transform: translateY(clamp(-12px, -1.5dvh, -4px));
+  }
+
+  .mobile-kicker {
+    font-size: clamp(11px, min(3.2vw, 1.8dvh), 14px);
+  }
+
+  .mobile-home h1 {
+    font-size: clamp(54px, min(19vw, 10.6dvh), 82px);
+  }
+
+  .mobile-intro {
+    font-size: clamp(14px, min(4.4vw, 2.45dvh), 19px);
+    line-height: 1.22;
+  }
+
+  .mobile-highlights {
+    gap: clamp(6px, 2vw, 10px);
+    margin-bottom: clamp(5px, 1dvh, 10px);
+  }
+
+  .mobile-highlights article {
+    min-height: clamp(50px, 7.2dvh, 64px);
+    padding: clamp(7px, 1.2dvh, 11px) clamp(9px, 3vw, 14px);
+  }
+
+  .mobile-highlights strong {
+    font-size: clamp(18px, min(5.2vw, 2.9dvh), 24px);
+  }
+
+  .mobile-highlights span {
+    font-size: clamp(9px, min(2.6vw, 1.4dvh), 11px);
+  }
+
+  .hotspots {
+    right: max(clamp(9px, 3vw, 14px), env(safe-area-inset-right)) !important;
+    bottom: max(clamp(7px, 1.3dvh, 11px), env(safe-area-inset-bottom)) !important;
+    left: max(clamp(9px, 3vw, 14px), env(safe-area-inset-left)) !important;
+    height: clamp(94px, 13dvh, 118px);
+    padding: clamp(5px, .9dvh, 8px);
+    gap: clamp(4px, 1vw, 7px);
+  }
+
+  .hotspot,
+  .hotspot--course,
+  .hotspot--story,
+  .hotspot--events,
+  .hotspot--book {
+    min-height: 44px !important;
+    height: clamp(44px, 5.5dvh, 48px) !important;
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) and (max-height: 780px) {
+  .mobile-home {
+    grid-template-rows: auto auto minmax(0, 1fr) auto clamp(98px, 13.5dvh, 108px);
+  }
+
+  .mobile-intro {
+    font-size: clamp(13px, 4vw, 16px);
+  }
+
+  .mobile-highlights article {
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) and (max-height: 735px) {
+  .mobile-location {
+    display: none;
+  }
+
+  .mobile-highlights span {
+    display: none;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 960px) {
+  .mobile-home {
+    grid-template-columns: minmax(230px, .9fr) minmax(280px, 1.1fr);
+    grid-template-rows: auto minmax(0, 1fr) clamp(52px, 16dvh, 66px);
+    column-gap: clamp(18px, 4vw, 44px);
+    padding:
+      max(clamp(10px, 3.8dvh, 16px), env(safe-area-inset-top))
+      max(clamp(18px, 3.2vw, 30px), env(safe-area-inset-right))
+      max(clamp(6px, 2dvh, 9px), env(safe-area-inset-bottom))
+      max(clamp(18px, 3.2vw, 30px), env(safe-area-inset-left));
+  }
+
+  .mobile-brand {
+    font-size: clamp(24px, min(4.2vw, 8dvh), 34px);
+  }
+
+  .mobile-location {
+    font-size: clamp(9px, min(1.35vw, 2.8dvh), 11px);
+  }
+
+  .mobile-kicker {
+    font-size: clamp(9px, min(1.4vw, 3dvh), 12px);
+  }
+
+  .mobile-home h1 {
+    font-size: clamp(42px, min(7.2vw, 16dvh), 66px);
+  }
+
+  .mobile-intro {
+    font-size: clamp(12px, min(1.8vw, 4dvh), 15px);
+    line-height: 1.2;
+  }
+
+  .mobile-highlights {
+    gap: clamp(5px, 1vw, 9px);
+  }
+
+  .mobile-highlights article {
+    min-height: clamp(46px, 14dvh, 56px);
+    padding: clamp(6px, 2dvh, 9px) clamp(7px, 1.4vw, 11px);
+  }
+
+  .mobile-highlights strong {
+    font-size: clamp(16px, min(2.3vw, 5.5dvh), 21px);
+  }
+
+  .mobile-highlights span {
+    font-size: clamp(8px, min(1.2vw, 2.6dvh), 10px);
+  }
+
+  .hotspots {
+    right: max(clamp(13px, 2.3vw, 20px), env(safe-area-inset-right)) !important;
+    bottom: max(clamp(6px, 2dvh, 9px), env(safe-area-inset-bottom)) !important;
+    left: max(clamp(13px, 2.3vw, 20px), env(safe-area-inset-left)) !important;
+    height: clamp(50px, 16dvh, 58px);
+    padding: clamp(4px, 1.4dvh, 6px);
+    gap: clamp(4px, .8vw, 7px);
+  }
+
+  .hotspot,
+  .hotspot--course,
+  .hotspot--story,
+  .hotspot--events,
+  .hotspot--book {
+    min-height: 44px !important;
+    height: clamp(44px, 13dvh, 47px) !important;
+  }
+}
+
+@media (max-height: 365px) and (orientation: landscape) {
+  .mobile-location {
+    display: none;
+  }
+
+  .mobile-intro {
+    font-size: 12px;
+  }
+
+  .mobile-highlights span {
+    display: none;
+  }
+}
