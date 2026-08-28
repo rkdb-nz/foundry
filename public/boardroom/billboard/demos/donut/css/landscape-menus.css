@@ -1,0 +1,228 @@
+/* Donut landscape overlay system.
+   Keeps every menu below the fixed header and fully inside the visible phone viewport. */
+@media (orientation: landscape) and (max-height: 520px) and (max-width: 1000px) {
+  .overlay {
+    position: absolute !important;
+    inset: clamp(50px,15dvh,64px) 0 0 0 !important;
+    z-index: 2000 !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: grid !important;
+    place-items: center !important;
+    padding: 7px 10px max(7px,env(safe-area-inset-bottom)) !important;
+    overflow: hidden !important;
+  }
+
+  .overlay[hidden] { display: none !important; }
+
+  .overlay-panel,
+  .overlay-panel--split,
+  .overlay-panel--order {
+    position: relative !important;
+    width: min(97%, 1180px) !important;
+    height: auto !important;
+    max-height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 42px 16px 12px !important;
+    overflow: auto !important;
+    overscroll-behavior: contain !important;
+    border-radius: 17px !important;
+  }
+
+  .overlay-close {
+    position: absolute !important;
+    top: 7px !important;
+    right: 10px !important;
+    left: auto !important;
+    width: auto !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    margin: 0 !important;
+    padding: 0 13px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 999px !important;
+    font: 700 11px/1 Arial,sans-serif !important;
+    letter-spacing: .05em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    transform: none !important;
+  }
+
+  .overlay-panel .eyebrow {
+    margin: 0 0 2px !important;
+    text-align: center !important;
+    font-size: clamp(9px,2.4dvh,12px) !important;
+    line-height: 1.1 !important;
+  }
+
+  .overlay-panel h2 {
+    margin: 0 0 8px !important;
+    padding: 0 !important;
+    text-align: center !important;
+    font-size: clamp(27px,7.2dvh,40px) !important;
+    line-height: .92 !important;
+  }
+
+  .overlay-panel p,
+  .overlay-panel .lead {
+    font-size: clamp(10px,2.6dvh,14px) !important;
+    line-height: 1.25 !important;
+  }
+
+  /* THE MENU */
+  .menu-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+    gap: 6px !important;
+  }
+
+  .menu-grid article {
+    min-width: 0 !important;
+    padding: 8px 38px 8px 9px !important;
+    border-radius: 10px !important;
+    font-size: clamp(9px,2.25dvh,12px) !important;
+  }
+
+  .menu-grid strong { font-size: 1.05em !important; }
+  .menu-grid span { margin-top: 3px !important; line-height: 1.18 !important; }
+  .menu-grid b { top: 8px !important; right: 8px !important; font-size: 1em !important; }
+
+  /* OUR STORY */
+  #overlay-story .overlay-panel--split {
+    display: grid !important;
+    grid-template-columns: minmax(0,1.45fr) minmax(120px,.55fr) !important;
+    align-items: center !important;
+    gap: 14px !important;
+  }
+
+  #overlay-story .lead { margin: 0 0 6px !important; }
+  #overlay-story p:not(.eyebrow):not(.lead) { margin: 5px 0 !important; }
+  #overlay-story .story-seal {
+    width: min(22vw,190px) !important;
+    max-height: 150px !important;
+    padding: 14px 18px !important;
+  }
+
+  /* LOCATIONS */
+  #overlay-locations .overlay-panel--split {
+    display: grid !important;
+    grid-template-columns: minmax(0,1.05fr) minmax(230px,.95fr) !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  #overlay-locations .location-list {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 7px !important;
+  }
+
+  #overlay-locations .location-list article {
+    min-width: 0 !important;
+    padding: 9px 10px !important;
+  }
+
+  #overlay-locations .location-list strong {
+    font-size: clamp(14px,3.8dvh,20px) !important;
+  }
+
+  #overlay-locations .location-list span,
+  #overlay-locations .location-list small {
+    font-size: clamp(9px,2.5dvh,13px) !important;
+    line-height: 1.16 !important;
+  }
+
+  #overlay-locations .map-card {
+    transform: none !important;
+    min-height: 0 !important;
+    height: 100% !important;
+    max-height: 185px !important;
+    border-width: 6px !important;
+    border-radius: 14px !important;
+  }
+
+  /* CATERING */
+  .catering-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .catering-grid article {
+    min-height: 0 !important;
+    padding: 10px !important;
+    border-radius: 12px !important;
+  }
+
+  .catering-grid strong {
+    margin: 4px 0 !important;
+    font-size: clamp(13px,3.4dvh,18px) !important;
+  }
+
+  .catering-grid p {
+    margin: 0 !important;
+    font-size: clamp(9px,2.35dvh,12px) !important;
+    line-height: 1.2 !important;
+  }
+
+  .soft-action {
+    margin-top: 8px !important;
+    padding: 9px 17px !important;
+    font-size: 11px !important;
+  }
+
+  /* ORDER NOW */
+  #overlay-order .overlay-panel--order {
+    display: grid !important;
+    grid-template-columns: minmax(180px,.75fr) minmax(0,1.25fr) !important;
+    align-items: start !important;
+    gap: 14px !important;
+  }
+
+  #overlay-order .lead { margin: 4px 0 0 !important; }
+
+  #overlay-order form {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px 8px !important;
+  }
+
+  #overlay-order form label {
+    gap: 3px !important;
+    font-size: 10px !important;
+  }
+
+  #overlay-order input,
+  #overlay-order select,
+  #overlay-order textarea {
+    min-height: 0 !important;
+    padding: 7px 9px !important;
+    font-size: 11px !important;
+  }
+
+  #overlay-order textarea {
+    height: 44px !important;
+    min-height: 44px !important;
+    resize: none !important;
+  }
+
+  #overlay-order label:nth-of-type(4),
+  #overlay-order .submit-button,
+  #overlay-order .form-status {
+    grid-column: auto !important;
+  }
+
+  #overlay-order .submit-button {
+    margin-top: 0 !important;
+    padding: 8px 12px !important;
+    font-size: 10px !important;
+  }
+
+  #overlay-order .form-status {
+    font-size: 10px !important;
+  }
+}
