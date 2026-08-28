@@ -7,7 +7,7 @@
   <meta name="description" content="A Hole in One — handcrafted gourmet donuts.">
   <title>A Hole in One | Gourmet Donuts</title>
   <link rel="stylesheet" href="css/style.css?v=slide3">
-  <link rel="stylesheet" href="css/mobile-fluid.css?v=1">
+  <link rel="stylesheet" href="css/mobile-fluid.css?v=2">
 </head>
 <body>
 <main class="viewport" aria-label="A Hole in One gourmet donuts">
@@ -17,6 +17,10 @@
           <img src="assets/images/logo.webp" alt="A Hole in One — Gourmet Donuts">
         </a>
 
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu-panel" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+
         <nav class="nav" aria-label="Primary navigation">
           <button class="nav-button" data-overlay="menu" type="button"><span class="nav-icon">◉</span><span>The Menu</span></button>
           <button class="nav-button" data-overlay="story" type="button"><span class="nav-icon">♧</span><span>Our Story</span></button>
@@ -24,18 +28,33 @@
           <button class="nav-button" data-overlay="catering" type="button"><span class="nav-icon">☆</span><span>Catering</span></button>
           <button class="nav-button nav-button--cta" data-overlay="order" type="button"><span>Order Now</span><span class="arrow">→</span></button>
         </nav>
+
+        <nav class="mobile-menu-panel" id="mobile-menu-panel" aria-label="Mobile navigation" hidden>
+          <button data-overlay="menu" type="button">The Menu</button>
+          <button data-overlay="story" type="button">Our Story</button>
+          <button data-overlay="locations" type="button">Locations</button>
+          <button data-overlay="catering" type="button">Catering</button>
+        </nav>
       </header>
 
-      <section class="hero" aria-label="Gourmet perfection in every bite">
+      <section class="hero" aria-label="Gourmet donuts">
         <img src="assets/images/donut1.webp" alt="Gourmet donuts with berries, gold leaf and coffee">
+      </section>
+
+      <section class="mobile-message" aria-label="Gourmet perfection in every bite">
+        <p class="mobile-script">Handcrafted Happiness <span aria-hidden="true">♡</span></p>
+        <h1>Gourmet<br>Perfection</h1>
+        <p class="mobile-script mobile-script--lower">in Every Bite</p>
+        <div class="mobile-flourish" aria-hidden="true"><span></span><b>•</b><i>◉</i><b>•</b><span></span></div>
+        <button class="mobile-order-button" data-overlay="order" type="button"><span>Order Now</span><span aria-hidden="true">→</span></button>
       </section>
 
       <section class="features" aria-label="Our promises">
         <article class="feature-card">
           <div class="feature-icon" aria-hidden="true">♧</div>
           <div class="feature-copy">
-            <h2>Premium<br>Ingredients</h2>
-            <p>We use only the finest ingredients for unforgettable flavor in every bite.</p>
+            <h2>Premium Ingredients</h2>
+            <p>Finest ingredients for unforgettable flavour.</p>
             <span class="feature-rule"></span>
           </div>
           <img src="assets/images/donut2.webp" alt="Chocolate, vanilla and berries">
@@ -44,8 +63,8 @@
         <article class="feature-card">
           <div class="feature-icon" aria-hidden="true">◉</div>
           <div class="feature-copy">
-            <h2>Handcrafted<br>Daily</h2>
-            <p>Each donut is handcrafted fresh every morning with passion and care.</p>
+            <h2>Handcrafted Daily</h2>
+            <p>Fresh every morning with passion and care.</p>
             <span class="feature-rule"></span>
           </div>
           <img src="assets/images/donut3.webp" alt="A baker handcrafting a donut">
@@ -55,7 +74,7 @@
           <div class="feature-icon" aria-hidden="true">♡</div>
           <div class="feature-copy">
             <h2>Made to Delight</h2>
-            <p>From our kitchen to you, crafted to make every moment a little sweeter.</p>
+            <p>Crafted to make every moment sweeter.</p>
             <span class="feature-rule"></span>
           </div>
           <img src="assets/images/donut4.webp" alt="A gift box of gourmet donuts">
@@ -144,6 +163,6 @@
       </section>
     </div>
   </main>
-  <script src="js/app.js?v=slide3"></script>
+  <script src="js/app.js?v=slide4"></script>
 </body>
 </html>
