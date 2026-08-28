@@ -1,5 +1,11 @@
-/* Fluid fixed-screen mobile overrides for Billboard / Donut.
-   Desktop remains untouched. Test viewports are examples, never targets. */
+/* Billboard / Donut mobile reference implementation.
+   Desktop remains untouched. Portrait is a fixed-screen composition, not a shrunk desktop page. */
+
+.mobile-menu-toggle,
+.mobile-menu-panel,
+.mobile-message {
+  display: none;
+}
 
 @media (max-width: 760px) and (orientation: portrait) {
   html,
@@ -18,100 +24,389 @@
     height: 100dvh;
   }
 
+  .viewport {
+    display: block;
+    background: #fff4ee;
+  }
+
   .site {
+    display: grid;
     grid-template-rows:
-      clamp(124px, 19dvh, 168px)
-      minmax(0, 39fr)
-      minmax(0, 42fr);
+      clamp(88px, 12.5dvh, 128px)
+      minmax(0, 28fr)
+      minmax(0, 31fr)
+      minmax(0, 28.5fr);
+    background: linear-gradient(180deg, #fff7f2 0%, #fff1eb 100%);
+    box-shadow: none;
   }
 
   .topbar {
-    grid-template-rows: clamp(40px, 6.2dvh, 56px) minmax(0, 1fr);
-    gap: clamp(3px, .7dvh, 6px);
+    position: relative;
+    z-index: 8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
     padding:
-      max(clamp(4px, .65dvh, 7px), env(safe-area-inset-top))
-      max(clamp(7px, 2vw, 11px), env(safe-area-inset-right))
-      clamp(5px, .8dvh, 8px)
-      max(clamp(7px, 2vw, 11px), env(safe-area-inset-left));
+      max(clamp(9px, 1.4dvh, 14px), env(safe-area-inset-top))
+      max(clamp(18px, 5vw, 28px), env(safe-area-inset-right))
+      clamp(8px, 1.1dvh, 12px)
+      max(clamp(18px, 5vw, 28px), env(safe-area-inset-left));
+    background: linear-gradient(100deg, #fff9f5, #fff1ea 62%, #ffece5);
+    border-bottom: 1px solid rgba(189,139,67,.34);
   }
 
   .brand {
-    width: clamp(128px, 43vw, 190px);
+    display: block !important;
+    width: min(62vw, 290px);
+    height: 100%;
+    min-width: 0;
+  }
+
+  .brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
   }
 
   .nav {
-    gap: clamp(3px, 1vw, 6px);
-    grid-template-rows: repeat(2, minmax(44px, 1fr));
+    display: none !important;
   }
 
-  .nav-button {
-    min-height: 44px;
-    padding-inline: clamp(3px, 1vw, 7px);
-    font-size: clamp(10px, min(2.7vw, 1.55dvh), 12px);
+  .mobile-menu-toggle {
+    flex: 0 0 auto;
+    width: clamp(50px, 14vw, 68px);
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    gap: clamp(5px, 1.4vw, 7px);
+    padding: 0;
+    border: 1.5px solid #df5c78;
+    border-radius: 50%;
+    background: rgba(255,248,244,.72);
+    box-shadow: 0 5px 16px rgba(129,45,51,.08);
   }
 
-  .nav-button--cta {
-    font-size: clamp(10px, min(2.9vw, 1.7dvh), 12px);
+  .mobile-menu-toggle span {
+    display: block;
+    width: clamp(24px, 6.7vw, 32px);
+    height: 3px;
+    border-radius: 99px;
+    background: #d92f5b;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .mobile-menu-panel {
+    position: absolute;
+    z-index: 30;
+    top: calc(100% + 8px);
+    right: max(clamp(14px, 4vw, 24px), env(safe-area-inset-right));
+    width: min(74vw, 300px);
+    padding: 10px;
+    display: grid;
+    gap: 7px;
+    border: 1px solid rgba(181,61,80,.22);
+    border-radius: 18px;
+    background: rgba(255,247,243,.98);
+    box-shadow: 0 18px 42px rgba(80,20,30,.2);
+    backdrop-filter: blur(16px);
+  }
+
+  .mobile-menu-panel[hidden] {
+    display: none;
+  }
+
+  .mobile-menu-panel button {
+    min-height: 48px;
+    padding: 0 16px;
+    border: 1px solid rgba(172,85,83,.22);
+    border-radius: 14px;
+    background: #fffaf6;
+    color: #5c1420;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    font: 700 clamp(13px, 3.7vw, 16px)/1 Georgia, serif;
+  }
+
+  .hero {
+    min-height: 0;
+    overflow: hidden;
+    background: #f2c6c1;
   }
 
   .hero img {
-    object-position: 51% clamp(42%, 48%, 52%);
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: 54% 48%;
+  }
+
+  .mobile-message {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:
+      clamp(8px, 1.2dvh, 13px)
+      max(clamp(18px, 5vw, 28px), env(safe-area-inset-right))
+      clamp(8px, 1.1dvh, 12px)
+      max(clamp(18px, 5vw, 28px), env(safe-area-inset-left));
+    text-align: center;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(255,255,255,.75), transparent 50%),
+      linear-gradient(180deg, #fff8f4, #fff1ea);
+  }
+
+  .mobile-script {
+    margin: 0 0 clamp(1px, .25dvh, 3px);
+    color: #bd8b43;
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: clamp(20px, min(6.8vw, 3.3dvh), 34px);
+    line-height: 1;
+  }
+
+  .mobile-script span {
+    color: #dc4266;
+    font-family: Georgia, serif;
+  }
+
+  .mobile-message h1 {
+    margin: 0;
+    color: #4d0914;
+    text-transform: uppercase;
+    font-size: clamp(42px, min(13.2vw, 7.7dvh), 72px);
+    font-weight: 500;
+    line-height: .82;
+    letter-spacing: -.035em;
+  }
+
+  .mobile-script--lower {
+    margin-top: clamp(2px, .4dvh, 5px);
+    font-size: clamp(22px, min(7.6vw, 3.8dvh), 38px);
+  }
+
+  .mobile-flourish {
+    width: min(72vw, 330px);
+    margin: clamp(4px, .7dvh, 8px) auto;
+    display: grid;
+    grid-template-columns: 1fr auto auto auto 1fr;
+    align-items: center;
+    gap: 8px;
+    color: #b88636;
+  }
+
+  .mobile-flourish span {
+    height: 1px;
+    background: #c89a4b;
+  }
+
+  .mobile-flourish b,
+  .mobile-flourish i {
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .mobile-order-button {
+    width: 100%;
+    min-height: clamp(50px, 7.2dvh, 66px);
+    margin-top: clamp(2px, .5dvh, 6px);
+    padding: 0 clamp(22px, 6vw, 34px);
+    border: 2px solid #fff2e7;
+    border-radius: 999px;
+    outline: 1px solid #e66370;
+    background: linear-gradient(180deg, #dd315e, #bf1748);
+    color: #fff;
+    box-shadow:
+      0 0 0 3px rgba(255,246,238,.9),
+      0 8px 18px rgba(208,34,76,.18),
+      inset 0 1px rgba(255,255,255,.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    font: 700 clamp(20px, min(6vw, 3.1dvh), 31px)/1 Georgia, serif;
+  }
+
+  .mobile-order-button span:last-child {
+    font-size: 1.25em;
+    line-height: 0;
   }
 
   .features {
-    gap: clamp(3px, .7dvh, 6px);
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, minmax(0,1fr));
+    gap: clamp(5px, .75dvh, 8px);
     padding:
-      clamp(4px, .8dvh, 7px)
-      max(clamp(7px, 2vw, 10px), env(safe-area-inset-right))
-      max(clamp(6px, .9dvh, 9px), env(safe-area-inset-bottom))
-      max(clamp(7px, 2vw, 10px), env(safe-area-inset-left));
+      clamp(7px, .9dvh, 10px)
+      max(clamp(18px, 5vw, 28px), env(safe-area-inset-right))
+      max(clamp(8px, 1.1dvh, 12px), env(safe-area-inset-bottom))
+      max(clamp(18px, 5vw, 28px), env(safe-area-inset-left));
+    background: linear-gradient(180deg, #fff5ef, #ffede6);
   }
 
   .feature-card,
   .feature-card:nth-child(even) {
-    grid-template-columns:
-      clamp(34px, 10vw, 46px)
-      minmax(0, 1fr)
-      clamp(86px, 29vw, 128px);
-    border-radius: clamp(8px, 2.4vw, 11px);
+    min-height: 0;
+    display: grid;
+    grid-template-columns: clamp(54px, 16vw, 74px) minmax(0, 1fr);
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.92);
+    border-radius: clamp(12px, 3.5vw, 18px);
+    background: rgba(255,250,246,.76);
+    box-shadow: 0 5px 14px rgba(123,55,45,.09);
+    text-align: left;
   }
 
   .feature-icon {
-    width: clamp(27px, 8vw, 34px);
-    font-size: clamp(15px, 4.5vw, 19px);
+    align-self: center;
+    justify-self: center;
+    margin: 0;
+    width: clamp(42px, 12vw, 56px);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #db4b69;
+    font-size: clamp(22px, 6.5vw, 30px);
+    background: linear-gradient(#ffeae5,#fff7f2);
+    border: 1px solid #eaa0a4;
+    box-shadow: 0 4px 10px rgba(158,71,70,.13);
   }
 
   .feature-copy {
-    padding: clamp(3px, .65dvh, 6px) clamp(5px, 1.6vw, 9px) clamp(3px, .65dvh, 6px) 0;
+    min-width: 0;
+    padding: clamp(4px, .55dvh, 7px) clamp(8px, 2.5vw, 14px) clamp(4px, .55dvh, 7px) 0;
   }
 
   .feature-copy h2 {
-    margin-bottom: clamp(1px, .35dvh, 4px);
-    font-size: clamp(13px, min(3.8vw, 2.05dvh), 17px);
+    margin: 0 0 clamp(1px, .25dvh, 3px);
+    color: #4d1019;
+    font-size: clamp(15px, min(4.5vw, 2.25dvh), 21px);
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: normal;
   }
 
   .feature-copy p {
-    font-size: clamp(10px, min(2.65vw, 1.5dvh), 12px);
-    line-height: 1.16;
-  }
-}
-
-@media (max-width: 760px) and (orientation: portrait) and (max-height: 780px) {
-  .site {
-    grid-template-rows: clamp(120px, 18.5dvh, 148px) minmax(0, 41fr) minmax(0, 41fr);
+    margin: 0;
+    color: #241b1c;
+    font-family: Arial, sans-serif;
+    font-size: clamp(11px, min(3.25vw, 1.65dvh), 14px);
+    line-height: 1.18;
   }
 
-  .feature-copy p {
-    -webkit-line-clamp: 1;
-  }
-}
-
-@media (max-width: 760px) and (orientation: portrait) and (max-height: 735px) {
-  .feature-copy p {
+  .feature-rule,
+  .feature-card img {
     display: none;
   }
+
+  .overlay {
+    padding:
+      max(14px, env(safe-area-inset-top))
+      max(12px, env(safe-area-inset-right))
+      max(14px, env(safe-area-inset-bottom))
+      max(12px, env(safe-area-inset-left));
+  }
+
+  .overlay-panel {
+    width: 100%;
+    max-height: 100%;
+    padding: clamp(24px, 6vw, 34px);
+    border-radius: 20px;
+  }
+
+  .overlay-panel h2 {
+    padding-right: 60px;
+    font-size: clamp(38px, 11vw, 56px);
+  }
+
+  .menu-grid,
+  .overlay-panel--split,
+  .overlay-panel--order,
+  .catering-grid,
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form label,
+  label:nth-of-type(4),
+  form .submit-button,
+  .form-status {
+    grid-column: 1;
+  }
+
+  #overlay-locations .map-card {
+    transform: none;
+    min-height: 180px;
+  }
 }
 
+/* Compact portrait phones: preserve hierarchy by trimming space, never scaling the whole page. */
+@media (max-width: 760px) and (orientation: portrait) and (max-height: 760px) {
+  .site {
+    grid-template-rows: clamp(78px, 11.5dvh, 96px) minmax(0, 27fr) minmax(0, 32fr) minmax(0, 29.5fr);
+  }
+
+  .mobile-message h1 {
+    font-size: clamp(38px, min(12.5vw, 7.4dvh), 58px);
+  }
+
+  .mobile-script,
+  .mobile-script--lower {
+    font-size: clamp(18px, min(6vw, 3dvh), 28px);
+  }
+
+  .mobile-flourish {
+    margin-block: 3px;
+  }
+
+  .feature-copy p {
+    font-size: clamp(10px, min(3vw, 1.55dvh), 12px);
+  }
+}
+
+@media (max-width: 760px) and (orientation: portrait) and (max-height: 680px) {
+  .site {
+    grid-template-rows: clamp(70px, 11dvh, 82px) minmax(0, 26fr) minmax(0, 33fr) minmax(0, 30fr);
+  }
+
+  .mobile-flourish {
+    display: none;
+  }
+
+  .mobile-order-button {
+    min-height: 46px;
+  }
+
+  .feature-copy p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Keep the existing landscape strategy for now; portrait is the reference implementation being approved first. */
 @media (orientation: landscape) and (max-height: 500px) and (max-width: 960px) {
   html,
   body,
@@ -156,35 +451,5 @@
 
   .nav-button--cta {
     font-size: clamp(9px, min(1.35vw, 3dvh), 12px);
-  }
-
-  .features {
-    gap: clamp(3px, 1dvh, 6px);
-    padding:
-      clamp(4px, 1.3dvh, 7px)
-      max(clamp(5px, .9vw, 9px), env(safe-area-inset-right))
-      max(clamp(5px, 1.2dvh, 8px), env(safe-area-inset-bottom))
-      clamp(5px, .9vw, 9px);
-  }
-
-  .feature-card,
-  .feature-card:nth-child(even) {
-    grid-template-columns:
-      clamp(28px, 4.3vw, 38px)
-      minmax(0, 1fr)
-      clamp(72px, 10vw, 108px);
-  }
-
-  .feature-icon {
-    width: clamp(24px, 3.7vw, 30px);
-    font-size: clamp(14px, 2.4vw, 17px);
-  }
-
-  .feature-copy {
-    padding: clamp(2px, .9dvh, 5px) clamp(4px, .7vw, 7px) clamp(2px, .9dvh, 5px) 0;
-  }
-
-  .feature-copy h2 {
-    font-size: clamp(12px, min(1.7vw, 4dvh), 16px);
   }
 }
