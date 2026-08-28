@@ -1,0 +1,74 @@
+@media (orientation:landscape) and (max-height:520px) and (max-width:1000px){
+  .hero{
+    background-image:url('../assets/images/donut1.webp')!important;
+    background-size:150% auto!important;
+    background-position:88% 52%!important;
+    background-repeat:no-repeat!important;
+    background-color:#f5d1cb!important;
+  }
+  .mobile-message{
+    height:55%!important;
+    padding:clamp(4px,1dvh,7px) clamp(16px,2vw,24px)!important;
+  }
+  .mobile-script{
+    font-size:clamp(14px,min(2.1vw,3.8dvh),20px)!important;
+  }
+  .mobile-message h1{
+    font-size:clamp(27px,min(4.7vw,8.6dvh),44px)!important;
+    line-height:.84!important;
+  }
+  .mobile-script--lower{
+    font-size:clamp(15px,min(2.3vw,4.1dvh),21px)!important;
+  }
+  .mobile-order-button{
+    width:min(90%,390px)!important;
+    min-height:clamp(38px,9dvh,44px)!important;
+    margin-top:clamp(4px,1.2dvh,6px)!important;
+    border:2px solid #fff2e7!important;
+    border-radius:999px!important;
+    outline:1px solid #e66370!important;
+    background:linear-gradient(180deg,#dd315e,#bf1748)!important;
+    color:#fff!important;
+    box-shadow:0 0 0 3px rgba(255,246,238,.9),0 6px 14px rgba(208,34,76,.16),inset 0 1px rgba(255,255,255,.35)!important;
+    text-transform:uppercase!important;
+    font-weight:700!important;
+  }
+  .features{
+    width:48%!important;
+    height:45%!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:repeat(3,minmax(0,1fr))!important;
+    gap:4px!important;
+    padding:4px max(8px,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) 8px!important;
+  }
+  .feature-card,.feature-card:nth-child(even){
+    min-height:0!important;
+    display:grid!important;
+    grid-template-columns:clamp(34px,8dvh,42px) minmax(0,1fr)!important;
+    align-items:center!important;
+    gap:6px!important;
+    padding:3px 8px!important;
+    border-radius:9px!important;
+    text-align:left!important;
+    overflow:hidden!important;
+  }
+  .feature-icon{
+    width:clamp(28px,7dvh,34px)!important;
+    margin:0!important;
+    font-size:clamp(14px,3.7dvh,18px)!important;
+  }
+  .feature-copy{padding:0!important;min-width:0!important;}
+  .feature-copy h2{
+    margin:0 0 1px!important;
+    font-size:clamp(10px,min(1.45vw,2.8dvh),13px)!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+  .feature-copy p{
+    margin:0!important;
+    font-size:clamp(8px,min(1.05vw,2.1dvh),10px)!important;
+    line-height:1.08!important;
+    white-space:normal!important;
+  }
+}
