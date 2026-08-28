@@ -30,6 +30,7 @@
     if (body.classList.contains('menu-open')) closeMenu();
     else openMenu();
   });
+  document.querySelector('.mobile-menu-cta')?.addEventListener('click', openMenu);
   close?.addEventListener('click', closeMenu);
   backdrop?.addEventListener('click', closeMenu);
 

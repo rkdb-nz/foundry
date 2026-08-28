@@ -354,6 +354,334 @@ site {.*?}s*#site {
   }
 }
 
+/* Mobile presentation: keep the desktop canvas untouched, but let phones
+   behave like a deliberately composed, scrollable site instead of a scaled
+   3:2 poster. */
+@media (max-width: 760px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .viewport {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    display: block;
+  }
+
+  .site {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    display: block;
+    box-shadow: none;
+  }
+
+  .site::after { position: fixed; }
+
+  .topbar {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: max(12px, env(safe-area-inset-top)) 14px 14px;
+  }
+
+  .brand {
+    display: block;
+    width: min(230px, 62vw);
+    height: 64px;
+    justify-self: center;
+  }
+
+  .brand img { object-position: center; }
+
+  .nav {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+  }
+
+  .nav-button {
+    grid-column: span 2;
+    min-width: 0;
+    min-height: 44px;
+    height: 44px;
+    padding: 0 8px;
+    font-size: 10px;
+    line-height: 1.1;
+    white-space: normal;
+  }
+
+  .nav-button:nth-child(4),
+  .nav-button:nth-child(5) { grid-column: span 3; }
+  .nav-button--cta { font-size: 12px; }
+  .nav-icon { display: none; }
+
+  .hero {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero img {
+    object-position: 51% center;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px 14px max(20px, env(safe-area-inset-bottom));
+  }
+
+  .feature-card {
+    min-height: 150px;
+    grid-template-columns: 70px minmax(0, 1fr) 34%;
+    grid-template-areas: "icon copy image";
+    place-items: stretch;
+    text-align: left;
+    border-radius: 16px;
+  }
+
+  .feature-card:nth-child(even) {
+    grid-template-columns: 34% 70px minmax(0, 1fr);
+    grid-template-areas: "image icon copy";
+  }
+
+  .feature-icon {
+    grid-area: icon;
+    display: grid;
+    width: 44px;
+    margin-top: 20px;
+    font-size: 24px;
+  }
+
+  .feature-copy {
+    grid-area: copy;
+    padding: 22px 12px 18px 0;
+    align-self: center;
+  }
+
+  .feature-copy h2 {
+    margin-bottom: 8px;
+    font-size: clamp(17px, 5vw, 22px);
+  }
+
+  .feature-copy p {
+    font-size: 13px;
+    line-height: 1.42;
+  }
+
+  .feature-rule { margin-top: 12px; }
+
+  .feature-card img {
+    grid-area: image;
+    display: block;
+    min-width: 0;
+    object-position: center;
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .overlay-panel,
+  .overlay-panel--split,
+  .overlay-panel--order {
+    width: min(94vw, 560px);
+    height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: max(76px, calc(env(safe-area-inset-top) + 64px)) 22px max(32px, env(safe-area-inset-bottom));
+    border-radius: 0 20px 20px 0;
+    display: block;
+  }
+
+  .overlay-close {
+    position: fixed;
+    top: max(12px, env(safe-area-inset-top));
+    right: calc(6vw + 10px);
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px 14px;
+    background: #fff8f4;
+  }
+
+  .overlay-panel h2 {
+    padding-right: 0;
+    font-size: clamp(42px, 14vw, 64px);
+  }
+
+  .lead { font-size: 18px; }
+  .menu-grid,
+  .catering-grid,
+  form { grid-template-columns: 1fr; }
+
+  .menu-grid article { padding: 16px 58px 16px 16px; }
+  .catering-grid article { min-height: 0; padding: 20px; }
+  label:nth-of-type(4), form .submit-button, .form-status { grid-column: auto; }
+
+  .story-seal {
+    width: min(100%, 340px) !important;
+    margin: 28px auto 0;
+    padding: 28px 34px !important;
+  }
+
+  #overlay-locations .map-card {
+    min-height: 250px;
+    margin-top: 24px;
+    transform: none;
+  }
+
+  .soft-action,
+  .submit-button { min-height: 48px; }
+}
+
+/* Short mobile landscape: retain a wide, image-led opening without trapping
+   navigation or feature content inside the shallow viewport. */
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 960px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .viewport {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    display: block;
+  }
+
+  .site {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    box-shadow: none;
+  }
+
+  .site::after { position: fixed; }
+
+  .topbar {
+    min-height: 78px;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 12px;
+    padding: 8px 14px;
+  }
+
+  .brand { display: block; height: 60px; }
+  .nav {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .nav-button {
+    min-width: 0;
+    min-height: 44px;
+    height: 44px;
+    padding: 0 6px;
+    font-size: 9px;
+    white-space: normal;
+  }
+  .nav-button--cta { font-size: 11px; }
+  .nav-icon { display: none; }
+
+  .hero {
+    height: clamp(230px, 64vh, 285px);
+  }
+
+  .hero img { object-position: center 44%; }
+
+  .features {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px 18px 20px;
+  }
+
+  .feature-card {
+    width: 100%;
+    min-height: 138px;
+    grid-template-columns: 72px minmax(0, 1fr) 38%;
+    grid-template-areas: "icon copy image";
+    text-align: left;
+    border-radius: 16px;
+  }
+
+  .feature-card:nth-child(even) {
+    grid-template-columns: 38% 72px minmax(0, 1fr);
+    grid-template-areas: "image icon copy";
+  }
+
+  .feature-icon {
+    grid-area: icon;
+    display: grid;
+    width: 44px;
+    margin-top: 22px;
+    font-size: 23px;
+  }
+
+  .feature-copy {
+    grid-area: copy;
+    align-self: center;
+    padding: 18px 20px 16px 0;
+  }
+  .feature-copy h2 {
+    margin-bottom: 7px;
+    font-size: clamp(17px, 2.4vw, 21px);
+  }
+  .feature-copy p {
+    max-width: 52ch;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .feature-rule { margin-top: 10px; }
+  .feature-card img {
+    grid-area: image;
+    display: block;
+    min-width: 0;
+    object-position: center;
+  }
+
+  .overlay { position: fixed; inset: 0; }
+  .overlay-panel,
+  .overlay-panel--split,
+  .overlay-panel--order {
+    width: min(86vw, 760px);
+    height: 100dvh;
+    overflow-y: auto;
+    padding: 62px 30px 26px;
+    border-radius: 0 20px 20px 0;
+  }
+
+  .overlay-close {
+    position: fixed;
+    top: 10px;
+    right: calc(14vw + 12px);
+    min-height: 44px;
+  }
+
+  .overlay-panel h2 { font-size: clamp(40px, 10vh, 58px); }
+  .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .overlay-panel--split,
+  .overlay-panel--order { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .catering-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .catering-grid article { min-height: 0; padding: 16px; }
+  .story-seal { width: min(31vw, 300px) !important; padding: 24px 30px !important; }
+  #overlay-locations .map-card { min-height: 230px; transform: none; }
+}
+
 /* Donut slide reveal — clarity + reliable dismissal */
 site {.*?}s*.topbar,
 body.overlay-open .hero,
