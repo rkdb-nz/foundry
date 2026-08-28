@@ -39,15 +39,15 @@
     overflow:hidden !important;
   }
 
-  /* Crop away the baked desktop copy and keep the donuts as the mobile hero. */
+  /* Portrait hero: show only the food photography, never the baked desktop poster copy. */
   .hero img {
     width:100% !important;
     height:100% !important;
     max-width:none !important;
     object-fit:cover !important;
-    object-position:78% 50% !important;
-    transform:scale(1.62) !important;
-    transform-origin:78% 50% !important;
+    object-position:100% 50% !important;
+    transform:scale(2.15) !important;
+    transform-origin:100% 50% !important;
   }
 
   .mobile-message {
