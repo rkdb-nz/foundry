@@ -17,7 +17,7 @@
     position: relative !important;
     display: grid !important;
     grid-template-columns: 56% 44% !important;
-    grid-template-rows: clamp(50px, 15dvh, 64px) minmax(0, 56fr) minmax(0, 44fr) !important;
+    grid-template-rows: clamp(50px, 15dvh, 64px) minmax(0, 54fr) minmax(0, 46fr) !important;
     background: linear-gradient(180deg,#fff8f3,#fff0e9) !important;
   }
 
@@ -100,8 +100,8 @@
     min-height: 0 !important;
     overflow: hidden !important;
     background-image: url('../assets/images/donut1.webp') !important;
-    background-size: 165% auto !important;
-    background-position: 86% 50% !important;
+    background-size: 178% auto !important;
+    background-position: 94% 50% !important;
     background-repeat: no-repeat !important;
     background-color: #f2c6c1 !important;
   }
@@ -176,8 +176,8 @@
     display: grid !important;
     grid-template-columns: 1fr !important;
     grid-template-rows: repeat(3,minmax(0,1fr)) !important;
-    gap: 4px !important;
-    padding: 4px max(10px,env(safe-area-inset-right)) max(5px,env(safe-area-inset-bottom)) 10px !important;
+    gap: 6px !important;
+    padding: 8px max(12px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) 12px !important;
     overflow: hidden !important;
     background: linear-gradient(180deg,#fff5ef,#ffede6) !important;
   }
@@ -191,9 +191,9 @@
     grid-template-columns: clamp(34px,8dvh,42px) minmax(0,1fr) !important;
     align-items: center !important;
     overflow: hidden !important;
-    padding: 2px 8px 2px 4px !important;
+    padding: 4px 10px 4px 6px !important;
     border: 1px solid rgba(255,255,255,.92) !important;
-    border-radius: 10px !important;
+    border-radius: 11px !important;
     background: rgba(255,250,246,.82) !important;
     box-shadow: 0 3px 8px rgba(123,55,45,.08) !important;
     text-align: left !important;
