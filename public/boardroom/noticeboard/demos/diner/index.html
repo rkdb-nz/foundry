@@ -1,15 +1,98 @@
 <!doctype html>
-<html lang="en" class="foundry-demo-shell">
+<html lang="en" class="foundry-demo-shell diner-demo-shell">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Diner — Noticeboard demo</title>
   <link rel="stylesheet" href="../../../demo-return.css">
+  <style>
+    @media (max-width:900px) {
+      html,
+      body {
+        width:100%;
+        height:100%;
+        height:100dvh;
+        margin:0;
+        overflow:hidden;
+        background:#100906;
+      }
+
+      .diner-demo-shell .foundry-demo-frame {
+        position:fixed !important;
+        inset:0 !important;
+        width:100vw !important;
+        height:100dvh !important;
+        max-height:100dvh !important;
+        border:0 !important;
+        box-shadow:none !important;
+      }
+
+      .diner-demo-shell .foundry-demo-return {
+        position:fixed !important;
+        z-index:2147483647 !important;
+        top:10px !important;
+        left:0 !important;
+        width:34px !important;
+        height:48px !important;
+        min-height:48px !important;
+        margin:0 !important;
+        padding:0 2px 0 0 !important;
+        display:grid !important;
+        place-items:center !important;
+        border:1px solid rgba(222,111,54,.36) !important;
+        border-left:0 !important;
+        border-radius:0 12px 12px 0 !important;
+        background:linear-gradient(145deg,#29211d 0%,#171311 64%,#221814 100%) !important;
+        box-shadow:0 0 0 1px rgba(222,111,54,.08),0 0 9px rgba(222,111,54,.34),3px 7px 15px rgba(0,0,0,.22) !important;
+        opacity:.98 !important;
+        overflow:visible !important;
+        animation:diner-edge-glow 2.8s ease-in-out infinite !important;
+      }
+
+      .diner-demo-shell .foundry-demo-return::before {
+        content:none !important;
+        display:none !important;
+      }
+
+      .diner-demo-shell .foundry-demo-return img {
+        display:block !important;
+        width:24px !important;
+        height:auto !important;
+        max-width:none !important;
+        margin:0 !important;
+        padding:0 !important;
+        border:0 !important;
+        opacity:.96 !important;
+        filter:drop-shadow(0 0 4px rgba(226,112,50,.58)) !important;
+        transform:none !important;
+      }
+
+      .diner-demo-shell .foundry-demo-return:hover,
+      .diner-demo-shell .foundry-demo-return:focus-visible {
+        transform:none !important;
+        filter:none !important;
+        outline:2px solid rgba(255,255,255,.9) !important;
+        outline-offset:3px !important;
+      }
+
+      @keyframes diner-edge-glow {
+        0%,100% { box-shadow:0 0 0 1px rgba(222,111,54,.08),0 0 8px rgba(222,111,54,.28),3px 7px 15px rgba(0,0,0,.22); }
+        50% { box-shadow:0 0 0 1px rgba(240,133,74,.28),0 0 18px rgba(222,111,54,.64),3px 7px 15px rgba(0,0,0,.22); }
+      }
+    }
+
+    @media (max-width:900px) and (prefers-reduced-motion:reduce) {
+      .diner-demo-shell .foundry-demo-return {
+        animation:none !important;
+        box-shadow:0 0 0 1px rgba(240,133,74,.24),0 0 12px rgba(222,111,54,.44),3px 7px 15px rgba(0,0,0,.22) !important;
+      }
+    }
+  </style>
 </head>
 <body>
   
 <a class="foundry-demo-return" href="../../index.html" aria-label="Back to Noticeboard"><img src="../../../../assets/images/backarrow.webp" alt=""></a>
 
-  <iframe class="foundry-demo-frame" src="site.html" title="Diner — Noticeboard demo"></iframe>
+  <iframe class="foundry-demo-frame" src="site.html?v=diner-mobile-fixed-1" title="Diner — Noticeboard demo"></iframe>
 </body>
 </html>
