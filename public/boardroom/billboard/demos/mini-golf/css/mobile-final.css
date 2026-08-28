@@ -60,3 +60,86 @@
 }
 @media (max-height:350px) and (orientation:landscape){body.mini-golf-final .mobile-details small{display:none}body.mini-golf-final .overlay .eyebrow{display:none!important}}
 @media (prefers-reduced-motion:reduce){body.mini-golf-final .overlay{animation:none!important}}
+
+/* Reference composition authority: the header floats over the artwork, so it no
+   longer consumes the hero's space. Portrait and landscape are deliberately
+   composed independently. */
+@media (max-width:900px) and (orientation:portrait){
+ body.mini-golf-final .mobile-home{
+  grid-template-columns:1fr!important;
+  grid-template-rows:32% 25% 35% 8%!important;
+  background:#032313 url('../assets/images/puttputt-hero.webp') center/cover no-repeat!important
+ }
+ body.mini-golf-final .mobile-header{
+  position:absolute!important;inset:0 0 auto 0!important;height:13.5%!important;
+  grid-template-columns:minmax(155px,44vw) minmax(50px,14vw) minmax(54px,15vw)!important;
+  justify-content:space-between!important;column-gap:8px!important;
+  padding:max(9px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) 3px max(44px,env(safe-area-inset-left))!important;
+  background:linear-gradient(180deg,#011b10 0%,rgba(1,27,16,.96) 72%,rgba(1,27,16,.38) 100%)!important
+ }
+ body.mini-golf-final .mobile-hero-photo{
+  grid-row:1!important;margin:0!important;clip-path:none!important;
+  background-image:url('../assets/images/mobile-hero.webp?v=3')!important;
+  background-position:center 49%!important;background-size:cover!important;
+  filter:brightness(1.12) saturate(1.16)!important
+ }
+ body.mini-golf-final .mobile-hero-copy{
+  grid-row:2!important;margin:-2.3dvh 0 0!important;padding:4.2dvh 10px 3px!important;
+  border-radius:0!important;
+  clip-path:polygon(0 0,24% 4%,56% 10%,100% 23%,100% 100%,0 100%)!important;
+  background:#f5e8c7!important
+ }
+ body.mini-golf-final .mobile-kicker{font-size:clamp(13px,min(3.7vw,2.05dvh),18px)!important}
+ body.mini-golf-final .mobile-home h1{font-size:clamp(50px,min(17vw,9.2dvh),78px)!important}
+ body.mini-golf-final .mobile-tagline{font-size:clamp(15px,min(4.5vw,2.55dvh),22px)!important}
+ body.mini-golf-final .mobile-book{width:min(66vw,300px)!important;margin-top:clamp(7px,1dvh,12px)!important;font-size:clamp(18px,min(5vw,2.8dvh),25px)!important}
+ body.mini-golf-final .mobile-highlights{grid-row:3!important;padding:5px max(17px,env(safe-area-inset-right)) 5px max(17px,env(safe-area-inset-left))!important;gap:7px!important;background:rgba(3,37,20,.98)!important}
+ body.mini-golf-final .mobile-highlights article{border-radius:18px!important;border-width:1.5px!important}
+ body.mini-golf-final .mobile-highlights article>div{grid-template-columns:clamp(38px,19%,56px) minmax(0,1fr)!important;padding:5px 8px!important}
+ body.mini-golf-final .mobile-highlights strong{font-size:clamp(15px,min(4.2vw,2.3dvh),21px)!important}
+ body.mini-golf-final .highlight-photo{margin:5px!important;border-radius:14px!important}
+ body.mini-golf-final .mobile-details{grid-row:4!important;margin:2px max(17px,env(safe-area-inset-right)) max(5px,env(safe-area-inset-bottom)) max(17px,env(safe-area-inset-left))!important}
+}
+
+@media (orientation:landscape) and (max-height:520px) and (max-width:1000px){
+ body.mini-golf-final .mobile-home{
+  grid-template-columns:46% 54%!important;
+  grid-template-rows:63% 27% 10%!important;
+  background:#032313 url('../assets/images/puttputt-hero.webp') center/cover no-repeat!important
+ }
+ body.mini-golf-final .mobile-header{
+  position:absolute!important;inset:0 0 auto 0!important;height:15%!important;
+  grid-template-columns:25% 7% 1fr!important;
+  padding:max(5px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) 2px max(44px,env(safe-area-inset-left))!important;
+  background:linear-gradient(180deg,#011b10 0%,rgba(1,27,16,.96) 75%,rgba(1,27,16,.25) 100%)!important
+ }
+ body.mini-golf-final .mobile-hero-copy{
+  grid-column:1!important;grid-row:1!important;
+  justify-content:flex-end!important;margin:0!important;padding:13% 5% 3.5%!important;
+  border-radius:0!important;
+  background:linear-gradient(180deg,transparent 0 22%,#f5e8c7 22% 100%)!important;
+  clip-path:polygon(0 18%,88% 24%,100% 33%,100% 100%,0 100%)!important
+ }
+ body.mini-golf-final .mobile-hero-photo{
+  grid-column:2!important;grid-row:1!important;margin:0 0 0 -7%!important;
+  clip-path:ellipse(88% 79% at 58% 49%)!important;
+  background-image:url('../assets/images/mobile-hero.webp?v=3')!important;
+  background-position:center 51%!important;background-size:cover!important;
+  filter:brightness(1.12) saturate(1.16)!important
+ }
+ body.mini-golf-final .mobile-kicker{font-size:clamp(10px,min(1.5vw,3.1dvh),15px)!important}
+ body.mini-golf-final .mobile-home h1{width:111%!important;font-size:clamp(48px,min(8.7vw,16dvh),100px)!important;transform:scaleX(.9)!important}
+ body.mini-golf-final .mobile-tagline{font-size:clamp(14px,min(2.1vw,4.1dvh),22px)!important}
+ body.mini-golf-final .mobile-book{width:min(61%,250px)!important;margin-top:5px!important;font-size:clamp(15px,min(2.2vw,4.4dvh),23px)!important}
+ body.mini-golf-final .mobile-highlights{
+  grid-column:1/-1!important;grid-row:2!important;
+  padding:4px max(3.5vw,env(safe-area-inset-right)) 4px max(3.5vw,env(safe-area-inset-left))!important;
+  gap:7px!important;background:rgba(3,37,20,.98)!important
+ }
+ body.mini-golf-final .mobile-highlights article{grid-template-rows:40% 60%!important;border-radius:17px!important}
+ body.mini-golf-final .mobile-highlights article>div{grid-template-columns:clamp(31px,18%,45px) minmax(0,1fr)!important;padding:3px 7px!important}
+ body.mini-golf-final .mobile-highlights strong{font-size:clamp(12px,min(1.6vw,3.7dvh),18px)!important}
+ body.mini-golf-final .highlight-photo{margin:0 6px 6px!important;border-radius:11px!important}
+ body.mini-golf-final .mobile-details{grid-column:1/-1!important;grid-row:3!important;margin:2px max(6vw,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) max(6vw,env(safe-area-inset-left))!important}
+ body.mini-golf-final .hotspots{left:32%!important;height:clamp(45px,14dvh,62px)!important}
+}
