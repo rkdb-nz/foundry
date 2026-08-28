@@ -17,3 +17,61 @@ html,body,.viewport,.site{width:100%;height:100%;min-height:0;margin:0;overflow:
 }
 @media (max-width:900px) and (max-height:365px) and (orientation:landscape),(max-width:1000px) and (max-height:365px) and (orientation:landscape){.mobile-hero{background-size:auto 180%}.mobile-hero__copy{padding-top:16px}.mobile-hero h1{font-size:clamp(35px,min(6.5vw,11dvh),47px)}.mobile-hero h2{margin-block:4px 3px}.mobile-hero__copy>p:not(.mobile-kicker){font-size:10px}.mobile-proof{padding-top:42px}.drawer-panel h2{font-size:20px}.panel-list article{padding:4px 0}.panel-list p{font-size:9px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Approved screenshot composition: live mobile layout over deliberate crops of
+   the original Drilling artwork. Menu/drawer rules above remain authoritative. */
+@media (max-width:900px) and (orientation:portrait){
+  .mobile-experience{position:relative;grid-template-rows:56% 38% 6%;background:#050505}
+  .mobile-hero{grid-row:1;display:block;padding:0;background-image:linear-gradient(90deg,rgba(0,0,0,.4),rgba(0,0,0,.02) 62%),url('../assets/images/drilling-hero.webp');background-size:auto 113%;background-position:52% 43%}
+  .mobile-brand{position:absolute;z-index:3;top:max(9px,env(safe-area-inset-top));left:max(9px,env(safe-area-inset-left));margin:0;gap:7px}
+  .mobile-brand>strong{font-size:clamp(44px,14vw,59px)}
+  .mobile-brand p{font-size:clamp(10px,3.1vw,14px)}
+  .mobile-brand b{font-size:clamp(12px,3.7vw,16px)}
+  .mobile-hero__copy{position:absolute;z-index:3;inset:13.2% auto auto max(7px,env(safe-area-inset-left));max-width:67%;text-shadow:0 3px 8px #000}
+  .mobile-kicker,.mobile-hero__copy>p:not(.mobile-kicker){display:none!important}
+  .mobile-hero h1{font-size:clamp(51px,17vw,74px);line-height:.76}
+  .mobile-hero h2{margin:8px 0 0;font-size:clamp(22px,7.1vw,31px);line-height:.9}
+  .mobile-menu-cta{position:absolute;top:calc(100% + clamp(138px,20dvh,160px));left:0;display:flex;align-items:center;justify-content:space-between;width:clamp(126px,39vw,170px);min-height:43px;margin:0;padding:8px 13px;border:2px solid #6f3319;border-radius:4px;background:linear-gradient(180deg,#e6691c,#ad3604);box-shadow:inset 0 0 0 1px #ff9a55,0 5px 12px #000;font-family:Impact,"Arial Narrow",sans-serif;font-size:clamp(15px,4.7vw,20px);font-weight:500;letter-spacing:.035em}
+  .mobile-menu-cta span{font:30px/0 Arial,sans-serif}
+  .mobile-proof{position:relative;z-index:4;grid-row:1;align-self:end;width:48%;margin:0 0 20% max(7px,env(safe-area-inset-left));padding:0;border:0;background:transparent}
+  .mobile-proof ul{display:grid;grid-template-columns:1fr;gap:clamp(8px,1.5dvh,13px)}
+  .mobile-proof li{padding-left:29px;font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(12px,3.7vw,16px);font-weight:500;text-transform:none;text-shadow:0 2px 5px #000}
+  .mobile-proof li::before{top:50%;width:15px;height:15px;border:2px solid var(--orange);border-radius:50%;background:transparent;transform:translateY(-50%) rotate(45deg)}
+  .mobile-services{position:relative;z-index:5;grid-row:2;grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,1fr));gap:3px;padding:2px 3px;background:#050505}
+  .mobile-services article{position:relative;display:flex;align-items:center;min-height:0;padding:5px 51% 5px 62px;border:1px solid #535353;border-radius:3px;background:linear-gradient(120deg,#121212,#080808);box-shadow:inset 0 0 0 2px #252525;overflow:hidden}
+  .mobile-services article::after{content:"";display:block;position:absolute;z-index:0;inset:4px 4px 4px 48%;border-left:1px solid #333;background-image:linear-gradient(90deg,rgba(0,0,0,.06),transparent),url('../assets/images/drilling-hero.webp');background-repeat:no-repeat}
+  .mobile-services article:nth-child(1)::after{background-size:768% auto;background-position:25% 76%}
+  .mobile-services article:nth-child(2)::after{background-size:1058% auto;background-position:62% 74%}
+  .mobile-services article:nth-child(3)::after{background-size:768% auto;background-position:96.5% 76%}
+  .mobile-services span{position:absolute;z-index:2;left:13px;display:grid;place-items:center;width:39px;aspect-ratio:1;border:2px solid var(--orange);transform:rotate(45deg);font-size:0}
+  .mobile-services span::after{content:"◆";color:var(--orange);font-size:18px;transform:rotate(-45deg)}
+  .mobile-services h2{position:relative;z-index:2;max-width:9ch;margin:0;font-size:clamp(16px,5vw,22px);line-height:.95;color:#eee;text-shadow:0 2px 5px #000}
+  .mobile-services h2 span,.mobile-services h2 b{display:block}.mobile-services h2 b{color:var(--orange);font-weight:500}
+  .mobile-signoff{position:relative;z-index:5;grid-row:3;display:block;align-self:stretch;margin:0;padding:clamp(4px,.8dvh,7px) 6px;color:#ddd;background:#070707;border-top:1px solid #333;text-align:center;font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(9px,3vw,13px);line-height:1.35;letter-spacing:.18em}
+}
+
+@media (max-width:900px) and (orientation:landscape),(max-width:1000px) and (max-height:520px) and (orientation:landscape){
+  .mobile-experience{position:relative;grid-template-columns:1fr;grid-template-rows:67% 23% 10%;background:#050505}
+  .mobile-hero{grid-column:1;grid-row:1;display:block;padding:0;background-image:linear-gradient(90deg,rgba(0,0,0,.45),rgba(0,0,0,0) 55%),url('../assets/images/drilling-hero.webp');background-size:cover;background-position:51% 42%}
+  .mobile-brand{top:max(10px,env(safe-area-inset-top));left:max(16px,env(safe-area-inset-left));gap:7px}
+  .mobile-brand>strong{font-size:clamp(42px,7.2vw,56px)}
+  .mobile-brand p{font-size:clamp(9px,1.55vw,12px)}
+  .mobile-brand b{font-size:clamp(11px,1.8vw,14px)}
+  .mobile-hero__copy{position:absolute;z-index:3;inset:24% auto auto max(14px,env(safe-area-inset-left));max-width:31%;padding:0}
+  .mobile-kicker,.mobile-hero__copy>p:not(.mobile-kicker){display:none!important}
+  .mobile-hero h1{font-size:clamp(43px,min(8vw,16dvh),65px);line-height:.76}
+  .mobile-hero h2{margin:7px 0 0;font-size:clamp(20px,min(3.7vw,7.5dvh),29px);line-height:.9}
+  .mobile-menu-cta{position:absolute;top:clamp(76px,26dvh,92px);left:calc(32vw);display:flex;align-items:center;justify-content:space-between;width:clamp(120px,18vw,150px);min-height:43px;margin:0;padding:8px 12px;border:2px solid #6f3319;border-radius:4px;background:linear-gradient(180deg,#e6691c,#ad3604);box-shadow:inset 0 0 0 1px #ff9a55,0 5px 12px #000;font-family:Impact,"Arial Narrow",sans-serif;font-size:clamp(14px,2.2vw,18px);font-weight:500}
+  .mobile-menu-cta span{font:28px/0 Arial,sans-serif}
+  .mobile-proof{position:relative;z-index:4;grid-column:1;grid-row:1;align-self:start;width:23%;margin:clamp(72px,24dvh,104px) 0 0 34%;padding:0;border:0;background:transparent}
+  .mobile-proof ul{display:grid;gap:clamp(7px,2.6dvh,11px)}
+  .mobile-proof li{padding-left:27px;font-size:clamp(11px,min(1.8vw,3.8dvh),14px);font-weight:500;text-transform:none;text-shadow:0 2px 5px #000}
+  .mobile-proof li::before{top:50%;width:14px;height:14px;border:2px solid var(--orange);border-radius:50%;background:transparent;transform:translateY(-50%) rotate(45deg)}
+  .mobile-services{position:relative;z-index:5;grid-column:1;grid-row:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:2px 3px;background:#050505}
+  .mobile-services article{position:relative;display:flex;align-items:center;min-width:0;padding:4px 48% 4px 55px;border:1px solid #555;border-radius:3px;background:#0b0b0b;box-shadow:inset 0 0 0 2px #242424;overflow:hidden}
+  .mobile-services article::after{content:"";display:block;position:absolute;inset:3px 3px 3px 48%;background-image:url('../assets/images/drilling-hero.webp');background-repeat:no-repeat}
+  .mobile-services article:nth-child(1)::after{background-size:768% auto;background-position:25% 76%}.mobile-services article:nth-child(2)::after{background-size:1058% auto;background-position:62% 74%}.mobile-services article:nth-child(3)::after{background-size:768% auto;background-position:96.5% 76%}
+  .mobile-services span{position:absolute;z-index:2;left:11px;display:grid;place-items:center;width:34px;aspect-ratio:1;border:2px solid var(--orange);transform:rotate(45deg);font-size:0}.mobile-services span::after{content:"◆";color:var(--orange);font-size:15px;transform:rotate(-45deg)}
+  .mobile-services h2{position:relative;z-index:2;max-width:9ch;margin:0;font-size:clamp(12px,min(2vw,4.4dvh),17px);line-height:.94;color:#eee;text-shadow:0 2px 5px #000}.mobile-services h2 span,.mobile-services h2 b{display:block}.mobile-services h2 b{color:var(--orange);font-weight:500}
+  .mobile-signoff{position:relative;z-index:5;grid-column:1;grid-row:3;display:block;margin:0;padding:clamp(5px,1.8dvh,8px) 6px;color:#ddd;background:#070707;border-top:1px solid #333;text-align:center;font-size:clamp(9px,min(1.5vw,3.2dvh),12px);letter-spacing:.18em}
+}

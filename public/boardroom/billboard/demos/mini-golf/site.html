@@ -8,7 +8,7 @@
   <title>A Hole in One | Tropical Mini Golf</title>
   <link rel="stylesheet" href="css/style.css?v=grey-final">
   <link rel="stylesheet" href="css/mobile-fluid.css?v=1">
-  <link rel="stylesheet" href="css/mobile-composition.css?v=3">
+  <link rel="stylesheet" href="css/mobile-composition.css?v=4">
 </head>
 <body>
 <main class="viewport" aria-label="A Hole in One tropical mini golf">
@@ -16,17 +16,31 @@
       <img class="artwork" src="assets/images/puttputt-hero.webp" alt="Tropical mini golf course with feature cards and Wāperiki map">
 
       <section class="mobile-home" aria-label="A Hole in One introduction">
-        <p class="mobile-brand"><span>A Hole</span> <em>in One</em></p>
-        <p class="mobile-location">Tropical mini golf · Wāperiki</p>
+        <header class="mobile-header">
+          <div class="mobile-identity" aria-label="A Hole in One Wāperiki">
+            <p class="mobile-brand"><span>A Hole</span> <em>in One</em></p>
+            <p class="mobile-location">Wāperiki</p>
+          </div>
+          <span class="mobile-palm" aria-hidden="true">🌴</span>
+          <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-primary-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+        </header>
+        <div class="mobile-hero-photo" aria-hidden="true"></div>
         <div class="mobile-hero-copy">
           <p class="mobile-kicker">Every round an</p>
           <h1>Adventure</h1>
-          <p class="mobile-intro">Tropical vibes. Tricky holes.<br>Unforgettable memories.</p>
+          <p class="mobile-tagline">Fun for everyone!</p>
+          <button class="mobile-book" data-overlay="book" type="button">Book now <span aria-hidden="true">●</span></button>
         </div>
-        <div class="mobile-highlights" aria-label="Course highlights">
-          <article><strong>18</strong><span>holes of fun</span></article>
-          <article><strong>All ages</strong><span>family friendly</span></article>
+        <div class="mobile-highlights" aria-label="Venue highlights">
+          <article class="highlight--course"><div><b>01</b><strong>18 holes<br>of fun</strong></div><span class="highlight-photo" aria-hidden="true"></span></article>
+          <article class="highlight--parties"><div><b>02</b><strong>Perfect for<br>parties</strong></div><span class="highlight-photo" aria-hidden="true"></span></article>
+          <article class="highlight--snacks"><div><b>03</b><strong>Snacks &amp;<br>drinks</strong></div><span class="highlight-photo" aria-hidden="true"></span></article>
         </div>
+        <footer class="mobile-details">
+          <div><b aria-hidden="true">●</b><span><strong>A Hole in One</strong><small>15 Palm Drive, Wāperiki</small></span></div>
+          <div><b aria-hidden="true">◷</b><span><strong>Open 7 days</strong><small>9:00am – 8:00pm</small></span></div>
+          <div><b aria-hidden="true">☺</b><span><strong>Good times guaranteed</strong><small>Memories made every round.</small></span></div>
+        </footer>
       </section>
 
       <a class="brand-mask" href="#" aria-label="A Hole in One home">
@@ -36,7 +50,7 @@
         <span class="brand-palm" aria-hidden="true">🌴</span>
       </a>
 
-      <nav class="hotspots" aria-label="Primary navigation">
+      <nav class="hotspots" id="mobile-primary-nav" aria-label="Primary navigation">
         <button class="hotspot hotspot--course" data-overlay="course" type="button" aria-label="Open The Course"></button>
         <button class="hotspot hotspot--story" data-overlay="story" type="button" aria-label="Open Above Par"></button>
         <button class="hotspot hotspot--events" data-overlay="events" type="button" aria-label="Open Parties and Events"></button>
@@ -107,6 +121,6 @@
       </section>
     </div>
   </main>
-  <script src="js/app.js?v=2"></script>
+  <script src="js/app.js?v=4"></script>
 </body>
 </html>

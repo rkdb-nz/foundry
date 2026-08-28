@@ -4,6 +4,7 @@
   const backgroundNodes = [...stage.children].filter(node => !node.classList.contains('overlay'));
   let lastTrigger = null;
   let activeOverlay = null;
+  const navToggle = document.querySelector('.mobile-nav-toggle');
 
   function scaleStage() {
     stage.style.transform = "none";
@@ -73,8 +74,23 @@
   }
 
   document.addEventListener('click', e => {
+    const toggleTrigger = e.target.closest('.mobile-nav-toggle');
+    if (toggleTrigger) {
+      const open = document.body.classList.toggle('mobile-nav-open');
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    } else if (document.body.classList.contains('mobile-nav-open') && !e.target.closest('.hotspots')) {
+      document.body.classList.remove('mobile-nav-open');
+      navToggle?.setAttribute('aria-expanded', 'false');
+      navToggle?.setAttribute('aria-label', 'Open menu');
+    }
     const trigger = e.target.closest('[data-overlay]');
-    if (trigger) openOverlay(trigger.dataset.overlay, trigger);
+    if (trigger) {
+      document.body.classList.remove('mobile-nav-open');
+      navToggle?.setAttribute('aria-expanded', 'false');
+      navToggle?.setAttribute('aria-label', 'Open menu');
+      openOverlay(trigger.dataset.overlay, trigger);
+    }
     if (e.target.closest('.overlay-close')) closeAll();
     if (e.target.classList.contains('overlay')) closeAll();
     if (e.target.closest('[data-open-book]')) openOverlay('book', e.target.closest('[data-open-book]'));
@@ -82,6 +98,12 @@
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && activeOverlay) closeAll();
+    else if (e.key === 'Escape' && document.body.classList.contains('mobile-nav-open')) {
+      document.body.classList.remove('mobile-nav-open');
+      navToggle?.setAttribute('aria-expanded', 'false');
+      navToggle?.setAttribute('aria-label', 'Open menu');
+      navToggle?.focus({ preventScroll: true });
+    }
     else trapFocus(e);
   });
 
