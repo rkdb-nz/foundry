@@ -36,7 +36,6 @@
       max(clamp(12px,3.4vw,18px), env(safe-area-inset-left)) !important;
   }
 
-  /* Centre the brand independently of the hamburger so the header is visually balanced. */
   .brand {
     position:absolute !important;
     left:50% !important;
@@ -47,9 +46,7 @@
     margin:0 !important;
   }
 
-  .brand img {
-    object-position:center center !important;
-  }
+  .brand img { object-position:center center !important; }
 
   .mobile-menu-toggle {
     width:clamp(44px,11vw,54px) !important;
@@ -80,7 +77,6 @@
     font-size:clamp(13px,3.7vw,16px) !important;
   }
 
-  /* Use the source artwork as a full-bleed background so no exposed pink block can appear. */
   .hero {
     position:relative !important;
     min-height:0 !important;
@@ -184,7 +180,6 @@
     line-height:1.08 !important;
   }
 
-  /* Mobile overlay polish: keep the existing press/panel animation, but prevent controls overlapping copy. */
   .overlay-panel {
     padding:clamp(20px,5vw,28px) !important;
   }
@@ -207,9 +202,7 @@
   }
 
   .overlay-panel .eyebrow,
-  .overlay-panel h2 {
-    text-align:center !important;
-  }
+  .overlay-panel h2 { text-align:center !important; }
 
   .overlay-panel h2 {
     padding-right:0 !important;
@@ -221,34 +214,281 @@
   .site {
     grid-template-rows:clamp(58px,8dvh,72px) minmax(0,21fr) minmax(0,28fr) minmax(0,43fr) !important;
   }
+  .mobile-flourish { display:none !important; }
+  .mobile-message h1 { font-size:clamp(31px,min(9.8vw,5.45dvh),48px) !important; }
+  .features { gap:3px !important; padding-top:3px !important; }
+  .feature-card,
+  .feature-card:nth-child(even) { grid-template-columns:clamp(36px,9.8vw,46px) minmax(0,1fr) !important; }
+  .feature-icon { width:clamp(29px,7.8vw,36px) !important; font-size:clamp(16px,4.3vw,20px) !important; }
+  .feature-copy h2 { font-size:clamp(11px,min(3.15vw,1.48dvh),15px) !important; }
+  .feature-copy p { font-size:clamp(8px,min(2.3vw,1.08dvh),10.5px) !important; line-height:1.06 !important; }
+}
+
+/* Approved Donut language adapted deliberately for short, wide phone viewports. */
+@media (orientation:landscape) and (max-height:520px) and (max-width:1000px) {
+  html, body, .viewport, .site {
+    width:100% !important;
+    height:100% !important;
+    min-height:0 !important;
+    max-height:100% !important;
+    overflow:hidden !important;
+  }
+
+  .viewport, .site {
+    width:100vw !important;
+    height:100dvh !important;
+  }
+
+  .site {
+    position:relative !important;
+    display:grid !important;
+    grid-template-columns:52% 48% !important;
+    grid-template-rows:clamp(52px,15dvh,66px) minmax(0,1fr) !important;
+    background:linear-gradient(180deg,#fff8f3,#fff0e9) !important;
+  }
+
+  .topbar {
+    grid-column:1 / -1 !important;
+    grid-row:1 !important;
+    position:relative !important;
+    z-index:20 !important;
+    min-height:0 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    padding:max(4px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) 4px max(12px,env(safe-area-inset-left)) !important;
+    background:linear-gradient(100deg,#fff9f5,#fff1ea 62%,#ffece5) !important;
+  }
+
+  .brand {
+    display:block !important;
+    position:absolute !important;
+    left:50% !important;
+    top:50% !important;
+    transform:translate(-50%,-50%) !important;
+    width:min(28vw,220px) !important;
+    height:78% !important;
+    margin:0 !important;
+  }
+
+  .brand img {
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center !important;
+  }
+
+  .nav { display:none !important; }
+
+  .mobile-menu-toggle {
+    display:grid !important;
+    width:clamp(42px,11dvh,50px) !important;
+    aspect-ratio:1 !important;
+    position:relative !important;
+    z-index:1002 !important;
+    margin-left:auto !important;
+    place-content:center !important;
+    gap:4px !important;
+    padding:0 !important;
+    border:1.5px solid #df5c78 !important;
+    border-radius:50% !important;
+    background:rgba(255,248,244,.78) !important;
+  }
+
+  .mobile-menu-toggle span {
+    width:clamp(21px,5.5dvh,27px) !important;
+    height:3px !important;
+    background:#d92f5b !important;
+  }
+
+  .mobile-menu-panel {
+    position:fixed !important;
+    z-index:1001 !important;
+    top:max(56px,calc(env(safe-area-inset-top) + 48px)) !important;
+    right:max(10px,env(safe-area-inset-right)) !important;
+    width:min(34vw,260px) !important;
+    padding:8px !important;
+    display:grid !important;
+    gap:6px !important;
+    border-radius:16px !important;
+    background:rgba(255,247,243,.99) !important;
+    box-shadow:0 16px 36px rgba(80,20,30,.24) !important;
+  }
+
+  .mobile-menu-panel[hidden] { display:none !important; }
+
+  .mobile-menu-panel button {
+    min-height:40px !important;
+    padding:0 13px !important;
+    font-size:clamp(12px,2.8dvh,14px) !important;
+  }
+
+  .hero {
+    grid-column:1 !important;
+    grid-row:2 !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+    background-image:url('../assets/images/donut1.webp') !important;
+    background-size:cover !important;
+    background-position:68% 50% !important;
+    background-repeat:no-repeat !important;
+  }
+
+  .hero img { opacity:0 !important; pointer-events:none !important; }
+
+  .mobile-message {
+    display:flex !important;
+    position:absolute !important;
+    z-index:4 !important;
+    top:clamp(52px,15dvh,66px) !important;
+    right:0 !important;
+    width:48% !important;
+    height:58% !important;
+    min-height:0 !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    align-items:center !important;
+    overflow:hidden !important;
+    padding:clamp(5px,1.4dvh,8px) clamp(14px,2vw,22px) !important;
+    text-align:center !important;
+    background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.78),transparent 52%),linear-gradient(180deg,#fff8f4,#fff1ea) !important;
+  }
+
+  .mobile-script {
+    margin:0 !important;
+    font-size:clamp(15px,min(2.5vw,4.2dvh),22px) !important;
+    line-height:.95 !important;
+  }
+
+  .mobile-message h1 {
+    margin:1px 0 !important;
+    font-size:clamp(28px,min(5.2vw,9.5dvh),48px) !important;
+    line-height:.82 !important;
+  }
+
+  .mobile-script--lower {
+    margin:0 !important;
+    font-size:clamp(16px,min(2.8vw,4.8dvh),24px) !important;
+  }
 
   .mobile-flourish { display:none !important; }
 
-  .mobile-message h1 {
-    font-size:clamp(31px,min(9.8vw,5.45dvh),48px) !important;
+  .mobile-order-button {
+    width:min(94%,420px) !important;
+    min-height:clamp(38px,10dvh,46px) !important;
+    margin-top:clamp(3px,1dvh,5px) !important;
+    padding:0 20px !important;
+    font-size:clamp(16px,min(2.5vw,4.5dvh),22px) !important;
   }
 
   .features {
-    gap:3px !important;
-    padding-top:3px !important;
+    position:absolute !important;
+    z-index:5 !important;
+    right:0 !important;
+    bottom:0 !important;
+    width:48% !important;
+    height:42% !important;
+    min-height:0 !important;
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    grid-template-rows:1fr !important;
+    gap:5px !important;
+    padding:5px max(8px,env(safe-area-inset-right)) max(5px,env(safe-area-inset-bottom)) 8px !important;
+    background:linear-gradient(180deg,#fff5ef,#ffede6) !important;
   }
 
   .feature-card,
   .feature-card:nth-child(even) {
-    grid-template-columns:clamp(36px,9.8vw,46px) minmax(0,1fr) !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:2px !important;
+    padding:4px 5px !important;
+    border-radius:10px !important;
+    text-align:center !important;
+    overflow:hidden !important;
   }
 
   .feature-icon {
-    width:clamp(29px,7.8vw,36px) !important;
-    font-size:clamp(16px,4.3vw,20px) !important;
+    width:clamp(25px,7dvh,34px) !important;
+    margin:0 !important;
+    flex:0 0 auto !important;
+    font-size:clamp(13px,3.8dvh,18px) !important;
+  }
+
+  .feature-copy {
+    min-width:0 !important;
+    padding:0 !important;
+    overflow:visible !important;
   }
 
   .feature-copy h2 {
-    font-size:clamp(11px,min(3.15vw,1.48dvh),15px) !important;
+    margin:0 0 2px !important;
+    font-size:clamp(9px,min(1.35vw,2.8dvh),12px) !important;
+    line-height:1 !important;
   }
 
   .feature-copy p {
-    font-size:clamp(8px,min(2.3vw,1.08dvh),10.5px) !important;
-    line-height:1.06 !important;
+    margin:0 !important;
+    display:block !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    font-size:clamp(7.5px,min(1.05vw,2.15dvh),10px) !important;
+    line-height:1.05 !important;
   }
+
+  .feature-rule,
+  .feature-card img { display:none !important; }
+
+  .overlay {
+    padding:max(8px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left)) !important;
+  }
+
+  .overlay-panel {
+    width:100% !important;
+    max-height:100% !important;
+    padding:12px 16px !important;
+    border-radius:18px !important;
+    overflow:auto !important;
+  }
+
+  .overlay-close {
+    position:static !important;
+    width:auto !important;
+    height:36px !important;
+    min-height:36px !important;
+    margin:0 0 5px auto !important;
+    padding:0 14px !important;
+    border-radius:999px !important;
+    font:700 12px/1 Arial,sans-serif !important;
+    text-transform:uppercase !important;
+  }
+
+  .overlay-panel .eyebrow,
+  .overlay-panel h2 { text-align:center !important; }
+
+  .overlay-panel h2 {
+    padding-right:0 !important;
+    margin:.02em 0 .2em !important;
+    font-size:clamp(30px,8dvh,46px) !important;
+  }
+
+  .menu-grid { grid-template-columns:repeat(3,minmax(0,1fr)) !important; gap:6px !important; }
+  .menu-grid article { padding:8px 42px 8px 9px !important; font-size:11px !important; }
+  .menu-grid b { right:8px !important; top:8px !important; }
+
+  .overlay-panel--split,
+  .overlay-panel--order { grid-template-columns:1fr 1fr !important; gap:14px !important; }
+  .catering-grid { grid-template-columns:repeat(3,1fr) !important; gap:8px !important; }
+  .catering-grid article { min-height:0 !important; padding:10px !important; }
+  form { grid-template-columns:1fr 1fr !important; gap:7px !important; }
+  form label:nth-of-type(4), form .submit-button, .form-status { grid-column:auto !important; }
+  input,select,textarea { padding:8px 10px !important; }
+  textarea { min-height:52px !important; }
+  #overlay-locations .map-card { transform:none !important; min-height:150px !important; }
 }
