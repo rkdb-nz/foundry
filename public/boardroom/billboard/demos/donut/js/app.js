@@ -1,4 +1,12 @@
 (() => {
+  if (!document.querySelector('link[data-donut-portrait-polish]')) {
+    const polish = document.createElement('link');
+    polish.rel = 'stylesheet';
+    polish.href = 'css/portrait-polish.css?v=1';
+    polish.dataset.donutPortraitPolish = '';
+    document.head.appendChild(polish);
+  }
+
   const site = document.getElementById('site');
   const triggers = [...document.querySelectorAll('[data-overlay]')];
   const overlays = [...document.querySelectorAll('.overlay')];
