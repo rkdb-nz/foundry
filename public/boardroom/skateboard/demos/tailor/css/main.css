@@ -1055,3 +1055,70 @@ body.page-scroll, body.shop-page, html.page-scroll{overflow:auto !important;heig
   .visit-intro h3{font-size:clamp(34px,6vw,54px)}
   .visit-intro p{font-size:10px;line-height:1.45;margin-top:2dvh}
 }
+
+/* TAILOR MOBILE V3 — CHAPTER EDGE ARROWS */
+.mobile-chapter-controls{display:none}
+
+@media (max-width:900px) {
+  .mobile-chapter-controls{
+    position:fixed;
+    inset:0;
+    z-index:850;
+    display:block;
+    pointer-events:none;
+  }
+
+  .mobile-chapter-controls button{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:clamp(34px,9vw,44px);
+    height:clamp(76px,18dvh,116px);
+    padding:0;
+    display:grid;
+    place-items:center;
+    pointer-events:auto;
+    border:1px solid rgba(201,168,106,.52);
+    background:linear-gradient(145deg,rgba(34,31,28,.92),rgba(18,17,16,.94));
+    color:#f3dfb5;
+    box-shadow:0 8px 24px rgba(0,0,0,.25),inset 0 1px rgba(255,255,255,.08);
+    font:300 clamp(42px,11vw,64px)/1 Georgia,serif;
+    opacity:.88;
+    touch-action:manipulation;
+  }
+
+  #chapter-prev{
+    left:0;
+    border-left:0;
+    border-radius:0 14px 14px 0;
+  }
+
+  #chapter-next{
+    right:0;
+    border-right:0;
+    border-radius:14px 0 0 14px;
+  }
+
+  .mobile-chapter-controls button:active{
+    opacity:1;
+    background:#171514;
+  }
+
+  .mobile-chapter-controls button[hidden],
+  .mobile-chapter-controls button:disabled{
+    display:none !important;
+  }
+
+  /* Keep the chapter arrows clear of Collection's page-turn arrows. */
+  .ch3.active ~ * .mobile-chapter-controls{
+    pointer-events:none;
+  }
+}
+
+@media (max-width:900px) and (orientation:landscape) and (max-height:500px) {
+  .mobile-chapter-controls button{
+    width:34px;
+    height:82px;
+    font-size:44px;
+  }
+}
