@@ -164,10 +164,23 @@ document.getElementById('look-prev')?.addEventListener('click',()=>showLook(look
 document.getElementById('look-next')?.addEventListener('click',()=>showLook(lookIndex+1));
 showLook(0);
 
-// Visit is the vertical ending. Reset to Wāperiki whenever it is entered directly.
-document.querySelector('a[data-goto="4"]')?.addEventListener('click',()=>{
-  if(visitScroll) visitScroll.scrollTop=0;
-});
+// Mobile Visit is a simple two-panel horizontal ending.
+const visitTabs=Array.from(document.querySelectorAll('[data-visit-panel]'));
+function showVisitPanel(index, smooth=true){
+  if(!visitScroll) return;
+  const panel=Math.max(0,Math.min(1,index));
+  visitScroll.scrollTo({left:panel*visitScroll.clientWidth,top:0,behavior:smooth?'smooth':'auto'});
+  visitTabs.forEach((button,i)=>button.classList.toggle('active',i===panel));
+}
+visitTabs.forEach((button,i)=>button.addEventListener('click',()=>showVisitPanel(i)));
+visitScroll?.addEventListener('scroll',()=>{
+  if(!isMobile()) return;
+  const panel=visitScroll.clientWidth ? Math.round(visitScroll.scrollLeft/visitScroll.clientWidth) : 0;
+  visitTabs.forEach((button,i)=>button.classList.toggle('active',i===panel));
+},{passive:true});
+
+// Reset to Wāperiki whenever Visit is entered directly.
+document.querySelector('a[data-goto="4"]')?.addEventListener('click',()=>showVisitPanel(0,false));
 
 window.addEventListener('resize',()=>{
   if(track){
