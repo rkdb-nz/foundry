@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Florist — Skateboard demo</title>
   <link rel="stylesheet" href="../../../demo-return.css">
+
   <style>
+    /* BILLBOARD MOBILE EDGE TAB — DIRECT DEMO OVERRIDE */
     @media (max-width:900px) {
       html,
       body {
@@ -14,10 +16,9 @@
         height:100dvh;
         margin:0;
         overflow:hidden;
-        background:#faf6f0;
       }
 
-      .florist-demo-shell .foundry-demo-frame {
+      .foundry-demo-frame {
         position:fixed !important;
         inset:0 !important;
         width:100vw !important;
@@ -27,7 +28,7 @@
         box-shadow:none !important;
       }
 
-      .florist-demo-shell .foundry-demo-return {
+      .foundry-demo-return {
         position:fixed !important;
         z-index:2147483647 !important;
         top:10px !important;
@@ -49,15 +50,15 @@
           3px 7px 15px rgba(0,0,0,.22) !important;
         opacity:.98 !important;
         overflow:visible !important;
-        animation:florist-edge-glow 2.8s ease-in-out infinite !important;
+        animation:board-edge-glow 2.8s ease-in-out infinite !important;
       }
 
-      .florist-demo-shell .foundry-demo-return::before {
+      .foundry-demo-return::before {
         content:none !important;
         display:none !important;
       }
 
-      .florist-demo-shell .foundry-demo-return img {
+      .foundry-demo-return img {
         display:block !important;
         width:24px !important;
         height:auto !important;
@@ -70,15 +71,15 @@
         transform:none !important;
       }
 
-      .florist-demo-shell .foundry-demo-return:hover,
-      .florist-demo-shell .foundry-demo-return:focus-visible {
+      .foundry-demo-return:hover,
+      .foundry-demo-return:focus-visible {
         transform:none !important;
         filter:none !important;
         outline:2px solid rgba(255,255,255,.9) !important;
         outline-offset:3px !important;
       }
 
-      @keyframes florist-edge-glow {
+      @keyframes board-edge-glow {
         0%,100% {
           box-shadow:
             0 0 0 1px rgba(222,111,54,.08),
@@ -95,7 +96,7 @@
     }
 
     @media (max-width:900px) and (prefers-reduced-motion:reduce) {
-      .florist-demo-shell .foundry-demo-return {
+      .foundry-demo-return {
         animation:none !important;
       }
     }
@@ -103,6 +104,6 @@
 </head>
 <body>
 <a class="foundry-demo-return" href="../../index.html" aria-label="Back to Skateboard"><img src="../../../../assets/images/backarrow.webp" alt=""></a>
-<iframe class="foundry-demo-frame" src="site.html?v=florist-mobile-shell-2" title="Florist — Skateboard demo"></iframe>
+<iframe class="foundry-demo-frame" src="site.html?v=billboard-edge-tab-3" title="Florist — Skateboard demo"></iframe>
 </body>
 </html>
