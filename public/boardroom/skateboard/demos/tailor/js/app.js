@@ -4,6 +4,8 @@ const chapterInd = document.getElementById('chapter-ind');
 const counter = document.getElementById('counter');
 const wheelHint = document.getElementById('wheel-hint');
 const visitScroll = document.getElementById('visit-scroll');
+const chapterPrev = document.getElementById('chapter-prev');
+const chapterNext = document.getElementById('chapter-next');
 const chapters = track ? Array.from(track.querySelectorAll('.chapter')) : [];
 const total = chapters.length || 5;
 let currentIndex = 0;
@@ -38,6 +40,8 @@ function updateUI(idx){
     progress.style.setProperty('--p', p);
     progress.style.transform = `scaleX(${p})`;
   }
+  if(chapterPrev) chapterPrev.hidden = idx <= 0;
+  if(chapterNext) chapterNext.hidden = idx >= total-1;
   chapters.forEach((ch,i)=>{
     ch.classList.toggle('active', i===idx);
     if(i===idx){
@@ -143,6 +147,8 @@ window.addEventListener('touchend',e=>{
   }
 },{passive:true});
 
+chapterPrev?.addEventListener('click',()=>goTo(targetIndex-1));
+chapterNext?.addEventListener('click',()=>goTo(targetIndex+1));
 document.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();goTo(parseInt(a.dataset.goto,10))}));
 window.addEventListener('keydown',e=>{
   if(!track) return;
