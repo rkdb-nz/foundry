@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=charity-mobile-fixed-1" />
+  <link rel="stylesheet" href="styles.css?v=charity-story-hub-1" />
 </head>
 <body>
   <header class="site-header">
@@ -18,6 +18,101 @@
     </div>
     <a class="header-donate" href="https://www.daffodilday.org.nz/" target="_blank" rel="noopener noreferrer">Donate</a>
   </header>
+
+
+  <section class="mobile-experience" aria-label="On the Road mobile story hub">
+    <section class="mobile-view mobile-hub is-active" data-mobile-view="hub" aria-labelledby="mobile-hub-title">
+      <img class="mobile-hero-image" src="assets/images/hero.jpg" alt="Kōkiri looking towards mountains while hiking Te Araroa" />
+      <div class="mobile-hero-shade"></div>
+      <div class="mobile-brand">On the Road</div>
+      <div class="mobile-hub-copy">
+        <h2 id="mobile-hub-title">3,000<br>Kilometres</h2>
+        <p>One cause. Countless reasons to keep walking.</p>
+      </div>
+      <nav class="mobile-hub-grid" aria-label="Explore Kōkiri's journey">
+        <button class="mobile-hub-tile" type="button" data-open-view="story">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 37c4-10 9-16 16-16s12 6 16 16M24 19a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z"/></svg>
+          <span>My Story</span>
+        </button>
+        <button class="mobile-hub-tile" type="button" data-open-view="diary">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 8h13c4 0 7 3 7 7v25c0-4-3-7-7-7H8V8Zm32 0H28v32c0-4 3-7 7-7h5V8Z"/></svg>
+          <span>Diary</span>
+        </button>
+        <button class="mobile-hub-tile" type="button" data-open-view="trail">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 38c4-8 11-8 15-14s1-11 8-17M31 7h8v8M9 40h5"/></svg>
+          <span>Trail</span>
+        </button>
+        <button class="mobile-hub-tile mobile-hub-tile--support" type="button" data-open-view="support">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40S8 30 8 18c0-6 4-10 10-10 3 0 5 1 6 4 2-3 4-4 7-4 6 0 10 4 10 10 0 12-17 22-17 22Z"/></svg>
+          <span>Support</span>
+        </button>
+      </nav>
+    </section>
+
+    <section class="mobile-view mobile-detail mobile-detail--story" data-mobile-view="story" aria-labelledby="mobile-story-title" hidden>
+      <img class="mobile-detail-photo" src="assets/images/portrait.png" alt="Kōkiri smiling in her trail clothing" />
+      <div class="mobile-detail-shade"></div>
+      <button class="mobile-view-back" type="button" data-open-view="hub" aria-label="Back to journey hub">← <span>Journey</span></button>
+      <article class="mobile-detail-card">
+        <span class="mobile-kicker">My story</span>
+        <h2 id="mobile-story-title">Kia ora,<br>I'm Kōkiri.</h2>
+        <p>Cancer has touched my whānau very personally. I’m walking Te Araroa from Cape Reinga to Bluff—3,000 kilometres, one day at a time—to honour them and every Kiwi family walking the same road.</p>
+        <p class="mobile-signoff">Ngā mihi nui—thank you for walking alongside me.</p>
+      </article>
+    </section>
+
+    <section class="mobile-view mobile-detail mobile-detail--diary" data-mobile-view="diary" aria-labelledby="mobile-diary-title" hidden>
+      <div class="mobile-detail-bg"></div>
+      <button class="mobile-view-back" type="button" data-open-view="hub" aria-label="Back to journey hub">← <span>Journey</span></button>
+      <article class="mobile-diary-card">
+        <span class="mobile-kicker">Updated from the trail</span>
+        <h2 id="mobile-diary-title">Kōkiri's diary</h2>
+        <div class="mobile-diary-stack">
+          <article class="mobile-diary-entry is-current"><time datetime="2025-05-14"><b>14</b> May</time><p>Spent the night listening to moreporks. I could hear them calling long after the hut went quiet.</p></article>
+          <article class="mobile-diary-entry"><time datetime="2025-05-13"><b>13</b> May</time><p>Someone left homemade muffins at the trail shelter. That kindness carried me through the last wet kilometres.</p></article>
+          <article class="mobile-diary-entry"><time datetime="2025-05-12"><b>12</b> May</time><p>The rain finally stopped. The views today were worth every blister and every soaked sock.</p></article>
+          <article class="mobile-diary-entry"><time datetime="2025-05-11"><b>11</b> May</time><p>A family walked beside me and shared their own cancer journey. I carried their story all day.</p></article>
+          <article class="mobile-diary-entry"><time datetime="2025-05-10"><b>10</b> May</time><p>Slow going through the mud, but a bright patch of daffodils beside the road felt like a sign to keep moving.</p></article>
+        </div>
+        <div class="mobile-diary-controls">
+          <button type="button" data-diary-step="-1" aria-label="Previous diary entry">←</button>
+          <span><b data-diary-current>1</b> / 5</span>
+          <button type="button" data-diary-step="1" aria-label="Next diary entry">→</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="mobile-view mobile-detail mobile-detail--trail" data-mobile-view="trail" aria-labelledby="mobile-trail-title" hidden>
+      <img class="mobile-detail-photo" src="assets/images/hero.jpg" alt="" />
+      <div class="mobile-detail-shade"></div>
+      <button class="mobile-view-back" type="button" data-open-view="hub" aria-label="Back to journey hub">← <span>Journey</span></button>
+      <article class="mobile-trail-card">
+        <span class="mobile-kicker">Latest trail update</span>
+        <h2 id="mobile-trail-title">Next stop</h2>
+        <div class="mobile-route">
+          <div><small>Today</small><strong>Taihape</strong></div>
+          <span aria-hidden="true">→</span>
+          <div><small>Tomorrow</small><strong>National Park</strong></div>
+        </div>
+        <p>21 km walked today</p>
+        <div class="mobile-progress" aria-label="Te Araroa progress"><span></span></div>
+        <small>Cape Reinga <b>Te Araroa</b> Bluff</small>
+      </article>
+    </section>
+
+    <section class="mobile-view mobile-detail mobile-detail--support" data-mobile-view="support" aria-labelledby="mobile-support-title" hidden>
+      <img class="mobile-detail-photo" src="assets/images/boots.jpg" alt="Worn hiking boots with a yellow daffodil tucked into the laces" />
+      <div class="mobile-detail-shade"></div>
+      <button class="mobile-view-back" type="button" data-open-view="hub" aria-label="Back to journey hub">← <span>Journey</span></button>
+      <article class="mobile-support-card">
+        <span class="mobile-kicker">Walk alongside Kōkiri</span>
+        <h2 id="mobile-support-title">Make every<br>step count.</h2>
+        <p>Support the Cancer Society or send Kōkiri a note to read after a day on the trail.</p>
+        <a class="mobile-support-primary" href="https://www.daffodilday.org.nz/" target="_blank" rel="noopener noreferrer">Support Daffodil Day <span>↗</span></a>
+        <a class="mobile-support-secondary" href="mailto:kokiri@ontheroad.nz?subject=A%20trail%20message%20for%20K%C5%8Dkiri">Send a trail note <span>→</span></a>
+      </article>
+    </section>
+  </section>
 
   <main class="layout">
     <section class="hero" aria-label="Kōkiri on the Te Araroa Trail">
@@ -129,6 +224,6 @@
       <span aria-hidden="true">Walking Te Araroa for the Cancer Society</span><b aria-hidden="true">On the Road</b><i aria-hidden="true">Next stop: National Park</i>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=charity-story-hub-1"></script>
 </body>
 </html>
