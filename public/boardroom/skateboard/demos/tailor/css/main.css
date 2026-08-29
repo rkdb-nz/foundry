@@ -591,3 +591,300 @@ body.page-scroll, body.shop-page, html.page-scroll{overflow:auto !important;heig
   .visit-interlude-mark{font-size:7vw}
   .visit-interlude-place{font-size:7px}
 }
+
+/* TAILOR MOBILE — VERTICAL SWIPE, HORIZONTAL CHAPTERS */
+@media (max-width:900px) {
+  html,
+  body {
+    width:100%;
+    height:100%;
+    height:100dvh;
+    overflow:hidden !important;
+    overscroll-behavior:none;
+  }
+
+  #scroller {
+    width:100vw;
+    height:100dvh;
+    overflow:hidden;
+  }
+
+  #track {
+    width:500vw !important;
+    height:100dvh !important;
+    display:flex !important;
+    flex-direction:row !important;
+    transform:translate3d(0,0,0);
+    will-change:transform;
+  }
+
+  .chapter {
+    width:100vw !important;
+    height:100dvh !important;
+    min-height:0 !important;
+    flex:0 0 100vw !important;
+    overflow:hidden !important;
+  }
+
+  /* Arrival */
+  .ch1 .hero {
+    position:absolute !important;
+    inset:0 0 0 28vw !important;
+    width:auto !important;
+    height:auto !important;
+  }
+
+  .ch1 .type {
+    position:absolute !important;
+    left:7vw !important;
+    top:19dvh !important;
+    width:48vw;
+    padding:0 !important;
+    transform:none !important;
+  }
+
+  .ch1 .type h1 {
+    font-size:clamp(62px,18vw,112px);
+  }
+
+  .ch1 .type .tag {
+    max-width:24ch;
+    margin-top:4dvh;
+    font-size:clamp(11px,2.8vw,14px);
+    line-height:1.5;
+  }
+
+  .ch1 .type .reveal[style*="margin-top:36px"] {
+    margin-top:3dvh !important;
+  }
+
+  .ch1 .ch1-passage {
+    left:32vw;
+    bottom:3dvh;
+  }
+
+  /* Atelier */
+  .ch2 .left-img {
+    position:absolute;
+    left:0;
+    top:0;
+    width:46vw;
+    height:100dvh;
+  }
+
+  .ch2 .right-content {
+    position:absolute;
+    left:51vw;
+    top:14dvh;
+    width:43vw;
+    margin:0;
+    padding:0;
+  }
+
+  .ch2 .right-content h2 {
+    font-size:clamp(38px,9vw,72px) !important;
+  }
+
+  .ch2 .right-content p {
+    font-size:clamp(10px,2.35vw,13px) !important;
+    line-height:1.55 !important;
+  }
+
+  .ch2 .kraft {
+    position:absolute;
+    left:18vw;
+    top:auto;
+    bottom:5dvh;
+    width:29vw;
+    margin:0;
+    padding:clamp(12px,2.5vw,22px);
+    transform:rotate(-1.2deg);
+  }
+
+  .ch2 .kraft p {
+    font-size:clamp(12px,2.8vw,17px);
+  }
+
+  /* Collection */
+  .lookbook-kicker {
+    position:absolute;
+    left:5vw;
+    top:8dvh;
+    margin:0;
+  }
+
+  .book-shell {
+    top:13dvh;
+    bottom:13dvh;
+  }
+
+  .lookbook-slide {
+    inset:0;
+  }
+
+  .lookbook-controls {
+    position:absolute !important;
+    left:auto !important;
+    right:auto !important;
+    top:13dvh !important;
+    bottom:13dvh !important;
+    width:auto !important;
+    margin:0 !important;
+  }
+
+  .copy h2 {
+    font-size:clamp(27px,7vw,52px);
+  }
+
+  .copy p {
+    font-size:clamp(9px,2vw,12px);
+    line-height:1.45;
+    margin-top:1.5dvh;
+  }
+
+  .spec {
+    margin-top:1.5dvh;
+  }
+
+  /* Craft */
+  .ch4 .macro {
+    position:absolute;
+    left:0;
+    top:0;
+    width:62vw;
+    height:100dvh;
+  }
+
+  .ch4 .details {
+    position:absolute;
+    left:66vw;
+    top:12dvh;
+    width:30vw;
+    margin:0;
+  }
+
+  .ch4 .details h2 {
+    font-size:clamp(30px,7vw,54px) !important;
+  }
+
+  .ch4 .details > div[style*="margin-top:36px"] {
+    margin-top:2dvh !important;
+  }
+
+  .ch4 .ditem {
+    padding:clamp(8px,1.4dvh,14px) 0;
+    gap:12px;
+  }
+
+  .ch4 .ditem h5 {
+    font-size:clamp(13px,2.8vw,18px);
+  }
+
+  .ch4 .ditem p {
+    font-size:clamp(8px,1.9vw,11px);
+    line-height:1.35;
+  }
+
+  /* Visit retains its internal Wāperiki-to-Milan vertical ending. */
+  .ch5 {
+    height:100dvh !important;
+  }
+
+  .visit-scroll {
+    position:absolute;
+    inset:0;
+    height:100dvh;
+    overflow-y:auto;
+    overflow-x:hidden;
+    overscroll-behavior:contain;
+  }
+
+  .visit-section {
+    height:100dvh;
+    min-height:100dvh;
+  }
+
+  .visit-intro,
+  .visit-intro-right {
+    left:7vw;
+    right:auto;
+    top:auto;
+    bottom:8dvh;
+    width:min(78vw,430px);
+  }
+
+  .visit-intro h2 {
+    font-size:clamp(54px,14vw,96px);
+  }
+
+  .visit-intro h3 {
+    font-size:clamp(38px,10vw,72px);
+  }
+
+  nav#topnav {
+    height:clamp(54px,9dvh,68px);
+    padding:0 clamp(20px,5vw,36px);
+    background:rgba(247,243,238,.88);
+  }
+
+  nav#topnav .links {
+    gap:clamp(8px,2.2vw,18px);
+  }
+
+  #chapter-ind {
+    left:clamp(18px,5vw,34px);
+    bottom:clamp(8px,2dvh,18px);
+  }
+
+  #counter {
+    right:clamp(18px,5vw,34px);
+    bottom:clamp(10px,2dvh,20px);
+  }
+}
+
+/* Short landscape phones */
+@media (max-width:900px) and (orientation:landscape) and (max-height:500px) {
+  .ch1 .type {
+    top:16dvh !important;
+    width:42vw;
+  }
+
+  .ch1 .type h1 {
+    font-size:clamp(54px,12vw,88px);
+  }
+
+  .ch1 .type .tag {
+    margin-top:2dvh;
+    font-size:10px;
+  }
+
+  .ch2 .right-content {
+    top:12dvh;
+  }
+
+  .ch2 .right-content > div[style*="margin-top:32px"],
+  .ch2 .right-content > div[style*="margin-top:40px"] {
+    margin-top:2dvh !important;
+  }
+
+  .ch2 .kraft {
+    bottom:3dvh;
+  }
+
+  .ch4 .details {
+    top:10dvh;
+  }
+
+  .ch4 .ditem p {
+    display:none;
+  }
+
+  .visit-intro {
+    bottom:5dvh;
+  }
+
+  .visit-intro p {
+    margin-top:2dvh;
+    line-height:1.45;
+  }
+}
