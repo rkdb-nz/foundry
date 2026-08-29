@@ -50,10 +50,6 @@ function updateUI(idx){
 function goTo(index){
   if(!track) return;
   index = Math.max(0, Math.min(total-1, index));
-  if(isMobile()){
-    chapters[index]?.scrollIntoView({behavior:'smooth'});
-    return;
-  }
   if(index===targetIndex && isAnimating) return;
   targetIndex=index;
   targetX=-index*window.innerWidth;
@@ -63,8 +59,7 @@ function goTo(index){
 
 function lerp(a,b,t){ return a+(b-a)*t }
 function animate(){
-  if(track && !isMobile()){
-    currentX=lerp(currentX,targetX,0.08);
+  if(track){    currentX=lerp(currentX,targetX,0.08);
     if(Math.abs(currentX-targetX)<0.5){
       currentX=targetX;
       if(isAnimating){ currentIndex=targetIndex; updateUI(currentIndex); isAnimating=false; }
@@ -82,16 +77,11 @@ if(track){
   const initialIndex = getInitialChapterIndex();
   currentIndex = initialIndex;
   targetIndex = initialIndex;
-  if(!isMobile()){
-    currentX = -initialIndex * window.innerWidth;
-    targetX = currentX;
-    track.style.transform = `translate3d(${currentX}px,0,0)`;
-  }
+  currentX = -initialIndex * window.innerWidth;
+  targetX = currentX;
+  track.style.transform = `translate3d(${currentX}px,0,0)`;
   animate();
   updateUI(initialIndex);
-  if(isMobile() && initialIndex>0){
-    setTimeout(()=>chapters[initialIndex]?.scrollIntoView({behavior:'auto'}),0);
-  }
 }
 
 let wheelAcc=0;
@@ -123,15 +113,39 @@ window.addEventListener('wheel',handleWheel,{passive:false});
 let touchStartX=0,touchStartY=0;
 window.addEventListener('touchstart',e=>{touchStartX=e.touches[0].clientX;touchStartY=e.touches[0].clientY},{passive:true});
 window.addEventListener('touchend',e=>{
-  if(!track || isMobile()) return;
+  if(!track) return;
   const dx=e.changedTouches[0].clientX-touchStartX;
   const dy=e.changedTouches[0].clientY-touchStartY;
-  if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>60) goTo(dx<0 ? targetIndex+1 : targetIndex-1);
+
+  if(isMobile()){
+    // The final Visit chapter keeps its own Wāperiki-to-Milan vertical scroll.
+    // A downward swipe at its top returns to Craft.
+    if(targetIndex===total-1 && visitScroll){
+      if(dy>60 && visitScroll.scrollTop<=1) goTo(total-2);
+      return;
+    }
+
+    // Mobile's natural vertical reading gesture drives the horizontal chapters.
+    if(Math.abs(dy)>50 && Math.abs(dy)>Math.abs(dx)*0.75){
+      goTo(dy<0 ? targetIndex+1 : targetIndex-1);
+      return;
+    }
+
+    // Horizontal swipes remain available as a secondary, intuitive gesture.
+    if(Math.abs(dx)>60){
+      goTo(dx<0 ? targetIndex+1 : targetIndex-1);
+    }
+    return;
+  }
+
+  if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>60){
+    goTo(dx<0 ? targetIndex+1 : targetIndex-1);
+  }
 },{passive:true});
 
 document.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();goTo(parseInt(a.dataset.goto,10))}));
 window.addEventListener('keydown',e=>{
-  if(!track || isMobile()) return;
+  if(!track) return;
   if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key==='PageDown') goTo(targetIndex+1);
   if(e.key==='ArrowLeft'||e.key==='ArrowUp'||e.key==='PageUp') goTo(targetIndex-1);
 });
@@ -156,7 +170,7 @@ document.querySelector('a[data-goto="4"]')?.addEventListener('click',()=>{
 });
 
 window.addEventListener('resize',()=>{
-  if(track && !isMobile()){
+  if(track){
     targetX=-targetIndex*window.innerWidth;
     currentX=targetX;
     track.style.transform=`translate3d(${currentX}px,0,0)`;
