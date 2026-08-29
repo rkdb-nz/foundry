@@ -888,3 +888,170 @@ body.page-scroll, body.shop-page, html.page-scroll{overflow:auto !important;heig
     line-height:1.45;
   }
 }
+
+/* TAILOR MOBILE V2 — DELIBERATE FIXED-SCREEN EDIT */
+.visit-mobile-tabs{display:none}
+
+@media (max-width:900px) {
+  html,body,#scroller,#track,.chapter{
+    height:100dvh !important;
+    min-height:0 !important;
+  }
+  body{overflow:hidden !important}
+  #track{display:flex !important;flex-direction:row !important;width:500vw !important}
+  .chapter{width:100vw !important;flex:0 0 100vw !important;overflow:hidden !important}
+  nav#topnav{
+    height:clamp(50px,8.5dvh,66px) !important;
+    padding:0 max(18px,5vw) !important;
+    background:linear-gradient(180deg,rgba(247,243,238,.96),rgba(247,243,238,.82)) !important;
+    backdrop-filter:blur(12px);
+  }
+  nav#topnav .wordmark{font-size:clamp(14px,4vw,18px)}
+  nav#topnav .links{gap:clamp(7px,2vw,16px) !important}
+  nav#topnav .links a{font-size:clamp(7px,1.9vw,9px) !important;letter-spacing:.1em !important}
+  #chapter-ind{left:max(16px,5vw);bottom:max(8px,2dvh)}
+  #chapter-ind .cur{font-size:clamp(30px,8vw,44px)}
+  #chapter-ind .meta{font-size:7px;letter-spacing:.15em}
+  #counter{right:max(16px,5vw);bottom:max(10px,2.2dvh);font-size:8px}
+
+  /* 01 — Arrival: one full-bleed fashion cover */
+  .ch1::after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(90deg,rgba(20,17,14,.83) 0%,rgba(20,17,14,.48) 46%,rgba(20,17,14,.05) 76%);
+    pointer-events:none;
+  }
+  .ch1 .hero{position:absolute !important;inset:0 !important;width:100vw !important;height:100dvh !important}
+  .ch1 .hero img{object-position:62% center}
+  .ch1 .type{
+    position:absolute !important;z-index:2 !important;left:max(24px,7vw) !important;top:18dvh !important;
+    width:min(54vw,360px) !important;padding:0 !important;color:var(--cream);transform:none !important
+  }
+  .ch1 .type h1{font-size:clamp(58px,17vw,108px) !important;line-height:.78 !important}
+  .ch1 .type .tag{font-size:clamp(10px,2.6vw,13px) !important;line-height:1.5 !important;opacity:.8 !important;max-width:25ch}
+  .ch1 .type .tiny{opacity:.86 !important}
+  .ch1 .type .btn{padding:11px 16px;border-color:rgba(247,243,238,.7)}
+  .ch1 .floating-num,.ch1 .ch1-passage{display:none !important}
+
+  /* 02 — Atelier: image above, concise editorial panel below */
+  .ch2{display:block !important;background:var(--paper)}
+  .ch2 .left-img{position:absolute !important;left:0 !important;top:0 !important;width:100vw !important;height:46dvh !important}
+  .ch2 .left-img img{object-position:center 38%}
+  .ch2 .right-content{
+    position:absolute !important;left:0 !important;top:46dvh !important;width:100vw !important;height:54dvh !important;
+    margin:0 !important;padding:clamp(20px,5vw,34px) max(24px,7vw) 8dvh !important;overflow:hidden
+  }
+  .ch2 .right-content h2{font-size:clamp(38px,11vw,66px) !important;line-height:.82 !important;margin-top:1dvh !important}
+  .ch2 .right-content>p{font-size:clamp(10px,2.7vw,13px) !important;line-height:1.45 !important;margin-top:1.8dvh !important;max-width:42ch !important}
+  .ch2 .right-content>div[style*="display:grid"]{display:none !important}
+  .ch2 .right-content>div[style*="margin-top:40px"]{margin-top:2dvh !important}
+  .ch2 .kraft{display:none !important}
+
+  /* 03 — Collection: one readable magazine page at a time */
+  .ch3{display:block !important}
+  .lookbook-kicker{position:absolute !important;left:7vw !important;top:9dvh !important;margin:0 !important}
+  .book-shell{left:7vw !important;right:7vw !important;top:14dvh !important;bottom:12dvh !important}
+  .book-spine{display:none !important}
+  .lookbook-slide{display:block !important;inset:0 !important}
+  .book-page{position:absolute !important;inset:0 !important;border:0 !important}
+  .book-page:nth-child(2){display:none !important}
+  .copy,.copy.top{left:7vw !important;top:7dvh !important;width:38vw !important}
+  .copy h2{font-size:clamp(38px,10.5vw,66px) !important;line-height:.83 !important}
+  .copy p{font-size:clamp(10px,2.7vw,13px) !important;line-height:1.5 !important}
+  .hero,.hero.full,.hero.slim,.hero.evening{
+    left:auto !important;right:5vw !important;top:5dvh !important;width:42vw !important;height:56dvh !important
+  }
+  .still.big{left:auto !important;right:5vw !important;top:5dvh !important;width:44vw !important;height:56dvh !important}
+  .lookbook-slide:last-of-type .book-page:first-child{display:block !important}
+  .lookbook-controls{inset:14dvh 7vw 12dvh !important}
+  #look-prev,#look-next{height:110px !important}
+  #look-prev::after,#look-next::after{font-size:58px !important;line-height:110px !important}
+  #look-count{top:-24px !important;font-size:13px !important}
+
+  /* 04 — Craft: detail image with a compact material ledger */
+  .ch4{display:block !important}
+  .ch4 .macro{position:absolute !important;inset:0 !important;width:100vw !important;height:100dvh !important}
+  .ch4::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.06),rgba(10,10,10,.88) 56%);z-index:1}
+  .ch4 .details{
+    position:absolute !important;z-index:2 !important;left:51vw !important;top:13dvh !important;width:43vw !important;
+    margin:0 !important;color:var(--cream)
+  }
+  .ch4 .details h2{font-size:clamp(34px,9vw,58px) !important}
+  .ch4 .details>div[style*="margin-top:36px"]{margin-top:2dvh !important}
+  .ch4 .ditem{padding:clamp(8px,1.4dvh,13px) 0 !important;gap:10px !important}
+  .ch4 .ditem h5{font-size:clamp(13px,3vw,18px) !important}
+  .ch4 .ditem p{display:none !important}
+
+  /* 05 — Visit: two horizontal full-screen panels, selected by taps or sideways swipes */
+  .ch5{display:block !important}
+  .visit-mobile-tabs{
+    position:absolute;z-index:8;top:calc(clamp(50px,8.5dvh,66px) + 12px);left:50%;transform:translateX(-50%);
+    display:flex;gap:4px;padding:4px;border:1px solid rgba(247,243,238,.32);border-radius:999px;
+    background:rgba(20,18,16,.58);backdrop-filter:blur(10px)
+  }
+  .visit-mobile-tabs button{
+    border:0;border-radius:999px;background:transparent;color:#fff;padding:9px 15px;
+    font:600 9px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase
+  }
+  .visit-mobile-tabs button.active{background:#f4eee5;color:#292824}
+  .visit-scroll{
+    position:absolute !important;inset:0 !important;width:100vw !important;height:100dvh !important;
+    display:flex !important;overflow-x:auto !important;overflow-y:hidden !important;scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;scrollbar-width:none;touch-action:pan-x
+  }
+  .visit-scroll::-webkit-scrollbar{display:none}
+  .visit-section{width:100vw !important;min-width:100vw !important;height:100dvh !important;min-height:100dvh !important;scroll-snap-align:start}
+  .visit-interlude{display:none !important}
+  .visit-intro,.visit-intro-right{
+    left:max(24px,7vw) !important;right:auto !important;bottom:10dvh !important;top:auto !important;
+    width:min(78vw,430px) !important;transform:none !important
+  }
+}
+
+@media (max-width:600px) and (orientation:portrait) {
+  nav#topnav .links a:nth-child(1),
+  nav#topnav .links a:nth-child(3){display:none}
+  .ch1::after{background:linear-gradient(0deg,rgba(20,17,14,.9) 0%,rgba(20,17,14,.22) 62%,rgba(20,17,14,.02) 100%)}
+  .ch1 .hero img{object-position:58% center}
+  .ch1 .type{left:7vw !important;top:auto !important;bottom:13dvh !important;width:86vw !important}
+  .ch1 .type h1{font-size:clamp(72px,22vw,110px) !important}
+  .ch1 .type .tag{max-width:36ch;margin-top:2.4dvh !important}
+  .ch1 .type .reveal[style*="margin-top:36px"]{margin-top:2.2dvh !important}
+
+  .book-shell{left:5vw !important;right:5vw !important}
+  .copy,.copy.top{left:7vw !important;top:5dvh !important;width:72vw !important}
+  .copy h2{font-size:clamp(44px,14vw,70px) !important}
+  .copy p,.spec{width:56vw}
+  .hero,.hero.full,.hero.slim,.hero.evening,.still.big{
+    top:auto !important;bottom:4dvh !important;right:5vw !important;width:42vw !important;height:31dvh !important
+  }
+
+  .ch4::after{background:linear-gradient(0deg,rgba(10,10,10,.94),rgba(10,10,10,.12) 72%)}
+  .ch4 .macro img{object-position:42% center}
+  .ch4 .details{left:7vw !important;top:auto !important;bottom:9dvh !important;width:86vw !important}
+  .ch4 .details h2{font-size:clamp(44px,13vw,70px) !important}
+  .ch4 .ditem{display:inline-flex !important;width:48%;vertical-align:top}
+}
+
+@media (max-width:900px) and (orientation:landscape) and (max-height:500px) {
+  nav#topnav{height:52px !important}
+  #chapter-ind .meta,#counter{display:none}
+  .ch1 .type{top:15dvh !important;width:43vw !important}
+  .ch1 .type h1{font-size:clamp(54px,11vw,82px) !important}
+  .ch1 .type .tag{margin-top:2dvh !important;font-size:10px !important}
+  .ch1 .type .reveal[style*="margin-top:36px"]{margin-top:2dvh !important}
+  .ch2 .left-img{width:48vw !important;height:100dvh !important}
+  .ch2 .right-content{left:48vw !important;top:0 !important;width:52vw !important;height:100dvh !important;padding:16dvh 5vw 8dvh !important}
+  .ch2 .right-content h2{font-size:clamp(36px,6vw,54px) !important}
+  .lookbook-kicker{top:10dvh !important}
+  .book-shell{top:17dvh !important;bottom:9dvh !important}
+  .lookbook-controls{inset:17dvh 7vw 9dvh !important}
+  .copy,.copy.top{top:5dvh !important}
+  .hero,.hero.full,.hero.slim,.hero.evening,.still.big{height:58dvh !important}
+  .ch4 .details{top:14dvh !important}
+  .ch4 .details h2{font-size:clamp(32px,5.2vw,48px) !important}
+  .visit-mobile-tabs{top:62px}
+  .visit-intro,.visit-intro-right{bottom:7dvh !important;width:42vw !important}
+  .visit-intro h2{font-size:clamp(46px,8vw,72px)}
+  .visit-intro h3{font-size:clamp(34px,6vw,54px)}
+  .visit-intro p{font-size:10px;line-height:1.45;margin-top:2dvh}
+}
