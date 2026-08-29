@@ -125,3 +125,11 @@ footer{padding:36px 48px; background:var(--ivory); border-top:1px solid var(--li
   .grid{grid-template-columns:1fr}
   #hero, #collections, #enquire{padding-left:24px; padding-right:24px}
 }
+
+
+/* Mobile landscape: keep the vertical brand clear of the Foundry back control. */
+@media (max-width:900px) and (orientation:landscape) {
+  #rail {
+    padding-top:82px;
+  }
+}
