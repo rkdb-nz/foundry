@@ -1,0 +1,144 @@
+/* Boardroom mobile sizing correction — 2026-08-31 */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+  body .foundry-global-nav,
+  body .foundry-global-nav.foundry-global-nav--menu-only {
+    right: 8px !important;
+    max-width: calc(100vw - 16px) !important;
+  }
+
+  .boardroom {
+    width: calc(100% - 30px) !important;
+    padding-top: 108px !important;
+    padding-bottom: 36px !important;
+  }
+
+  .boardroom-drafting {
+    top: 118px !important;
+    right: -54vw !important;
+    width: 128vw !important;
+    opacity: .34 !important;
+  }
+
+  .intro {
+    margin-bottom: 26px !important;
+  }
+
+  .eyebrow {
+    margin-bottom: 14px !important;
+    font-size: .68rem !important;
+    letter-spacing: .27em !important;
+  }
+
+  .intro-heading-rule {
+    width: 72% !important;
+    margin-bottom: 25px !important;
+  }
+
+  h1,
+  #boardroom-title {
+    max-width: 100% !important;
+    font-size: clamp(2.72rem, 11.8vw, 3.35rem) !important;
+    line-height: .95 !important;
+    letter-spacing: -.05em !important;
+  }
+
+  .intro-rule {
+    width: 58px !important;
+    margin: 24px 0 18px !important;
+  }
+
+  .intro-copy {
+    max-width: 100% !important;
+    font-size: clamp(.98rem, 4.1vw, 1.08rem) !important;
+    line-height: 1.48 !important;
+  }
+
+  .boards {
+    gap: 9px !important;
+  }
+
+  .board-card {
+    min-height: 106px !important;
+    grid-template-columns: 20px 50px 1px minmax(0,1fr) !important;
+    gap: 9px !important;
+    padding: 11px 44px 11px 11px !important;
+    border-radius: 14px !important;
+  }
+
+  .board-grip {
+    width: 18px !important;
+    height: 50px !important;
+    background-size: 8px 8px !important;
+  }
+
+  .board-number {
+    font-size: 2.18rem !important;
+  }
+
+  .board-divider {
+    height: 68px !important;
+  }
+
+  .board-label {
+    margin-bottom: 6px !important;
+    font-size: .66rem !important;
+    letter-spacing: .18em !important;
+  }
+
+  .board-main strong {
+    font-size: clamp(.98rem, 4.45vw, 1.15rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  .board-arrow {
+    right: 13px !important;
+    font-size: 2rem !important;
+  }
+
+  .boards::after {
+    height: 48px !important;
+    margin-top: 4px !important;
+    margin-bottom: -36px !important;
+  }
+}
+
+@media (max-width: 390px) and (orientation: portrait) {
+  .boardroom {
+    width: calc(100% - 24px) !important;
+    padding-top: 100px !important;
+  }
+
+  h1,
+  #boardroom-title {
+    font-size: clamp(2.5rem, 11.6vw, 2.9rem) !important;
+  }
+
+  .intro-copy {
+    font-size: .94rem !important;
+  }
+
+  .board-card {
+    min-height: 100px !important;
+    grid-template-columns: 18px 46px 1px minmax(0,1fr) !important;
+    gap: 8px !important;
+    padding-right: 40px !important;
+  }
+
+  .board-number {
+    font-size: 2rem !important;
+  }
+
+  .board-label {
+    font-size: .62rem !important;
+  }
+
+  .board-main strong {
+    font-size: .95rem !important;
+  }
+}
