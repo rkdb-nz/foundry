@@ -42,8 +42,8 @@ body.explore-open .explore-wordmark {
 body.explore-open .explore-kicker {
     display: flex;
     align-items: center;
-    gap: 12px;
-    width: 92%;
+    gap: 0;
+    width: 100%;
     padding: 0 !important;
     border: 0 !important;
     color: #e8bd8c !important;
@@ -57,19 +57,20 @@ body.explore-open .explore-kicker::after {
     display: block;
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, rgba(211, 148, 91, .78), rgba(194, 128, 72, .42));
-    box-shadow: 0 0 8px rgba(205, 133, 72, .18);
+    margin-left: 12px;
+    background: linear-gradient(90deg, rgba(198, 139, 86, .6), rgba(190, 130, 77, .46));
+    box-shadow: none;
 }
 
 body.explore-open .explore-kicker::before {
     content: "";
     order: 2;
-    width: 10px;
-    height: 10px;
-    margin-left: -18px;
-    background: #dca56f;
+    width: 7px;
+    height: 7px;
+    margin-left: -4px;
+    background: #d2a06d;
     transform: rotate(45deg);
-    box-shadow: 0 0 10px rgba(209, 139, 77, .24);
+    box-shadow: 0 0 5px rgba(185, 119, 63, .14);
 }
 
 body.explore-open .explore-boardroom h2 {
@@ -155,19 +156,19 @@ body.explore-open .explore-choice:nth-child(4) {
     align-items: center;
     justify-content: center;
     width: 100%;
-    color: var(--explore-copper);
+    color: rgba(196, 139, 85, .72);
 }
 
 .explore-anvil-rule span {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, transparent, currentColor);
+    background: linear-gradient(90deg, transparent 0%, currentColor 16%, currentColor 100%);
 }
 
-.explore-anvil-rule span { transform: translateY(10px); }
-.explore-anvil-rule span:last-child { transform: translateY(10px) scaleX(-1); }
-.explore-anvil-rule svg { width: 84px; height: 44px; overflow: visible; }
-.explore-anvil-rule path { fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
+.explore-anvil-rule span { transform: translateY(8px); }
+.explore-anvil-rule span:last-child { transform: translateY(8px) scaleX(-1); }
+.explore-anvil-rule svg { width: 94px; height: 48px; margin-inline: 9px; overflow: visible; }
+.explore-anvil-rule path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 
 @media (max-width: 800px) and (orientation: portrait) {
     body.explore-open .explore-screen {
@@ -282,9 +283,9 @@ body.explore-open .explore-choice:nth-child(4) {
     body.explore-open .explore-anvil-rule {
         display: flex;
         position: absolute;
-        right: max(40px, calc(env(safe-area-inset-right) + 32px));
+        right: max(22px, calc(env(safe-area-inset-right) + 18px));
         bottom: max(28px, calc(env(safe-area-inset-bottom) + 20px));
-        left: max(40px, calc(env(safe-area-inset-left) + 32px));
+        left: max(22px, calc(env(safe-area-inset-left) + 18px));
         width: auto;
         padding: 0;
     }
