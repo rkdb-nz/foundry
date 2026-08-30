@@ -1,20 +1,20 @@
 /* Premium bronze Explore treatment — intentionally isolated to #explore. */
 
 body.explore-open {
-    --explore-ink: #110b07;
-    --explore-copper: #d68a4b;
-    --explore-copper-bright: #f0b270;
+    --explore-ink: #241208;
+    --explore-copper: #d99a55;
+    --explore-copper-bright: #f1b978;
     --explore-cream: #f1dfbd;
-    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M18 2H982L998 18V218H2V18Z' fill='none' stroke='%23b86d35' stroke-opacity='.8' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
-    --explore-primary-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 260' preserveAspectRatio='none'%3E%3Cpath d='M28 3H972V8H984V16H992V24H997V236H992V244H984V252H972V257H28V252H16V244H8V236H3V24H8V16H16V8H28Z' fill='none' stroke='%23d58a49' stroke-width='1.35' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M31 12H969L988 31V229L969 248H31L12 229V31Z' fill='none' stroke='%23a95d2d' stroke-width='1.15' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
-    background: #0c0805;
+    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M18 2H982L998 18V218H2V18Z' fill='none' stroke='%23c98b4e' stroke-opacity='.86' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    --explore-primary-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 260' preserveAspectRatio='none'%3E%3Cpath d='M28 3H972V8H984V16H992V24H997V236H992V244H984V252H972V257H28V252H16V244H8V236H3V24H8V16H16V8H28Z' fill='none' stroke='%23e0aa67' stroke-width='1.35' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M31 12H969L988 31V229L969 248H31L12 229V31Z' fill='none' stroke='%23b9763d' stroke-width='1.15' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    background: #241208;
 }
 
 body.explore-open .landing,
 body.explore-open .explore-screen {
     background:
-        radial-gradient(ellipse at 48% 34%, rgba(151, 77, 31, .18), transparent 58%),
-        linear-gradient(rgba(25, 13, 8, .18), rgba(8, 5, 3, .42)),
+        radial-gradient(ellipse at 48% 34%, rgba(211, 126, 55, .3), transparent 62%),
+        linear-gradient(rgba(91, 45, 19, .26), rgba(38, 18, 8, .38)),
         url("../assets/images/explore-bronze-texture.webp") center / cover;
 }
 
@@ -25,8 +25,8 @@ body.explore-open .explore-screen::after {
     z-index: -1;
     pointer-events: none;
     background:
-        repeating-linear-gradient(17deg, transparent 0 4px, rgba(242, 170, 99, .008) 4px 5px),
-        radial-gradient(ellipse at 50% 38%, transparent 52%, rgba(0, 0, 0, .26) 100%);
+        repeating-linear-gradient(17deg, transparent 0 4px, rgba(255, 190, 111, .018) 4px 5px),
+        radial-gradient(ellipse at 50% 38%, rgba(190, 103, 39, .08), rgba(19, 8, 3, .24) 100%);
     mix-blend-mode: normal;
 }
 
@@ -99,7 +99,7 @@ body.explore-open .explore-choice {
     border: 0 !important;
     background:
         var(--explore-card-outline) center / 100% 100% no-repeat,
-        linear-gradient(90deg, rgba(35, 19, 12, .72), rgba(17, 10, 7, .78)),
+        linear-gradient(90deg, rgba(62, 32, 17, .72), rgba(34, 17, 9, .78)),
         url("../assets/images/explore-bronze-texture.webp") center / 760px auto !important;
     color: #e5d4b8 !important;
     box-shadow: inset 0 0 14px rgba(0, 0, 0, .24), 0 2px 5px rgba(0, 0, 0, .2);
@@ -118,7 +118,7 @@ body.explore-open .explore-choice::after {
     content: "" !important;
     width: 20px;
     height: 14px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3E%3Cpath d='M1 7H20M15 1.5L20.5 7 15 12.5' fill='none' stroke='%23dfa060' stroke-width='1.25' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") center / contain no-repeat;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3E%3Cpath d='M1 7H20M15 1.5L20.5 7 15 12.5' fill='none' stroke='%23e4ad69' stroke-width='1.25' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 body.explore-open .explore-choice:first-child {
@@ -126,12 +126,12 @@ body.explore-open .explore-choice:first-child {
     border: 0 !important;
     background:
         var(--explore-primary-outline) center / 100% 100% no-repeat,
-        radial-gradient(circle at 24% 28%, rgba(142, 65, 29, .13), transparent 52%),
-        linear-gradient(90deg, rgba(60, 29, 16, .62), rgba(29, 16, 11, .7)),
+        radial-gradient(circle at 24% 28%, rgba(226, 133, 60, .28), transparent 56%),
+        linear-gradient(90deg, rgba(103, 49, 22, .86), rgba(55, 27, 13, .84)),
         url("../assets/images/explore-bronze-texture.webp") center / 720px auto !important;
     color: #ead9bb !important;
     box-shadow:
-        inset 0 0 15px rgba(0, 0, 0, .22);
+        inset 0 0 15px rgba(248, 161, 83, .12);
 }
 
 body.explore-open .explore-choice:nth-child(2) {
@@ -139,12 +139,12 @@ body.explore-open .explore-choice:nth-child(2) {
 }
 
 body.explore-open .explore-choice:nth-child(3) {
-    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Crect x='2' y='2' width='996' height='216' fill='none' stroke='%23b86d35' stroke-opacity='.8' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Crect x='2' y='2' width='996' height='216' fill='none' stroke='%23c98b4e' stroke-opacity='.86' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
     clip-path: none !important;
 }
 
 body.explore-open .explore-choice:nth-child(4) {
-    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M2 2H998V208L986 218H14L2 208Z' fill='none' stroke='%23b86d35' stroke-opacity='.8' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M2 2H998V208L986 218H14L2 208Z' fill='none' stroke='%23c98b4e' stroke-opacity='.86' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px)) !important;
 }
 
