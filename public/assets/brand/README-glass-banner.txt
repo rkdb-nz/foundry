@@ -1,1 +1,0 @@
-FoundryCare rendered glass asset is stored as public/assets/brand/foundrycare-glass-banner-v2.webp and used by the mobile FoundryCare page.
