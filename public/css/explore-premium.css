@@ -5,8 +5,8 @@ body.explore-open {
     --explore-copper: #d68a4b;
     --explore-copper-bright: #f0b270;
     --explore-cream: #f1dfbd;
-    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M18 2H982L998 18V202L982 218H18L2 202V18Z' fill='none' stroke='%23c87838' stroke-opacity='.82' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
-    --explore-primary-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 260' preserveAspectRatio='none'%3E%3Cpath d='M25 3H975L997 25V235L975 257H25L3 235V25Z' fill='none' stroke='%23e3a15f' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M36 12H964L987 35V225L964 248H36L13 225V35Z' fill='none' stroke='%23b96831' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M3 55H12M3 205H12M988 55H997M988 205H997' stroke='%23eda765' stroke-width='3' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M18 2H982L998 18V218H2V18Z' fill='none' stroke='%23b86d35' stroke-opacity='.8' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    --explore-primary-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 260' preserveAspectRatio='none'%3E%3Cpath d='M28 3H972V8H984V16H992V24H997V236H992V244H984V252H972V257H28V252H16V244H8V236H3V24H8V16H16V8H28Z' fill='none' stroke='%23d58a49' stroke-width='1.35' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M31 12H969L988 31V229L969 248H31L12 229V31Z' fill='none' stroke='%23a95d2d' stroke-width='1.15' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
     background: #0c0805;
 }
 
@@ -92,14 +92,14 @@ body.explore-open .explore-choice {
     counter-increment: explore-route;
     position: relative;
     isolation: isolate;
-    clip-path: polygon(11px 0, calc(100% - 11px) 0, 100% 11px, 100% calc(100% - 11px), calc(100% - 11px) 100%, 11px 100%, 0 calc(100% - 11px), 0 11px) !important;
+    clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%, 0 6px) !important;
     border: 0 !important;
     background:
         var(--explore-card-outline) center / 100% 100% no-repeat,
-        linear-gradient(90deg, rgba(25, 14, 9, .88), rgba(10, 7, 5, .9)),
-        url("../assets/images/explore-bronze-texture.webp") center / 900px auto !important;
-    color: #f0e1c7 !important;
-    box-shadow: inset 0 0 24px rgba(0, 0, 0, .4), 0 5px 16px rgba(0, 0, 0, .28);
+        linear-gradient(90deg, rgba(35, 19, 12, .72), rgba(17, 10, 7, .78)),
+        url("../assets/images/explore-bronze-texture.webp") center / 760px auto !important;
+    color: #e5d4b8 !important;
+    box-shadow: inset 0 0 14px rgba(0, 0, 0, .24), 0 2px 5px rgba(0, 0, 0, .2);
 }
 
 body.explore-open .explore-choice::before {
@@ -112,37 +112,38 @@ body.explore-open .explore-choice::before {
 }
 
 body.explore-open .explore-choice::after {
-    content: "→" !important;
-    color: var(--explore-copper-bright) !important;
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-weight: 200 !important;
+    content: "" !important;
+    width: 20px;
+    height: 14px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3E%3Cpath d='M1 7H20M15 1.5L20.5 7 15 12.5' fill='none' stroke='%23dfa060' stroke-width='1.25' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 body.explore-open .explore-choice:first-child {
+    clip-path: polygon(3px 0, calc(100% - 3px) 0, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%, 0 calc(100% - 3px), 0 3px) !important;
     border: 0 !important;
     background:
         var(--explore-primary-outline) center / 100% 100% no-repeat,
-        radial-gradient(circle at 23% 24%, rgba(175, 83, 34, .28), transparent 48%),
-        linear-gradient(90deg, rgba(91, 39, 18, .9), rgba(39, 19, 11, .92)),
-        url("../assets/images/explore-bronze-texture.webp") center / 820px auto !important;
-    color: #f6e5c7 !important;
+        radial-gradient(circle at 24% 28%, rgba(142, 65, 29, .13), transparent 52%),
+        linear-gradient(90deg, rgba(60, 29, 16, .62), rgba(29, 16, 11, .7)),
+        url("../assets/images/explore-bronze-texture.webp") center / 720px auto !important;
+    color: #ead9bb !important;
     box-shadow:
-        0 7px 17px rgba(0, 0, 0, .38),
-        0 0 12px rgba(201, 101, 40, .1);
+        inset 0 0 15px rgba(0, 0, 0, .22),
+        0 3px 8px rgba(0, 0, 0, .27);
 }
 
 body.explore-open .explore-choice:nth-child(2) {
-    clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px) !important;
+    clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%, 0 6px) !important;
 }
 
 body.explore-open .explore-choice:nth-child(3) {
-    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Crect x='2' y='2' width='996' height='216' fill='none' stroke='%23c87838' stroke-opacity='.82' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Crect x='2' y='2' width='996' height='216' fill='none' stroke='%23b86d35' stroke-opacity='.8' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
     clip-path: none !important;
 }
 
 body.explore-open .explore-choice:nth-child(4) {
-    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M2 2H998V202L982 218H18L2 202Z' fill='none' stroke='%23c87838' stroke-opacity='.82' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 11px 100%, 0 calc(100% - 11px)) !important;
+    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M2 2H998V208L986 218H14L2 208Z' fill='none' stroke='%23b86d35' stroke-opacity='.8' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px)) !important;
 }
 
 .explore-anvil-rule {
@@ -213,10 +214,10 @@ body.explore-open .explore-choice:nth-child(4) {
     }
 
     body.explore-open .explore-choice {
-        grid-template-columns: clamp(60px, 17vw, 74px) 1fr 24px !important;
-        column-gap: clamp(14px, 4vw, 21px) !important;
+        grid-template-columns: clamp(68px, 21.5vw, 78px) minmax(0, 1fr) 22px !important;
+        column-gap: clamp(16px, 5vw, 20px) !important;
         min-height: 62px !important;
-        padding: 8px 18px 8px 0 !important;
+        padding: 7px 15px 7px 0 !important;
         font-family: Arial, Helvetica, sans-serif !important;
         font-size: clamp(11px, 3.1vw, 14px) !important;
         font-weight: 400 !important;
@@ -227,14 +228,14 @@ body.explore-open .explore-choice:nth-child(4) {
         display: flex;
         align-items: center;
         justify-content: center;
-        align-self: stretch;
+        align-self: center;
+        height: 62%;
         border-right: 1px solid rgba(203, 121, 55, .56);
-        font-size: clamp(31px, 9.4vw, 42px) !important;
+        color: #df9d61 !important;
+        font-size: clamp(29px, 8.8vw, 38px) !important;
     }
 
-    body.explore-open .explore-choice::after {
-        font-size: clamp(23px, 6.5vw, 29px) !important;
-    }
+    body.explore-open .explore-choice::after { justify-self: end; }
 
     body.explore-open .explore-choice:first-child {
         font-family: "Instrument Serif", Georgia, serif !important;
