@@ -2,19 +2,19 @@
 
 body.explore-open {
     --explore-ink: #241208;
-    --explore-copper: #d99a55;
-    --explore-copper-bright: #f1b978;
-    --explore-cream: #f1dfbd;
-    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M18 2H982L998 18V218H2V18Z' fill='none' stroke='%23c98b4e' stroke-opacity='.86' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
-    --explore-primary-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 260' preserveAspectRatio='none'%3E%3Cpath d='M28 3H972V8H984V16H992V24H997V236H992V244H984V252H972V257H28V252H16V244H8V236H3V24H8V16H16V8H28Z' fill='none' stroke='%23e0aa67' stroke-width='1.35' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M31 12H969L988 31V229L969 248H31L12 229V31Z' fill='none' stroke='%23b9763d' stroke-width='1.15' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    --explore-copper: #cf965c;
+    --explore-copper-bright: #eab77c;
+    --explore-cream: #f0dfc4;
+    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M18 2H982L998 18V218H2V18Z' fill='none' stroke='%23c08a57' stroke-opacity='.7' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    --explore-primary-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 260' preserveAspectRatio='none'%3E%3Cpath d='M28 3H972V8H984V16H992V24H997V236H992V244H984V252H972V257H28V252H16V244H8V236H3V24H8V16H16V8H28Z' fill='none' stroke='%23d9a86f' stroke-width='1.35' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M31 12H969L988 31V229L969 248H31L12 229V31Z' fill='none' stroke='%23ad7448' stroke-width='1.15' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
     background: #241208;
 }
 
 body.explore-open .landing,
 body.explore-open .explore-screen {
     background:
-        radial-gradient(ellipse at 48% 34%, rgba(211, 126, 55, .3), transparent 62%),
-        linear-gradient(rgba(91, 45, 19, .26), rgba(38, 18, 8, .38)),
+        radial-gradient(ellipse at 48% 34%, rgba(196, 112, 48, .24), transparent 62%),
+        linear-gradient(rgba(73, 36, 17, .42), rgba(35, 17, 9, .5)),
         url("../assets/images/explore-bronze-texture.webp") center / cover;
 }
 
@@ -25,8 +25,8 @@ body.explore-open .explore-screen::after {
     z-index: -1;
     pointer-events: none;
     background:
-        repeating-linear-gradient(17deg, transparent 0 4px, rgba(255, 190, 111, .018) 4px 5px),
-        radial-gradient(ellipse at 50% 38%, rgba(190, 103, 39, .08), rgba(19, 8, 3, .24) 100%);
+        repeating-linear-gradient(17deg, transparent 0 4px, rgba(255, 190, 111, .006) 4px 5px),
+        radial-gradient(ellipse at 50% 38%, rgba(184, 103, 48, .07), rgba(25, 12, 6, .2) 100%);
     mix-blend-mode: normal;
 }
 
@@ -36,7 +36,7 @@ body.explore-open .explore-wordmark {
     color: var(--explore-copper-bright) !important;
     font-family: "Instrument Serif", Georgia, serif !important;
     font-weight: 400 !important;
-    text-shadow: 0 1px #000, 0 0 18px rgba(215, 119, 52, .22);
+    text-shadow: 0 1px rgba(0, 0, 0, .76), 0 0 18px rgba(209, 133, 70, .16);
 }
 
 body.explore-open .explore-kicker {
@@ -46,7 +46,7 @@ body.explore-open .explore-kicker {
     width: 92%;
     padding: 0 !important;
     border: 0 !important;
-    color: #efc38d !important;
+    color: #e8bd8c !important;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     white-space: nowrap;
@@ -57,8 +57,8 @@ body.explore-open .explore-kicker::after {
     display: block;
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, rgba(225, 143, 74, .9), rgba(225, 143, 74, .5));
-    box-shadow: 0 0 8px rgba(225, 118, 43, .28);
+    background: linear-gradient(90deg, rgba(211, 148, 91, .78), rgba(194, 128, 72, .42));
+    box-shadow: 0 0 8px rgba(205, 133, 72, .18);
 }
 
 body.explore-open .explore-kicker::before {
@@ -67,20 +67,20 @@ body.explore-open .explore-kicker::before {
     width: 10px;
     height: 10px;
     margin-left: -18px;
-    background: #e4a168;
+    background: #dca56f;
     transform: rotate(45deg);
-    box-shadow: 0 0 10px rgba(226, 132, 60, .35);
+    box-shadow: 0 0 10px rgba(209, 139, 77, .24);
 }
 
 body.explore-open .explore-boardroom h2 {
     color: var(--explore-cream) !important;
     font-family: "Instrument Serif", Georgia, serif !important;
     font-weight: 400;
-    text-shadow: 0 2px 2px #000, 0 0 20px rgba(185, 91, 30, .12);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .8), 0 0 20px rgba(202, 129, 67, .1);
 }
 
 body.explore-open .explore-boardroom p {
-    color: #e7d4b4 !important;
+    color: #ead9be !important;
     font-weight: 300;
 }
 
@@ -99,9 +99,9 @@ body.explore-open .explore-choice {
     border: 0 !important;
     background:
         var(--explore-card-outline) center / 100% 100% no-repeat,
-        linear-gradient(90deg, rgba(62, 32, 17, .72), rgba(34, 17, 9, .78)),
+        linear-gradient(90deg, rgba(55, 29, 17, .82), rgba(31, 16, 9, .86)),
         url("../assets/images/explore-bronze-texture.webp") center / 760px auto !important;
-    color: #e5d4b8 !important;
+    color: #e7d6bc !important;
     box-shadow: inset 0 0 14px rgba(0, 0, 0, .24), 0 2px 5px rgba(0, 0, 0, .2);
 }
 
@@ -118,7 +118,7 @@ body.explore-open .explore-choice::after {
     content: "" !important;
     width: 20px;
     height: 14px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3E%3Cpath d='M1 7H20M15 1.5L20.5 7 15 12.5' fill='none' stroke='%23e4ad69' stroke-width='1.25' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") center / contain no-repeat;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3E%3Cpath d='M1 7H20M15 1.5L20.5 7 15 12.5' fill='none' stroke='%23d8a66d' stroke-width='1.25' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 body.explore-open .explore-choice:first-child {
@@ -126,12 +126,13 @@ body.explore-open .explore-choice:first-child {
     border: 0 !important;
     background:
         var(--explore-primary-outline) center / 100% 100% no-repeat,
-        radial-gradient(circle at 24% 28%, rgba(226, 133, 60, .28), transparent 56%),
-        linear-gradient(90deg, rgba(103, 49, 22, .86), rgba(55, 27, 13, .84)),
+        radial-gradient(ellipse at 28% 28%, rgba(231, 158, 91, .24), transparent 58%),
+        linear-gradient(105deg, rgba(112, 58, 30, .94) 0%, rgba(91, 43, 21, .96) 42%, rgba(59, 29, 15, .94) 100%),
         url("../assets/images/explore-bronze-texture.webp") center / 720px auto !important;
-    color: #ead9bb !important;
+    color: #f0dec1 !important;
     box-shadow:
-        inset 0 0 15px rgba(248, 161, 83, .12);
+        inset 0 0 18px rgba(242, 171, 103, .16),
+        inset 0 -10px 22px rgba(35, 13, 5, .2);
 }
 
 body.explore-open .explore-choice:nth-child(2) {
@@ -139,12 +140,12 @@ body.explore-open .explore-choice:nth-child(2) {
 }
 
 body.explore-open .explore-choice:nth-child(3) {
-    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Crect x='2' y='2' width='996' height='216' fill='none' stroke='%23c98b4e' stroke-opacity='.86' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Crect x='2' y='2' width='996' height='216' fill='none' stroke='%23c08a57' stroke-opacity='.7' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
     clip-path: none !important;
 }
 
 body.explore-open .explore-choice:nth-child(4) {
-    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M2 2H998V208L986 218H14L2 208Z' fill='none' stroke='%23c98b4e' stroke-opacity='.86' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
+    --explore-card-outline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 220' preserveAspectRatio='none'%3E%3Cpath d='M2 2H998V208L986 218H14L2 208Z' fill='none' stroke='%23c08a57' stroke-opacity='.7' stroke-width='1.25' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px)) !important;
 }
 
