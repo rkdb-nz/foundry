@@ -222,12 +222,12 @@ body.explore-open .explore-choice:nth-child(4) {
         position: absolute;
         z-index: 0;
         top: clamp(66px, 8.7svh, 79px);
-        left: 3%;
-        right: 3%;
-        height: 25px;
+        left: 0;
+        right: 0;
+        height: 31px;
         border-radius: 50%;
-        background: radial-gradient(ellipse, rgba(48, 19, 8, .84) 0%, rgba(99, 49, 23, .46) 52%, transparent 76%);
-        filter: blur(6px);
+        background: radial-gradient(ellipse at 50% 18%, rgba(43, 16, 7, .92) 0%, rgba(62, 27, 12, .72) 34%, rgba(99, 49, 23, .3) 62%, transparent 82%);
+        filter: blur(7px);
         pointer-events: none;
     }
 
@@ -235,13 +235,13 @@ body.explore-open .explore-choice:nth-child(4) {
         content: "";
         position: absolute;
         z-index: 0;
-        top: -5px;
-        right: -2px;
-        left: -2px;
-        height: clamp(78px, 10svh, 91px);
-        border-radius: 10px;
-        background: radial-gradient(ellipse at 50% 48%, rgba(205, 128, 68, .2), rgba(122, 66, 32, .1) 56%, transparent 76%);
-        filter: blur(9px);
+        top: clamp(66px, 8.7svh, 79px);
+        right: 2%;
+        left: 2%;
+        height: 9px;
+        border-radius: 50%;
+        background: rgba(48, 19, 8, .88);
+        filter: blur(2px);
         pointer-events: none;
     }
 
@@ -318,8 +318,8 @@ body.explore-open .explore-choice:nth-child(4) {
     body.explore-open .explore-boardroom h2 { margin-bottom: 8px !important; font-size: clamp(40px, 12vw, 50px) !important; }
     body.explore-open .explore-boardroom p { font-size: clamp(13px, 3.8vw, 16px) !important; line-height: 1.35 !important; }
     body.explore-open .explore-choices { grid-template-rows: 59px repeat(3, 51px) !important; gap: 5px !important; }
-    body.explore-open .explore-choices::after { top: 53px; height: 21px; filter: blur(6px); }
-    body.explore-open .explore-choices::before { top: -4px; height: 66px; filter: blur(8px); }
+    body.explore-open .explore-choices::after { top: 53px; height: 27px; filter: blur(6px); }
+    body.explore-open .explore-choices::before { top: 53px; height: 8px; filter: blur(2px); }
     body.explore-open .explore-choice { min-height: 51px !important; }
     body.explore-open .explore-anvil-rule { display: flex; bottom: max(16px, calc(env(safe-area-inset-bottom) + 10px)); }
 }
@@ -341,25 +341,25 @@ body.explore-open .explore-choice:nth-child(4) {
         position: absolute;
         z-index: 0;
         top: 49px;
-        left: 3%;
-        right: 3%;
-        height: 22px;
+        left: 0;
+        right: 0;
+        height: 28px;
         border-radius: 50%;
-        background: radial-gradient(ellipse, rgba(48, 19, 8, .84) 0%, rgba(99, 49, 23, .46) 52%, transparent 76%);
-        filter: blur(6px);
+        background: radial-gradient(ellipse at 50% 18%, rgba(43, 16, 7, .92) 0%, rgba(62, 27, 12, .72) 34%, rgba(99, 49, 23, .3) 62%, transparent 82%);
+        filter: blur(7px);
         pointer-events: none;
     }
     body.explore-open .explore-choices::before {
         content: "";
         position: absolute;
         z-index: 0;
-        top: -4px;
-        right: -2px;
-        left: -2px;
-        height: 63px;
-        border-radius: 9px;
-        background: radial-gradient(ellipse at 50% 48%, rgba(205, 128, 68, .2), rgba(122, 66, 32, .1) 56%, transparent 76%);
-        filter: blur(8px);
+        top: 49px;
+        right: 2%;
+        left: 2%;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(48, 19, 8, .88);
+        filter: blur(2px);
         pointer-events: none;
     }
     body.explore-open .explore-choice { grid-template-columns: 50px 1fr 22px !important; column-gap: 15px !important; min-height: 55px !important; padding: 6px 15px 6px 0 !important; font-size: clamp(10px, 1.45vw, 13px) !important; }
