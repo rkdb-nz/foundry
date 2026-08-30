@@ -283,9 +283,9 @@ body.explore-open .explore-choice:nth-child(4) {
     body.explore-open .explore-anvil-rule {
         display: flex;
         position: absolute;
-        right: max(22px, calc(env(safe-area-inset-right) + 18px));
+        right: max(12px, calc(env(safe-area-inset-right) + 8px));
         bottom: max(28px, calc(env(safe-area-inset-bottom) + 20px));
-        left: max(22px, calc(env(safe-area-inset-left) + 18px));
+        left: max(12px, calc(env(safe-area-inset-left) + 8px));
         width: auto;
         padding: 0;
     }
