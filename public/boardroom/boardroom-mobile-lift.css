@@ -1,0 +1,19 @@
+/* Boardroom mobile lift/alignment — 2026-08-31 */
+@media (max-width: 700px) and (orientation: portrait) {
+  .boardroom {
+    padding-top: 32px !important;
+  }
+
+  .eyebrow {
+    color: #f6f2eb !important;
+    margin-bottom: 16px !important;
+  }
+
+  .intro-heading-rule {
+    margin-bottom: 26px !important;
+  }
+
+  .intro {
+    margin-bottom: 28px !important;
+  }
+}
