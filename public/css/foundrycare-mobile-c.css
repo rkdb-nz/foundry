@@ -6,7 +6,7 @@
   body.foundrycare-page {
     min-height: 100%;
     overflow-x: hidden;
-    background: #e5e6e5;
+    background: #e6e7e6 !important;
   }
 
   body.foundrycare-page {
@@ -18,18 +18,18 @@
 
   .foundrycare-main {
     min-height: 100%;
+    background: #e6e7e6 !important;
   }
 
-  /* Cool pale stone / mineral plaster field from the supplied target. */
   .foundrycare-scene {
     min-height: 100svh;
+    background-color: #e6e7e6 !important;
     background-image:
-      radial-gradient(circle at 16% 10%, rgba(255,255,255,.82) 0 9%, transparent 30%),
-      radial-gradient(circle at 78% 16%, rgba(165,171,175,.15) 0 14%, transparent 38%),
-      radial-gradient(circle at 24% 74%, rgba(157,163,167,.11) 0 12%, transparent 35%),
-      repeating-linear-gradient(112deg, rgba(73,79,83,.032) 0 1px, transparent 1px 5px),
-      repeating-linear-gradient(18deg, rgba(255,255,255,.19) 0 1px, transparent 1px 7px),
-      linear-gradient(180deg, #eceeed 0%, #e3e5e4 48%, #e9eae9 100%) !important;
+      radial-gradient(circle at 15% 10%, rgba(255,255,255,.72) 0 8%, transparent 28%),
+      radial-gradient(circle at 78% 18%, rgba(130,137,141,.10) 0 13%, transparent 36%),
+      repeating-linear-gradient(112deg, rgba(67,73,77,.025) 0 1px, transparent 1px 5px),
+      repeating-linear-gradient(18deg, rgba(255,255,255,.16) 0 1px, transparent 1px 7px),
+      linear-gradient(180deg, #eceeed 0%, #e3e5e4 50%, #e8e9e8 100%) !important;
     background-position: center top !important;
     background-size: auto !important;
     background-attachment: scroll !important;
@@ -42,9 +42,7 @@
     inset: 0 !important;
     z-index: 0 !important;
     pointer-events: none !important;
-    background:
-      radial-gradient(ellipse at 50% 24%, rgba(255,255,255,.24), transparent 42%),
-      linear-gradient(90deg, rgba(255,255,255,.09), transparent 30%, rgba(91,98,103,.045) 72%, transparent) !important;
+    background: linear-gradient(90deg, rgba(255,255,255,.08), transparent 32%, rgba(91,98,103,.035) 72%, transparent) !important;
     opacity: 1 !important;
   }
 
@@ -64,9 +62,7 @@
     letter-spacing: .11em;
   }
 
-  .foundrycare-menu {
-    display: none !important;
-  }
+  .foundrycare-menu { display: none !important; }
 
   body.foundrycare-page .foundry-global-nav {
     top: max(8px, env(safe-area-inset-top)) !important;
@@ -88,9 +84,7 @@
   }
 
   body.foundrycare-page .foundry-global-nav::before,
-  body.foundrycare-page .foundry-global-control + .foundry-global-control::before {
-    display: none !important;
-  }
+  body.foundrycare-page .foundry-global-control + .foundry-global-control::before { display: none !important; }
 
   body.foundrycare-page .foundry-global-control,
   body.foundrycare-page .foundry-global-menu {
@@ -105,9 +99,7 @@
     background: transparent !important;
   }
 
-  body.foundrycare-page .foundry-global-control + .foundry-global-control {
-    border: 0 !important;
-  }
+  body.foundrycare-page .foundry-global-control + .foundry-global-control { border: 0 !important; }
 
   body.foundrycare-page .foundry-global-menu {
     display: flex !important;
@@ -148,7 +140,6 @@
     color: var(--fc-mobile-ink) !important;
   }
 
-  /* Disable the old CSS-built plaque. The rendered glass asset is used below. */
   .foundrycare-content::before,
   .foundrycare-content::after {
     content: none !important;
@@ -159,48 +150,55 @@
     position: relative !important;
     display: block !important;
     width: 100% !important;
-    margin: 0 0 25px !important;
-    aspect-ratio: 3 / 1 !important;
+    margin: 0 0 24px !important;
+    aspect-ratio: 10 / 3 !important;
     overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
   }
 
   .foundrycare-mobile-banner-art {
+    position: absolute !important;
+    inset: -10% -4% -14% -4% !important;
     display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
+    width: 108% !important;
+    height: 124% !important;
+    max-width: none !important;
+    object-fit: fill !important;
     pointer-events: none !important;
     user-select: none !important;
-    filter: drop-shadow(0 10px 10px rgba(64,65,66,.16)) !important;
+    filter: none !important;
   }
 
   .foundrycare-mobile-banner-overlay {
     position: absolute !important;
     inset: 0 !important;
+    z-index: 2 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 0 clamp(26px, 6vw, 40px) !important;
-    gap: clamp(15px, 4vw, 24px) !important;
+    padding: 0 clamp(30px, 7vw, 46px) !important;
+    gap: clamp(16px, 4vw, 26px) !important;
     pointer-events: none !important;
   }
 
   .foundrycare-mobile-banner-anvil {
     flex: 0 0 auto !important;
-    width: clamp(38px, 10vw, 60px) !important;
+    width: clamp(42px, 11vw, 64px) !important;
     height: auto !important;
-    filter: saturate(1.12) brightness(1.01) !important;
+    filter: saturate(1.08) brightness(.98) !important;
   }
 
   .foundrycare-mobile-banner-title {
     display: block !important;
-    color: #201a17 !important;
+    color: #1d1815 !important;
     font-family: Georgia, "Times New Roman", serif !important;
-    font-size: clamp(1.55rem, 7vw, 2.5rem) !important;
+    font-size: clamp(1.62rem, 7.2vw, 2.6rem) !important;
     font-weight: 400 !important;
     line-height: 1 !important;
     letter-spacing: .01em !important;
-    text-shadow: 0 1px 0 rgba(255,255,255,.78), 0 2px 3px rgba(59,52,45,.13) !important;
+    text-shadow: 0 1px 0 rgba(255,255,255,.92), 0 2px 3px rgba(55,48,43,.14) !important;
     white-space: nowrap !important;
   }
 
@@ -235,10 +233,7 @@
     line-height: 1.42 !important;
   }
 
-  .foundrycare-intro strong {
-    color: var(--fc-mobile-ink) !important;
-    font-weight: 700 !important;
-  }
+  .foundrycare-intro strong { color: var(--fc-mobile-ink) !important; font-weight: 700 !important; }
 
   .foundrycare-promise {
     margin: 10px 0 17px !important;
@@ -255,8 +250,8 @@
     max-width: none !important;
     display: block !important;
     border: 1px solid var(--fc-mobile-line) !important;
-    background: rgba(255,255,255,.13) !important;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.34) !important;
+    background: rgba(255,255,255,.10) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.28) !important;
   }
 
   .foundrycare-services article,
@@ -271,14 +266,9 @@
     background: transparent !important;
   }
 
-  .foundrycare-services article:last-child {
-    border-bottom: 0 !important;
-  }
-
+  .foundrycare-services article:last-child { border-bottom: 0 !important; }
   .foundrycare-services article::before,
-  .foundrycare-services article::after {
-    display: none !important;
-  }
+  .foundrycare-services article::after { display: none !important; }
 
   .foundrycare-service-icon {
     position: absolute !important;
@@ -313,9 +303,7 @@
     text-align: left !important;
   }
 
-  .foundrycare-services h2 br {
-    display: none !important;
-  }
+  .foundrycare-services h2 br { display: none !important; }
 
   .foundrycare-services p {
     margin: 0 !important;
@@ -325,9 +313,7 @@
     line-height: 1.35 !important;
   }
 
-  .foundrycare-actions {
-    display: none !important;
-  }
+  .foundrycare-actions { display: none !important; }
 }
 
 @media (max-width: 430px) {
@@ -336,33 +322,12 @@
     padding-top: 90px !important;
   }
 
-  .foundrycare-mobile-banner {
-    margin-bottom: 22px !important;
-  }
-
-  .foundrycare-mobile-banner-overlay {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-    gap: 12px !important;
-  }
-
-  .foundrycare-mobile-banner-anvil {
-    width: 34px !important;
-  }
-
-  .foundrycare-mobile-banner-title {
-    font-size: clamp(1.42rem, 7vw, 1.92rem) !important;
-  }
+  .foundrycare-mobile-banner { margin-bottom: 20px !important; }
+  .foundrycare-mobile-banner-overlay { padding-left: 24px !important; padding-right: 24px !important; gap: 12px !important; }
+  .foundrycare-mobile-banner-anvil { width: 36px !important; }
+  .foundrycare-mobile-banner-title { font-size: clamp(1.45rem, 7vw, 1.95rem) !important; }
 
   .foundrycare-services article,
-  .foundrycare-services article:nth-child(even) {
-    min-height: 78px !important;
-    padding-left: 64px !important;
-  }
-
-  .foundrycare-service-icon {
-    left: 15px !important;
-    width: 33px !important;
-    height: 33px !important;
-  }
+  .foundrycare-services article:nth-child(even) { min-height: 78px !important; padding-left: 64px !important; }
+  .foundrycare-service-icon { left: 15px !important; width: 33px !important; height: 33px !important; }
 }
