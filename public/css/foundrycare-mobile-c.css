@@ -6,14 +6,13 @@
   body.foundrycare-page {
     min-height: 100%;
     overflow-x: hidden;
-    background: #e8e7e4;
+    background: #e5e6e5;
   }
 
   body.foundrycare-page {
     --fc-mobile-ink: #171412;
     --fc-mobile-body: #332d29;
     --fc-mobile-bronze: #9a5528;
-    --fc-mobile-copper: #b46732;
     --fc-mobile-line: rgba(82, 66, 55, .18);
   }
 
@@ -21,16 +20,16 @@
     min-height: 100%;
   }
 
-  /* Cooler pale stone / mineral plaster field from the reference image. */
+  /* Cool pale stone / mineral plaster field from the supplied target. */
   .foundrycare-scene {
     min-height: 100svh;
     background-image:
       radial-gradient(circle at 16% 10%, rgba(255,255,255,.82) 0 9%, transparent 30%),
-      radial-gradient(circle at 78% 16%, rgba(177,181,184,.14) 0 14%, transparent 38%),
-      radial-gradient(circle at 24% 74%, rgba(168,172,175,.10) 0 12%, transparent 35%),
-      repeating-linear-gradient(112deg, rgba(78,82,85,.032) 0 1px, transparent 1px 5px),
+      radial-gradient(circle at 78% 16%, rgba(165,171,175,.15) 0 14%, transparent 38%),
+      radial-gradient(circle at 24% 74%, rgba(157,163,167,.11) 0 12%, transparent 35%),
+      repeating-linear-gradient(112deg, rgba(73,79,83,.032) 0 1px, transparent 1px 5px),
       repeating-linear-gradient(18deg, rgba(255,255,255,.19) 0 1px, transparent 1px 7px),
-      linear-gradient(180deg, #efefed 0%, #e7e7e4 48%, #ececea 100%) !important;
+      linear-gradient(180deg, #eceeed 0%, #e3e5e4 48%, #e9eae9 100%) !important;
     background-position: center top !important;
     background-size: auto !important;
     background-attachment: scroll !important;
@@ -45,11 +44,10 @@
     pointer-events: none !important;
     background:
       radial-gradient(ellipse at 50% 24%, rgba(255,255,255,.24), transparent 42%),
-      linear-gradient(90deg, rgba(255,255,255,.09), transparent 30%, rgba(95,101,105,.045) 72%, transparent) !important;
+      linear-gradient(90deg, rgba(255,255,255,.09), transparent 30%, rgba(91,98,103,.045) 72%, transparent) !important;
     opacity: 1 !important;
   }
 
-  /* Keep only the normal Foundry mobile header/navigation. */
   .foundrycare-header {
     z-index: 10010;
     padding: max(8px, env(safe-area-inset-top)) 18px 0 !important;
@@ -150,50 +148,60 @@
     color: var(--fc-mobile-ink) !important;
   }
 
-  /* Premium thick-glass FoundryCare plaque from the reference image. */
-  .foundrycare-content::before {
-    content: "FOUNDRYCARE" !important;
+  /* Disable the old CSS-built plaque. The rendered glass asset is used below. */
+  .foundrycare-content::before,
+  .foundrycare-content::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .foundrycare-mobile-banner {
     position: relative !important;
-    inset: auto !important;
+    display: block !important;
     width: 100% !important;
-    min-height: clamp(112px, 30vw, 138px) !important;
-    margin: 0 0 30px !important;
-    padding: 0 clamp(22px, 6vw, 36px) 0 clamp(104px, 25vw, 132px) !important;
-    box-sizing: border-box !important;
+    margin: 0 0 25px !important;
+    aspect-ratio: 3 / 1 !important;
+    overflow: visible !important;
+  }
+
+  .foundrycare-mobile-banner-art {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    filter: drop-shadow(0 10px 10px rgba(64,65,66,.16)) !important;
+  }
+
+  .foundrycare-mobile-banner-overlay {
+    position: absolute !important;
+    inset: 0 !important;
     display: flex !important;
     align-items: center !important;
-    background-color: rgba(239,241,241,.34) !important;
-    background-image:
-      url("../assets/brand/anvil-mark.svg"),
-      linear-gradient(118deg, rgba(255,255,255,.76) 0%, rgba(255,255,255,.22) 24%, rgba(155,160,163,.10) 58%, rgba(255,255,255,.50) 100%) !important;
-    background-repeat: no-repeat, no-repeat !important;
-    background-position: clamp(30px, 8vw, 46px) center, center !important;
-    background-size: clamp(48px, 13vw, 64px) auto, 100% 100% !important;
-    border: 1px solid rgba(141,72,30,.98) !important;
-    border-radius: 13px !important;
-    color: #1b1714 !important;
+    justify-content: center !important;
+    padding: 0 clamp(26px, 6vw, 40px) !important;
+    gap: clamp(15px, 4vw, 24px) !important;
+    pointer-events: none !important;
+  }
+
+  .foundrycare-mobile-banner-anvil {
+    flex: 0 0 auto !important;
+    width: clamp(38px, 10vw, 60px) !important;
+    height: auto !important;
+    filter: saturate(1.12) brightness(1.01) !important;
+  }
+
+  .foundrycare-mobile-banner-title {
+    display: block !important;
+    color: #201a17 !important;
     font-family: Georgia, "Times New Roman", serif !important;
-    font-size: clamp(1.72rem, 7vw, 2.55rem) !important;
+    font-size: clamp(1.55rem, 7vw, 2.5rem) !important;
     font-weight: 400 !important;
     line-height: 1 !important;
     letter-spacing: .01em !important;
-    text-align: left !important;
-    text-shadow: 0 1px 0 rgba(255,255,255,.92), 0 2px 3px rgba(55,48,43,.12) !important;
-    -webkit-backdrop-filter: blur(12px) saturate(1.02) !important;
-    backdrop-filter: blur(12px) saturate(1.02) !important;
-    box-shadow:
-      inset 0 0 0 1px rgba(255,255,255,.96),
-      inset 0 0 0 3px rgba(180,108,60,.16),
-      inset 0 0 0 5px rgba(255,255,255,.36),
-      inset 0 14px 28px rgba(255,255,255,.60),
-      inset 0 -18px 30px rgba(102,109,113,.10),
-      inset 10px 0 18px rgba(255,255,255,.22),
-      inset -8px 0 16px rgba(74,78,81,.05),
-      0 1px 0 rgba(255,255,255,.95),
-      0 3px 0 rgba(118,61,26,.30),
-      0 14px 18px rgba(58,62,65,.18),
-      0 22px 30px rgba(58,62,65,.09),
-      0 0 10px rgba(183,103,48,.20) !important;
+    text-shadow: 0 1px 0 rgba(255,255,255,.78), 0 2px 3px rgba(59,52,45,.13) !important;
+    white-space: nowrap !important;
   }
 
   .foundrycare-kicker {
@@ -328,15 +336,22 @@
     padding-top: 90px !important;
   }
 
-  .foundrycare-content::before {
-    min-height: 102px !important;
-    margin-bottom: 25px !important;
-    padding-left: 92px !important;
-    padding-right: 16px !important;
-    background-position: 25px center, center !important;
-    background-size: 50px auto, 100% 100% !important;
-    border-radius: 11px !important;
-    font-size: clamp(1.55rem, 7.6vw, 2.08rem) !important;
+  .foundrycare-mobile-banner {
+    margin-bottom: 22px !important;
+  }
+
+  .foundrycare-mobile-banner-overlay {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    gap: 12px !important;
+  }
+
+  .foundrycare-mobile-banner-anvil {
+    width: 34px !important;
+  }
+
+  .foundrycare-mobile-banner-title {
+    font-size: clamp(1.42rem, 7vw, 1.92rem) !important;
   }
 
   .foundrycare-services article,
