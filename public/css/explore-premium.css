@@ -129,7 +129,8 @@ body.explore-open .explore-choice:first-child {
     color: #ead9bb !important;
     box-shadow:
         inset 0 0 15px rgba(0, 0, 0, .22),
-        0 3px 8px rgba(0, 0, 0, .27);
+        0 8px 13px rgba(0, 0, 0, .62),
+        0 15px 24px rgba(0, 0, 0, .28);
 }
 
 body.explore-open .explore-choice:nth-child(2) {
