@@ -6,7 +6,7 @@
   body.foundrycare-page {
     min-height: 100%;
     overflow-x: hidden;
-    background: #f0eee9;
+    background: #e8e7e4;
   }
 
   body.foundrycare-page {
@@ -21,16 +21,16 @@
     min-height: 100%;
   }
 
-  /* Soft warm plaster/paper field from the reference image. */
+  /* Cooler pale stone / mineral plaster field from the reference image. */
   .foundrycare-scene {
     min-height: 100svh;
     background-image:
-      radial-gradient(circle at 18% 12%, rgba(255,255,255,.92) 0 9%, transparent 31%),
-      radial-gradient(circle at 77% 17%, rgba(214,206,195,.18) 0 12%, transparent 36%),
-      radial-gradient(circle at 28% 78%, rgba(205,196,184,.15) 0 10%, transparent 33%),
-      repeating-linear-gradient(112deg, rgba(88,72,60,.025) 0 1px, transparent 1px 5px),
-      repeating-linear-gradient(18deg, rgba(255,255,255,.24) 0 1px, transparent 1px 7px),
-      linear-gradient(180deg, #f4f2ee 0%, #eeece7 49%, #f3f1ec 100%) !important;
+      radial-gradient(circle at 16% 10%, rgba(255,255,255,.82) 0 9%, transparent 30%),
+      radial-gradient(circle at 78% 16%, rgba(177,181,184,.14) 0 14%, transparent 38%),
+      radial-gradient(circle at 24% 74%, rgba(168,172,175,.10) 0 12%, transparent 35%),
+      repeating-linear-gradient(112deg, rgba(78,82,85,.032) 0 1px, transparent 1px 5px),
+      repeating-linear-gradient(18deg, rgba(255,255,255,.19) 0 1px, transparent 1px 7px),
+      linear-gradient(180deg, #efefed 0%, #e7e7e4 48%, #ececea 100%) !important;
     background-position: center top !important;
     background-size: auto !important;
     background-attachment: scroll !important;
@@ -44,8 +44,8 @@
     z-index: 0 !important;
     pointer-events: none !important;
     background:
-      radial-gradient(ellipse at 50% 25%, rgba(255,255,255,.30), transparent 44%),
-      linear-gradient(90deg, rgba(255,255,255,.13), transparent 30%, rgba(121,102,89,.035) 72%, transparent) !important;
+      radial-gradient(ellipse at 50% 24%, rgba(255,255,255,.24), transparent 42%),
+      linear-gradient(90deg, rgba(255,255,255,.09), transparent 30%, rgba(95,101,105,.045) 72%, transparent) !important;
     opacity: 1 !important;
   }
 
@@ -70,7 +70,6 @@
     display: none !important;
   }
 
-  /* Match the established 3-button mobile Foundry nav. */
   body.foundrycare-page .foundry-global-nav {
     top: max(8px, env(safe-area-inset-top)) !important;
     right: max(10px, env(safe-area-inset-right)) !important;
@@ -151,27 +150,27 @@
     color: var(--fc-mobile-ink) !important;
   }
 
-  /* Premium frosted-glass FoundryCare plaque from the reference image. */
+  /* Premium thick-glass FoundryCare plaque from the reference image. */
   .foundrycare-content::before {
     content: "FOUNDRYCARE" !important;
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
     min-height: clamp(112px, 30vw, 138px) !important;
-    margin: 0 0 28px !important;
+    margin: 0 0 30px !important;
     padding: 0 clamp(22px, 6vw, 36px) 0 clamp(104px, 25vw, 132px) !important;
     box-sizing: border-box !important;
     display: flex !important;
     align-items: center !important;
-    background-color: rgba(255,255,255,.25) !important;
+    background-color: rgba(239,241,241,.34) !important;
     background-image:
       url("../assets/brand/anvil-mark.svg"),
-      linear-gradient(118deg, rgba(255,255,255,.72) 0%, rgba(255,255,255,.18) 28%, rgba(172,156,145,.12) 64%, rgba(255,255,255,.42) 100%) !important;
+      linear-gradient(118deg, rgba(255,255,255,.76) 0%, rgba(255,255,255,.22) 24%, rgba(155,160,163,.10) 58%, rgba(255,255,255,.50) 100%) !important;
     background-repeat: no-repeat, no-repeat !important;
     background-position: clamp(30px, 8vw, 46px) center, center !important;
     background-size: clamp(48px, 13vw, 64px) auto, 100% 100% !important;
-    border: 2px solid rgba(156,83,37,.88) !important;
-    border-radius: 12px !important;
+    border: 1px solid rgba(141,72,30,.98) !important;
+    border-radius: 13px !important;
     color: #1b1714 !important;
     font-family: Georgia, "Times New Roman", serif !important;
     font-size: clamp(1.72rem, 7vw, 2.55rem) !important;
@@ -179,17 +178,22 @@
     line-height: 1 !important;
     letter-spacing: .01em !important;
     text-align: left !important;
-    text-shadow: 0 1px 0 rgba(255,255,255,.8), 0 2px 3px rgba(74,48,31,.12) !important;
-    -webkit-backdrop-filter: blur(10px) saturate(1.06) !important;
-    backdrop-filter: blur(10px) saturate(1.06) !important;
+    text-shadow: 0 1px 0 rgba(255,255,255,.92), 0 2px 3px rgba(55,48,43,.12) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(1.02) !important;
+    backdrop-filter: blur(12px) saturate(1.02) !important;
     box-shadow:
-      inset 0 0 0 1px rgba(255,255,255,.78),
-      inset 0 0 0 4px rgba(174,113,70,.16),
-      inset 0 12px 22px rgba(255,255,255,.46),
-      inset 0 -14px 26px rgba(111,89,73,.08),
-      0 2px 0 rgba(255,255,255,.9),
-      0 13px 20px rgba(74,58,46,.17),
-      0 0 18px rgba(183,103,48,.16) !important;
+      inset 0 0 0 1px rgba(255,255,255,.96),
+      inset 0 0 0 3px rgba(180,108,60,.16),
+      inset 0 0 0 5px rgba(255,255,255,.36),
+      inset 0 14px 28px rgba(255,255,255,.60),
+      inset 0 -18px 30px rgba(102,109,113,.10),
+      inset 10px 0 18px rgba(255,255,255,.22),
+      inset -8px 0 16px rgba(74,78,81,.05),
+      0 1px 0 rgba(255,255,255,.95),
+      0 3px 0 rgba(118,61,26,.30),
+      0 14px 18px rgba(58,62,65,.18),
+      0 22px 30px rgba(58,62,65,.09),
+      0 0 10px rgba(183,103,48,.20) !important;
   }
 
   .foundrycare-kicker {
@@ -243,7 +247,7 @@
     max-width: none !important;
     display: block !important;
     border: 1px solid var(--fc-mobile-line) !important;
-    background: rgba(255,255,255,.16) !important;
+    background: rgba(255,255,255,.13) !important;
     box-shadow: inset 0 1px 0 rgba(255,255,255,.34) !important;
   }
 
@@ -326,12 +330,12 @@
 
   .foundrycare-content::before {
     min-height: 102px !important;
-    margin-bottom: 23px !important;
+    margin-bottom: 25px !important;
     padding-left: 92px !important;
     padding-right: 16px !important;
     background-position: 25px center, center !important;
     background-size: 50px auto, 100% 100% !important;
-    border-radius: 10px !important;
+    border-radius: 11px !important;
     font-size: clamp(1.55rem, 7.6vw, 2.08rem) !important;
   }
 
