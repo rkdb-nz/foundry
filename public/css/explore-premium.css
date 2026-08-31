@@ -55,7 +55,11 @@ body.explore-open .explore-kicker {
 body.explore-open .explore-kicker::after {
     content: "";
     display: block;
+    position: static;
     flex: 1;
+    left: auto;
+    bottom: auto;
+    width: auto;
     height: 1px;
     margin-left: 12px;
     background: linear-gradient(90deg, rgba(198, 139, 86, .6), rgba(190, 130, 77, .46));
