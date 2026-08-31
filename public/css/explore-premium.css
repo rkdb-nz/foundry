@@ -162,7 +162,7 @@ body.explore-open .explore-choice:nth-child(4) {
 .explore-anvil-rule span {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, transparent 0%, currentColor 16%, currentColor 100%);
+    background: currentColor;
 }
 
 .explore-anvil-rule span { transform: translateY(8px); }
