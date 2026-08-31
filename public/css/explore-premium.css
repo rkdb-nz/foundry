@@ -304,10 +304,10 @@ body.explore-open .explore-choice:nth-child(4) {
     }
 
     body.explore-open .foundry-global-nav {
-        top: max(24px, calc(env(safe-area-inset-top) + 17px)) !important;
-        right: max(18px, calc(env(safe-area-inset-right) + 14px)) !important;
-        grid-template-columns: repeat(3, clamp(38px, 10.4vw, 46px)) !important;
-        width: auto !important;
+        top: max(8px, env(safe-area-inset-top)) !important;
+        right: max(10px, env(safe-area-inset-right)) !important;
+        grid-template-columns: repeat(3, 48px) !important;
+        width: 144px !important;
         height: 48px !important;
     }
 
@@ -316,13 +316,13 @@ body.explore-open .explore-choice:nth-child(4) {
     }
 
     body.explore-open .foundry-global-nav .foundry-global-control svg {
-        width: 23px !important;
-        height: 23px !important;
+        width: 25px !important;
+        height: 25px !important;
     }
 
     body.explore-open .foundry-global-nav .foundry-global-home svg {
-        width: 24px !important;
-        height: 24px !important;
+        width: 25px !important;
+        height: 25px !important;
     }
 }
 
