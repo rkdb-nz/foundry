@@ -167,7 +167,7 @@ body.explore-open .explore-choice:nth-child(4) {
 
 .explore-anvil-rule span { transform: translateY(8px); }
 .explore-anvil-rule span:last-child { transform: translateY(8px) scaleX(-1); }
-.explore-anvil-rule svg { width: 94px; height: 48px; margin-inline: 9px; overflow: visible; }
+.explore-anvil-rule svg { width: 90px; height: 45px; margin-inline: 7px; overflow: visible; }
 .explore-anvil-rule path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 
 @media (max-width: 800px) and (orientation: portrait) {
@@ -283,9 +283,9 @@ body.explore-open .explore-choice:nth-child(4) {
     body.explore-open .explore-anvil-rule {
         display: flex;
         position: absolute;
-        right: max(12px, calc(env(safe-area-inset-right) + 8px));
+        right: max(4px, calc(env(safe-area-inset-right) + 2px));
         bottom: max(28px, calc(env(safe-area-inset-bottom) + 20px));
-        left: max(12px, calc(env(safe-area-inset-left) + 8px));
+        left: max(4px, calc(env(safe-area-inset-left) + 2px));
         width: auto;
         padding: 0;
     }
