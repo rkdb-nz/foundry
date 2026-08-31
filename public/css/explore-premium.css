@@ -196,10 +196,15 @@ body.explore-open .explore-choice:nth-child(4) {
     }
 
     body.explore-open .explore-wordmark {
-        top: max(35px, calc(env(safe-area-inset-top) + 27px)) !important;
-        left: max(25px, calc(env(safe-area-inset-left) + 21px)) !important;
-        font-size: clamp(16px, 4.9vw, 21px) !important;
-        letter-spacing: clamp(2.5px, .9vw, 4px) !important;
+        top: max(22px, calc(env(safe-area-inset-top) + 14px)) !important;
+        left: max(24px, calc(env(safe-area-inset-left) + 18px)) !important;
+        color: #eee8de !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: clamp(12px, 3.8vw, 16px) !important;
+        font-weight: 400 !important;
+        line-height: 1 !important;
+        letter-spacing: clamp(3px, 1.1vw, 5px) !important;
+        text-shadow: none !important;
     }
 
     body.explore-open .explore-kicker {
@@ -304,10 +309,10 @@ body.explore-open .explore-choice:nth-child(4) {
     }
 
     body.explore-open .foundry-global-nav {
-        top: max(24px, calc(env(safe-area-inset-top) + 17px)) !important;
-        right: max(18px, calc(env(safe-area-inset-right) + 14px)) !important;
-        grid-template-columns: repeat(3, clamp(38px, 10.4vw, 46px)) !important;
-        width: auto !important;
+        top: max(8px, env(safe-area-inset-top)) !important;
+        right: max(10px, env(safe-area-inset-right)) !important;
+        grid-template-columns: repeat(3, 48px) !important;
+        width: 144px !important;
         height: 48px !important;
     }
 
@@ -316,13 +321,13 @@ body.explore-open .explore-choice:nth-child(4) {
     }
 
     body.explore-open .foundry-global-nav .foundry-global-control svg {
-        width: 23px !important;
-        height: 23px !important;
+        width: 25px !important;
+        height: 25px !important;
     }
 
     body.explore-open .foundry-global-nav .foundry-global-home svg {
-        width: 24px !important;
-        height: 24px !important;
+        width: 25px !important;
+        height: 25px !important;
     }
 }
 
