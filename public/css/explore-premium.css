@@ -13,8 +13,8 @@ body.explore-open {
 body.explore-open .landing,
 body.explore-open .explore-screen {
     background:
-        radial-gradient(ellipse at 48% 34%, rgba(196, 112, 48, .24), transparent 62%),
-        linear-gradient(rgba(73, 36, 17, .45), rgba(35, 17, 9, .53)),
+        radial-gradient(ellipse at 48% 34%, rgba(196, 112, 48, .22), transparent 64%),
+        linear-gradient(rgba(73, 36, 17, .49), rgba(35, 17, 9, .56)),
         url("../assets/images/explore-bronze-texture.webp") center / cover;
 }
 
@@ -25,8 +25,8 @@ body.explore-open .explore-screen::after {
     z-index: -1;
     pointer-events: none;
     background:
-        repeating-linear-gradient(17deg, transparent 0 4px, rgba(255, 190, 111, .004) 4px 5px),
-        radial-gradient(ellipse at 50% 38%, rgba(184, 103, 48, .07), rgba(25, 12, 6, .2) 100%);
+        repeating-linear-gradient(17deg, transparent 0 4px, rgba(255, 190, 111, .002) 4px 5px),
+        radial-gradient(ellipse at 50% 38%, rgba(184, 103, 48, .095), rgba(25, 12, 6, .22) 100%);
     mix-blend-mode: normal;
 }
 
@@ -131,14 +131,14 @@ body.explore-open .explore-choice:first-child {
     border: 0 !important;
     background:
         var(--explore-primary-outline) center / 100% 100% no-repeat,
-        radial-gradient(ellipse at 28% 24%, rgba(244, 179, 111, .3), transparent 56%),
-        linear-gradient(105deg, rgba(119, 63, 33, .95) 0%, rgba(94, 45, 22, .97) 44%, rgba(58, 28, 14, .95) 100%),
+        radial-gradient(ellipse at 28% 24%, rgba(244, 179, 111, .27), transparent 58%),
+        linear-gradient(105deg, rgba(116, 61, 32, .97) 0%, rgba(90, 43, 21, .985) 46%, rgba(57, 27, 14, .97) 100%),
         url("../assets/images/explore-bronze-texture.webp") center / 720px auto !important;
     color: #f0dec1 !important;
     box-shadow:
         inset 0 1px 0 rgba(255, 207, 151, .22),
-        inset 0 0 20px rgba(242, 171, 103, .2),
-        inset 0 -12px 24px rgba(35, 13, 5, .24);
+        inset 0 0 22px rgba(242, 171, 103, .18),
+        inset 0 -13px 25px rgba(35, 13, 5, .28);
 }
 
 body.explore-open .explore-choice:nth-child(2) {
@@ -172,7 +172,7 @@ body.explore-open .explore-choice:nth-child(4) {
 .explore-anvil-rule span { transform: translateY(8px); }
 .explore-anvil-rule span:last-child { transform: translateY(8px) scaleX(-1); }
 .explore-anvil-rule svg { width: 90px; height: 45px; margin-inline: 7px; overflow: visible; }
-.explore-anvil-rule path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.explore-anvil-rule path { fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; }
 
 @media (max-width: 800px) and (orientation: portrait) {
     body.explore-open .explore-screen {
@@ -234,8 +234,8 @@ body.explore-open .explore-choice:nth-child(4) {
         background:
             radial-gradient(ellipse at 7% 10%, rgba(39, 14, 6, .9), transparent 34%),
             radial-gradient(ellipse at 93% 10%, rgba(39, 14, 6, .9), transparent 34%),
-            radial-gradient(ellipse at 50% 10%, rgba(39, 14, 6, .98) 0%, rgba(57, 23, 10, .8) 40%, rgba(86, 40, 18, .38) 67%, transparent 86%);
-        filter: blur(6px);
+            radial-gradient(ellipse at 50% 10%, rgba(39, 14, 6, .98) 0%, rgba(57, 23, 10, .8) 40%, rgba(95, 48, 23, .42) 67%, transparent 86%);
+        filter: blur(7px);
         pointer-events: none;
     }
 
@@ -356,8 +356,8 @@ body.explore-open .explore-choice:nth-child(4) {
         background:
             radial-gradient(ellipse at 7% 10%, rgba(39, 14, 6, .9), transparent 34%),
             radial-gradient(ellipse at 93% 10%, rgba(39, 14, 6, .9), transparent 34%),
-            radial-gradient(ellipse at 50% 10%, rgba(39, 14, 6, .98) 0%, rgba(57, 23, 10, .8) 40%, rgba(86, 40, 18, .38) 67%, transparent 86%);
-        filter: blur(6px);
+            radial-gradient(ellipse at 50% 10%, rgba(39, 14, 6, .98) 0%, rgba(57, 23, 10, .8) 40%, rgba(95, 48, 23, .42) 67%, transparent 86%);
+        filter: blur(7px);
         pointer-events: none;
     }
     body.explore-open .explore-choices::before {
