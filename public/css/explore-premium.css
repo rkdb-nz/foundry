@@ -26,7 +26,7 @@ html.restore-sort body.homepage .landing {
     background:
         radial-gradient(ellipse at 48% 34%, rgba(196, 112, 48, .22), transparent 64%),
         linear-gradient(rgba(73, 36, 17, .49), rgba(35, 17, 9, .56)),
-        url("../assets/images/explore-bronze-texture.webp") center / cover;
+        url("../assets/images/explore-bronze-texture.webp") center / cover !important;
 }
 
 body.explore-open .explore-screen::after {
