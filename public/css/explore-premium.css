@@ -196,10 +196,15 @@ body.explore-open .explore-choice:nth-child(4) {
     }
 
     body.explore-open .explore-wordmark {
-        top: max(35px, calc(env(safe-area-inset-top) + 27px)) !important;
-        left: max(25px, calc(env(safe-area-inset-left) + 21px)) !important;
-        font-size: clamp(16px, 4.9vw, 21px) !important;
-        letter-spacing: clamp(2.5px, .9vw, 4px) !important;
+        top: max(22px, calc(env(safe-area-inset-top) + 14px)) !important;
+        left: max(24px, calc(env(safe-area-inset-left) + 18px)) !important;
+        color: #eee8de !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: clamp(12px, 3.8vw, 16px) !important;
+        font-weight: 400 !important;
+        line-height: 1 !important;
+        letter-spacing: clamp(3px, 1.1vw, 5px) !important;
+        text-shadow: none !important;
     }
 
     body.explore-open .explore-kicker {
