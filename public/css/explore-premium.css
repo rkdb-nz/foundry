@@ -229,13 +229,13 @@ body.explore-open .explore-choice:nth-child(4) {
         top: clamp(66px, 8.7svh, 79px);
         left: -2%;
         right: -2%;
-        height: 34px;
+        height: 38px;
         border-radius: 50%;
         background:
             radial-gradient(ellipse at 7% 10%, rgba(39, 14, 6, .9), transparent 34%),
             radial-gradient(ellipse at 93% 10%, rgba(39, 14, 6, .9), transparent 34%),
-            radial-gradient(ellipse at 50% 10%, rgba(39, 14, 6, .98) 0%, rgba(57, 23, 10, .8) 40%, rgba(95, 48, 23, .42) 67%, transparent 86%);
-        filter: blur(7px);
+            radial-gradient(ellipse at 50% 8%, rgba(39, 14, 6, .99) 0%, rgba(57, 23, 10, .84) 40%, rgba(95, 48, 23, .48) 68%, transparent 88%);
+        filter: blur(8px);
         pointer-events: none;
     }
 
@@ -246,9 +246,9 @@ body.explore-open .explore-choice:nth-child(4) {
         top: clamp(66px, 8.7svh, 79px);
         right: 1%;
         left: 1%;
-        height: 7px;
+        height: 8px;
         border-radius: 50%;
-        background: rgba(39, 14, 6, .96);
+        background: rgba(39, 14, 6, .98);
         filter: blur(1.5px);
         pointer-events: none;
     }
@@ -351,13 +351,13 @@ body.explore-open .explore-choice:nth-child(4) {
         top: 49px;
         left: -2%;
         right: -2%;
-        height: 32px;
+        height: 36px;
         border-radius: 50%;
         background:
             radial-gradient(ellipse at 7% 10%, rgba(39, 14, 6, .9), transparent 34%),
             radial-gradient(ellipse at 93% 10%, rgba(39, 14, 6, .9), transparent 34%),
-            radial-gradient(ellipse at 50% 10%, rgba(39, 14, 6, .98) 0%, rgba(57, 23, 10, .8) 40%, rgba(95, 48, 23, .42) 67%, transparent 86%);
-        filter: blur(7px);
+            radial-gradient(ellipse at 50% 8%, rgba(39, 14, 6, .99) 0%, rgba(57, 23, 10, .84) 40%, rgba(95, 48, 23, .48) 68%, transparent 88%);
+        filter: blur(8px);
         pointer-events: none;
     }
     body.explore-open .explore-choices::before {
@@ -367,9 +367,9 @@ body.explore-open .explore-choice:nth-child(4) {
         top: 49px;
         right: 1%;
         left: 1%;
-        height: 7px;
+        height: 8px;
         border-radius: 50%;
-        background: rgba(39, 14, 6, .96);
+        background: rgba(39, 14, 6, .98);
         filter: blur(1.5px);
         pointer-events: none;
     }
