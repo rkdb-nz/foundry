@@ -1,0 +1,468 @@
+/* =========================================================
+   THE FOUNDRY — BOARDROOM LIGHT ARCHITECTURAL GRID
+   Final mobile override. Desktop remains unchanged.
+   ========================================================= */
+
+.boardroom-mobile-title,
+.boardroom-mobile-intro {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden !important;
+    overscroll-behavior: none;
+    background: #f5f1e9 !important;
+  }
+
+  body {
+    color: #181715 !important;
+    background:
+      linear-gradient(rgba(255, 255, 255, .34), rgba(255, 255, 255, .34)),
+      repeating-linear-gradient(
+        0deg,
+        rgba(78, 67, 54, .018) 0,
+        rgba(78, 67, 54, .018) 1px,
+        transparent 1px,
+        transparent 5px
+      ),
+      #f5f1e9 !important;
+  }
+
+  body::after {
+    display: none !important;
+  }
+
+  .page-shade {
+    display: none !important;
+  }
+
+  .boardroom-mobile-wordmark {
+    position: fixed !important;
+    z-index: 101 !important;
+    top: max(18px, calc(env(safe-area-inset-top) + 12px)) !important;
+    left: max(22px, calc(env(safe-area-inset-left) + 18px)) !important;
+    display: block !important;
+    margin: 0 !important;
+    color: #181715 !important;
+    font: 750 clamp(10px, 2.7vw, 13px)/1 Inter, ui-sans-serif, system-ui, sans-serif !important;
+    letter-spacing: .22em !important;
+    text-decoration: none !important;
+  }
+
+  .foundry-global-nav.foundry-global-nav--menu-only {
+    position: fixed !important;
+    z-index: 110 !important;
+    top: max(8px, env(safe-area-inset-top)) !important;
+    right: max(10px, env(safe-area-inset-right)) !important;
+    left: auto !important;
+    width: clamp(126px, 35vw, 150px) !important;
+    height: 42px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    clip-path: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .foundry-global-nav.foundry-global-nav--menu-only::before,
+  .foundry-global-nav.foundry-global-nav--menu-only::after,
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-control + .foundry-global-control::before {
+    display: none !important;
+  }
+
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-control,
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-back,
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-home,
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-menu {
+    position: relative !important;
+    width: auto !important;
+    min-width: 42px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #181715 !important;
+  }
+
+  .foundry-global-nav.foundry-global-nav--menu-only svg {
+    width: 24px !important;
+    height: 24px !important;
+    fill: none !important;
+    stroke: #181715 !important;
+    stroke-width: 1.6 !important;
+    filter: none !important;
+  }
+
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-home svg {
+    width: 23px !important;
+    height: 23px !important;
+  }
+
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-home svg path {
+    fill: none !important;
+    stroke: #181715 !important;
+  }
+
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-menu {
+    gap: 4px !important;
+  }
+
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-menu span {
+    width: 23px !important;
+    height: 1.5px !important;
+    border: 0 !important;
+    background: #181715 !important;
+    box-shadow: none !important;
+  }
+
+  .boardroom {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding:
+      max(74px, calc(env(safe-area-inset-top) + 64px))
+      max(22px, calc(env(safe-area-inset-right) + 18px))
+      max(20px, calc(env(safe-area-inset-bottom) + 14px))
+      max(22px, calc(env(safe-area-inset-left) + 18px)) !important;
+    display: grid !important;
+    grid-template-rows: minmax(0, .72fr) minmax(0, 1.28fr) !important;
+    grid-template-columns: 1fr !important;
+    gap: clamp(12px, 2.2dvh, 22px) !important;
+    overflow: hidden !important;
+  }
+
+  .intro {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-self: end !important;
+  }
+
+  .eyebrow {
+    margin: 0 0 clamp(8px, 1.4dvh, 14px) !important;
+    color: #a9562c !important;
+    font-size: clamp(9px, 2.4vw, 12px) !important;
+    font-weight: 750 !important;
+    line-height: 1 !important;
+    letter-spacing: .22em !important;
+  }
+
+  #boardroom-title {
+    max-width: 7.5em !important;
+    margin: 0 !important;
+    color: #181715 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(38px, min(12vw, 8dvh), 68px) !important;
+    font-weight: 400 !important;
+    line-height: .88 !important;
+    letter-spacing: -.055em !important;
+    text-shadow: none !important;
+  }
+
+  .boardroom-desktop-title {
+    display: none !important;
+  }
+
+  .boardroom-mobile-title {
+    display: inline !important;
+  }
+
+  #boardroom-title > span,
+  #boardroom-title .boardroom-mobile-title > span {
+    color: #a9562c !important;
+  }
+
+  .intro-rule,
+  .intro-copy {
+    display: none !important;
+  }
+
+  .boardroom-mobile-intro {
+    display: block !important;
+    max-width: 34em !important;
+    margin: clamp(10px, 1.7dvh, 17px) 0 0 !important;
+    color: #403d38 !important;
+    font-size: clamp(13px, 3.45vw, 17px) !important;
+    line-height: 1.32 !important;
+  }
+
+  .boards {
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(10px, 2.5vw, 16px) !important;
+    align-self: stretch !important;
+    justify-self: stretch !important;
+    transform: none !important;
+  }
+
+  .board-card {
+    position: relative !important;
+    isolation: isolate !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: clamp(13px, 3.5vw, 22px) clamp(28px, 6vw, 42px) clamp(12px, 3vw, 20px) clamp(13px, 3.5vw, 22px) !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto 1fr !important;
+    align-items: start !important;
+    gap: clamp(7px, 1.35dvh, 12px) !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(74, 66, 56, .25) !important;
+    border-radius: 0 !important;
+    color: #181715 !important;
+    text-decoration: none !important;
+    background: rgba(255, 255, 255, .38) !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    transform: none !important;
+  }
+
+  .board-card:nth-child(1) { border-color: rgba(170, 75, 38, .62) !important; }
+  .board-card:nth-child(2) { border-color: rgba(117, 105, 79, .58) !important; }
+  .board-card:nth-child(3) { border-color: rgba(40, 73, 101, .62) !important; }
+  .board-card:nth-child(4) { border-color: rgba(170, 75, 38, .56) !important; }
+
+  .board-card::before,
+  .board-card::after,
+  .glass-layer,
+  .board-icon,
+  .board-description {
+    display: none !important;
+  }
+
+  .board-number {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-self: start !important;
+    color: #a9562c !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(38px, min(11vw, 7.2dvh), 64px) !important;
+    font-weight: 400 !important;
+    line-height: .8 !important;
+    letter-spacing: -.05em !important;
+  }
+
+  .board-card:nth-child(2) .board-number { color: #75694f !important; }
+  .board-card:nth-child(3) .board-number { color: #284965 !important; }
+
+  .board-number > span {
+    transform: none !important;
+  }
+
+  .board-main {
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    align-self: end !important;
+  }
+
+  .board-label {
+    display: block !important;
+    margin: 0 0 clamp(6px, 1dvh, 9px) !important;
+    color: #181715 !important;
+    font-size: clamp(9px, 2.65vw, 13px) !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    letter-spacing: .14em !important;
+    white-space: normal !important;
+  }
+
+  .board-main strong {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #3d3933 !important;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif !important;
+    font-size: clamp(11px, 2.95vw, 15px) !important;
+    font-weight: 450 !important;
+    line-height: 1.24 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .board-arrow {
+    position: absolute !important;
+    top: 50% !important;
+    right: clamp(10px, 2.7vw, 18px) !important;
+    margin: 0 !important;
+    color: #a9562c !important;
+    font-size: clamp(20px, 5.5vw, 30px) !important;
+    font-weight: 300 !important;
+    line-height: 1 !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .board-card:nth-child(2) .board-arrow { color: #75694f !important; }
+  .board-card:nth-child(3) .board-arrow { color: #284965 !important; }
+
+  .board-card:active {
+    background: rgba(169, 86, 44, .08) !important;
+  }
+
+  .foundry-global-drawer {
+    color-scheme: dark;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .boardroom-mobile-wordmark {
+    top: max(14px, calc(env(safe-area-inset-top) + 8px)) !important;
+    left: max(18px, calc(env(safe-area-inset-left) + 14px)) !important;
+    font-size: 10px !important;
+  }
+
+  .foundry-global-nav.foundry-global-nav--menu-only {
+    top: max(2px, env(safe-area-inset-top)) !important;
+    width: 126px !important;
+    height: 38px !important;
+  }
+
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-control,
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-back,
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-home,
+  .foundry-global-nav.foundry-global-nav--menu-only .foundry-global-menu {
+    min-width: 38px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+  }
+
+  .boardroom {
+    padding:
+      max(48px, calc(env(safe-area-inset-top) + 42px))
+      max(18px, calc(env(safe-area-inset-right) + 14px))
+      max(12px, calc(env(safe-area-inset-bottom) + 8px))
+      max(18px, calc(env(safe-area-inset-left) + 14px)) !important;
+    grid-template-columns: minmax(210px, .72fr) minmax(0, 1.28fr) !important;
+    grid-template-rows: 1fr !important;
+    gap: clamp(22px, 4vw, 48px) !important;
+    align-items: stretch !important;
+  }
+
+  .intro {
+    align-self: center !important;
+  }
+
+  .eyebrow {
+    margin-bottom: 7px !important;
+    font-size: clamp(8px, 1.25vw, 10px) !important;
+  }
+
+  #boardroom-title {
+    max-width: 6.2em !important;
+    font-size: clamp(34px, min(6.2vw, 13dvh), 58px) !important;
+  }
+
+  .boardroom-mobile-intro {
+    max-width: 24em !important;
+    margin-top: 9px !important;
+    font-size: clamp(11px, 1.65vw, 14px) !important;
+  }
+
+  .boards {
+    gap: clamp(8px, 1.4vw, 12px) !important;
+  }
+
+  .board-card {
+    padding: clamp(9px, 2dvh, 14px) clamp(28px, 4vw, 40px) clamp(9px, 2dvh, 14px) clamp(11px, 1.8vw, 16px) !important;
+    gap: clamp(4px, 1dvh, 8px) !important;
+  }
+
+  .board-number {
+    font-size: clamp(30px, min(5vw, 11dvh), 48px) !important;
+  }
+
+  .board-label {
+    margin-bottom: 4px !important;
+    font-size: clamp(8px, 1.2vw, 11px) !important;
+  }
+
+  .board-main strong {
+    font-size: clamp(9px, 1.35vw, 12px) !important;
+    line-height: 1.18 !important;
+  }
+
+  .board-arrow {
+    right: 10px !important;
+    font-size: clamp(18px, 3vw, 24px) !important;
+  }
+}
+
+@media (max-width: 350px) and (orientation: portrait),
+       (max-height: 640px) and (orientation: portrait) {
+  .boardroom {
+    padding-top: max(64px, calc(env(safe-area-inset-top) + 56px)) !important;
+    padding-bottom: max(12px, calc(env(safe-area-inset-bottom) + 8px)) !important;
+    grid-template-rows: minmax(0, .62fr) minmax(0, 1.38fr) !important;
+    gap: 10px !important;
+  }
+
+  .eyebrow {
+    margin-bottom: 6px !important;
+  }
+
+  #boardroom-title {
+    font-size: clamp(34px, 11.5vw, 46px) !important;
+  }
+
+  .boardroom-mobile-intro {
+    margin-top: 7px !important;
+    font-size: 12px !important;
+  }
+
+  .board-card {
+    padding: 10px 27px 9px 11px !important;
+    gap: 5px !important;
+  }
+
+  .board-number {
+    font-size: 34px !important;
+  }
+
+  .board-label {
+    margin-bottom: 4px !important;
+    font-size: 8.5px !important;
+  }
+
+  .board-main strong {
+    font-size: 10px !important;
+    line-height: 1.16 !important;
+  }
+}
