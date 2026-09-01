@@ -149,7 +149,7 @@
       max(20px, calc(env(safe-area-inset-bottom) + 14px))
       max(22px, calc(env(safe-area-inset-left) + 18px)) !important;
     display: grid !important;
-    grid-template-rows: minmax(0, .72fr) minmax(0, 1.28fr) !important;
+    grid-template-rows: minmax(0, .58fr) minmax(0, 1.42fr) !important;
     grid-template-columns: 1fr !important;
     gap: clamp(12px, 2.2dvh, 22px) !important;
     overflow: hidden !important;
@@ -299,8 +299,8 @@
     display: block !important;
     margin: 0 0 clamp(6px, 1dvh, 9px) !important;
     color: #181715 !important;
-    font-size: clamp(9px, 2.65vw, 13px) !important;
-    font-weight: 800 !important;
+    font-size: clamp(11px, 3.05vw, 15px) !important;
+    font-weight: 850 !important;
     line-height: 1.05 !important;
     letter-spacing: .14em !important;
     white-space: normal !important;
@@ -366,7 +366,7 @@
 
   .boardroom {
     padding:
-      max(48px, calc(env(safe-area-inset-top) + 42px))
+      max(62px, calc(env(safe-area-inset-top) + 56px))
       max(18px, calc(env(safe-area-inset-right) + 14px))
       max(12px, calc(env(safe-area-inset-bottom) + 8px))
       max(18px, calc(env(safe-area-inset-left) + 14px)) !important;
@@ -411,7 +411,7 @@
 
   .board-label {
     margin-bottom: 4px !important;
-    font-size: clamp(8px, 1.2vw, 11px) !important;
+    font-size: clamp(10px, 1.45vw, 13px) !important;
   }
 
   .board-main strong {
