@@ -2194,3 +2194,26 @@ body.springboard .board-system-illustration{
     height:76%;
   }
 }
+
+
+/* =========================================================
+   BOARD DESKTOP RESTORATION / MOBILE ISOLATION
+   Desktop uses the original Foundry board composition.
+   Editorial board treatment is mounted only at <= 980px.
+   ========================================================= */
+.desktop-board-page{display:block}
+.mobile-board-page{display:none}
+
+@media(max-width:980px){
+  .desktop-board-page{display:none !important}
+  .mobile-board-page{display:block}
+}
+
+@media(min-width:981px){
+  body.dual-board-page{
+    overflow:hidden;
+  }
+  body.dual-board-page .mobile-board-page{
+    display:none !important;
+  }
+}
