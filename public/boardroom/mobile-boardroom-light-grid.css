@@ -458,7 +458,7 @@
 
   .board-label {
     margin-bottom: 4px !important;
-    font-size: 8.5px !important;
+    font-size: clamp(13px, 3.8vw, 16px) !important;
   }
 
   .board-main strong {
