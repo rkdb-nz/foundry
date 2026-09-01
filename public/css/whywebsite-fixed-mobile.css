@@ -46,134 +46,134 @@
   }
 
   body.whywebsite-page .whywebsite-mobile-story h1 {
-    font-size: clamp(2.35rem, 10vw, 3.25rem);
+    font-size: clamp(2.65rem, 11vw, 3.65rem);
     line-height: .9;
   }
 
   body.whywebsite-page .whywebsite-copper-rule {
     width: 54px;
     height: 2px;
-    margin: 11px 0 10px;
+    margin: 14px 0 13px;
   }
 
   body.whywebsite-page .whywebsite-mobile-intro {
-    margin: 0 0 11px;
-    font-size: clamp(1.1rem, 4.55vw, 1.42rem);
+    margin: 0 0 15px;
+    font-size: clamp(1.25rem, 5vw, 1.6rem);
     line-height: 1.12;
   }
 
   body.whywebsite-page .whywebsite-steps {
-    gap: clamp(5px, 1dvh, 9px);
-    margin: 0 0 10px;
+    gap: clamp(10px, 1.5dvh, 14px);
+    margin: 0 0 14px;
   }
 
   body.whywebsite-page .whywebsite-steps li {
-    grid-template-columns: clamp(32px, 9.2vw, 38px) 1fr;
-    gap: clamp(12px, 3.5vw, 16px);
-    min-height: clamp(32px, 9.2vw, 38px);
+    grid-template-columns: clamp(38px, 10.4vw, 44px) 1fr;
+    gap: clamp(14px, 3.8vw, 18px);
+    min-height: clamp(38px, 10.4vw, 44px);
   }
 
   body.whywebsite-page .whywebsite-steps span {
-    width: clamp(32px, 9.2vw, 38px);
-    height: clamp(32px, 9.2vw, 38px);
-    font-size: clamp(.88rem, 3.7vw, 1.02rem);
+    width: clamp(38px, 10.4vw, 44px);
+    height: clamp(38px, 10.4vw, 44px);
+    font-size: clamp(1rem, 4vw, 1.12rem);
   }
 
   body.whywebsite-page .whywebsite-steps::before {
-    top: 17px;
-    bottom: 17px;
-    left: clamp(15px, 4.35vw, 18px);
+    top: 20px;
+    bottom: 20px;
+    left: clamp(18px, 5vw, 21px);
   }
 
   body.whywebsite-page .whywebsite-steps p {
-    font-size: clamp(1rem, 4.2vw, 1.25rem);
+    font-size: clamp(1.14rem, 4.65vw, 1.38rem);
     line-height: 1.04;
   }
 
   body.whywebsite-page .whywebsite-mobile-value {
-    margin: 0 0 9px;
-    font-size: clamp(.75rem, 3.2vw, .88rem);
+    margin: 0 0 13px;
+    font-size: clamp(.88rem, 3.55vw, 1rem);
     line-height: 1.28;
   }
 
   body.whywebsite-page .whywebsite-mobile-pill {
-    grid-template-columns: 38px 1fr;
-    gap: 10px;
-    min-height: 56px;
-    padding: 7px 12px 7px 9px;
+    grid-template-columns: 46px 1fr;
+    gap: 13px;
+    min-height: 72px;
+    padding: 10px 15px 10px 11px;
     border-width: 1px;
     border-radius: 13px;
   }
 
   body.whywebsite-page .whywebsite-mobile-pill img {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
   }
 
   body.whywebsite-page .whywebsite-mobile-pill p {
-    font-size: clamp(.78rem, 3.25vw, .96rem);
+    font-size: clamp(.9rem, 3.6vw, 1.06rem);
     line-height: 1.15;
   }
 }
 
 @media (max-width: 700px) and (max-height: 680px) and (orientation: portrait) {
   body.whywebsite-page .whywebsite-mobile-inner {
-    padding-top: max(74px, calc(env(safe-area-inset-top) + 66px));
+    padding-top: max(80px, calc(env(safe-area-inset-top) + 72px));
   }
 
   body.whywebsite-page .whywebsite-mobile-story h1 {
-    font-size: clamp(2.15rem, 9.4vw, 2.85rem);
+    font-size: clamp(2.4rem, 10.2vw, 3.2rem);
   }
 
   body.whywebsite-page .whywebsite-mobile-intro {
-    font-size: clamp(1rem, 4.1vw, 1.24rem);
+    font-size: clamp(1.1rem, 4.45vw, 1.35rem);
   }
 
   body.whywebsite-page .whywebsite-steps {
-    gap: 4px;
-    margin-bottom: 7px;
+    gap: 7px;
+    margin-bottom: 10px;
   }
 
   body.whywebsite-page .whywebsite-steps li {
-    grid-template-columns: 30px 1fr;
-    gap: 11px;
-    min-height: 30px;
+    grid-template-columns: 36px 1fr;
+    gap: 13px;
+    min-height: 36px;
   }
 
   body.whywebsite-page .whywebsite-steps span {
-    width: 30px;
-    height: 30px;
-    font-size: .82rem;
+    width: 36px;
+    height: 36px;
+    font-size: .94rem;
   }
 
   body.whywebsite-page .whywebsite-steps::before {
-    top: 15px;
-    bottom: 15px;
-    left: 14px;
+    top: 18px;
+    bottom: 18px;
+    left: 17px;
   }
 
   body.whywebsite-page .whywebsite-steps p {
-    font-size: clamp(.92rem, 3.9vw, 1.1rem);
+    font-size: clamp(1.02rem, 4.2vw, 1.2rem);
   }
 
   body.whywebsite-page .whywebsite-mobile-value {
-    font-size: .7rem;
-    margin-bottom: 6px;
+    font-size: .8rem;
+    margin-bottom: 9px;
   }
 
   body.whywebsite-page .whywebsite-mobile-pill {
-    min-height: 48px;
-    grid-template-columns: 31px 1fr;
-    padding: 5px 10px 5px 7px;
+    min-height: 62px;
+    grid-template-columns: 39px 1fr;
+    padding: 8px 12px 8px 9px;
   }
 
   body.whywebsite-page .whywebsite-mobile-pill img {
-    width: 30px;
-    height: 30px;
+    width: 38px;
+    height: 38px;
   }
 
   body.whywebsite-page .whywebsite-mobile-pill p {
-    font-size: .74rem;
+    font-size: .86rem;
   }
 }
 
@@ -229,7 +229,7 @@
     grid-column: 1;
     grid-row: 1;
     align-self: end;
-    font-size: clamp(2.2rem, 5.2vw, 3.1rem);
+    font-size: clamp(2.45rem, 5.6vw, 3.4rem);
     line-height: .88;
   }
 
