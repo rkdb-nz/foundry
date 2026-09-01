@@ -6,12 +6,18 @@
   <meta name="theme-color" content="#214f6b">
   <meta name="description" content="SKATEBOARD — a Foundry website direction.">
   <title>SKATEBOARD | The Foundry Boardroom</title>
-  <link rel="stylesheet" href="../board-page.css?v=board-system-v1">
+  <link rel="stylesheet" href="../board-page.css?v=desktop-restore-mobile-v2">
   <link rel="stylesheet" href="../../css/foundry-global-nav.css">
   <link rel="stylesheet" href="../../css/foundry-mobile-nav-uniform.css?v=mobile-nav-uniform-v1">
 </head>
-<body class="skateboard billboard-editorial billboard-scroll board-system">
-  <div class="billboard-page">
+<body class="skateboard dual-board-page">
+  <div class="desktop-board-page">
+    <div class="board-shell"><header class="board-nav"><a href="../">← Boardroom</a><nav class="board-tabs" aria-label="Board navigation"><a href="../billboard/">Billboard</a><a href="../noticeboard/">Noticeboard</a><a href="../skateboard/" class="active" aria-current="page">Skateboard</a><a href="../springboard/">Springboard</a></nav></header>
+<main class="board-main"><section class="board-intro"><p class="board-kicker">03 / SKATEBOARD</p><h1 class="board-title">SKATEBOARD</h1><h2 class="board-tagline">Scroll energy. Make the ride worth it.</h2><span class="board-rule"></span><p class="board-copy">People are moving down the page anyway — give them something that actually earns the glide. A visual. A moment. A reason to keep going. That’s Skateboard. Three brands. Three totally different journeys. Start scrolling.</p><a class="board-contact-cta" href="mailto:thefoundry@rkdb.nz">Let’s talk about your site</a></section><section class="board-gallery"><div class="gallery-head"><p>SKATEBOARD in action</p><h2>Three examples. Three journeys worth scrolling.</h2></div><div class="demo-grid"><a class="demo-card" href="demos/florist/index.html"><img src="assets/images/florist-preview.jpg" alt="Florist Skateboard preview"><span class="demo-meta"><strong>Florist</strong><span>Open site →</span></span></a><a class="demo-card" href="demos/pottery/index.html"><img src="assets/images/pottery-preview.webp" alt="Pottery Skateboard preview"><span class="demo-meta"><strong>Pottery</strong><span>Open site →</span></span></a><a class="demo-card" href="demos/tailor/index.html"><img src="assets/images/tailor-preview.webp" alt="Tailor Skateboard preview"><span class="demo-meta"><strong>Tailor</strong><span>Open site →</span></span></a></div></section></main></div>
+  </div>
+
+  <div class="mobile-board-page">
+    <div class="billboard-page">
     <header class="billboard-header">
       <a class="billboard-brand" href="../../">THE<br>FOUNDRY</a>
     </header>
@@ -47,6 +53,23 @@
       </section>
     </main>
   </div>
-  <script src="../../js/foundry-global-nav.js" data-root="../../"></script>
+  </div>
+
+  <script src="../../js/foundry-global-nav.js" data-root="../../" data-menu-only="true"></script>
+  <script>
+    (() => {
+      const mobile = window.matchMedia('(max-width: 980px)');
+      const syncBoardMode = () => {
+        const isMobile = mobile.matches;
+        document.body.classList.toggle('billboard-editorial', isMobile);
+        document.body.classList.toggle('billboard-scroll', isMobile);
+        document.body.classList.toggle('board-system', isMobile && !document.body.classList.contains('billboard'));
+        const nav = document.querySelector('.foundry-global-nav');
+        if (nav) nav.classList.toggle('foundry-global-nav--menu-only', !isMobile);
+      };
+      syncBoardMode();
+      mobile.addEventListener?.('change', syncBoardMode);
+    })();
+  </script>
 </body>
 </html>
