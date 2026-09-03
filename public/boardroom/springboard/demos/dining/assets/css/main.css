@@ -980,3 +980,44 @@ img{display:block; max-width:100%}
 .panel.is-activating .card-image--neat{
   opacity:1;
 }
+
+/* Dine menu — portrait phones use a readable editorial stack */
+@media (max-width:700px) and (orientation:portrait){
+  .dine-page .menu-grid{
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:18px !important;
+  }
+
+  .dine-page .menu-grid > div{
+    min-width:0;
+  }
+
+  .dine-page .menu-section{
+    margin-bottom:34px;
+  }
+
+  .dine-page .menu-section h2{
+    margin-bottom:10px;
+    padding-bottom:10px;
+  }
+
+  .dine-page .menu-item{
+    grid-template-columns:minmax(0,1fr) auto;
+    column-gap:20px;
+    padding:16px 0 17px;
+  }
+
+  .dine-page .menu-item h3{
+    line-height:1.55;
+  }
+
+  .dine-page .menu-item p{
+    margin-top:3px;
+    line-height:1.65;
+  }
+
+  .dine-page .menu-item .price{
+    min-width:30px;
+    padding-top:1px;
+  }
+}
