@@ -147,3 +147,26 @@ footer{padding:36px 48px; background:var(--ivory); border-top:1px solid var(--li
     padding-top:clamp(26px,8dvh,42px) !important;
   }
 }
+
+
+/* Landscape collection balance: feature the orphaned final arrangement. */
+@media (max-width:900px) and (orientation:landscape) {
+  #reveal-gap + section.solid .grid > .card:last-child {
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    padding-bottom:0;
+  }
+
+  #reveal-gap + section.solid .grid > .card:last-child .card-img {
+    min-height:54dvh;
+    aspect-ratio:auto;
+  }
+
+  #reveal-gap + section.solid .grid > .card:last-child .card-body {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:clamp(24px,7dvh,44px) clamp(28px,5vw,54px);
+  }
+}
