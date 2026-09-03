@@ -994,12 +994,14 @@ button{color:inherit}
   .hero-image {
     background-position:61% center;
     background-size:auto 100%;
+    filter:saturate(1.14) brightness(1.19) contrast(1);
   }
 
   .hero-shade {
     background:
-      linear-gradient(90deg,rgba(4,3,2,.91) 0%,rgba(5,4,3,.70) 58%,rgba(4,3,2,.12) 100%),
-      linear-gradient(0deg,rgba(0,0,0,.68),transparent 54%);
+      radial-gradient(ellipse 82% 40% at 24% 29%,rgba(3,2,1,.52) 0%,rgba(4,3,2,.28) 52%,transparent 100%),
+      linear-gradient(90deg,rgba(4,3,2,.64) 0%,rgba(5,4,3,.30) 56%,rgba(4,3,2,.04) 100%),
+      linear-gradient(0deg,rgba(0,0,0,.44) 0%,transparent 35%,transparent 72%,rgba(0,0,0,.16) 100%);
   }
 
   .hero-content {
