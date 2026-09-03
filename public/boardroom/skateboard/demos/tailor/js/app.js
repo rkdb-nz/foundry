@@ -54,6 +54,17 @@ function updateUI(idx){
 function goTo(index){
   if(!track) return;
   index = Math.max(0, Math.min(total-1, index));
+
+  if(isMobile()){
+    targetIndex=index;
+    currentIndex=index;
+    isAnimating=false;
+    wheelHint?.classList.add('hide');
+    chapters[index]?.scrollIntoView({behavior:'smooth',block:'start'});
+    updateUI(index);
+    return;
+  }
+
   if(index===targetIndex && isAnimating) return;
   targetIndex=index;
   targetX=-index*window.innerWidth;
@@ -122,23 +133,7 @@ window.addEventListener('touchend',e=>{
   const dy=e.changedTouches[0].clientY-touchStartY;
 
   if(isMobile()){
-    // The final Visit chapter keeps its own Wāperiki-to-Milan vertical scroll.
-    // A downward swipe at its top returns to Craft.
-    if(targetIndex===total-1 && visitScroll){
-      if(dy>60 && visitScroll.scrollTop<=1) goTo(total-2);
-      return;
-    }
-
-    // Mobile's natural vertical reading gesture drives the horizontal chapters.
-    if(Math.abs(dy)>50 && Math.abs(dy)>Math.abs(dx)*0.75){
-      goTo(dy<0 ? targetIndex+1 : targetIndex-1);
-      return;
-    }
-
-    // Horizontal swipes remain available as a secondary, intuitive gesture.
-    if(Math.abs(dx)>60){
-      goTo(dx<0 ? targetIndex+1 : targetIndex-1);
-    }
+    // Mobile uses the browser's native vertical chapter scroll.
     return;
   }
 
@@ -196,3 +191,20 @@ window.addEventListener('resize',()=>{
   }
 });
 
+
+
+if(isMobile() && chapters.length){
+  const chapterObserver=new IntersectionObserver(entries=>{
+    const visible=entries
+      .filter(entry=>entry.isIntersecting)
+      .sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+    if(!visible) return;
+    const idx=chapters.indexOf(visible.target);
+    if(idx>=0 && idx!==currentIndex){
+      currentIndex=idx;
+      targetIndex=idx;
+      updateUI(idx);
+    }
+  },{threshold:[.45,.6,.75]});
+  chapters.forEach(chapter=>chapterObserver.observe(chapter));
+}
