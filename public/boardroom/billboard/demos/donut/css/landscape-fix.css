@@ -16,7 +16,7 @@
   .site {
     position: relative !important;
     display: grid !important;
-    grid-template-columns: 56% 44% !important;
+    grid-template-columns: 64% 36% !important;
     grid-template-rows: clamp(50px, 15dvh, 64px) minmax(0, 54fr) minmax(0, 46fr) !important;
     background: linear-gradient(180deg,#fff8f3,#fff0e9) !important;
   }
