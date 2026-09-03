@@ -1,0 +1,98 @@
+/* Donut mobile landscape — single authoritative composition.
+   Loaded last. Portrait and desktop are intentionally untouched. */
+@media (orientation: landscape) and (max-width: 1000px) and (max-height: 520px) {
+  html,
+  body,
+  .viewport,
+  .site {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .viewport,
+  .site {
+    width: 100vw !important;
+    height: 100dvh !important;
+  }
+
+  .site {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: 68% 32% !important;
+    grid-template-rows: clamp(50px, 15dvh, 64px) minmax(0, 56fr) minmax(0, 44fr) !important;
+  }
+
+  .topbar {
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+  }
+
+  .hero {
+    grid-column: 1 !important;
+    grid-row: 2 / 4 !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    overflow: hidden !important;
+    background-image: url('../assets/images/donut-landscape-hero.webp?v=2') !important;
+    background-size: 146% auto !important;
+    background-position: right center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .hero img {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .mobile-message {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding-inline: clamp(10px, 1.5vw, 18px) !important;
+  }
+
+  .mobile-message h1 {
+    font-size: clamp(27px, min(4vw, 8dvh), 40px) !important;
+  }
+
+  .mobile-script {
+    font-size: clamp(14px, min(2vw, 3.8dvh), 19px) !important;
+  }
+
+  .mobile-script--lower {
+    font-size: clamp(15px, min(2.2vw, 4dvh), 20px) !important;
+  }
+
+  .mobile-order-button {
+    width: 94% !important;
+    min-width: 0 !important;
+    padding-inline: 12px !important;
+    gap: 12px !important;
+    font-size: clamp(15px, min(2.1vw, 4dvh), 19px) !important;
+  }
+
+  .features {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
