@@ -11,6 +11,13 @@
   <link rel="stylesheet" href="css/portrait-polish.css?v=7">
   <link rel="stylesheet" href="css/landscape-fix.css?v=11">
   <link rel="stylesheet" href="css/landscape-menus.css?v=4">
+  <style id="donut-landscape-panel-position">
+    @media (orientation: landscape) and (max-height: 900px) {
+      .site { grid-template-columns: 64% 36% !important; }
+      .hero { grid-column: 1 !important; }
+      .mobile-message, .features { grid-column: 2 !important; }
+    }
+  </style>
 </head>
 <body>
 <main class="viewport" aria-label="A Hole in One gourmet donuts">
