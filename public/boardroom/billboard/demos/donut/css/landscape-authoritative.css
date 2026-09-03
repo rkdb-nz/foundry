@@ -62,7 +62,7 @@
     right: auto !important;
     bottom: auto !important;
     z-index: 4 !important;
-    width: 34% !important;
+    width: 40% !important;
     height: 56% !important;
     min-width: 0 !important;
     min-height: 0 !important;
@@ -75,13 +75,13 @@
 
   .mobile-message h1 {
     color: #fff !important;
-    font-size: clamp(27px, min(4vw, 8dvh), 40px) !important;
+    font-size: clamp(34px, min(5vw, 10dvh), 52px) !important;
     text-shadow: 0 2px 8px rgba(59,13,20,.58) !important;
   }
 
   .mobile-script {
     color: #fff !important;
-    font-size: clamp(14px, min(2vw, 3.8dvh), 19px) !important;
+    font-size: clamp(17px, min(2.5vw, 4.8dvh), 24px) !important;
     text-shadow: 0 2px 7px rgba(59,13,20,.62) !important;
   }
 
@@ -91,7 +91,7 @@
 
   .mobile-script--lower {
     color: #fff !important;
-    font-size: clamp(15px, min(2.2vw, 4dvh), 20px) !important;
+    font-size: clamp(18px, min(2.75vw, 5dvh), 25px) !important;
   }
 
   .mobile-order-button {
@@ -99,7 +99,7 @@
     min-width: 0 !important;
     padding-inline: 12px !important;
     gap: 12px !important;
-    font-size: clamp(15px, min(2.1vw, 4dvh), 19px) !important;
+    font-size: clamp(18px, min(2.5vw, 4.8dvh), 23px) !important;
   }
 
   .features {
