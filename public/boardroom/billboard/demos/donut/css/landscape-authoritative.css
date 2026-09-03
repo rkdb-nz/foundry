@@ -23,6 +23,7 @@
     display: grid !important;
     grid-template-columns: 68% 32% !important;
     grid-template-rows: clamp(50px, 15dvh, 64px) minmax(0, 56fr) minmax(0, 44fr) !important;
+    background: #f2c6c1 !important;
   }
 
   .topbar {
@@ -31,7 +32,7 @@
   }
 
   .hero {
-    grid-column: 1 !important;
+    grid-column: 1 / -1 !important;
     grid-row: 2 / 4 !important;
     width: auto !important;
     height: auto !important;
@@ -39,10 +40,11 @@
     min-height: 0 !important;
     position: relative !important;
     inset: auto !important;
+    z-index: 1 !important;
     overflow: hidden !important;
     background-image: url('../assets/images/donut-landscape-hero.webp?v=2') !important;
-    background-size: 146% auto !important;
-    background-position: right center !important;
+    background-size: cover !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
   }
 
@@ -54,21 +56,26 @@
   .mobile-message {
     grid-column: 2 !important;
     grid-row: 2 !important;
-    position: static !important;
+    position: relative !important;
     inset: auto !important;
+    z-index: 4 !important;
     width: auto !important;
     height: auto !important;
     min-width: 0 !important;
     min-height: 0 !important;
     padding-inline: clamp(10px, 1.5vw, 18px) !important;
+    background: linear-gradient(90deg, rgba(255,248,244,.58), rgba(255,248,244,.90) 28%, rgba(255,242,235,.94)) !important;
+    backdrop-filter: blur(1px) !important;
   }
 
   .mobile-message h1 {
     font-size: clamp(27px, min(4vw, 8dvh), 40px) !important;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8) !important;
   }
 
   .mobile-script {
     font-size: clamp(14px, min(2vw, 3.8dvh), 19px) !important;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8) !important;
   }
 
   .mobile-script--lower {
@@ -86,13 +93,15 @@
   .features {
     grid-column: 2 !important;
     grid-row: 3 !important;
-    position: static !important;
+    position: relative !important;
     inset: auto !important;
+    z-index: 4 !important;
     width: auto !important;
     height: auto !important;
     min-width: 0 !important;
     min-height: 0 !important;
     grid-template-columns: 1fr !important;
     grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
+    background: linear-gradient(180deg, rgba(255,245,239,.91), rgba(255,237,230,.95)) !important;
   }
 }
