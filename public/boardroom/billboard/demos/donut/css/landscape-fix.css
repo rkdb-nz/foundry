@@ -101,7 +101,7 @@
     overflow: hidden !important;
     background-image: url('../assets/images/donut-landscape-hero.webp?v=2') !important;
     background-size: 178% auto !important;
-    background-position: center !important;
+    background-position: right center !important;
     background-repeat: no-repeat !important;
     background-color: #f2c6c1 !important;
   }
