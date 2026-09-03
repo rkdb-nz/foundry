@@ -1068,3 +1068,14 @@ img{display:block; max-width:100%}
     display:none;
   }
 }
+
+/* Sign page — restrain the reservation image in phone landscape */
+@media (max-width:900px) and (orientation:landscape) and (max-height:600px){
+  .sign-page .sign-wrap > div:last-child > img{
+    width:68%;
+    height:150px;
+    margin:18px 0 0 auto !important;
+    object-fit:cover;
+    object-position:center 42%;
+  }
+}
