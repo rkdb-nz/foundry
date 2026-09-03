@@ -43,8 +43,8 @@
     z-index: 1 !important;
     overflow: hidden !important;
     background-image: url('../assets/images/donut-landscape-hero.webp?v=2') !important;
-    background-size: cover !important;
-    background-position: center center !important;
+    background-size: 99% auto !important;
+    background-position: right center !important;
     background-repeat: no-repeat !important;
   }
 
