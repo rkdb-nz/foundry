@@ -1101,3 +1101,58 @@ img{display:block; max-width:100%}
     object-position:center 42%;
   }
 }
+
+/* Sign page — complete landscape flow: details, imagery, then FAQs */
+@media (max-width:900px) and (orientation:landscape) and (max-height:600px){
+  .sign-page .sign-wrap{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    grid-template-areas:
+      "details booking"
+      "details note"
+      "map photo"
+      "faq faq";
+    gap:12px 48px;
+    align-items:start;
+  }
+
+  .sign-page .sign-wrap > div{
+    display:contents;
+  }
+
+  .sign-page .venue-details{
+    grid-area:details;
+  }
+
+  .sign-page .booking-form{
+    grid-area:booking;
+  }
+
+  .sign-page .booking-note{
+    grid-area:note;
+    margin:2px 0 14px !important;
+  }
+
+  .sign-page .sign-map{
+    display:block;
+    grid-area:map;
+    width:100%;
+    height:150px !important;
+    margin:0 !important;
+  }
+
+  .sign-page .reservation-photo{
+    display:block;
+    grid-area:photo;
+    width:100% !important;
+    height:150px !important;
+    margin:0 !important;
+  }
+
+  .sign-page .sign-faq{
+    display:block;
+    grid-area:faq;
+    width:100%;
+    margin:18px 0 0 !important;
+  }
+}
