@@ -170,3 +170,26 @@ footer{padding:36px 48px; background:var(--ivory); border-top:1px solid var(--li
     padding:clamp(24px,7dvh,44px) clamp(28px,5vw,54px);
   }
 }
+
+
+/* Match the upper three-card collection to the approved landscape feature rhythm. */
+@media (max-width:900px) and (orientation:landscape) {
+  #collections .grid > .card:last-child {
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    padding-bottom:0;
+  }
+
+  #collections .grid > .card:last-child .card-img {
+    min-height:54dvh;
+    aspect-ratio:auto;
+  }
+
+  #collections .grid > .card:last-child .card-body {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:clamp(24px,7dvh,44px) clamp(28px,5vw,54px);
+  }
+}
