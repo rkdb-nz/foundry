@@ -271,14 +271,19 @@
   .mobile-support-secondary{margin-top:9px;border:1px solid rgba(255,255,255,.45);color:#fff}
 
   @media(orientation:landscape){
-    .mobile-hub-copy{left:8%;top:50%;right:58%}
-    .mobile-hub-copy h2{font-size:clamp(34px,9dvh,52px)}
+    .mobile-hero-image{object-position:50% 34%}
+    .mobile-hero-shade{background:
+      linear-gradient(90deg,rgba(15,20,18,.68) 0%,rgba(15,20,18,.24) 36%,rgba(15,20,18,.04) 68%),
+      linear-gradient(0deg,rgba(15,20,18,.58) 0%,rgba(15,20,18,.08) 38%,transparent 64%)}
+    .mobile-hub-copy{left:7%;top:42%;right:62%}
+    .mobile-hub-copy h2{font-size:clamp(34px,10dvh,54px)}
     .mobile-hub-copy p{font-size:clamp(10px,3dvh,14px)}
-    .mobile-hub-grid{left:49%;right:2%;top:clamp(10px,3dvh,18px);bottom:clamp(10px,3dvh,18px);height:auto;gap:8px}
-    .mobile-hub-tile{border-radius:15px;gap:3px}
+    .mobile-hub-grid{left:3%;right:3%;top:auto;bottom:clamp(8px,2.5dvh,14px);height:clamp(108px,31dvh,150px);grid-template-columns:repeat(4,1fr);grid-template-rows:1fr;gap:clamp(7px,1.3vw,12px)}
+    .mobile-hub-tile{border-radius:15px;gap:3px;background:linear-gradient(145deg,rgba(47,62,46,.94),rgba(22,31,24,.97));backdrop-filter:blur(7px)}
     .mobile-hub-tile svg{width:clamp(20px,7dvh,30px);height:clamp(20px,7dvh,30px)}
     .mobile-hub-tile span{font-size:clamp(14px,4.6dvh,22px)}
-    .mobile-brand{left:24%;font-size:clamp(17px,5dvh,24px)}
+    .mobile-hub-tile--support{background:linear-gradient(145deg,#ffe13b,var(--yellow))}
+    .mobile-brand{left:22%;font-size:clamp(17px,5dvh,24px)}
     .mobile-detail-card,.mobile-diary-card,.mobile-trail-card,.mobile-support-card{left:38%;right:2%;top:clamp(10px,3dvh,18px);bottom:clamp(10px,3dvh,18px);overflow:hidden}
     .mobile-detail--story .mobile-detail-photo{width:40%;object-position:50% 20%}
     .mobile-detail--story .mobile-detail-shade{background:linear-gradient(90deg,transparent 25%,rgba(15,20,18,.85) 45%,rgba(15,20,18,.95))}
