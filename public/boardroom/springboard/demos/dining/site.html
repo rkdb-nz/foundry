@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Home — CLEMENTINES</title>
-<link rel="stylesheet" href="assets/css/main.css?v=dining-portrait-title-1">
+<link rel="stylesheet" href="assets/css/main.css?v=dining-card-transition-1">
 </head>
 <body class="home-page">
 <nav class="nav hidden">
@@ -29,7 +29,7 @@
 <div class="trifold-wrap" id="trifold">
   <div class="trifold-sticky">
     <div class="trifold-inner">
-      <div class="panel" data-panel="dine" tabindex="0" role="button" aria-label="Dine" onclick="location.href='dine.html'">
+      <div class="panel" data-panel="dine" data-href="dine.html" tabindex="0" role="button" aria-label="Dine">
         <div class="card-image-stack">
           <img class="card-image card-image--busy" src="assets/images/plating-close.webp" alt="Signature plated dish on an elegant table">
           <img class="card-image card-image--neat" src="assets/images/fork.webp" alt="Fork">
@@ -38,7 +38,7 @@
           <div class="panel-label">Dine</div>
         </div>
       </div>
-      <div class="panel" data-panel="wine" tabindex="0" role="button" aria-label="Wine" onclick="location.href='wine.html'">
+      <div class="panel" data-panel="wine" data-href="wine.html" tabindex="0" role="button" aria-label="Wine">
         <div class="card-image-stack">
           <img class="card-image card-image--busy" src="assets/images/wine_cellar_kinfolk.webp" alt="Wine cellar">
           <img class="card-image card-image--neat" src="assets/images/glass.webp" alt="Wine glass">
@@ -47,7 +47,7 @@
           <div class="panel-label">Wine</div>
         </div>
       </div>
-      <div class="panel" data-panel="sign" tabindex="0" role="button" aria-label="Sign" onclick="location.href='sign.html'">
+      <div class="panel" data-panel="sign" data-href="sign.html" tabindex="0" role="button" aria-label="Sign">
         <div class="card-image-stack">
           <img class="card-image card-image--busy" src="assets/images/maitred.webp" alt="Fountain pen">
           <img class="card-image card-image--neat" src="assets/images/pen.webp" alt="Fountain pen">
@@ -60,6 +60,6 @@
   </div>
 </div>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=dining-card-transition-1"></script>
 </body>
 </html>
