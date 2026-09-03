@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sign — CLEMENTINES</title>
-<link rel="stylesheet" href="assets/css/main.css?v=dining-sign-unified-1">
+<link rel="stylesheet" href="assets/css/main.css?v=dining-sign-complete-1">
 </head>
 <body class="sign-page">
 <nav class="nav">
@@ -20,7 +20,7 @@
 <div class="page-head"><h1 class="serif">Join us.</h1><p>Booking is simple. We hold the table. You come hungry.</p></div>
 <div class="sign-wrap">
 <div>
-<p style="font-size:13px; letter-spacing:0.08em; line-height:2.2"><span style="text-transform:uppercase">Opening</span> — <span style="text-transform:lowercase">wed to sun, 5pm till late</span><br><span style="text-transform:uppercase">Location</span> — <span style="text-transform:lowercase">38 kenya rd, wāperiki</span><br><span style="text-transform:uppercase">Parking</span> — <span style="text-transform:lowercase">street on jervois, late is easy</span><br><span style="text-transform:uppercase">Phone</span> — <span style="text-transform:lowercase">09 302 1847</span><br><span style="text-transform:uppercase">Email</span> — <span style="text-transform:lowercase">clementinesdining@rkdb.nz</span></p>
+<p class="venue-details" style="font-size:13px; letter-spacing:0.08em; line-height:2.2"><span style="text-transform:uppercase">Opening</span> — <span style="text-transform:lowercase">wed to sun, 5pm till late</span><br><span style="text-transform:uppercase">Location</span> — <span style="text-transform:lowercase">38 kenya rd, wāperiki</span><br><span style="text-transform:uppercase">Parking</span> — <span style="text-transform:lowercase">street on jervois, late is easy</span><br><span style="text-transform:uppercase">Phone</span> — <span style="text-transform:lowercase">09 302 1847</span><br><span style="text-transform:uppercase">Email</span> — <span style="text-transform:lowercase">clementinesdining@rkdb.nz</span></p>
 <div class="sign-map" style="margin-top:32px; background:#E9E6DE; height:260px; border-radius:2px; position:relative; overflow:hidden">
   <img src="assets/images/map.webp" alt="Map to Clementines at 38 kenya rd, wāperiki" style="width:100%; height:100%; object-fit:cover; display:block">
 </div>
@@ -32,7 +32,7 @@
 </div>
 </div>
 <div>
-<form onsubmit="event.preventDefault(); document.getElementById('booking-confirmation').classList.add('is-open');">
+<form class="booking-form" onsubmit="event.preventDefault(); document.getElementById('booking-confirmation').classList.add('is-open');">
 <input class="input" placeholder="Name" required>
 <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px"><select class="input"><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6 guests</option></select><input class="input" type="date"></div>
 <div class="time-request-row">
@@ -40,7 +40,7 @@
   <button class="btn" type="submit">Request Table</button>
 </div>
 </form>
-<p style="margin-top:16px; font-size:11px; color:#999">We confirm by text. No deposit for tables under six.</p>
+<p class="booking-note" style="margin-top:16px; font-size:11px; color:#999">We confirm by text. No deposit for tables under six.</p>
 <img class="reservation-photo" src="assets/images/clemwall.webp" alt="Reservation book" style="margin-top:32px; border-radius:2px">
 </div>
 </div>
