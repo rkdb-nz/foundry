@@ -54,36 +54,48 @@
   }
 
   .mobile-message {
-    grid-column: 2 !important;
-    grid-row: 2 !important;
-    position: relative !important;
-    inset: auto !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    position: absolute !important;
+    top: clamp(50px, 15dvh, 64px) !important;
+    left: 4% !important;
+    right: auto !important;
+    bottom: auto !important;
     z-index: 4 !important;
-    width: auto !important;
-    height: auto !important;
+    width: 34% !important;
+    height: 56% !important;
     min-width: 0 !important;
     min-height: 0 !important;
-    padding-inline: clamp(10px, 1.5vw, 18px) !important;
-    background: linear-gradient(90deg, rgba(255,248,244,.58), rgba(255,248,244,.90) 28%, rgba(255,242,235,.94)) !important;
-    backdrop-filter: blur(1px) !important;
+    align-items: flex-start !important;
+    padding: clamp(8px, 1.4dvh, 12px) 0 !important;
+    text-align: left !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
   }
 
   .mobile-message h1 {
+    color: #fff !important;
     font-size: clamp(27px, min(4vw, 8dvh), 40px) !important;
-    text-shadow: 0 1px 0 rgba(255,255,255,.8) !important;
+    text-shadow: 0 2px 8px rgba(59,13,20,.58) !important;
   }
 
   .mobile-script {
+    color: #fff !important;
     font-size: clamp(14px, min(2vw, 3.8dvh), 19px) !important;
-    text-shadow: 0 1px 0 rgba(255,255,255,.8) !important;
+    text-shadow: 0 2px 7px rgba(59,13,20,.62) !important;
+  }
+
+  .mobile-script span {
+    color: #fff !important;
   }
 
   .mobile-script--lower {
+    color: #fff !important;
     font-size: clamp(15px, min(2.2vw, 4dvh), 20px) !important;
   }
 
   .mobile-order-button {
-    width: 94% !important;
+    width: 100% !important;
     min-width: 0 !important;
     padding-inline: 12px !important;
     gap: 12px !important;
