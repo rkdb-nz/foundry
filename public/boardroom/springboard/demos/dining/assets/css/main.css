@@ -1079,3 +1079,25 @@ img{display:block; max-width:100%}
     object-position:center 42%;
   }
 }
+
+/* Sign page — unify the compact landscape into two clear columns */
+@media (max-width:900px) and (orientation:landscape) and (max-height:600px){
+  .sign-page .sign-wrap{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:48px;
+    align-items:start;
+  }
+
+  .sign-page .sign-map,
+  .sign-page .sign-faq{
+    display:none;
+  }
+
+  .sign-page .reservation-photo{
+    width:100% !important;
+    height:112px !important;
+    margin:18px 0 0 !important;
+    object-fit:cover;
+    object-position:center 42%;
+  }
+}
