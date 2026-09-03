@@ -179,3 +179,40 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     field.value = times[index];
   }, { passive:false });
 })();
+
+// Home cards: finish the image crossfade before opening the selected page.
+(() => {
+  const panels = document.querySelectorAll('.home-page .panel[data-href]');
+  if (!panels.length) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const navigationDelay = reducedMotion ? 120 : 1050;
+  let navigating = false;
+
+  function openPanel(panel) {
+    if (navigating) return;
+    const destination = panel.dataset.href;
+    if (!destination) return;
+
+    navigating = true;
+    panel.classList.add('is-activating');
+    panel.setAttribute('aria-disabled', 'true');
+
+    window.setTimeout(() => {
+      window.location.href = destination;
+    }, navigationDelay);
+  }
+
+  panels.forEach(panel => {
+    panel.addEventListener('click', event => {
+      event.preventDefault();
+      openPanel(panel);
+    });
+
+    panel.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      openPanel(panel);
+    });
+  });
+})();
