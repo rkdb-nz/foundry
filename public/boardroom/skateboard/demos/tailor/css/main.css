@@ -1122,3 +1122,42 @@ body.page-scroll, body.shop-page, html.page-scroll{overflow:auto !important;heig
     font-size:44px;
   }
 }
+
+
+/* Tailor mobile: restore natural vertical chapter scrolling. */
+@media (max-width:900px) {
+  html,
+  body {
+    width:100%;
+    height:auto !important;
+    min-height:100%;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    overscroll-behavior-y:auto;
+  }
+
+  #scroller {
+    width:100%;
+    height:auto !important;
+    overflow:visible !important;
+  }
+
+  #track {
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+    transform:none !important;
+  }
+
+  .chapter {
+    position:relative;
+    width:100% !important;
+    height:100dvh !important;
+    min-height:100dvh !important;
+    overflow:hidden !important;
+  }
+
+  .mobile-chapter-controls {
+    display:none !important;
+  }
+}
