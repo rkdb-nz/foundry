@@ -1124,40 +1124,49 @@ body.page-scroll, body.shop-page, html.page-scroll{overflow:auto !important;heig
 }
 
 
-/* Tailor mobile: restore natural vertical chapter scrolling. */
+/* Tailor mobile: native horizontal chapter journey. */
 @media (max-width:900px) {
   html,
   body {
     width:100%;
-    height:auto !important;
-    min-height:100%;
-    overflow-x:hidden !important;
-    overflow-y:auto !important;
-    overscroll-behavior-y:auto;
+    height:100dvh !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+    overscroll-behavior:none;
   }
 
   #scroller {
-    width:100%;
-    height:auto !important;
-    overflow:visible !important;
+    width:100vw;
+    height:100dvh !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    touch-action:pan-x;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  #scroller::-webkit-scrollbar {
+    display:none;
   }
 
   #track {
-    width:100% !important;
-    height:auto !important;
-    display:block !important;
+    width:500vw !important;
+    height:100dvh !important;
+    display:flex !important;
+    flex-direction:row !important;
     transform:none !important;
   }
 
   .chapter {
     position:relative;
-    width:100% !important;
+    width:100vw !important;
     height:100dvh !important;
-    min-height:100dvh !important;
+    min-height:0 !important;
+    flex:0 0 100vw !important;
     overflow:hidden !important;
-  }
-
-  .mobile-chapter-controls {
-    display:none !important;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
   }
 }
