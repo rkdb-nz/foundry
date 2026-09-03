@@ -284,3 +284,36 @@ img{display:block;max-width:100%}
   pointer-events: none !important;
   cursor: default !important;
 }
+
+/* Now Playing poster — press to enlarge */
+.np-poster-trigger{
+  width:100%;
+  height:100%;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:inherit;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:zoom-in;
+}
+
+.np-poster-trigger .np-poster-image{
+  transition:transform .28s ease, filter .28s ease;
+}
+
+.np-poster-trigger:hover .np-poster-image,
+.np-poster-trigger:focus-visible .np-poster-image{
+  transform:scale(1.018);
+  filter:brightness(1.05);
+}
+
+.np-poster-trigger:focus-visible{
+  outline:2px solid var(--brass);
+  outline-offset:-4px;
+}
+
+.np-media-overlay{
+  pointer-events:none;
+}
