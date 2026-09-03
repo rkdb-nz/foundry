@@ -967,3 +967,16 @@ img{display:block; max-width:100%}
     white-space:nowrap;
   }
 }
+
+/* Home cards — complete the selected image reveal before navigation */
+.panel.is-activating{
+  pointer-events:none;
+}
+
+.panel.is-activating .card-image--busy{
+  opacity:0;
+}
+
+.panel.is-activating .card-image--neat{
+  opacity:1;
+}
