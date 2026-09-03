@@ -60,7 +60,7 @@ function goTo(index){
     currentIndex=index;
     isAnimating=false;
     wheelHint?.classList.add('hide');
-    chapters[index]?.scrollIntoView({behavior:'smooth',block:'start'});
+    scroller?.scrollTo({left:index*window.innerWidth,behavior:'smooth'});
     updateUI(index);
     return;
   }
@@ -74,7 +74,7 @@ function goTo(index){
 
 function lerp(a,b,t){ return a+(b-a)*t }
 function animate(){
-  if(track){    currentX=lerp(currentX,targetX,0.08);
+  if(track && !isMobile()){    currentX=lerp(currentX,targetX,0.08);
     if(Math.abs(currentX-targetX)<0.5){
       currentX=targetX;
       if(isAnimating){ currentIndex=targetIndex; updateUI(currentIndex); isAnimating=false; }
@@ -193,18 +193,17 @@ window.addEventListener('resize',()=>{
 
 
 
-if(isMobile() && chapters.length){
-  const chapterObserver=new IntersectionObserver(entries=>{
-    const visible=entries
-      .filter(entry=>entry.isIntersecting)
-      .sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
-    if(!visible) return;
-    const idx=chapters.indexOf(visible.target);
-    if(idx>=0 && idx!==currentIndex){
-      currentIndex=idx;
-      targetIndex=idx;
-      updateUI(idx);
-    }
-  },{threshold:[.45,.6,.75]});
-  chapters.forEach(chapter=>chapterObserver.observe(chapter));
+if(isMobile() && scroller){
+  let mobileScrollFrame=0;
+  scroller.addEventListener('scroll',()=>{
+    cancelAnimationFrame(mobileScrollFrame);
+    mobileScrollFrame=requestAnimationFrame(()=>{
+      const idx=Math.max(0,Math.min(total-1,Math.round(scroller.scrollLeft/window.innerWidth)));
+      if(idx!==currentIndex){
+        currentIndex=idx;
+        targetIndex=idx;
+        updateUI(idx);
+      }
+    });
+  },{passive:true});
 }
