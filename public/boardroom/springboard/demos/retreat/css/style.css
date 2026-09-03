@@ -561,3 +561,37 @@ body:has(.hero) .header:not(.scrolled){
     padding-top:68px;
   }
 }
+
+/* Retreat reviews — pair each portrait and quote in phone landscape */
+@media(max-width:900px) and (orientation:landscape) and (max-height:600px){
+  .reviews-shell{
+    padding:14vh 0 8vh;
+  }
+
+  .testimonials-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .testimonial-entry{
+    grid-template-columns:minmax(180px,.72fr) minmax(0,1.28fr);
+    gap:30px;
+    align-items:center;
+    padding:22px 0;
+  }
+
+  .testimonial-portrait{
+    width:100%;
+    max-width:280px;
+    justify-self:end;
+  }
+
+  .testimonial-copy{
+    padding:0;
+  }
+
+  .testimonial-quote{
+    max-width:18ch;
+    font-size:clamp(28px,4.1vw,44px);
+  }
+}
