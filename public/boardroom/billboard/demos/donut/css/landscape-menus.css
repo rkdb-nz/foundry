@@ -1,6 +1,6 @@
 /* Donut landscape overlay system.
    Keeps every menu below the fixed header and fully inside the visible phone viewport. */
-@media (orientation: landscape) and (max-height: 520px) and (max-width: 1000px) {
+@media (orientation:landscape) and (max-height:720px) and (max-width:1280px) {
   .overlay {
     position: absolute !important;
     inset: clamp(50px,15dvh,64px) 0 0 0 !important;
