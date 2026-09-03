@@ -505,3 +505,30 @@ body:has(.hero) .header:not(.scrolled){
     transform:none;
   }
 }
+
+/* Retreat collection — a distinct landscape tone for each property */
+#woodland.retreat-full{
+  background:#e9eee7;
+}
+
+#coastal.retreat-full{
+  background:#e5edf0;
+}
+
+#farm.retreat-full{
+  background:#eee5d8;
+}
+
+#town.retreat-full{
+  background:#ebe7df;
+}
+
+#woodland .eyebrow{color:#526558}
+#coastal .eyebrow{color:#496a78}
+#farm .eyebrow{color:#816749}
+#town .eyebrow{color:#706356}
+
+.retreat-full .retreat-copy{
+  border-top:1px solid rgba(43,43,40,.08);
+  border-bottom:1px solid rgba(43,43,40,.08);
+}
