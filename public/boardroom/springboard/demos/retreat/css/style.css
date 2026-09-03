@@ -595,3 +595,40 @@ body:has(.hero) .header:not(.scrolled){
     font-size:clamp(28px,4.1vw,44px);
   }
 }
+
+/* Retreat reviews — portrait identity beside photo, quote beneath */
+@media(max-width:700px) and (orientation:portrait){
+  .testimonial-entry{
+    display:grid;
+    grid-template-columns:minmax(120px,42%) minmax(0,1fr);
+    grid-template-areas:
+      "photo meta"
+      "quote quote";
+    gap:22px 20px;
+    align-items:center;
+    padding:24px 0 34px;
+  }
+
+  .testimonial-entry .testimonial-portrait{
+    grid-area:photo;
+    width:100%;
+    max-width:190px;
+    margin:0;
+  }
+
+  .testimonial-entry .testimonial-copy{
+    display:contents;
+  }
+
+  .testimonial-entry .testimonial-meta{
+    grid-area:meta;
+    align-self:center;
+  }
+
+  .testimonial-entry .testimonial-quote{
+    grid-area:quote;
+    margin:0;
+    max-width:none;
+    font-size:clamp(29px,8.5vw,38px);
+  }
+}
