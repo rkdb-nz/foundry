@@ -463,3 +463,45 @@ body:has(.hero) .header:not(.scrolled){
   padding:13px 28px;
   font-size:17px;
 }
+
+/* Retreat mobile header — keep the closed menu fully out of view */
+@media(max-width:900px){
+  .header,
+  body:has(.hero) .header:not(.scrolled){
+    min-height:72px;
+    padding:16px 20px;
+    background:rgba(20,20,18,.38);
+    mix-blend-mode:normal;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+  }
+
+  .header .logo,
+  .header .menu-btn{
+    position:relative;
+    z-index:102;
+  }
+
+  .header .nav{
+    position:fixed;
+    inset:0;
+    z-index:101;
+    width:100vw;
+    height:100dvh;
+    padding:88px 24px 32px;
+    background:var(--warm-white);
+    color:var(--charcoal);
+    visibility:hidden;
+    opacity:0;
+    pointer-events:none;
+    transform:none;
+    transition:opacity .35s ease, visibility .35s ease;
+  }
+
+  .header .nav.open{
+    visibility:visible;
+    opacity:1;
+    pointer-events:auto;
+    transform:none;
+  }
+}
