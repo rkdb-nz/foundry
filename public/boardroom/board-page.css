@@ -2226,12 +2226,12 @@ body.springboard .board-system-illustration{
     background-size:contain;
   }
   body.billboard-scroll .billboard-illustration--donut{
-    background-image:url("billboard/assets/images/billboard-donut.svg?v=1");
+    background-image:url("billboard/assets/images/billboard-donut.svg?v=2");
   }
   body.billboard-scroll .billboard-illustration--golf{
-    background-image:url("billboard/assets/images/billboard-golf.svg?v=1");
+    background-image:url("billboard/assets/images/billboard-golf.svg?v=2");
   }
   body.billboard-scroll .billboard-illustration--drilling{
-    background-image:url("billboard/assets/images/billboard-drilling.svg?v=1");
+    background-image:url("billboard/assets/images/billboard-drilling.svg?v=2");
   }
 }
