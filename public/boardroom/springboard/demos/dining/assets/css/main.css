@@ -1021,3 +1021,50 @@ img{display:block; max-width:100%}
     padding-top:1px;
   }
 }
+
+/* Sign page — compact, balanced phone landscape composition */
+@media (max-width:900px) and (orientation:landscape) and (max-height:600px){
+  .sign-page .nav{
+    padding:14px 32px;
+  }
+
+  .sign-page .page-head{
+    max-width:1240px;
+    padding:94px 44px 24px;
+  }
+
+  .sign-page .page-head h1{
+    font-size:40px;
+    line-height:1;
+    margin-bottom:8px;
+  }
+
+  .sign-page .page-head p{
+    font-size:13px;
+  }
+
+  .sign-page .sign-wrap{
+    grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+    gap:44px;
+    max-width:1240px;
+    padding:0 44px 56px;
+  }
+
+  .sign-page .sign-wrap > div:first-child > p{
+    line-height:1.85 !important;
+  }
+
+  .sign-page .input{
+    padding:11px 13px;
+    margin-bottom:10px;
+  }
+
+  .sign-page .time-request-row{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .sign-page .time-wheel-hint{
+    display:none;
+  }
+}
