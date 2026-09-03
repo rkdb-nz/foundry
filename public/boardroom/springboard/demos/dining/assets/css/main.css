@@ -951,3 +951,19 @@ img{display:block; max-width:100%}
     grid-template-columns:1fr;
   }
 }
+
+/* Home hero — contain the long wordmark on portrait phones */
+@media (max-width:600px) and (orientation:portrait){
+  .home-page .hero-content{
+    width:100%;
+    padding-inline:20px;
+  }
+
+  .home-page .hero-content h1{
+    max-width:100%;
+    margin-inline:auto;
+    font-size:clamp(36px,10.25vw,46px);
+    letter-spacing:.14em;
+    white-space:nowrap;
+  }
+}
