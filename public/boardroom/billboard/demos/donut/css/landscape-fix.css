@@ -1,5 +1,5 @@
 /* Approved Donut landscape composition. Portrait and desktop untouched. */
-@media (orientation:landscape) and (max-height:720px) and (max-width:1280px) {
+@media (orientation:landscape) and (max-height:720px) {
   html, body, .viewport, .site {
     width: 100% !important;
     height: 100% !important;
