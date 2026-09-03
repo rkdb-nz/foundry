@@ -994,7 +994,7 @@ button{color:inherit}
   .hero-image {
     background-position:61% center;
     background-size:auto 100%;
-    filter:saturate(1.12) brightness(1.24) contrast(.98);
+    filter:saturate(1.06) brightness(1.11) contrast(.99);
   }
 
   .hero-shade {
