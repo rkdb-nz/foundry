@@ -579,3 +579,17 @@ body.homepage .foundry-global-menu span {
     width: 58px !important;
   }
 }
+
+
+/* Tighten the hamburger icon while retaining option 6. */
+body.homepage .foundry-global-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+}
+
+body.homepage .foundry-global-menu span {
+  margin: 0 !important;
+}
