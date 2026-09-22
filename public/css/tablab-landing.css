@@ -51,9 +51,7 @@ body.homepage .landing::after {
   align-items: flex-end;
   padding-left: 16px;
   color: #fff;
-  background:
-    linear-gradient(90deg, rgba(65,35,23,.24), transparent 24%, rgba(255,255,255,.08) 58%, transparent 80%),
-    linear-gradient(180deg, #855d45 0%, #70472f 58%, #5a321f 100%);
+  background: #8b6756;
   border-bottom: 1px solid rgba(77,39,24,.42);
   box-shadow: 0 2px 9px rgba(45,25,17,.18);
 }
@@ -161,19 +159,41 @@ body.homepage .landing::after {
   align-self: flex-end;
   display: grid;
   place-items: center;
-  width: 43px;
-  height: 34px;
-  margin-left: -9px;
-  padding-left: 7px;
-  border-radius: 10px 10px 0 0;
-  background: #946153;
-  color: rgba(255,248,242,.94);
+  width: 46px;
+  height: 36px;
+  margin-left: -8px;
+  padding: 0 0 1px 7px;
+  border: 0;
+  border-radius: 11px 11px 0 0;
+  background: #a86f62;
+  color: #fff6ee;
   font-family: Arial, sans-serif;
   font-size: 23px;
   font-weight: 200;
   line-height: 1;
   text-align: center;
-  box-shadow: inset 1px 1px 0 rgba(255,255,255,.12);
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,.14);
+}
+
+.tablab-new::before,
+.tablab-new::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 13px;
+  height: 13px;
+  background: #a86f62;
+  pointer-events: none;
+}
+
+.tablab-new::before {
+  left: -13px;
+  border-top-left-radius: 13px;
+}
+
+.tablab-new::after {
+  right: -13px;
+  border-top-right-radius: 13px;
 }
 
 .tablab-monitor-peek {
