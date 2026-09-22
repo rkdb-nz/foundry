@@ -593,3 +593,63 @@ body.homepage .foundry-global-menu {
 body.homepage .foundry-global-menu span {
   margin: 0 !important;
 }
+
+
+/* Directional monitor shadow from the approved reference. */
+body.homepage .tablab-monitor-shadow {
+  position: absolute;
+  z-index: 1;
+  left: -2vw;
+  top: 70%;
+  width: min(58vw, 780px);
+  height: 15vh;
+  min-height: 105px;
+  pointer-events: none;
+  transform: rotate(-2.5deg);
+  transform-origin: left center;
+  background:
+    radial-gradient(ellipse at 9% 52%,
+      rgba(102,72,61,.27) 0 8%,
+      rgba(111,81,70,.17) 18%,
+      rgba(121,91,80,.08) 36%,
+      transparent 62%),
+    linear-gradient(176deg,
+      transparent 0 35%,
+      rgba(103,75,64,.12) 46%,
+      rgba(118,89,79,.07) 58%,
+      transparent 76%);
+  filter: blur(13px);
+  opacity: .82;
+}
+
+body.homepage .tablab-monitor-shadow::after {
+  content: "";
+  position: absolute;
+  left: 2%;
+  top: 56%;
+  width: 82%;
+  height: 24%;
+  border-radius: 50%;
+  background: linear-gradient(90deg,
+    rgba(83,58,49,.24),
+    rgba(112,84,73,.13) 34%,
+    rgba(127,99,88,.05) 66%,
+    transparent);
+  filter: blur(11px);
+  transform: skewX(-18deg);
+}
+
+body.homepage .tablab-monitor-peek {
+  box-shadow:
+    12px 19px 24px rgba(73,47,38,.12),
+    24px 38px 40px rgba(88,61,50,.07);
+}
+
+@media (max-width: 820px) {
+  body.homepage .tablab-monitor-shadow {
+    left: -5vw;
+    width: 72vw;
+    top: 72%;
+    opacity: .64;
+  }
+}
