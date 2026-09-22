@@ -96,30 +96,26 @@ body.homepage .landing::after {
 
 .tablab-tab--active {
   z-index: 3;
-  width: 148px;
-  height: 42px;
-  padding: 0 23px 2px;
+  width: 150px;
+  height: 43px;
+  padding: 0 21px 1px;
   gap: 0;
   overflow: visible;
   background: #f8eee5;
-  border-radius: 15px 15px 0 0;
-  box-shadow: 0 -1px 0 rgba(255,255,255,.5), 0 3px 7px rgba(45,25,18,.13);
+  border: 0;
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 -1px 0 rgba(255,255,255,.48), 0 2px 5px rgba(45,25,18,.12);
 }
 
 .tablab-tab--active::before,
 .tablab-tab--active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 12px;
-  height: 12px;
-  pointer-events: none;
+  right: -18px;
+  border-top-right-radius: 18px;
 }
 
 .tablab-tab--active::before {
-  left: -12px;
-  border-bottom-right-radius: 12px;
-  box-shadow: 6px 0 0 #f8eee5;
+  left: -18px;
+  border-top-left-radius: 18px;
 }
 
 .tablab-tab--active::after {
@@ -130,16 +126,22 @@ body.homepage .landing::after {
 
 .tablab-word-tab,
 .tablab-word-lab {
-  font-family: "Bodoni Moda", Georgia, "Times New Roman", serif;
-  line-height: 1;
+  margin-left: .025em;
+  color: #70483b;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 450;
+  letter-spacing: -.055em;
+  transform: translateY(1px);
 }
 
 .tablab-word-tab {
   color: #39231b;
-  font-size: 24px;
+  font-size: 26px;
   font-style: normal;
-  font-weight: 600;
-  letter-spacing: -.055em;
+  font-weight: 500;
+  letter-spacing: -.065em;
+  transform: translateY(0);
 }
 
 .tablab-word-lab {
