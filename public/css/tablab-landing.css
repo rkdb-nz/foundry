@@ -770,3 +770,14 @@ body.homepage #introPanel #sortButton {
     width: min(310px, 86vw);
   }
 }
+
+/* DIAGNOSTIC — deliberately exaggerated headline spacing.
+   Remove/reduce once the live cascade is confirmed. */
+body.homepage #introPanel .hero-lines {
+  row-gap: 72px !important;
+}
+
+body.homepage #introPanel .hero-lines > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
