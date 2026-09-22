@@ -439,3 +439,66 @@ body.homepage .foundry-global-backdrop {
     transition: none;
   }
 }
+
+
+/* Phase 1 refinement: match approved desktop reference. */
+body.homepage #introPanel .hero-lines,
+body.homepage #introPanel .hero-lines > div {
+  text-align: center !important;
+}
+
+body.homepage .foundry-global-nav {
+  width: auto !important;
+  min-width: 250px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.homepage .foundry-global-control {
+  border: 0 !important;
+  border-left: 1px solid rgba(255,255,255,.72) !important;
+}
+
+body.homepage .foundry-global-menu {
+  border-right: 0 !important;
+}
+
+body.homepage .foundry-global-menu span {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.homepage .tablab-monitor-peek {
+  top: 13.5%;
+  left: clamp(-305px, -18.5vw, -245px);
+  width: clamp(330px, 24vw, 400px);
+  aspect-ratio: 1 / 1.72;
+  border-width: 9px;
+  border-radius: 15px;
+  transform: rotate(-3.2deg);
+  box-shadow:
+    18px 25px 34px rgba(73,47,38,.20),
+    42px 68px 58px rgba(88,61,50,.14);
+}
+
+body.homepage .tablab-monitor-peek::after {
+  height: 82px;
+  box-shadow:
+    0 18px 28px rgba(79,57,48,.16),
+    20px 38px 44px rgba(91,66,56,.10);
+}
+
+@media (max-width: 820px) {
+  body.homepage .foundry-global-nav {
+    min-width: 88px !important;
+  }
+
+  body.homepage .tablab-monitor-peek {
+    left: -290px;
+    width: 350px;
+  }
+}
