@@ -242,7 +242,7 @@ body.homepage #introPanel .hero-lines {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .075em;
+  gap: .11em;
   margin: 0;
   background: none;
   color: #513f39;
