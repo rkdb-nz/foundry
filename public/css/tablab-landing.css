@@ -1,0 +1,441 @@
+/* TabLab landing-page rebrand
+   Phase 1: landing page and shared browser-style header.
+   Legacy Foundry assets are intentionally retained for the final cleanup audit. */
+
+:root {
+  --tablab-ink: #21130f;
+  --tablab-brown: #70452f;
+  --tablab-brown-deep: #4b2b1d;
+  --tablab-rose: #b97e70;
+  --tablab-paper: #fffaf7;
+  --tablab-line: rgba(72, 39, 27, 0.48);
+}
+
+body.homepage {
+  background: #f8efeb;
+  color: var(--tablab-ink);
+}
+
+body.homepage .landing {
+  min-height: 100svh;
+  height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 66% 26%, rgba(255,255,255,.98) 0 9%, rgba(255,255,255,0) 31%),
+    radial-gradient(circle at 55% 57%, rgba(255,255,255,.92) 0 17%, rgba(255,255,255,0) 42%),
+    radial-gradient(circle at 28% 38%, rgba(241,215,209,.76) 0 10%, rgba(241,215,209,0) 34%),
+    radial-gradient(circle at 75% 65%, rgba(239,207,199,.52) 0 8%, rgba(239,207,199,0) 31%),
+    linear-gradient(118deg, #fffdfc 0%, #f7e9e5 42%, #fffefe 72%, #f5e5e1 100%);
+}
+
+body.homepage .landing::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  bottom: -7vh;
+  height: 24vh;
+  background:
+    linear-gradient(176deg, transparent 0 33%, rgba(255,255,255,.92) 34% 62%, rgba(223,202,194,.62) 63% 65%, #fff 66%);
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.tablab-browserbar {
+  position: fixed;
+  z-index: 140;
+  inset: 0 0 auto;
+  height: 48px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 16px;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(65,35,23,.24), transparent 24%, rgba(255,255,255,.08) 58%, transparent 80%),
+    linear-gradient(180deg, #855d45 0%, #70472f 58%, #5a321f 100%);
+  border-bottom: 1px solid rgba(77,39,24,.42);
+  box-shadow: 0 2px 9px rgba(45,25,17,.18);
+}
+
+.tablab-window-dots {
+  align-self: center;
+  display: flex;
+  gap: 9px;
+  margin-right: 26px;
+}
+
+.tablab-window-dots span {
+  width: 19px;
+  height: 19px;
+  display: block;
+  border-radius: 50%;
+  border: 1px solid rgba(49,25,18,.42);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,.48), 0 1px 3px rgba(38,19,12,.34);
+}
+
+.tablab-window-dots span:nth-child(1) { background: #e9574b; }
+.tablab-window-dots span:nth-child(2) { background: #eab04f; }
+.tablab-window-dots span:nth-child(3) { background: #62ae73; }
+
+.tablab-tabs {
+  height: 42px;
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+}
+
+.tablab-tab {
+  position: relative;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(77,39,25,.42);
+  border-bottom: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.54), 0 -1px 4px rgba(43,23,15,.12);
+}
+
+.tablab-tab--active {
+  z-index: 2;
+  width: 145px;
+  padding: 0 24px;
+  background: linear-gradient(180deg, #fffdfb 0%, #f7efe9 100%);
+  color: #362017;
+  border-radius: 0 17px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -.04em;
+}
+
+.tablab-tab--blank {
+  width: 130px;
+  margin-left: -1px;
+  background: linear-gradient(180deg, #bd897c 0%, #ad7469 100%);
+  border-radius: 17px 17px 0 0;
+  transform: skewX(9deg);
+  transform-origin: bottom left;
+}
+
+.tablab-new {
+  align-self: center;
+  width: 72px;
+  margin-left: 12px;
+  color: rgba(255,255,255,.92);
+  font-family: Arial, sans-serif;
+  font-size: 33px;
+  font-weight: 200;
+  line-height: 1;
+  text-align: center;
+}
+
+.tablab-monitor-peek {
+  position: absolute;
+  z-index: 2;
+  top: 14%;
+  left: -12.6rem;
+  width: clamp(250px, 25vw, 410px);
+  aspect-ratio: 1 / 1.55;
+  border-radius: 16px;
+  background: #171717;
+  border: 9px solid #20201f;
+  box-shadow: 16px 23px 40px rgba(71,50,42,.22);
+  transform: rotate(-4deg);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.tablab-monitor-peek::before {
+  content: "";
+  position: absolute;
+  inset: 20px 12px 76px;
+  background:
+    radial-gradient(circle at 55% 38%, rgba(255,208,192,.72), transparent 26%),
+    linear-gradient(135deg, #a45145 0%, #e5a79b 40%, #71322d 75%, #d78272 100%);
+  filter: saturate(.82);
+}
+
+.tablab-monitor-peek::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: -1px;
+  height: 72px;
+  background: linear-gradient(180deg, #f5f4f2 0%, #d8d5d1 100%);
+  border-top: 1px solid rgba(0,0,0,.18);
+}
+
+body.homepage .brand,
+body.homepage .fm-home-v2 {
+  display: none !important;
+}
+
+body.homepage .hero {
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  width: min(650px, 76vw);
+  transform: translate(-50%, -45%);
+  text-align: center;
+}
+
+body.homepage #introPanel {
+  width: 100%;
+}
+
+body.homepage #introPanel .hero-title {
+  display: none;
+}
+
+body.homepage #introPanel .hero-lines {
+  display: block;
+  background: none;
+  color: #17100e;
+  -webkit-text-fill-color: currentColor;
+  filter: none;
+  font-family: "Bodoni Moda", Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 5.4vw, 6rem);
+  font-weight: 500;
+  line-height: .93;
+  letter-spacing: -.055em;
+}
+
+body.homepage #introPanel .hero-lines div:nth-child(2),
+body.homepage #introPanel .hero-lines div:nth-child(3) {
+  color: #795d55;
+}
+
+body.homepage #introPanel .hero-actions {
+  width: min(430px, 100%);
+  margin: 58px auto 0;
+  display: grid;
+  justify-items: center;
+  gap: 28px;
+}
+
+body.homepage #introPanel .hero-button {
+  min-width: 0;
+  border-radius: 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  text-transform: uppercase;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+body.homepage #introPanel #sortButton {
+  width: 100%;
+  min-height: 82px;
+  padding: 18px 30px;
+  border: 1px solid #9b5229 !important;
+  background:
+    linear-gradient(100deg, #b96332 0%, #df914e 24%, #efa960 49%, #d57e3c 76%, #a94d27 100%) !important;
+  color: #21120d !important;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .42em;
+  box-shadow:
+    inset 0 2px 2px rgba(255,225,184,.58),
+    inset 0 -2px 2px rgba(102,42,18,.46),
+    0 15px 20px rgba(79,45,31,.26) !important;
+  text-shadow: none !important;
+}
+
+body.homepage #introPanel #exploreButton {
+  width: 280px;
+  min-height: 56px;
+  padding: 14px 22px;
+  border: 1px solid rgba(76,51,43,.74);
+  background: rgba(255,250,247,.72);
+  color: #6c554f;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .24em;
+  box-shadow: 0 5px 12px rgba(78,55,46,.05);
+  text-shadow: none;
+}
+
+body.homepage #introPanel .hero-button:hover,
+body.homepage #introPanel .hero-button:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  outline: 2px solid rgba(109,67,47,.42);
+  outline-offset: 4px;
+}
+
+body.homepage .foundry-global-nav {
+  z-index: 150 !important;
+  top: 0 !important;
+  right: 20px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+body.homepage .foundry-global-control {
+  width: 46px !important;
+  height: 34px !important;
+  border-left: 1px solid rgba(255,255,255,.68) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.homepage .foundry-global-control svg {
+  width: 29px !important;
+  height: 29px !important;
+  stroke: #fff !important;
+  fill: #fff !important;
+  filter: drop-shadow(0 1px 2px rgba(41,22,14,.42));
+}
+
+body.homepage .foundry-global-menu {
+  width: 54px !important;
+  border-right: 0 !important;
+}
+
+body.homepage .foundry-global-menu span {
+  width: 27px !important;
+  height: 2px !important;
+  margin: 4px auto !important;
+  border: 0 !important;
+  background: #fff !important;
+  box-shadow: 0 1px 2px rgba(41,22,14,.42) !important;
+}
+
+body.homepage .foundry-global-drawer {
+  z-index: 160;
+}
+
+body.homepage .foundry-global-backdrop {
+  z-index: 155;
+}
+
+@media (max-width: 820px) {
+  .tablab-browserbar {
+    height: 44px;
+    padding-left: 10px;
+  }
+
+  .tablab-window-dots {
+    gap: 6px;
+    margin-right: 12px;
+  }
+
+  .tablab-window-dots span {
+    width: 13px;
+    height: 13px;
+  }
+
+  .tablab-tabs,
+  .tablab-tab {
+    height: 38px;
+  }
+
+  .tablab-tab--active {
+    width: 112px;
+    padding: 0 15px;
+    font-size: 20px;
+    border-radius: 0 14px 0 0;
+  }
+
+  .tablab-tab--blank {
+    width: 76px;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .tablab-new {
+    display: none;
+  }
+
+  .tablab-monitor-peek {
+    left: -15rem;
+    opacity: .78;
+  }
+
+  body.homepage .foundry-global-nav {
+    right: 7px !important;
+    height: 44px !important;
+    gap: 0 !important;
+  }
+
+  body.homepage .foundry-global-back {
+    display: none !important;
+  }
+
+  body.homepage .foundry-global-control {
+    width: 40px !important;
+  }
+
+  body.homepage .hero {
+    top: 48%;
+    width: min(88vw, 520px);
+    transform: translate(-50%, -43%);
+  }
+
+  body.homepage #introPanel .hero-lines {
+    font-size: clamp(3.15rem, 12vw, 5rem);
+  }
+
+  body.homepage #introPanel .hero-actions {
+    width: min(84vw, 390px);
+    margin-top: 42px;
+    gap: 20px;
+  }
+
+  body.homepage #introPanel #sortButton {
+    min-height: 68px;
+    font-size: 14px;
+    letter-spacing: .3em;
+  }
+
+  body.homepage #introPanel #exploreButton {
+    width: min(250px, 78vw);
+    min-height: 52px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 540px) {
+  body.homepage .foundry-global-home {
+    display: none !important;
+  }
+
+  .tablab-tab--blank {
+    width: 58px;
+  }
+
+  body.homepage #introPanel .hero-lines {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+}
+
+@media (max-height: 620px) and (orientation: landscape) {
+  body.homepage .hero {
+    top: 52%;
+    transform: translate(-50%, -46%);
+  }
+
+  body.homepage #introPanel .hero-lines {
+    font-size: clamp(2.8rem, 7.2vh, 4.2rem);
+  }
+
+  body.homepage #introPanel .hero-actions {
+    margin-top: 24px;
+    gap: 13px;
+  }
+
+  body.homepage #introPanel #sortButton {
+    min-height: 54px;
+  }
+
+  body.homepage #introPanel #exploreButton {
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.homepage #introPanel .hero-button {
+    transition: none;
+  }
+}
