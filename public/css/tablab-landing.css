@@ -242,7 +242,7 @@ body.homepage #introPanel .hero-lines {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .20em;
+  gap: 14px;
   margin: 0;
   background: none;
   color: #513f39;
@@ -251,14 +251,14 @@ body.homepage #introPanel .hero-lines {
   font-family: "Bodoni Moda", Georgia, "Times New Roman", serif;
   font-size: clamp(2.95rem, 3.45vw, 3.7rem);
   font-weight: 500;
-  line-height: .94;
+  line-height: 1.05;
   letter-spacing: -.055em;
   text-align: center;
 }
 
 body.homepage #introPanel .hero-lines > div {
   margin: 0;
-  line-height: .94;
+  line-height: 1.05;
   text-align: center;
 }
 
