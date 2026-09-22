@@ -502,3 +502,24 @@ body.homepage .tablab-monitor-peek::after {
     width: 350px;
   }
 }
+
+
+/* Final header/monitor correction from the approved reference. */
+body.homepage .foundry-global-nav::before,
+body.homepage .foundry-global-nav::after,
+body.homepage .foundry-global-control::before,
+body.homepage .foundry-global-control::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.homepage .foundry-global-menu span {
+  height: 2px !important;
+  min-height: 2px !important;
+  flex: 0 0 2px !important;
+  padding: 0 !important;
+}
+
+body.homepage .tablab-monitor-peek {
+  aspect-ratio: 1 / 1.9;
+}
