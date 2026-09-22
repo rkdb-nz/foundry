@@ -16,7 +16,7 @@ body.homepage {
   color: var(--tablab-ink);
 }
 
-body.homepage .landing {
+body.homepage:not(.explore-open) .landing {
   min-height: 100svh;
   height: 100svh;
   overflow: hidden;
