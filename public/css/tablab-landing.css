@@ -653,3 +653,16 @@ body.homepage .tablab-monitor-peek {
     opacity: .64;
   }
 }
+
+
+/* TabLab photographic landing background.
+   The previous CSS-built monitor and shadow are retained above for the final cleanup audit. */
+body.homepage:not(.explore-open) .landing {
+  background: url("../assets/backgrounds/tablab-landing.png") center center / cover no-repeat !important;
+}
+
+body.homepage .landing::after,
+body.homepage .tablab-monitor-shadow,
+body.homepage .tablab-monitor-peek {
+  display: none !important;
+}
