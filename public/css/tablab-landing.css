@@ -1149,3 +1149,72 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav 
     height: 30px !important;
   }
 }
+
+/* Give the browser tabs the presence expected of the TabLab identity. */
+@media (min-width: 821px) {
+  body.homepage .tablab-browserbar {
+    height: 42px !important;
+    padding-left: 8px !important;
+  }
+
+  body.homepage .tablab-window-dots {
+    gap: 6px !important;
+    margin-right: 10px !important;
+  }
+
+  body.homepage .tablab-window-dots span {
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  body.homepage .tablab-tabs {
+    height: 39px !important;
+  }
+
+  body.homepage .tablab-tab--active {
+    width: 112px !important;
+    height: 38px !important;
+    padding: 0 13px 2px !important;
+  }
+
+  body.homepage .tablab-word-tab {
+    font-size: 19px !important;
+  }
+
+  body.homepage .tablab-word-lab {
+    font-size: 18px !important;
+  }
+
+  body.homepage .tablab-new {
+    width: 48px !important;
+    height: 34px !important;
+    margin-left: -3px !important;
+    font-size: 19px !important;
+  }
+
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
+    height: 42px !important;
+  }
+
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home {
+    width: 54px !important;
+    min-width: 54px !important;
+    height: 34px !important;
+  }
+
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu {
+    width: 72px !important;
+    min-width: 72px !important;
+    height: 34px !important;
+  }
+
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu::after {
+    font-size: 11px !important;
+  }
+}
