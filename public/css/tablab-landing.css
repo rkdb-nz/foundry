@@ -1153,27 +1153,27 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav 
 /* Give the browser tabs the presence expected of the TabLab identity. */
 @media (min-width: 821px) {
   body.homepage .tablab-browserbar {
-    height: 40px !important;
-    padding-left: 6px !important;
+    height: 34px !important;
+    padding-left: 14px !important;
   }
 
   body.homepage .tablab-window-dots {
-    gap: 5px !important;
-    margin-right: 7px !important;
+    gap: 6px !important;
+    margin-right: 18px !important;
   }
 
   body.homepage .tablab-window-dots span {
-    width: 7px !important;
-    height: 7px !important;
+    width: 8px !important;
+    height: 8px !important;
   }
 
   body.homepage .tablab-tabs {
-    height: 37px !important;
+    height: 30px !important;
   }
 
   body.homepage .tablab-tab--active {
-    width: 132px !important;
-    height: 36px !important;
+    width: 125px !important;
+    height: 29px !important;
     padding: 0 18px 2px !important;
   }
 
@@ -1186,31 +1186,31 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav 
   }
 
   body.homepage .tablab-new {
-    width: 70px !important;
+    width: 74px !important;
     height: 27px !important;
-    margin-left: -38px !important;
+    margin-left: -13px !important;
     font-size: 16px !important;
   }
 
   body.homepage .tablab-new > span {
-    transform: translate(8px, -1px) !important;
+    transform: translateY(-1px) !important;
   }
 
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
-    height: 40px !important;
+    height: 34px !important;
   }
 
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back,
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home {
     width: 49px !important;
     min-width: 49px !important;
-    height: 31px !important;
+    height: 27px !important;
   }
 
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu {
     width: 67px !important;
     min-width: 67px !important;
-    height: 31px !important;
+    height: 27px !important;
   }
 
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control svg {
