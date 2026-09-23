@@ -242,7 +242,7 @@ body.homepage #introPanel .hero-lines {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   margin: 0;
   background: none;
   color: #513f39;
@@ -251,21 +251,15 @@ body.homepage #introPanel .hero-lines {
   font-family: "Bodoni Moda", Georgia, "Times New Roman", serif;
   font-size: clamp(2.95rem, 3.45vw, 3.7rem);
   font-weight: 500;
-  line-height: 1.05;
+  line-height: 1;
   letter-spacing: -.055em;
   text-align: center;
 }
 
 body.homepage #introPanel .hero-lines > div {
   margin: 0;
-  line-height: 1.05;
+  line-height: 1;
   text-align: center;
-}
-
-/* Optical correction: the long descender in “Forged.” visually closes
-   the first gap far more than the second, so compensate only that join. */
-body.homepage #introPanel .hero-lines > div:nth-child(2) {
-  margin-top: 13px;
 }
 
 body.homepage #introPanel .hero-lines > div:nth-child(2),
@@ -771,13 +765,3 @@ body.homepage #introPanel #sortButton {
   }
 }
 
-/* DIAGNOSTIC — deliberately exaggerated headline spacing.
-   Remove/reduce once the live cascade is confirmed. */
-body.homepage #introPanel .hero-lines {
-  row-gap: 72px !important;
-}
-
-body.homepage #introPanel .hero-lines > div {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
