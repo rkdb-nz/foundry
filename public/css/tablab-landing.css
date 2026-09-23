@@ -767,53 +767,54 @@ body.homepage #introPanel #sortButton {
 
 /* =========================================================
    TABLAB HEADER — CONCEPT 5 / MODERN STUDIO
-   Header only. Everything below the header remains untouched.
+   Refined to the approved compact mockup.
+   Header only. Everything below remains untouched.
    ========================================================= */
 
 body.homepage .tablab-browserbar {
-  --tablab-header: #9b7b6c;
+  --tablab-header: #9a7868;
   --tablab-cream: #f6eee7;
   --tablab-plus: #765145;
   --tablab-ink: #35211b;
-  --tablab-soft-ink: #6c4a3f;
+  --tablab-soft-ink: #68483d;
 
-  height: 40px !important;
-  padding-left: 11px !important;
+  height: 34px !important;
+  padding-left: 10px !important;
   display: flex !important;
   align-items: flex-end !important;
   overflow: hidden !important;
   background: var(--tablab-header) !important;
-  border-bottom: 1px solid rgba(61, 34, 25, .17) !important;
+  border-bottom: 1px solid rgba(61,34,25,.16) !important;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.12),
-    0 1px 4px rgba(49,29,21,.10) !important;
+    inset 0 1px 0 rgba(255,255,255,.11),
+    0 1px 3px rgba(49,29,21,.09) !important;
 }
 
 body.homepage .tablab-window-dots {
   align-self: center !important;
-  gap: 6px !important;
-  margin: 0 16px 0 0 !important;
+  gap: 5px !important;
+  margin: 0 13px 0 0 !important;
 }
 
 body.homepage .tablab-window-dots span {
-  width: 9px !important;
-  height: 9px !important;
-  border: 1px solid rgba(48,27,20,.20) !important;
+  width: 8px !important;
+  height: 8px !important;
+  border: 1px solid rgba(48,27,20,.18) !important;
   box-shadow:
-    inset 0 1px 1px rgba(255,255,255,.38),
-    0 1px 1px rgba(43,24,18,.12) !important;
+    inset 0 1px 1px rgba(255,255,255,.36),
+    0 1px 1px rgba(43,24,18,.10) !important;
 }
 
 body.homepage .tablab-tabs {
-  height: 36px !important;
+  height: 31px !important;
   display: flex !important;
   align-items: flex-end !important;
 }
 
 body.homepage .tablab-tab--active {
-  width: 118px !important;
-  height: 34px !important;
-  padding: 0 18px 1px !important;
+  width: 96px !important;
+  height: 29px !important;
+  padding: 0 14px 1px !important;
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
@@ -832,10 +833,10 @@ body.homepage .tablab-new-shape {
 
 body.homepage .tablab-tab-shape path {
   fill: var(--tablab-cream) !important;
-  stroke: rgba(78,45,33,.10) !important;
-  stroke-width: .75 !important;
+  stroke: rgba(78,45,33,.09) !important;
+  stroke-width: .7 !important;
   vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 1px 1px rgba(57,32,24,.055));
+  filter: drop-shadow(0 1px 1px rgba(57,32,24,.05));
 }
 
 body.homepage .tablab-word-tab,
@@ -849,35 +850,35 @@ body.homepage .tablab-word-lab {
 
 body.homepage .tablab-word-tab {
   color: var(--tablab-ink) !important;
-  font-size: 18.5px !important;
+  font-size: 15.5px !important;
   font-style: normal !important;
   font-weight: 600 !important;
   letter-spacing: -.035em !important;
-  transform: translateY(0) !important;
+  transform: none !important;
 }
 
 body.homepage .tablab-word-lab {
-  margin-left: .06em !important;
+  margin-left: .055em !important;
   color: var(--tablab-soft-ink) !important;
-  font-size: 17.5px !important;
+  font-size: 14.8px !important;
   font-style: italic !important;
   font-weight: 500 !important;
   letter-spacing: -.025em !important;
-  transform: translateY(.5px) !important;
+  transform: translateY(.3px) !important;
 }
 
 body.homepage .tablab-new {
   position: relative !important;
   z-index: 1 !important;
-  width: 49px !important;
-  height: 31px !important;
-  margin-left: -4px !important;
-  padding: 0 0 1px 2px !important;
+  width: 39px !important;
+  height: 27px !important;
+  margin-left: -3px !important;
+  padding: 0 0 1px 1px !important;
   background: transparent !important;
   border: 0 !important;
   color: #f8efe8 !important;
   font-family: Arial, Helvetica, sans-serif !important;
-  font-size: 17px !important;
+  font-size: 15px !important;
   font-weight: 300 !important;
   line-height: 1 !important;
   box-shadow: none !important;
@@ -885,10 +886,10 @@ body.homepage .tablab-new {
 
 body.homepage .tablab-new-shape path {
   fill: var(--tablab-plus) !important;
-  stroke: rgba(69,38,29,.09) !important;
-  stroke-width: .75 !important;
+  stroke: rgba(69,38,29,.08) !important;
+  stroke-width: .7 !important;
   vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 1px 1px rgba(48,26,20,.05));
+  filter: drop-shadow(0 1px 1px rgba(48,26,20,.04));
 }
 
 body.homepage .tablab-new > span {
@@ -897,16 +898,16 @@ body.homepage .tablab-new > span {
   transform: translateY(-1px) !important;
 }
 
-/* Right side — retained approved mini-tab language. */
+/* Right-hand controls keep the approved mini-tab treatment. */
 body.homepage .foundry-global-nav {
   z-index: 150 !important;
   top: 0 !important;
-  right: 10px !important;
+  right: 8px !important;
   width: auto !important;
   min-width: 0 !important;
-  height: 40px !important;
+  height: 34px !important;
   padding: 0 !important;
-  gap: 3px !important;
+  gap: 2px !important;
   display: flex !important;
   align-items: flex-end !important;
   border: 0 !important;
@@ -927,9 +928,9 @@ body.homepage .foundry-global-control::before {
 body.homepage .foundry-global-control {
   position: relative !important;
   flex: 0 0 auto !important;
-  width: 52px !important;
-  min-width: 52px !important;
-  height: 30px !important;
+  width: 43px !important;
+  min-width: 43px !important;
+  height: 25px !important;
   padding: 0 !important;
 
   display: inline-flex !important;
@@ -937,54 +938,54 @@ body.homepage .foundry-global-control {
   justify-content: center !important;
 
   border: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 7px 7px 0 0 !important;
   background: var(--tablab-cream) !important;
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.62),
-    0 1px 2px rgba(57,32,24,.06) !important;
+    inset 0 1px 0 rgba(255,255,255,.60),
+    0 1px 2px rgba(57,32,24,.05) !important;
 
   color: var(--tablab-ink) !important;
   text-decoration: none !important;
 
   clip-path: polygon(
-    12% 100%,
-    17% 38%,
-    22% 14%,
-    30% 0,
-    70% 0,
-    78% 14%,
-    83% 38%,
-    88% 100%
+    9% 100%,
+    16% 34%,
+    22% 12%,
+    28% 0,
+    72% 0,
+    78% 12%,
+    84% 34%,
+    91% 100%
   ) !important;
 
   transition:
-    transform .16s ease,
-    background-color .16s ease,
-    color .16s ease !important;
+    transform .15s ease,
+    background-color .15s ease,
+    color .15s ease !important;
 }
 
 body.homepage .foundry-global-home {
-  width: 52px !important;
-  min-width: 52px !important;
+  width: 43px !important;
+  min-width: 43px !important;
 }
 
 body.homepage .foundry-global-menu {
-  width: 78px !important;
-  min-width: 78px !important;
+  width: 62px !important;
+  min-width: 62px !important;
 }
 
 body.homepage .foundry-global-control svg {
   display: block !important;
-  width: 17px !important;
-  height: 17px !important;
+  width: 14px !important;
+  height: 14px !important;
   stroke: var(--tablab-ink) !important;
   fill: none !important;
   filter: none !important;
 }
 
 body.homepage .foundry-global-home svg {
-  width: 16px !important;
-  height: 16px !important;
+  width: 13px !important;
+  height: 13px !important;
   fill: none !important;
   stroke: var(--tablab-ink) !important;
 }
@@ -1008,10 +1009,10 @@ body.homepage .foundry-global-menu::after {
   display: block !important;
   color: var(--tablab-ink) !important;
   font-family: "Bodoni Moda", Georgia, "Times New Roman", serif !important;
-  font-size: 11px !important;
+  font-size: 9.5px !important;
   font-weight: 600 !important;
   line-height: 1 !important;
-  letter-spacing: .06em !important;
+  letter-spacing: .055em !important;
 }
 
 body.homepage.foundry-global-open .foundry-global-menu::after,
@@ -1034,48 +1035,47 @@ body.homepage .foundry-global-control:focus-visible svg {
 
 @media (max-width: 820px) {
   body.homepage .tablab-browserbar {
-    height: 37px !important;
-    padding-left: 9px !important;
+    height: 32px !important;
+    padding-left: 8px !important;
   }
 
   body.homepage .tablab-window-dots {
-    gap: 5px !important;
-    margin-right: 12px !important;
+    gap: 4px !important;
+    margin-right: 10px !important;
   }
 
   body.homepage .tablab-window-dots span {
-    width: 8px !important;
-    height: 8px !important;
+    width: 7px !important;
+    height: 7px !important;
   }
 
   body.homepage .tablab-tabs {
-    height: 34px !important;
+    height: 29px !important;
   }
 
   body.homepage .tablab-tab--active {
-    width: 108px !important;
-    height: 32px !important;
-    padding: 0 15px 1px !important;
+    width: 90px !important;
+    height: 27px !important;
+    padding: 0 12px 1px !important;
   }
 
   body.homepage .tablab-word-tab {
-    font-size: 17px !important;
+    font-size: 14.5px !important;
   }
 
   body.homepage .tablab-word-lab {
-    font-size: 16px !important;
+    font-size: 13.8px !important;
   }
 
   body.homepage .tablab-new {
-    width: 45px !important;
-    height: 29px !important;
-    margin-left: -4px !important;
+    width: 36px !important;
+    height: 25px !important;
+    margin-left: -3px !important;
   }
 
   body.homepage .foundry-global-nav {
-    right: 7px !important;
-    height: 37px !important;
-    gap: 2px !important;
+    right: 6px !important;
+    height: 32px !important;
   }
 
   body.homepage .foundry-global-back,
@@ -1084,9 +1084,9 @@ body.homepage .foundry-global-control:focus-visible svg {
   }
 
   body.homepage .foundry-global-menu {
-    width: 70px !important;
-    min-width: 70px !important;
-    height: 28px !important;
+    width: 58px !important;
+    min-width: 58px !important;
+    height: 24px !important;
   }
 }
 
