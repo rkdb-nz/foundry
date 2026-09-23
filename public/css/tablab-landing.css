@@ -1094,14 +1094,14 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-cont
   }
 }
 
-/* Concept 5 reference: inset browser chrome and the small editorial masthead. */
+/* Concept 5 reference: full-width browser chrome and small editorial masthead. */
 body.homepage .tablab-browserbar {
-  inset: 10px 2.5% auto !important;
-  width: 95% !important;
+  inset: 10px 0 auto !important;
+  width: 100% !important;
   height: 30px !important;
   padding-left: 9px !important;
   overflow: visible !important;
-  border-radius: 8px 8px 0 0 !important;
+  border-radius: 0 !important;
   background: linear-gradient(95deg, #a68e7a 0%, #8b7462 62%, #7c6758 100%) !important;
   box-shadow: 0 1px 7px rgba(53, 35, 27, .28) !important;
 }
@@ -1154,7 +1154,7 @@ body.homepage .tablab-new {
 
 body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
   top: 10px !important;
-  right: calc(2.5% + 12px) !important;
+  right: 12px !important;
   height: 30px !important;
 }
 
@@ -1166,7 +1166,7 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav 
 
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
     top: 10px !important;
-    right: calc(2.5% + 6px) !important;
+    right: 6px !important;
     height: 30px !important;
   }
 }
