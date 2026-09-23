@@ -11,6 +11,22 @@
   --tablab-line: rgba(72, 39, 27, 0.48);
 }
 
+/* The tab silhouettes and lettering come from the supplied reference crop. */
+body.homepage .tablab-reference-tabs {
+  display: block;
+  flex: 0 0 auto;
+  align-self: flex-end;
+  width: 116px;
+  height: 18px;
+}
+
+@media (min-width: 821px) {
+  body.homepage .tablab-reference-tabs {
+    width: 186px;
+    height: 29px;
+  }
+}
+
 body.homepage {
   background: #f8efeb;
   color: var(--tablab-ink);
