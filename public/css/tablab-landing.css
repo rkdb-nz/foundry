@@ -1192,6 +1192,10 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav 
     font-size: 16px !important;
   }
 
+  body.homepage .tablab-new > span {
+    transform: translate(8px, -1px) !important;
+  }
+
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
     height: 40px !important;
   }
