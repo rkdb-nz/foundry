@@ -1188,7 +1188,7 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav 
   body.homepage .tablab-new {
     width: 70px !important;
     height: 43px !important;
-    margin-left: -9px !important;
+    margin-left: -25px !important;
     font-size: 25px !important;
   }
 
