@@ -1153,68 +1153,68 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav 
 /* Give the browser tabs the presence expected of the TabLab identity. */
 @media (min-width: 821px) {
   body.homepage .tablab-browserbar {
-    height: 54px !important;
-    padding-left: 10px !important;
+    height: 40px !important;
+    padding-left: 6px !important;
   }
 
   body.homepage .tablab-window-dots {
-    gap: 7px !important;
-    margin-right: 14px !important;
+    gap: 5px !important;
+    margin-right: 7px !important;
   }
 
   body.homepage .tablab-window-dots span {
-    width: 9px !important;
-    height: 9px !important;
+    width: 7px !important;
+    height: 7px !important;
   }
 
   body.homepage .tablab-tabs {
-    height: 50px !important;
+    height: 37px !important;
   }
 
   body.homepage .tablab-tab--active {
-    width: 170px !important;
-    height: 49px !important;
-    padding: 0 22px 3px !important;
+    width: 132px !important;
+    height: 36px !important;
+    padding: 0 18px 2px !important;
   }
 
   body.homepage .tablab-word-tab {
-    font-size: 26px !important;
+    font-size: 21px !important;
   }
 
   body.homepage .tablab-word-lab {
-    font-size: 24px !important;
+    font-size: 20px !important;
   }
 
   body.homepage .tablab-new {
-    width: 70px !important;
-    height: 43px !important;
-    margin-left: -25px !important;
-    font-size: 25px !important;
+    width: 51px !important;
+    height: 32px !important;
+    margin-left: -18px !important;
+    font-size: 17px !important;
   }
 
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
-    height: 54px !important;
+    height: 40px !important;
   }
 
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back,
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home {
-    width: 66px !important;
-    min-width: 66px !important;
-    height: 43px !important;
+    width: 49px !important;
+    min-width: 49px !important;
+    height: 31px !important;
   }
 
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu {
-    width: 88px !important;
-    min-width: 88px !important;
-    height: 43px !important;
+    width: 67px !important;
+    min-width: 67px !important;
+    height: 31px !important;
   }
 
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control svg {
-    width: 19px !important;
-    height: 19px !important;
+    width: 14px !important;
+    height: 14px !important;
   }
 
   body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu::after {
-    font-size: 13px !important;
+    font-size: 10px !important;
   }
 }
