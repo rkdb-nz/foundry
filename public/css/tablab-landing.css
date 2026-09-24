@@ -1407,3 +1407,54 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home
     outline-offset: -5px !important;
   }
 }
+
+/* Keep both PNG tab groups at the approved aspect ratio.
+   The central brown strip alone expands with the viewport. */
+@media (min-width: 821px) {
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar {
+    background: linear-gradient(90deg, #806957, #765f4d) !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar::before,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 320px;
+    pointer-events: none;
+    background-image: url("../assets/brand/tablab-approved-header.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar::before {
+    left: 0;
+    background-position: left top;
+    -webkit-mask-image: linear-gradient(to right, #000 0 87%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 0 87%, transparent 100%);
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar::after {
+    right: 0;
+    background-position: right top;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 13% 100%);
+    mask-image: linear-gradient(to right, transparent, #000 13% 100%);
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
+    right: 21px !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control {
+    height: 40px !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back {
+    width: 70px !important;
+    min-width: 70px !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home {
+    width: 63px !important;
+    min-width: 63px !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu {
+    width: 84px !important;
+    min-width: 84px !important;
+  }
+}
