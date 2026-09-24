@@ -1325,3 +1325,28 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu
 body.homepage:not(.explore-open):has(#introPanel.is-active).foundry-global-open .foundry-global-nav {
   z-index: 170 !important;
 }
+
+/* Approved compact browser-tab proportions and stronger right-side symbols. */
+body.homepage .tablab-reference-tabs {
+  width: 140px !important;
+  height: 22px !important;
+}
+@media (min-width: 821px) {
+  body.homepage .tablab-reference-tabs {
+    width: 220px !important;
+    height: 34px !important;
+  }
+}
+body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back svg path,
+body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home svg path {
+  stroke-width: 2.7 !important;
+}
+body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu::after {
+  font-weight: 700 !important;
+  letter-spacing: .025em !important;
+}
+@media (min-width: 821px) {
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu::after {
+    font-size: 13px !important;
+  }
+}
