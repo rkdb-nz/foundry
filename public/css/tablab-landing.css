@@ -1320,3 +1320,8 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu
     height: 33px !important;
   }
 }
+
+/* Keep the MENU tab reachable while the navigation drawer is open. */
+body.homepage:not(.explore-open):has(#introPanel.is-active).foundry-global-open .foundry-global-nav {
+  z-index: 170 !important;
+}
