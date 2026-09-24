@@ -1238,3 +1238,54 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav 
     font-size: 10px !important;
   }
 }
+
+/* Goal mockup: align the desktop browser chrome to the traffic lights and bar edge. */
+@media (min-width: 821px) {
+  body.homepage .tablab-browserbar {
+    height: 47px !important;
+    padding-left: 14px !important;
+    background: #816a58 !important;
+  }
+
+  body.homepage .tablab-window-dots {
+    gap: 8px !important;
+    margin-right: 18px !important;
+  }
+
+  body.homepage .tablab-window-dots span {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  body.homepage .tablab-reference-tabs {
+    width: 200px;
+    height: 32px;
+  }
+
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
+    height: 47px !important;
+    right: 26px !important;
+  }
+
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home {
+    width: 68px !important;
+    min-width: 68px !important;
+    height: 32px !important;
+  }
+
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu {
+    width: 90px !important;
+    min-width: 90px !important;
+    height: 32px !important;
+  }
+
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control svg {
+    width: 17px !important;
+    height: 17px !important;
+  }
+
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu::after {
+    font-size: 12px !important;
+  }
+}
