@@ -1458,3 +1458,133 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home
     min-width: 84px !important;
   }
 }
+
+/* Preserve the approved browser header through tablet and narrow windows. */
+@media (max-width: 820px) {
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar {
+    height: 47px !important;
+    background: linear-gradient(90deg, #806957, #765f4d) !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar::before,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 320px;
+    pointer-events: none;
+    background-image: url("../assets/brand/tablab-approved-header.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar::before {
+    left: 0;
+    background-position: left top;
+    -webkit-mask-image: linear-gradient(to right, #000 0 87%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 0 87%, transparent 100%);
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar::after {
+    right: 0;
+    background-position: right top;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 13% 100%);
+    mask-image: linear-gradient(to right, transparent, #000 13% 100%);
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-window-dots,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-reference-tabs {
+    display: none !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
+    display: flex !important;
+    align-items: flex-end !important;
+    top: 0 !important;
+    right: 21px !important;
+    left: auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 47px !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    position: relative !important;
+    height: 40px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    transform: none !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back {
+    width: 70px !important;
+    min-width: 70px !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home {
+    width: 63px !important;
+    min-width: 63px !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu {
+    width: 84px !important;
+    min-width: 84px !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control svg,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu span,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu::after {
+    visibility: hidden !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control:focus-visible {
+    outline: 2px solid #fff !important;
+    outline-offset: -5px !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active).foundry-global-open .foundry-global-nav {
+    z-index: 170 !important;
+  }
+}
+@media (max-width: 519px) {
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
+    height: clamp(32px, 9vw, 47px) !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar::before,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar::after {
+    width: clamp(220px, 61.5vw, 320px);
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
+    right: clamp(13px, 2.5vw, 21px) !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu {
+    height: clamp(28px, 7.7vw, 40px) !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back {
+    width: clamp(48px, 13.46vw, 70px) !important;
+    min-width: clamp(48px, 13.46vw, 70px) !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home {
+    width: clamp(43px, 12.11vw, 63px) !important;
+    min-width: clamp(43px, 12.11vw, 63px) !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu {
+    width: clamp(58px, 16.15vw, 84px) !important;
+    min-width: clamp(58px, 16.15vw, 84px) !important;
+  }
+}
