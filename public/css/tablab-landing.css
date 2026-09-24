@@ -1356,3 +1356,54 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back
 body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home svg path {
   stroke-width: 4.7 !important;
 }
+
+/* Desktop landing: the approved full-width artwork is one exact PNG.
+   Real transparent controls retain the back, home and menu interactions. */
+@media (min-width: 821px) {
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-browserbar {
+    background: #816a58 url("../assets/brand/tablab-approved-header.png") center / 100% 100% no-repeat !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-window-dots,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .tablab-reference-tabs {
+    display: none !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
+    right: 1.5vw !important;
+    height: 47px !important;
+    background: transparent !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control {
+    height: 42px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    transform: none !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back {
+    width: 7.35vw !important;
+    min-width: 7.35vw !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home {
+    width: 6.65vw !important;
+    min-width: 6.65vw !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu {
+    width: 7.85vw !important;
+    min-width: 7.85vw !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control svg,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu span,
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu::after {
+    visibility: hidden !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control:focus-visible {
+    outline: 2px solid #fff !important;
+    outline-offset: -5px !important;
+  }
+}
