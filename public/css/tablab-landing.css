@@ -1289,3 +1289,34 @@ body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav 
     font-size: 12px !important;
   }
 }
+
+/* Joined landing header tabs: matched height and shared baseline. */
+body.homepage .tablab-reference-tabs {
+  width: 225px !important;
+  height: 23px !important;
+  overflow: visible;
+}
+body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-nav {
+  gap: 0 !important;
+}
+body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control {
+  height: 23px !important;
+  background: linear-gradient(#fffdf8, #eee7df) !important;
+  clip-path: polygon(0 100%, 13% 18%, 18% 3%, 24% 0, 76% 0, 82% 3%, 87% 18%, 100% 100%) !important;
+  filter: drop-shadow(0 1px 1px rgba(51,32,22,.35)) !important;
+}
+body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control + .foundry-global-control {
+  margin-left: -5px !important;
+}
+body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-back { z-index: 3 !important; }
+body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-home { z-index: 2 !important; }
+body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-menu { z-index: 1 !important; }
+@media (min-width: 821px) {
+  body.homepage .tablab-reference-tabs {
+    width: 270px !important;
+    height: 33px !important;
+  }
+  body.homepage:not(.explore-open):has(#introPanel.is-active) .foundry-global-control {
+    height: 33px !important;
+  }
+}
